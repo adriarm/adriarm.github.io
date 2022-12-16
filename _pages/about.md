@@ -23,7 +23,7 @@ Click <a href="./files/cv.pdf">here</a> for my CV.
 </p>
 </div>
 
-<div><h1 style="position: relative; bottom: -20px;"> Publications</h1></div>
+<div><h1 style="position: relative; bottom: -50px;"> Publications</h1></div>
 <div id="publications">
     <article>
         <div class="pub_text">
