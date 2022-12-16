@@ -26,15 +26,15 @@ Click <a href="./files/cv.pdf">here</a> for my CV.
 <div><h1> Publications</h1></div>
 <div id="publications">
     <article>
-      <a classa="pub_image"><img src="./aliasing_is_a_driver/toy_example_2.svg"></a>
-      <div class="pub_text">
-          <h3>Aliasing is a Driver of Adversarial Attacks</h3>
-          [<a href="">paper</a>]
-          [<a href="">webpage</a>]
-          [<a href="">code</a>]
-          <h4 class="authors">
-            <b>Adrián Rodríguez-Muñoz</b>, Antonio Torralba
-          </h4>
-      </div>
+        <div class="pub_text">
+            <h3>Aliasing is a Driver of Adversarial Attacks</h3>
+            [<a href="">paper</a>]
+            [<a href="">webpage</a>]
+            [<a href="">code</a>]
+            <h4 class="authors">
+                <b>Adrián Rodríguez-Muñoz</b>, Antonio Torralba
+            </h4>
+        </div>
+        <a classa="pub_image"><img src="./aliasing_is_a_driver/toy_example_2.svg"></a>
     </article>
 </div>
