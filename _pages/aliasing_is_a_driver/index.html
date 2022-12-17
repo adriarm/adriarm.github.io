@@ -254,7 +254,7 @@ BODY {
 </div>
 
 <hr>
-<h2>Aliasing: what is it?</h2>
+<h2>What is aliasing?</h2>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="0" width="900">
@@ -275,36 +275,36 @@ BODY {
 </div>
 
 <hr>
-<h2>What makes a good quasimetric model?</h2>
+<h2>Motivation linking aliasing to adversarial examples</h2>
 <br>
 
-<h3 style="text-align: left;font-size: 18px;padding-left: 20px; padding-bottom: 0px">(1) Obey <scan class="ul">Quasimetric Constraints</scan> (at least approximately). <span style="font-weight: 100;">Enforce the correct geometric and inductive biases.</span></h3>
-<h3 style="text-align: left;font-size: 18px;padding-left: 20px; padding-bottom: 0px">(2) <scan class="ul">Universally approximate</scan> all possible quasimetrics. <span style="font-weight: 100;">Expressive enough for any  quasimetric structure in data.</span></h3>
-<br/>
-<p style="text-align: left;font-size: 16px;padding-left: 20px; ">Currently, only <span style="font-weight: bold" class="ul">latent quasimetric models</span> satisfy both (1) and (2):
-$$d(x, y) = \underbrace{d_\mathsf{latent}}_{\llap{\textsf{quasim}}\rlap{\textsf{etric over latent space (possibly parametrized)}}}(\overbrace{f}^{\llap{\textsf{gene}}\rlap{\textsf{ric encoder (e.g., a deep neural network)}}}(x), \overbrace{f}(y))$$
-
-Indeed, prior works [1,2,3] and our paper show that such methods greatly outperform alternatives in modeling quasimetrics.
-</p>
-<h3 style="text-align: left;font-size: 18px;padding-left: 20px; padding-bottom: 0px">What makes a good <span style="font-weight: bold" class="ul">latent quasimetric model</span>?</h3>
-
-
-<h3 style="text-align: left;font-size: 18px;padding-left: 20px; padding-bottom: 0px">(3) $d_\mathsf{latent}$ should have <scan class="ul">few parameters.</scan> <span style="font-weight: 100;"> So latents are informative of the quasimetric structure, e.g., in transfer learning.</span></h3>
-<h3 style="text-align: left;font-size: 18px;padding-left: 20px; padding-bottom: 0px">(4) $d_\mathsf{latent}(u, v)$ should be "smooth" in latents $(u,v)$.  <span style="font-weight: 100;">No diminishing/discountinuous gradients. Have (approximate)</span> latent positive homogeneity: </h3>
-<p style="text-align: left;font-size: 16px;padding-left: 20px; ">
-$$\forall \textsf{latent } u, v, \quad \forall \alpha > 0, \quad d_\mathsf{latent}(\alpha \cdot u, \alpha \cdot v) = \alpha \cdot d(u, v)\qquad$$
-</p>
-<br/>
-<p style="text-align: left;font-size: 16px;padding-left: 20px; ">Before our proposed IQE, no method satisfies all four properties.
-</p>
-
-<table border="0" cellspacing="0" cellpadding="0">
+<table border="0" cellspacing="0" cellpadding="0" width="900">
   <tr>
     <td align="center" valign="bottom" style="overflow:hidden;">
-        <img class="result" src="images/properties_table.png" style="width: 100%">
+        <img class="result" src="files/toy_example_2.svg" style="width: 100%">
     </td>
   </tr>
 </table>
+
+<div style="text-align: justify;">
+<p>
+  Our hypothesis is that adversarial attacks work in part by exploiting the phenomenon of aliasing. See the above 
+  figure for a simple but enlightening toy example. As we can see, the dirty image is indistinguishable
+  from the original clean image by a human, and yet their outputs are completely different. The culprit for this bizarre ef-
+  fect is the convolution stride (green box) that carelessly down-samples the input. 
+</p>
+<p>
+  An attacker with knowledge
+  about it is able to construct a perturbation focused on manipulating the surviving samples (pixels at even rows and
+  columns). The discarded samples (pixels at an odd row or column) serve as extra degrees of freedom that can be used
+  to make the attack less noticeable and more powerful.
+</p>
+<p>  
+  The behavior of these analytically constructed attacks is remarkably 
+  similar to low-amplitude, gradient-driven attacks: they are imperceptible by humans and drastically change the feature maps of a network. 
+  It is thus plausible that attacks may be exploiting aliasing.
+</p>
+</div>
 
 <hr>
 <h2>Interval Quasimetric Embeddings (IQEs)</h2>
