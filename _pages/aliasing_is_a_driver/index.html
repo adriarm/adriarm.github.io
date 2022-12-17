@@ -1,0 +1,480 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+  <title>Aliasing is a Driver of Adversarial Attacks</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<meta property="og:title" content="Aliasing is a Driver of Adversarial Attacks" />
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+<script src="lib.js" type="text/javascript"></script>
+<script src="popup.js" type="text/javascript"></script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+<script type="text/javascript">
+// redefining default features
+var _POPUP_FEATURES = 'width=500,height=300,resizable=1,scrollbars=1,titlebar=1,status=1';
+</script>
+<link media="all" href="glab.css" type="text/css" rel="StyleSheet">
+<style type="text/css" media="all">
+IMG {
+	PADDING-RIGHT: 0px;
+	PADDING-LEFT: 0px;
+	FLOAT: right;
+	PADDING-BOTTOM: 0px;
+	PADDING-TOP: 0px
+}
+#primarycontent {
+	MARGIN-LEFT: auto; ; WIDTH: expression(document.body.clientWidth >
+1000? "1000px": "auto" ); MARGIN-RIGHT: auto; TEXT-ALIGN: left; max-width:
+1000px }
+BODY {
+	TEXT-ALIGN: center
+}
+</style>
+
+<style type="text/css">
+  body {
+    font-family: "Titillium Web","HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight:300;
+    font-size:18px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+    width: 100%;
+  }
+
+  h1 {
+    font-weight:300;
+  }
+
+  div {
+    max-width: 95%;
+    margin:auto;
+    padding: 10px;
+  }
+
+  .table-like {
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+
+  .disclaimerbox {
+    background-color: #eee;
+    border: 1px solid #eeeeee;
+    border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+    padding: 20px;
+  }
+
+  video.header-vid {
+    height: 140px;
+    border: 1px solid black;
+    border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+  }
+
+  img {
+    padding: 0;
+    display: block;
+    margin: 0 auto;
+    max-height: 100%;
+    max-width: 100%;
+  }
+
+  iframe {
+    max-width: 100%;
+  }
+
+  img.header-img {
+    height: 140px;
+    border: 1px solid black;
+    border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+  }
+
+  img.rounded {
+    border: 1px solid #eeeeee;
+    border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+  }
+
+  a:link,a:visited
+  {
+    color: #1367a7;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #208799;
+  }
+
+  td.dl-link {
+    height: 160px;
+    text-align: center;
+    font-size: 22px;
+  }
+
+  .layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+    box-shadow:
+            0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+            5px 5px 0 0px #fff, /* The second layer */
+            5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+            10px 10px 0 0px #fff, /* The third layer */
+            10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
+            15px 15px 0 0px #fff, /* The fourth layer */
+            15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
+            20px 20px 0 0px #fff, /* The fifth layer */
+            20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
+            25px 25px 0 0px #fff, /* The fifth layer */
+            25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
+    margin-left: 10px;
+    margin-right: 45px;
+  }
+
+
+  .layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+    box-shadow:
+            0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+            5px 5px 0 0px #fff, /* The second layer */
+            5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+            10px 10px 0 0px #fff, /* The third layer */
+            10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 30px;
+    margin-bottom: 5px;
+  }
+
+  .vert-cent {
+    position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+  }
+
+  hr
+  {
+    border: 0;
+    height: 1px;
+    max-width: 1100px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+  }
+
+  #authors td {
+    padding-bottom:5px;
+    padding-top:30px;
+  }
+</style>
+
+<body>
+
+<div id="primarycontent">
+<center><h1 style="font-size: 225%">Aliasing is a Driver of Adversarial Attacks</h1></center>
+<center>
+  <div class="table-like" style="justify-content:space-evenly;max-width:880px;margin:auto;">
+    <div width="1"></div>
+    <div>
+      <center>
+        <a href="adriarm.github.io" style="font-size: larger">Adrián Rodríguez-Muñoz</a>
+      </center>
+      <center>
+        MIT CSAIL
+      </center>
+    </div>
+    <div width="1"></div>
+    <div>
+      <center>
+        <a href="https://web.mit.edu/torralba/www" style="font-size: larger">Antonio Torralba</a>
+      </center>
+      <center>
+        MIT CSAIL
+      </center>
+    </div>
+    <div width="1"></div>
+  </div>
+</center>
+
+<div class="table-like" style="justify-content:space-evenly;max-width:900px;margin:auto;">
+  <center>
+    <table>
+      <tr>
+        <td>
+          <span style="font-size:26px;margin:20px">Paper:</span>
+        </td>
+        <td style="font-size:20px;margin:20px;font-family:monospace">
+          <a style="margin:2px" href="files/aliasing_is_a_driver/paper.pdf">[paper]</a>
+          <!-- <a style="margin:2px" href="https://openreview.net/forum?id=KRiST_rzkGl">[OpenReview]</a> -->
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span style="font-size:26px;margin:20px">Code:</span>
+        </td>
+        <td style="font-size:20px;margin:20px;font-family:monospace">
+          <a style="margin:2px" href="https://github.com/quasimetric-learning/torch-quasimetric">[PyTorch Package of SOTA Quasimetric Learning Methods]</a>
+        </td>
+      </tr>
+    </table>
+  </center>
+</div>
+<center>
+<br>
+
+<h2>Abstract</h2>
+<div style="font-size:14px; text-align: justify;">
+<p>
+Asymmetrical distance structures (<em class="ul" style="font-weight: bold;">quasimetrics</em>) are ubiquitous in our lives and are gaining more attention in machine learning applications. Imposing such quasimetric structures in model representations has been shown to improve many tasks, including reinforcement learning (RL) and causal relation learning. In this work, we present four desirable properties in such quasimetric models, and show how prior works fail at them. We propose <em class="ul" style="font-weight: bold;">Interval Quasimetric Embedding (IQE)</em>, which is designed to satisfy all four criteria. On three quasimetric learning experiments, IQEs show strong approximation and generalization abilities, leading to better performance and improved efficiency over prior methods.
+</p>
+</div>
+
+<hr>
+<h2>Quasimetric Learning: What and Why?</h2>
+<br>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="center" valign="bottom" style="overflow:hidden;">
+        <img class="result" src="../quasimetric/images/function_spaces_cropped.png" style="width: 95%">
+    </td>
+  </tr>
+</table>
+
+<div style="text-align: justify;">
+<p>
+Among all unconstrained bivariate functions , a special subset is the <em class="ul" style="font-weight: bold;">quasimetrics</em>, which represent distances that can be asymmetrical. This includes many functions of research and practical interests, which does not generally belong to the widely studied metric function space. Analogous to Metric Learning, <em class="ul" style="font-weight: bold;">Quasimetric Learning</em> is the task of learning a <em class="ul" style="font-weight: bold;">quasimetric</em> from data. Quasimetric Learning is already an important part of many research works, including graph learning, causual relation learning, and reinforcement learning.
+</p>
+
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="center" valign="bottom" style="overflow:hidden;">
+        <img class="result" src="images/quasimetric_properties.png" style="width: 75%">
+    </td>
+  </tr>
+</table>
+<br/>
+
+<p>
+Many recent works [1,2,3] propose quasimetric learning methods. In this work, we discuss several desirable properties of the quasimetric parameterization, and propose <em class="ul" style="font-weight: bold;">Interval Quasimetric Embedding (IQE)</em>, which greatly outperform previous state of the art with a much simpler form.
+</p>
+
+<p style="font-size:12px">
+  [1] Tongzhou Wang and Phillip Isola. On the Learning and Learnability of Quasimetrics. In
+International Conference on Learning Representations (ICLR), 2022 <br/>
+
+  [2] Silviu Pitis, Harris Chan, Kiarash Jamali, and Jimmy Ba. An Inductive Bias For Distances:
+Neural Nets That Respect the Triangle Inequality. In
+International Conference on Learning Representations (ICLR), 2020. <br/>
+
+[3] Bo Liu, Yihao Feng, Qiang Liu, and Peter Stone. Metric Residual Networks for Sample
+Efficient Goal-Conditioned Reinforcement Learning. arXiv preprint arXiv:2208.08133, 2022.
+
+</p>
+</div>
+
+<hr>
+<h2>What makes a good quasimetric model?</h2>
+<br>
+
+<h3 style="text-align: left;font-size: 18px;padding-left: 20px; padding-bottom: 0px">(1) Obey <scan class="ul">Quasimetric Constraints</scan> (at least approximately). <span style="font-weight: 100;">Enforce the correct geometric and inductive biases.</span></h3>
+<h3 style="text-align: left;font-size: 18px;padding-left: 20px; padding-bottom: 0px">(2) <scan class="ul">Universally approximate</scan> all possible quasimetrics. <span style="font-weight: 100;">Expressive enough for any  quasimetric structure in data.</span></h3>
+<br/>
+<p style="text-align: left;font-size: 16px;padding-left: 20px; ">Currently, only <span style="font-weight: bold" class="ul">latent quasimetric models</span> satisfy both (1) and (2):
+$$d(x, y) = \underbrace{d_\mathsf{latent}}_{\llap{\textsf{quasim}}\rlap{\textsf{etric over latent space (possibly parametrized)}}}(\overbrace{f}^{\llap{\textsf{gene}}\rlap{\textsf{ric encoder (e.g., a deep neural network)}}}(x), \overbrace{f}(y))$$
+
+Indeed, prior works [1,2,3] and our paper show that such methods greatly outperform alternatives in modeling quasimetrics.
+</p>
+<h3 style="text-align: left;font-size: 18px;padding-left: 20px; padding-bottom: 0px">What makes a good <span style="font-weight: bold" class="ul">latent quasimetric model</span>?</h3>
+
+
+<h3 style="text-align: left;font-size: 18px;padding-left: 20px; padding-bottom: 0px">(3) $d_\mathsf{latent}$ should have <scan class="ul">few parameters.</scan> <span style="font-weight: 100;"> So latents are informative of the quasimetric structure, e.g., in transfer learning.</span></h3>
+<h3 style="text-align: left;font-size: 18px;padding-left: 20px; padding-bottom: 0px">(4) $d_\mathsf{latent}(u, v)$ should be "smooth" in latents $(u,v)$.  <span style="font-weight: 100;">No diminishing/discountinuous gradients. Have (approximate)</span> latent positive homogeneity: </h3>
+<p style="text-align: left;font-size: 16px;padding-left: 20px; ">
+$$\forall \textsf{latent } u, v, \quad \forall \alpha > 0, \quad d_\mathsf{latent}(\alpha \cdot u, \alpha \cdot v) = \alpha \cdot d(u, v)\qquad$$
+</p>
+<br/>
+<p style="text-align: left;font-size: 16px;padding-left: 20px; ">Before our proposed IQE, no method satisfies all four properties.
+</p>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="center" valign="bottom" style="overflow:hidden;">
+        <img class="result" src="images/properties_table.png" style="width: 100%">
+    </td>
+  </tr>
+</table>
+
+<hr>
+<h2>Interval Quasimetric Embeddings (IQEs)</h2>
+<br>
+
+
+<div style="text-align: justify;">
+<p>
+  IQE is derived via an extension to PQEs [1]. Instead of using complex Poisson processes, it uses simple unions of intervals. Given input latents, IQE divides the latent dimensions into groups, where a union of intervals is computed for each group. Lengths of the resulting unions are aggregated together to form the IQE quasimetric:
+</p>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="center" valign="bottom" style="overflow:hidden;">
+        <img class="result" src="images/iqe_compute.png" style="width: 95%">
+    </td>
+  </tr>
+</table>
+</div>
+
+
+<hr>
+<h2>Experiments</h2>
+<br>
+
+
+
+
+<h3 style="text-align: left;font-size: 20px;padding-left: 20px; padding-bottom: 0px">Modeling a Large-Scale Social Graph (<span style="font-size: 18px">$\textsf{Berkeley-Stanfard Web}, |V|=685{,}230, |E| = 7{,}600{,}595$</span>)</h3>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="center" valign="bottom" style="overflow:hidden;">
+        <img class="result" src="images/iqe_social_graph.png" style="width: 95%">
+    </td>
+  </tr>
+</table>
+
+
+
+
+<h3 style="text-align: left;font-size: 20px;padding-left: 20px; padding-bottom: 0px">Modeling Distinct Random Graphs (<span style="font-size: 18px">$|V|=300$</span>)</h3>
+
+<div style="text-align: justify;">
+<p>
+  IQE consistently performs the best, often outperforming models with much more heavily parametrized $d_\mathsf{latent}$ heads.
+</p>
+</div>
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="center" valign="bottom" style="overflow:hidden;">
+        <img class="result" src="images/iqe_random_graphs.png" style="width: 95%">
+    </td>
+  </tr>
+</table>
+<br/>
+
+
+<div class="text" style="text-align: justify;font-size: 20px;margin-left: 0.1em;">
+<p>
+See the paper for results  on  offline Q-learning.
+</p>
+</div>
+<hr>
+
+<table>
+  <tr>
+    <td style="padding: 10px; padding-right: 50px">
+      <span>
+      <a href="https://arxiv.org/abs/2211.15120"><img style="float: left; max-width: 120%" alt="paper thumbnail" src="images/paper_thumbnail.png" width=200></a>
+      </span>
+    </td>
+    <td>
+      <span>
+        <h2>Paper</h2>
+        <p>
+          Workshop on Symmetry and Geometry in Neural Representations at Conference on Neural Information Processing Systems (NeurIPS) 2022.
+          <a href="https://arxiv.org/abs/2211.15120">arXiv 2211.15120</a>.
+          <a href="https://openreview.net/forum?id=KRiST_rzkGl">OpenReview</a>.
+        </p>
+
+        <h2>Citation</h2>
+        <p>Tongzhou Wang, Phillip Isola. "Improved Representation of Asymmetrical Distances with Interval Quasimetric Embeddings" <em>Workshop on Symmetry and Geometry in Neural Representations at Conference on Neural Information Processing Systems (NeurIPS)</em>. 2022.
+        </p>
+        <h2>Code:<span style="font-family:monospace;font-size:21px;margin:5px;position:relative;bottom:2px">
+            <a style="font-weight:normal;" href="https://github.com/quasimetric-learning/torch-quasimetric">[PyTorch Package of SOTA Quasimetric Learning Methods]</a>
+          </span></h2>
+        <br>
+      </span>
+    </td>
+  </tr>
+</table>
+<br>
+
+<h3 style="margin-top: -1.6em;text-align:left"><code style="font-size: 15pt">bibtex</code> <span style="font-size: 14.5pt">entry</span></h3>
+<div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;padding-right: 4em;width: 95%">
+<pre style="font-size: 10pt; margin: .3em 0px;text-align: left">
+@inproceedings{wang2022iqe,
+  title={Improved Representation of Asymmetrical Distances with Interval Quasimetric Embeddings},
+  author={Wang, Tongzhou and Isola, Phillip},
+  note={Workshop on Symmetry and Geometry in Neural Representations at Conference on Neural Information Processing Systems (NeurIPS) 2022},
+  booktitle={Proceedings of Machine Learning Research (PMLR)},
+  volume={Volume on Symmetry and Geometry in Neural Representations},
+  year={2022},
+}
+</pre>
+
+</div>
+
+<style type="text/css" media="all">
+.page__footer {
+  /*float: left;*/
+  padding-top: 1em;
+  padding-bottom: 0.5em;
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+  clear: both;
+  /* sticky footer fix start */
+  /*position: absolute;*/
+  bottom: 0;
+  height: auto;
+  /* sticky footer fix end */
+  margin-top: 3em;
+  color: #898c8f;
+  background-color: #f2f3f3;
+  padding-left: 0em;
+  padding-right: 0em;
+  max-width: 100%;
+}
+
+.page__footer .links {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1000px;
+  /*padding: 0;*/
+}
+
+.page__footer .links .social-icons {
+  padding-left: 0;
+  text-align: left;
+}
+</style>
+
+<div class="page__footer">
+  <div class="links">
+    <ul class="social-icons">
+      <li style='display: inline-block; margin-right: 5px; font-style: bold'><strong>Links:</strong></li>
+      <li style='display: inline-block; margin-right: 5px; font-style: normal;'><a href="https://accessibility.mit.edu"><i class="fa fa-fw fas fa-universal-access" aria-hidden="true"></i> Accessibility</a></li>
+    </ul>
+  </div>
+</div>
+
+</body>
+
+</html>
