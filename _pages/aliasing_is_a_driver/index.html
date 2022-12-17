@@ -213,6 +213,16 @@ BODY {
   </div>
 </center>
 
+<center>
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td align="center" valign="bottom" width=900>
+          <img class="result" src="files/aliasing_is_a_driver/simple_example.svg" style="width: 100%">
+      </td>
+    </tr>
+  </table>
+  </center>
+
 <div class="table-like" style="justify-content:space-evenly;max-width:900px;margin:auto;">
   <center>
     <table>
@@ -234,7 +244,18 @@ BODY {
 <h2>Abstract</h2>
 <div style="font-size:14px; text-align: justify;">
 <p>
-Asymmetrical distance structures (<em class="ul" style="font-weight: bold;">quasimetrics</em>) are ubiquitous in our lives and are gaining more attention in machine learning applications. Imposing such quasimetric structures in model representations has been shown to improve many tasks, including reinforcement learning (RL) and causal relation learning. In this work, we present four desirable properties in such quasimetric models, and show how prior works fail at them. We propose <em class="ul" style="font-weight: bold;">Interval Quasimetric Embedding (IQE)</em>, which is designed to satisfy all four criteria. On three quasimetric learning experiments, IQEs show strong approximation and generalization abilities, leading to better performance and improved efficiency over prior methods.
+  Aliasing is a highly important concept in signal processing, as careful consideration of resolution changes is essential in ensuring 
+  transmission and processing quality of audio, image, and video. Despite this, up until recently aliasing has received very little 
+  consideration in Deep Learning, with all common architectures carelessly sub-sampling without considering aliasing effects. In this work, 
+  we investigate the hypothesis that the existence of adversarial perturbations is due in part to aliasing in neural networks. Our ultimate goal is to increase robustness against adversarial attacks using explainable, non-trained, structural changes only, derived from aliasing 
+  first principles.
+</p>
+<p>
+  Our contributions are the following. First, we establish a sufficient condition for no aliasing for general image 
+  transformations. Next, we study sources of aliasing in common neural network layers, and derive simple modifications from first principles 
+  to eliminate or reduce it. Lastly, our experimental results show a solid link between anti-aliasing and adversarial attacks. Simply 
+  reducing aliasing already results in more robust classifiers, and combining anti-aliasing with robust training out-performs solo 
+  robust training on $L_2$ attacks with none or minimal losses in performance on $L_{\infty}$ attacks.
 </p>
 </div>
 
