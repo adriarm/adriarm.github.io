@@ -96,8 +96,8 @@ BODY {
     padding: 0;
     display: block;
     margin: 0 auto;
-    max-height: 100%;
-    max-width: 100%;
+    /* max-height: 100%;
+    max-width: 100%; */
   }
 
   iframe {
@@ -254,47 +254,23 @@ BODY {
 </div>
 
 <hr>
-<h2>Quasimetric Learning: What and Why?</h2>
+<h2>Aliasing: what is it?</h2>
 <br>
 
-<table border="0" cellspacing="0" cellpadding="0">
+<table border="0" cellspacing="0" cellpadding="0" width="900">
   <tr>
     <td align="center" valign="bottom" style="overflow:hidden;">
-        <img class="result" src="../quasimetric/images/function_spaces_cropped.png" style="width: 95%">
+        <img class="result" src="files/simple_example.svg" style="width: 100%">
     </td>
   </tr>
 </table>
 
 <div style="text-align: justify;">
 <p>
-Among all unconstrained bivariate functions , a special subset is the <em class="ul" style="font-weight: bold;">quasimetrics</em>, which represent distances that can be asymmetrical. This includes many functions of research and practical interests, which does not generally belong to the widely studied metric function space. Analogous to Metric Learning, <em class="ul" style="font-weight: bold;">Quasimetric Learning</em> is the task of learning a <em class="ul" style="font-weight: bold;">quasimetric</em> from data. Quasimetric Learning is already an important part of many research works, including graph learning, causual relation learning, and reinforcement learning.
-</p>
-
-
-<table border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td align="center" valign="bottom" style="overflow:hidden;">
-        <img class="result" src="images/quasimetric_properties.png" style="width: 75%">
-    </td>
-  </tr>
-</table>
-<br/>
-
-<p>
-Many recent works [1,2,3] propose quasimetric learning methods. In this work, we discuss several desirable properties of the quasimetric parameterization, and propose <em class="ul" style="font-weight: bold;">Interval Quasimetric Embedding (IQE)</em>, which greatly outperform previous state of the art with a much simpler form.
-</p>
-
-<p style="font-size:12px">
-  [1] Tongzhou Wang and Phillip Isola. On the Learning and Learnability of Quasimetrics. In
-International Conference on Learning Representations (ICLR), 2022 <br/>
-
-  [2] Silviu Pitis, Harris Chan, Kiarash Jamali, and Jimmy Ba. An Inductive Bias For Distances:
-Neural Nets That Respect the Triangle Inequality. In
-International Conference on Learning Representations (ICLR), 2020. <br/>
-
-[3] Bo Liu, Yihao Feng, Qiang Liu, and Peter Stone. Metric Residual Networks for Sample
-Efficient Goal-Conditioned Reinforcement Learning. arXiv preprint arXiv:2208.08133, 2022.
-
+  The concept of aliasing is intrinsically related to discrete sampling. In layman's terms, the more ”complex” a continuous-domain signal, 
+  the finer the sampling needed to properly represent it. Using an insufficiently fine sampling results in visual artifacts that perceptually 
+  destroy the original signal; we call this phenomenon ”aliasing”. Consider the example shown in the above figure: the main ”feature” of the 
+  signal, the right-to-left diagonals, is inverted by aliasing when sampling at an insufficient rate.
 </p>
 </div>
 
