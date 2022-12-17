@@ -277,7 +277,7 @@ BODY {
 
 
 <hr>
-<h2>Motivation linking aliasing to adversarial examples</h2>
+<h2>Linking aliasing to adversarial examples</h2>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="0" width="900">
@@ -323,52 +323,53 @@ BODY {
 
 <div style="text-align: justify;">
 <p>
-  Neural networks are full of aliasing. The above figure shows a summary graphic of the adaptations used in our experiments to 
-  supress aliasing in convolutional networks.
+  To supress aliasing in neural networks, we expand on existing blurring based approaches such as in [1, 2, 3] 
+  by using theory to derive the exact blurring strength necessary, which coincides with the experimentally derived strength 
+  as was done in [1]. Furthermore, we also introduce the Quantile ReLu anti-aliasing modification, which is a 
+  new way of anti-aliasing independent of and synergistic with blurring-based approaches. The above figure shows 
+  a summary graphic of the adaptations used in our experiments.
+</p>
+
+<p style="font-size:12px;text-align:left">
+  [1] Tero Karras, Miika Aittala, Samuli Laine, Erik H ̈ark ̈onen,
+  Janne Hellsten, Jaakko Lehtinen, and Timo Aila. Alias-Free
+  Generative Adversarial Networks. In Proc. NeurIPS, 2021 <br/>
+
+  [2] Cristina Vasconcelos, Hugo Larochelle, Vincent Dumoulin,
+  Rob Romijnders, Nicolas Le Roux, and Ross Goroshin.
+  Impact of Aliasing on Generalization in Deep Convolu-
+  tional Networks. In Proceedings of the IEEE/CVF In-
+  ternational Conference on Computer Vision (ICCV), pages
+  10529–10538, Oct. 2021. <br/>
+
+  [3] Richard Zhang. Making Convolutional Networks Shift-
+  Invariant Again. In ICML, 2019.
 </p>
 </div>
 
 
 <hr>
-<h2>Experiments</h2>
+<h2>How effective is anti-aliasing as a defense?</h2>
 <br>
 
-
-
-
-<h3 style="text-align: left;font-size: 20px;padding-left: 20px; padding-bottom: 0px">Modeling a Large-Scale Social Graph (<span style="font-size: 18px">$\textsf{Berkeley-Stanfard Web}, |V|=685{,}230, |E| = 7{,}600{,}595$</span>)</h3>
-
-<table border="0" cellspacing="0" cellpadding="0">
+<table border="0" cellspacing="0" cellpadding="0" width="900">
   <tr>
     <td align="center" valign="bottom" style="overflow:hidden;">
-        <img class="result" src="images/iqe_social_graph.png" style="width: 95%">
+        <img class="result" src="files/accuracy_amplitude.svg" style="width: 100%">
     </td>
   </tr>
 </table>
-
-
-
-
-<h3 style="text-align: left;font-size: 20px;padding-left: 20px; padding-bottom: 0px">Modeling Distinct Random Graphs (<span style="font-size: 18px">$|V|=300$</span>)</h3>
 
 <div style="text-align: justify;">
 <p>
-  IQE consistently performs the best, often outperforming models with much more heavily parametrized $d_\mathsf{latent}$ heads.
-</p>
-</div>
-<table border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td align="center" valign="bottom" style="overflow:hidden;">
-        <img class="result" src="images/iqe_random_graphs.png" style="width: 95%">
-    </td>
-  </tr>
-</table>
-<br/>
-
-
-<div class="text" style="text-align: justify;font-size: 20px;margin-left: 0.1em;">
-<p>
-See the paper for results  on  offline Q-learning.
+  The above figures compares the robustness of five defenses:
+  <ul>
+    <li>Vanilla: No defense.</li>
+    <li>Initial Blur: Naive initial blur with [1 4 6 4 1]</li>
+    <li>AA(5): Anti-aliasing all five blocks of the network.</li>
+    <li>AT: Adversarial Training with PGD</li>
+    <li>AT+AA(2): Combining adversarial training with anti-aliasing the first two blocks of the network.</li>
+  </ul>
 </p>
 </div>
 <hr>
