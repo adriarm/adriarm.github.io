@@ -11,7 +11,7 @@ title                    : "Adrián Rodríguez-Muñoz"
 title_separator          : "-"
 name                     : &name "Adrián Rodríguez-Muñoz"
 description              : &description ""
-url                      : https://adriarm.github.io/ # http://127.0.0.1:4000
+url                      : http://127.0.0.1:4000 # https://adriarm.github.io/
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "adriarm/adriarm.github.io"
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
