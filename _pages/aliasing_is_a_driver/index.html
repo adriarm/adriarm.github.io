@@ -362,19 +362,30 @@ BODY {
 
 <div style="text-align: justify;">
 <p>
-  The above figures compares the robustness of five defenses:
+  The above figure plots adversarial strength vs accuracy curves for the five defenses:
   <ul>
-    <li>Vanilla: No defense.</li>
-    <li>Initial Blur: Naive initial blur with [1 4 6 4 1]</li>
-    <li>AA(5): Anti-aliasing all five blocks of the network.</li>
-    <li>AT: Adversarial Training with PGD</li>
-    <li>AT+AA(2): Combining adversarial training with anti-aliasing the first two blocks of the network.</li>
+    <li><b style='color:#0000a7;'>Vanilla:</b> No defense.</li>
+    <li><b style='color:#008176;'>Initial Blur:</b> Naive initial blur with [1 4 6 4 1]</li>
+    <li><b style='color:#eecc16;'>AA(5):</b> Anti-aliasing all five blocks of the network.</li>
+    <li><b style='color:#c1272d;'>AT:</b> Adversarial Training with PGD</li>
+    <li><b style='color:#000000;'>AT+AA(2):</b> Combining adversarial training with anti-aliasing the first two blocks of the network.</li>
   </ul>
+  against various attacks on each architecture and dataset. The results show that, while not the full picture, aliasing plays a significant 
+  role in the vulnerability of vanilla networks to adversarial attacks.
+</p>
+<p>
+  Simple anti-aliasing measures are sufficient by themselves to increase the robustness of networks significantly for 
+  low-amplitude and single-step attacks, especially for the $L_2$ variant.
+</p>
+<p>
+  Furthermore, we observe that the AT+AA(2) defense, which combines anti-aliasing with robust training, consistently outperforms the 
+  robust training defense AT on L2 attacks, sometimes by a very wide margin such as in Resnet-50+TinyImagenet where both L2 attacks 
+  appear completelybeaten, while maintaining statistically equal robustness on $L_\infty$ attacks.
 </p>
 </div>
 <hr>
 
-<table>
+<!-- <table>
   <tr>
     <td style="padding: 10px; padding-right: 50px">
       <span>
@@ -415,8 +426,13 @@ BODY {
   year={2022},
 }
 </pre>
+</div> -->
 
-</div>
+<br>
+<h2>Acknowledgements</h2>
+<p style="font-size:14px; text-align: justify; padding-bottom: 15px">
+Experiments were conducted using computation resources from MIT's Supercloud cluster.
+</p>
 
 <style type="text/css" media="all">
 .page__footer {
