@@ -290,10 +290,10 @@ BODY {
 
 <div style="text-align: justify;">
 <p>
-  Our hypothesis is that adversarial attacks work in part by exploiting the phenomenon of aliasing. See the above 
-  figure for a simple but enlightening toy example. As we can see, the dirty image is indistinguishable
-  from the original clean image by a human, and yet their outputs are completely different. The culprit for this bizarre ef-
-  fect is the convolution stride (green box) that carelessly down-samples the input. 
+  Our hypothesis is that adversarial attacks work in part by exploiting the phenomenon of aliasing. See the above figure for a simple 
+  but enlightening toy example. As we can see, the dirty image is indistinguishable from the original clean image by a human, and 
+  yet their outputs are completely different. The culprit for this bizarre effect is the convolution stride (green box) that carelessly 
+  down-samples the input. 
 </p>
 <p>
   An attacker with knowledge
@@ -316,7 +316,7 @@ BODY {
 <table border="0" cellspacing="0" cellpadding="0" width="900">
   <tr>
     <td align="center" valign="bottom" style="overflow:hidden;">
-        <img class="result" src="files/new_layer_cards_horizontal.svg" style="width: 100%">
+        <img class="result" src="files/new_layer_cards_horizontal_alt.svg" style="width: 100%">
     </td>
   </tr>
 </table>
@@ -379,11 +379,21 @@ BODY {
 </p>
 <p>
   Furthermore, we observe that the AT+AA(2) defense, which combines anti-aliasing with robust training, consistently outperforms the 
-  robust training defense AT on L2 attacks, sometimes by a very wide margin such as in Resnet-50+TinyImagenet where both L2 attacks 
+  robust training defense AT on $L_2$ attacks, sometimes by a very wide margin such as in Resnet-50+TinyImagenet where both $L_2$ attacks 
   appear completelybeaten, while maintaining statistically equal robustness on $L_\infty$ attacks.
 </p>
 </div>
+
 <hr>
+<h2>Is aliasing a driver of adversarial attacks?</h2>
+<br>
+
+<div style="text-align: justify;">
+  <p>
+
+  </p>
+  </div>
+  <hr>
 
 <!-- <table>
   <tr>

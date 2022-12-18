@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 27.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 536.9 365.3" style="enable-background:new 0 0 536.9 365.3;" xml:space="preserve">
+<style type="text/css">
+	.st0{font-family:'Avenir-Light';}
+	.st1{font-size:10px;}
+	.st2{fill:none;stroke:#000000;stroke-width:0.5;stroke-linejoin:round;}
+	.st3{fill:#8BC53F;stroke:#231F20;stroke-miterlimit:10;}
+	.st4{fill:#FFF100;stroke:#231F20;stroke-miterlimit:10;}
+	.st5{fill:#F6921E;stroke:#231F20;stroke-miterlimit:10;}
+	.st6{fill:#231F20;}
+	.st7{font-family:'TimesNewRomanPS-ItalicMT';}
+	.st8{font-size:7.5064px;}
+	.st9{font-family:'TimesNewRomanPSMT';}
+	.st10{fill:none;stroke:#000000;stroke-width:0.5;stroke-miterlimit:8;}
+	.st11{fill:#FF0000;}
+	.st12{fill:none;stroke:#FF0000;stroke-linejoin:round;}
+	.st13{font-size:7.5668px;}
+	.st14{font-size:7.0793px;}
+	.st15{fill:#29ABE2;stroke:#231F20;stroke-miterlimit:10;}
+	.st16{font-size:9.6209px;}
+	.st17{font-size:17px;}
+	.st18{font-size:7.1673px;}
+	.st19{font-size:6.9575px;}
+	.st20{fill:#E3BFDA;stroke:#231F20;stroke-miterlimit:10;}
+	.st21{fill:none;stroke:#231F20;stroke-miterlimit:10;}
+	.st22{fill:none;stroke:#000000;stroke-width:0.5;stroke-linejoin:round;stroke-miterlimit:8;}
+	.st23{fill:none;stroke:#000000;stroke-miterlimit:10;}
+	.st24{font-family:'MyriadPro-Regular';}
+	.st25{font-size:19px;}
+</style>
+<g>
+	<text transform="matrix(1 0 0 1 25.3347 41.7558)" class="st0 st1">a.1) Blur ReLu</text>
+	<g>
+		<g>
+			<g>
+				<g>
+					<line class="st2" x1="126.8" y1="78.4" x2="138" y2="78.4"/>
+					<g>
+						<path d="M141,78.4c-1.4,0.5-3.2,1.4-4.3,2.4l0.9-2.4l-0.9-2.4C137.9,76.9,139.6,77.8,141,78.4z"/>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<line class="st2" x1="168.2" y1="78.4" x2="179.4" y2="78.4"/>
+					<g>
+						<path d="M182.4,78.4c-1.4,0.5-3.2,1.4-4.3,2.4l0.9-2.4l-0.9-2.4C179.2,76.9,181,77.8,182.4,78.4z"/>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<line class="st2" x1="188.6" y1="78.4" x2="199.8" y2="78.4"/>
+					<g>
+						<path d="M202.8,78.4c-1.4,0.5-3.2,1.4-4.3,2.4l0.9-2.4l-0.9-2.4C199.7,76.9,201.4,77.8,202.8,78.4z"/>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<line class="st2" x1="147.7" y1="78.4" x2="158.9" y2="78.4"/>
+					<g>
+						<path d="M161.9,78.4c-1.4,0.5-3.2,1.4-4.3,2.4l0.9-2.4l-0.9-2.4C158.7,76.9,160.5,77.8,161.9,78.4z"/>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<line class="st2" x1="210.7" y1="78.4" x2="221.9" y2="78.4"/>
+					<g>
+						<path d="M224.9,78.4c-1.4,0.5-3.2,1.4-4.3,2.4l0.9-2.4l-0.9-2.4C221.7,76.9,223.5,77.8,224.9,78.4z"/>
+					</g>
+				</g>
+			</g>
+			<rect x="121" y="58.9" class="st3" width="9.7" height="39"/>
+			<rect x="161.9" y="58.9" class="st4" width="9.7" height="39"/>
+			<rect x="182.3" y="58.9" class="st5" width="9.7" height="39"/>
+			<rect x="202.7" y="58.9" class="st3" width="9.7" height="39"/>
+			<text transform="matrix(1 0 0 1 125.4962 80.063)" class="st6 st7 st8">2</text>
+			<text transform="matrix(1 0 0 1 207.0245 80.063)" class="st6 st7 st8">2</text>
+			<rect x="141.3" y="58.9" class="st5" width="9.7" height="39"/>
+			<text transform="matrix(0 -1 1 0 147.7462 90.8989)" class="st6 st9 st8">Low-pass</text>
+			<text transform="matrix(0 -1 1 0 189.256 90.8989)" class="st6 st9 st8">Low-pass</text>
+			<g>
+				<g>
+					<line class="st10" x1="124.4" y1="81.6" x2="124.4" y2="76.5"/>
+					<g>
+						<polygon points="125.9,77.6 124.4,77 123,77.6 124.4,74.1 						"/>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<line class="st10" x1="205.8" y1="74.1" x2="205.8" y2="79.3"/>
+					<g>
+						<polygon points="204.3,78.1 205.8,78.8 207.2,78.1 205.8,81.6 						"/>
+					</g>
+				</g>
+			</g>
+			<text transform="matrix(0 -1 1 0 168.879 85.8818)" class="st6 st9 st8">ReLu</text>
+			<g>
+				<g>
+					<line class="st2" x1="106.1" y1="78.4" x2="117.3" y2="78.4"/>
+					<g>
+						<path d="M120.3,78.4c-1.4,0.5-3.2,1.4-4.3,2.4l0.9-2.4L116,76C117.1,76.9,118.9,77.8,120.3,78.4z"/>
+					</g>
+				</g>
+			</g>
+		</g>
+		<g>
+			<line class="st11" x1="69.9" y1="78.4" x2="97.9" y2="78.4"/>
+			<g>
+				<line class="st12" x1="75.9" y1="78.4" x2="91.9" y2="78.4"/>
+				<g>
+					<path class="st11" d="M69.9,78.4c2.8,1.1,6.4,2.9,8.5,4.8l-1.7-4.8l1.7-4.8C76.2,75.5,72.7,77.3,69.9,78.4z"/>
+				</g>
+				<g>
+					<path class="st11" d="M97.9,78.4c-2.8,1.1-6.4,2.9-8.5,4.8l1.7-4.8l-1.7-4.8C91.6,75.5,95.1,77.3,97.9,78.4z"/>
+				</g>
+			</g>
+		</g>
+		<g>
+			<rect x="40.4" y="58.9" class="st4" width="9.7" height="39"/>
+			<text transform="matrix(0 -1 1 0 47.383 85.8818)" class="st6 st9 st8">ReLu</text>
+			<g>
+				<g>
+					<line class="st2" x1="50.3" y1="76.9" x2="61.5" y2="76.9"/>
+					<g>
+						<path d="M64.5,76.9c-1.4,0.5-3.2,1.4-4.3,2.4l0.9-2.4l-0.9-2.4C61.3,75.5,63.1,76.4,64.5,76.9z"/>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<line class="st2" x1="25.9" y1="76.9" x2="37.1" y2="76.9"/>
+					<g>
+						<path d="M40.1,76.9c-1.4,0.5-3.2,1.4-4.3,2.4l0.9-2.4l-0.9-2.4C36.9,75.5,38.7,76.4,40.1,76.9z"/>
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
+<g>
+	<text transform="matrix(1 0 0 1 52.3906 285.8193)" class="st0 st1">b) Anti-aliased sub-sampling</text>
+	<g>
+		<g>
+			<g>
+				<line class="st2" x1="171.5" y1="323.7" x2="184.1" y2="323.7"/>
+				<g>
+					<path d="M187.1,323.7c-1.4,0.5-3.2,1.4-4.3,2.4l0.9-2.4l-0.9-2.4C183.9,322.3,185.7,323.2,187.1,323.7z"/>
+				</g>
+			</g>
+		</g>
+		<g>
+			<g>
+				<line class="st2" x1="195.7" y1="323.7" x2="208.3" y2="323.7"/>
+				<g>
+					<path d="M211.3,323.7c-1.4,0.5-3.2,1.4-4.3,2.4l0.9-2.4l-0.9-2.4C208.1,322.3,209.9,323.2,211.3,323.7z"/>
+				</g>
+			</g>
+		</g>
+		<rect x="164.6" y="302.3" class="st5" width="10.6" height="42.9"/>
+		<rect x="187" y="302.3" class="st3" width="10.6" height="42.9"/>
+		<text transform="matrix(1 0 0 1 191.7079 325.566)" class="st6 st7 st13">S</text>
+		<text transform="matrix(0 -1 1 0 172.1932 337.4684)" class="st6 st9 st14">Low-pass</text>
+		<g>
+			<g>
+				<line class="st10" x1="189.6" y1="319.1" x2="189.6" y2="324.9"/>
+				<g>
+					<polygon points="188.2,323.8 189.6,324.4 191.1,323.8 189.6,327.3 					"/>
+				</g>
+			</g>
+		</g>
+		<g>
+			<g>
+				<line class="st2" x1="147.9" y1="323.7" x2="160.5" y2="323.7"/>
+				<g>
+					<path d="M163.6,323.7c-1.4,0.5-3.2,1.4-4.3,2.4l0.9-2.4l-0.9-2.4C160.4,322.3,162.1,323.2,163.6,323.7z"/>
+				</g>
+			</g>
+		</g>
+		<rect x="141" y="302.3" class="st15" width="10.6" height="42.9"/>
+		<text transform="matrix(0 -1 1 0 146.8768 335.1285)" class="st6 st9 st16">g</text>
+		<text transform="matrix(0 -0.583 0.583 0 150.0809 330.318)" class="st6 st9 st16">stride=1</text>
+		<rect x="67" y="302.8" class="st15" width="10.6" height="42.9"/>
+		<text transform="matrix(0 -1 1 0 72.9091 335.6613)" class="st6 st9 st16">g</text>
+		<text transform="matrix(0 -0.583 0.583 0 76.1132 330.8507)" class="st6 st9 st16">stride=S</text>
+		<g>
+			<line class="st11" x1="101.6" y1="323.7" x2="131.2" y2="323.7"/>
+			<g>
+				<line class="st12" x1="107.6" y1="323.7" x2="125.2" y2="323.7"/>
+				<g>
+					<path class="st11" d="M101.6,323.7c2.8,1.1,6.4,2.9,8.5,4.8l-1.7-4.8l1.7-4.8C108,320.9,104.4,322.7,101.6,323.7z"/>
+				</g>
+				<g>
+					<path class="st11" d="M131.2,323.7c-2.8,1.1-6.4,2.9-8.5,4.8l1.7-4.8l-1.7-4.8C124.9,320.9,128.4,322.7,131.2,323.7z"/>
+				</g>
+			</g>
+		</g>
+		<g>
+			<g>
+				<line class="st2" x1="78.8" y1="323.7" x2="90.7" y2="323.7"/>
+				<g>
+					<path d="M93.8,323.7c-1.4,0.5-3.2,1.4-4.3,2.4l0.9-2.4l-0.9-2.4C90.6,322.3,92.3,323.2,93.8,323.7z"/>
+				</g>
+			</g>
+		</g>
+		<g>
+			<g>
+				<line class="st2" x1="53.1" y1="323.7" x2="65" y2="323.7"/>
+				<g>
+					<path d="M68.1,323.7c-1.4,0.5-3.2,1.4-4.3,2.4l0.9-2.4l-0.9-2.4C64.9,322.3,66.6,323.2,68.1,323.7z"/>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
+<g>
+	<text transform="matrix(0.583 0 0 0.583 297.7922 285.7434)" class="st0 st17">c) Anti-aliased max-pool (kernel size = stride = K)</text>
+	<g>
+		<g>
+			<g>
+				<line class="st2" x1="411.8" y1="324" x2="424.6" y2="324"/>
+				<g>
+					<path d="M427.6,324c-1.4,0.5-3.2,1.4-4.3,2.4l0.9-2.4l-0.9-2.4C424.4,322.5,426.2,323.4,427.6,324z"/>
+				</g>
+			</g>
+		</g>
+		<rect x="404.7" y="302.3" class="st5" width="10.7" height="43.4"/>
+		<text transform="matrix(0 -1 1 0 412.4819 337.8535)" class="st6 st9 st18">Low-pass</text>
+		<g>
+			<g>
+				<line class="st2" x1="388.4" y1="324" x2="401.2" y2="324"/>
+				<g>
+					<path d="M404.2,324c-1.4,0.5-3.2,1.4-4.3,2.4l0.9-2.4l-0.9-2.4C401,322.5,402.7,323.4,404.2,324z"/>
+				</g>
+			</g>
+		</g>
+		<rect x="381.9" y="302.3" class="st3" width="10.7" height="43.4"/>
+		<text transform="matrix(1 0 0 1 386.8789 326.3965)" class="st6 st7 st18">2</text>
+		<g>
+			<g>
+				<line class="st10" x1="385.7" y1="328.1" x2="385.7" y2="322.2"/>
+				<g>
+					<polygon points="387.2,323.3 385.7,322.7 384.2,323.3 385.7,319.8 					"/>
+				</g>
+			</g>
+		</g>
+		<g>
+			<g>
+				<line class="st2" x1="457.4" y1="324" x2="470.2" y2="324"/>
+				<g>
+					<path d="M473.2,324c-1.4,0.5-3.2,1.4-4.3,2.4l0.9-2.4l-0.9-2.4C470.1,322.5,471.8,323.4,473.2,324z"/>
+				</g>
+			</g>
+		</g>
+		<g>
+			<g>
+				<line class="st2" x1="489.4" y1="324" x2="498.9" y2="324"/>
+				<g>
+					<path d="M501.9,324c-1.4,0.5-3.2,1.4-4.3,2.4l0.9-2.4l-0.9-2.4C498.7,322.5,500.5,323.4,501.9,324z"/>
+				</g>
+			</g>
+		</g>
+		<rect x="450.4" y="302.3" class="st5" width="10.7" height="43.4"/>
+		<rect x="473.1" y="302.3" class="st3" width="15.8" height="43.4"/>
+		<text transform="matrix(1 0 0 1 477.8823 326.3965)" class="st6 st7 st18">2K</text>
+		<text transform="matrix(0 -1 1 0 458.1323 337.8535)" class="st6 st9 st18">Low-pass</text>
+		<g>
+			<g>
+				<line class="st10" x1="476.5" y1="319.8" x2="476.5" y2="325.8"/>
+				<g>
+					<polygon points="475,324.6 476.5,325.3 478,324.6 476.5,328.1 					"/>
+				</g>
+			</g>
+		</g>
+		<g>
+			<g>
+				<line class="st2" x1="433.6" y1="324" x2="446.4" y2="324"/>
+				<g>
+					<path d="M449.4,324c-1.4,0.5-3.2,1.4-4.3,2.4l0.9-2.4l-0.9-2.4C446.2,322.5,448,323.4,449.4,324z"/>
+				</g>
+			</g>
+		</g>
+		<rect x="426.5" y="302.3" class="st15" width="10.7" height="43.4"/>
+		<text transform="matrix(0 -1 1 0 432.4971 336.5627)" class="st6 st9 st19">pool</text>
+		<text transform="matrix(0 -0.583 0.583 0 434.814 324.1936)" class="st6 st9 st19">stride=1</text>
+		<rect x="312.2" y="302.3" class="st15" width="10.7" height="43.4"/>
+		<text transform="matrix(0 -1 1 0 318.1934 337.4148)" class="st6 st9 st19">pool</text>
+		<text transform="matrix(0 -0.583 0.583 0 320.5103 325.0457)" class="st6 st9 st19">stride=K</text>
+		<g>
+			<g>
+				<line class="st2" x1="322.7" y1="324" x2="333.9" y2="324"/>
+				<g>
+					<path d="M336.9,324c-1.4,0.5-3.2,1.4-4.3,2.4l0.9-2.4l-0.9-2.4C333.7,322.5,335.5,323.4,336.9,324z"/>
+				</g>
+			</g>
+		</g>
+		<g>
+			<g>
+				<line class="st2" x1="298.3" y1="324" x2="309.5" y2="324"/>
+				<g>
+					<path d="M312.5,324c-1.4,0.5-3.2,1.4-4.3,2.4l0.9-2.4l-0.9-2.4C309.4,322.5,311.1,323.4,312.5,324z"/>
+				</g>
+			</g>
+		</g>
+		<g>
+			<line class="st11" x1="342.8" y1="324" x2="370.8" y2="324"/>
+			<g>
+				<line class="st12" x1="348.8" y1="324" x2="364.8" y2="324"/>
+				<g>
+					<path class="st11" d="M342.8,324c2.8,1.1,6.4,2.9,8.5,4.8l-1.7-4.8l1.7-4.8C349.1,321.1,345.6,322.9,342.8,324z"/>
+				</g>
+				<g>
+					<path class="st11" d="M370.8,324c-2.8,1.1-6.4,2.9-8.5,4.8l1.7-4.8l-1.7-4.8C364.5,321.1,368,322.9,370.8,324z"/>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
+<g>
+	<text transform="matrix(1 0 0 1 341.6269 41.5157)" class="st0 st1">a.2)  QReLu</text>
+	<g>
+		<g>
+			<g>
+				<g>
+					<line class="st2" x1="438.7" y1="97.8" x2="448.2" y2="97.8"/>
+					<g>
+						<path d="M451.2,97.8c-1.4,0.5-3.2,1.4-4.3,2.4l0.9-2.4l-0.9-2.4C448,96.3,449.8,97.2,451.2,97.8z"/>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<line class="st2" x1="418.5" y1="70" x2="473.1" y2="70"/>
+					<g>
+						<path d="M476.1,70c-1.4,0.5-3.2,1.4-4.3,2.4l0.9-2.4l-0.9-2.4C472.9,68.5,474.7,69.4,476.1,70z"/>
+					</g>
+				</g>
+			</g>
+			<rect x="434.7" y="77.4" class="st20" width="10.1" height="40.6"/>
+			<text transform="matrix(0 -1 1 0 441.3365 112.4789)"><tspan x="0" y="0" class="st6 st9 st8">Quantile </tspan><tspan x="27.7" y="0" class="st6 st7 st8">q</tspan></text>
+			<rect x="465.8" y="77.4" class="st4" width="8.5" height="40.6"/>
+			<g>
+				<g>
+					<line class="st2" x1="480.7" y1="97.8" x2="480.7" y2="77.3"/>
+					<g>
+						<path d="M480.7,74.3c0.5,1.4,1.4,3.2,2.4,4.3l-2.4-0.9l-2.4,0.9C479.3,77.4,480.2,75.7,480.7,74.3z"/>
+					</g>
+				</g>
+			</g>
+			<text transform="matrix(0 -1 1 0 471.9087 106.2411)" class="st6 st9 st8">ReLu</text>
+			<circle class="st21" cx="480.6" cy="70" r="4.6"/>
+			<line class="st22" x1="480.7" y1="97.8" x2="474.5" y2="97.8"/>
+			<line class="st22" x1="426.5" y1="98" x2="426.5" y2="70.1"/>
+			<g>
+				<g>
+					<line class="st2" x1="426.5" y1="97.9" x2="430.9" y2="97.9"/>
+					<g>
+						<path d="M433.9,97.9c-1.4,0.5-3.2,1.4-4.3,2.4l0.9-2.4l-0.9-2.4C430.7,96.5,432.5,97.4,433.9,97.9z"/>
+					</g>
+				</g>
+			</g>
+			<text transform="matrix(1 0 0 1 479.1011 72.3744)" class="st6 st9 st8">+</text>
+			<text transform="matrix(1 0 0 1 452.0801 115.061)" class="st6 st9 st8">-1</text>
+			<g>
+				<circle class="st21" cx="454.9" cy="98" r="3.9"/>
+				<line class="st23" x1="452.1" y1="100.8" x2="457.6" y2="95.3"/>
+				<line class="st23" x1="452.1" y1="95.3" x2="457.6" y2="100.8"/>
+			</g>
+			<g>
+				<g>
+					<line class="st2" x1="458.6" y1="97.9" x2="462.9" y2="97.9"/>
+					<g>
+						<path d="M466,97.9c-1.4,0.5-3.2,1.4-4.3,2.4l0.9-2.4l-0.9-2.4C462.8,96.5,464.5,97.4,466,97.9z"/>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<line class="st2" x1="455" y1="108.9" x2="455" y2="104.6"/>
+					<g>
+						<path d="M455,101.5c0.5,1.4,1.4,3.2,2.4,4.3l-2.4-0.9l-2.4,0.9C453.6,104.7,454.5,103,455,101.5z"/>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<line class="st2" x1="505.5" y1="70.1" x2="516.7" y2="70.1"/>
+					<g>
+						<path d="M519.7,70.1c-1.4,0.5-3.2,1.4-4.3,2.4l0.9-2.4l-0.9-2.4C516.5,68.7,518.3,69.6,519.7,70.1z"/>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<line class="st2" x1="484.9" y1="70.1" x2="496.1" y2="70.1"/>
+					<g>
+						<path d="M499.1,70.1c-1.4,0.5-3.2,1.4-4.3,2.4l0.9-2.4l-0.9-2.4C496,68.7,497.7,69.6,499.1,70.1z"/>
+					</g>
+				</g>
+			</g>
+			<rect x="499.1" y="50.6" class="st4" width="9.7" height="39"/>
+			<text transform="matrix(0 -1 1 0 506.1472 77.5988)" class="st6 st9 st8">ReLu</text>
+		</g>
+		<g>
+			<line class="st11" x1="386.1" y1="84.3" x2="414.2" y2="84.3"/>
+			<g>
+				<line class="st12" x1="392.2" y1="84.3" x2="408.2" y2="84.3"/>
+				<g>
+					<path class="st11" d="M386.1,84.3c2.8,1.1,6.4,2.9,8.5,4.8l-1.7-4.8l1.7-4.8C392.5,81.4,389,83.2,386.1,84.3z"/>
+				</g>
+				<g>
+					<path class="st11" d="M414.2,84.3c-2.8,1.1-6.4,2.9-8.5,4.8l1.7-4.8l-1.7-4.8C407.9,81.4,411.4,83.2,414.2,84.3z"/>
+				</g>
+			</g>
+		</g>
+		<g>
+			<rect x="356.7" y="64.8" class="st4" width="9.7" height="39"/>
+			<text transform="matrix(0 -1 1 0 363.6751 91.7647)" class="st6 st9 st8">ReLu</text>
+			<g>
+				<g>
+					<line class="st2" x1="366.6" y1="82.8" x2="377.8" y2="82.8"/>
+					<g>
+						<path d="M380.8,82.8c-1.4,0.5-3.2,1.4-4.3,2.4l0.9-2.4l-0.9-2.4C377.6,81.4,379.4,82.3,380.8,82.8z"/>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<line class="st2" x1="342.2" y1="82.8" x2="353.4" y2="82.8"/>
+					<g>
+						<path d="M356.4,82.8c-1.4,0.5-3.2,1.4-4.3,2.4l0.9-2.4l-0.9-2.4C353.2,81.4,355,82.3,356.4,82.8z"/>
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
+<g>
+	<text transform="matrix(1 0 0 1 142.5517 142.6651)" class="st0 st1">a.3) Anti-aliased ReLu (Blur Relu + QReLu)</text>
+	<g>
+		<g>
+			<g>
+				<g>
+					<line class="st2" x1="239.7" y1="199.8" x2="249.1" y2="199.8"/>
+					<g>
+						<path d="M252.1,199.8c-1.4,0.5-3.2,1.4-4.3,2.4l0.9-2.4l-0.9-2.4C248.9,198.4,250.7,199.3,252.1,199.8z"/>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<line class="st2" x1="285.6" y1="172" x2="296.8" y2="172"/>
+					<g>
+						<path d="M299.8,172c-1.4,0.5-3.2,1.4-4.3,2.4l0.9-2.4l-0.9-2.4C296.7,170.6,298.4,171.5,299.8,172z"/>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<line class="st2" x1="219.5" y1="172" x2="274" y2="172"/>
+					<g>
+						<path d="M277,172c-1.4,0.5-3.2,1.4-4.3,2.4l0.9-2.4l-0.9-2.4C273.8,170.6,275.6,171.5,277,172z"/>
+					</g>
+				</g>
+			</g>
+			<rect x="235.6" y="179.5" class="st20" width="10.1" height="40.6"/>
+			<text transform="matrix(0 -1 1 0 242.2617 214.5106)"><tspan x="0" y="0" class="st6 st9 st8">Quantile </tspan><tspan x="27.7" y="0" class="st6 st7 st8">q</tspan></text>
+			<rect x="266.7" y="179.5" class="st4" width="8.5" height="40.6"/>
+			<g>
+				<g>
+					<line class="st2" x1="281.6" y1="199.8" x2="281.6" y2="179.3"/>
+					<g>
+						<path d="M281.6,176.3c0.5,1.4,1.4,3.2,2.4,4.3l-2.4-0.9l-2.4,0.9C280.2,179.5,281.1,177.7,281.6,176.3z"/>
+					</g>
+				</g>
+			</g>
+			<text transform="matrix(0 -1 1 0 272.834 208.2728)" class="st6 st9 st8">ReLu</text>
+			<circle class="st21" cx="281.6" cy="172" r="4.6"/>
+			<line class="st22" x1="281.6" y1="199.8" x2="275.4" y2="199.8"/>
+			<line class="st22" x1="227.4" y1="200" x2="227.4" y2="172.1"/>
+			<g>
+				<g>
+					<line class="st2" x1="227.4" y1="199.9" x2="231.8" y2="199.9"/>
+					<g>
+						<path d="M234.8,199.9c-1.4,0.5-3.2,1.4-4.3,2.4l0.9-2.4l-0.9-2.4C231.6,198.5,233.4,199.4,234.8,199.9z"/>
+					</g>
+				</g>
+			</g>
+			<text transform="matrix(1 0 0 1 280.0263 174.4061)" class="st6 st9 st8">+</text>
+			<text transform="matrix(1 0 0 1 253.0053 217.0927)" class="st6 st9 st8">-1</text>
+			<g>
+				<circle class="st21" cx="255.8" cy="200" r="3.9"/>
+				<line class="st23" x1="253.1" y1="202.8" x2="258.6" y2="197.3"/>
+				<line class="st23" x1="253.1" y1="197.3" x2="258.6" y2="202.8"/>
+			</g>
+			<g>
+				<g>
+					<line class="st2" x1="259.5" y1="200" x2="263.9" y2="200"/>
+					<g>
+						<path d="M266.9,200c-1.4,0.5-3.2,1.4-4.3,2.4l0.9-2.4l-0.9-2.4C263.7,198.5,265.5,199.4,266.9,200z"/>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<line class="st2" x1="255.9" y1="210.9" x2="255.9" y2="206.6"/>
+					<g>
+						<path d="M255.9,203.6c0.5,1.4,1.4,3.2,2.4,4.3l-2.4-0.9l-2.4,0.9C254.5,206.7,255.4,205,255.9,203.6z"/>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<line class="st2" x1="304.4" y1="172" x2="315.6" y2="172"/>
+					<g>
+						<path d="M318.6,172c-1.4,0.5-3.2,1.4-4.3,2.4l0.9-2.4l-0.9-2.4C315.4,170.6,317.2,171.5,318.6,172z"/>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<line class="st2" x1="345.8" y1="172" x2="357" y2="172"/>
+					<g>
+						<path d="M360,172c-1.4,0.5-3.2,1.4-4.3,2.4l0.9-2.4l-0.9-2.4C356.8,170.6,358.6,171.5,360,172z"/>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<line class="st2" x1="366.2" y1="172" x2="377.4" y2="172"/>
+					<g>
+						<path d="M380.4,172c-1.4,0.5-3.2,1.4-4.3,2.4l0.9-2.4l-0.9-2.4C377.2,170.6,379,171.5,380.4,172z"/>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<line class="st2" x1="325.2" y1="172" x2="336.4" y2="172"/>
+					<g>
+						<path d="M339.5,172c-1.4,0.5-3.2,1.4-4.3,2.4l0.9-2.4l-0.9-2.4C336.3,170.6,338,171.5,339.5,172z"/>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<line class="st2" x1="388.3" y1="172" x2="399.4" y2="172"/>
+					<g>
+						<path d="M402.5,172c-1.4,0.5-3.2,1.4-4.3,2.4l0.9-2.4l-0.9-2.4C399.3,170.6,401,171.5,402.5,172z"/>
+					</g>
+				</g>
+			</g>
+			<rect x="298.6" y="152.5" class="st3" width="9.7" height="39"/>
+			<rect x="339.5" y="152.5" class="st4" width="9.7" height="39"/>
+			<rect x="359.9" y="152.5" class="st5" width="9.7" height="39"/>
+			<rect x="380.3" y="152.5" class="st3" width="9.7" height="39"/>
+			<text transform="matrix(1 0 0 1 303.0796 173.6713)" class="st6 st7 st8">2</text>
+			<text transform="matrix(1 0 0 1 384.6079 173.6713)" class="st6 st7 st8">2</text>
+			<rect x="318.9" y="152.5" class="st5" width="9.7" height="39"/>
+			<text transform="matrix(0 -1 1 0 325.3296 184.5072)" class="st6 st9 st8">Low-pass</text>
+			<text transform="matrix(0 -1 1 0 366.8393 184.5072)" class="st6 st9 st8">Low-pass</text>
+			<g>
+				<g>
+					<line class="st10" x1="302" y1="175.3" x2="302" y2="170.1"/>
+					<g>
+						<polygon points="303.5,171.3 302,170.6 300.5,171.3 302,167.7 						"/>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<line class="st10" x1="383.3" y1="167.7" x2="383.3" y2="172.9"/>
+					<g>
+						<polygon points="381.9,171.7 383.3,172.4 384.8,171.7 383.3,175.3 						"/>
+					</g>
+				</g>
+			</g>
+			<text transform="matrix(0 -1 1 0 346.4624 179.4901)" class="st6 st9 st8">ReLu</text>
+		</g>
+		<g>
+			<line class="st11" x1="187.1" y1="186.3" x2="215.2" y2="186.3"/>
+			<g>
+				<line class="st12" x1="193.1" y1="186.3" x2="209.1" y2="186.3"/>
+				<g>
+					<path class="st11" d="M187.1,186.3c2.8,1.1,6.4,2.9,8.5,4.8l-1.7-4.8l1.7-4.8C193.4,183.4,189.9,185.2,187.1,186.3z"/>
+				</g>
+				<g>
+					<path class="st11" d="M215.2,186.3c-2.8,1.1-6.4,2.9-8.5,4.8l1.7-4.8l-1.7-4.8C208.8,183.4,212.3,185.2,215.2,186.3z"/>
+				</g>
+			</g>
+		</g>
+		<g>
+			<rect x="157.6" y="166.8" class="st4" width="9.7" height="39"/>
+			<text transform="matrix(0 -1 1 0 164.6004 193.7964)" class="st6 st9 st8">ReLu</text>
+			<g>
+				<g>
+					<line class="st2" x1="167.5" y1="184.8" x2="178.7" y2="184.8"/>
+					<g>
+						<path d="M181.7,184.8c-1.4,0.5-3.2,1.4-4.3,2.4l0.9-2.4l-0.9-2.4C178.5,183.4,180.3,184.3,181.7,184.8z"/>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<line class="st2" x1="143.1" y1="184.8" x2="154.3" y2="184.8"/>
+					<g>
+						<path d="M157.3,184.8c-1.4,0.5-3.2,1.4-4.3,2.4l0.9-2.4l-0.9-2.4C154.2,183.4,155.9,184.3,157.3,184.8z"/>
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
+<rect x="0.5" y="0.5" class="st23" width="535.9" height="226.8"/>
+<text transform="matrix(0.8978 0 0 1 5.3932 18.171)" class="st24 st25">ReLu</text>
+<rect x="0.5" y="236.2" class="st23" width="262.7" height="128.6"/>
+<text transform="matrix(0.8978 0 0 1 6.6894 255.1143)" class="st24 st25">Sub-sampling</text>
+<rect x="273.7" y="236.2" class="st23" width="262.7" height="128.6"/>
+<text transform="matrix(0.8978 0 0 1 279.8441 255.1143)" class="st24 st25">Max-pooling</text>
+<line class="st23" x1="0" y1="260.7" x2="263.2" y2="260.7"/>
+<line class="st23" x1="273.4" y1="260.7" x2="536.6" y2="260.7"/>
+<line class="st23" x1="0.2" y1="22.9" x2="536.4" y2="22.9"/>
+</svg>
