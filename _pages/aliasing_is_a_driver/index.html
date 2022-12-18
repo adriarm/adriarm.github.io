@@ -370,8 +370,7 @@ BODY {
     <li><b style='color:#c1272d;'>AT:</b> Adversarial Training with PGD</li>
     <li><b style='color:#000000;'>AT+AA(2):</b> Combining adversarial training with anti-aliasing the first two blocks of the network.</li>
   </ul>
-  against various attacks on each architecture and dataset. The results show that, while not the full picture, aliasing plays a significant 
-  role in the vulnerability of vanilla networks to adversarial attacks.
+  against various attacks on each architecture and dataset.
 </p>
 <p>
   Simple anti-aliasing measures are sufficient by themselves to increase the robustness of networks significantly for 
@@ -385,15 +384,27 @@ BODY {
 </div>
 
 <hr>
-<h2>Is aliasing a driver of adversarial attacks?</h2>
+<h2>Is aliasing the only reason for adversarial attacks?</h2>
 <br>
 
 <div style="text-align: justify;">
   <p>
-
+    The results show that aliasing plays a significant role in the vulnerability of vanilla networks to adversarial attacks. 
+    Simply adding anti-aliasing is enough to obtain a significant measure of robustness over the undefended network,
+    and combining anti-aliasing with adversarial training yields a more globally robust model over base AT. Indeed, 
+    the combined model seems almost completely impervious to FGSM-$L_2$ and PGD-$L_2$.
   </p>
-  </div>
-  <hr>
+  <p>
+    Regrettably, anti-aliasing is not the full picture. Anti-aliasing by itself is not sufficient to reach the level of performance of
+    adversarial training, and the combination model is also not $100\percent$ robust, as accuracy still decays significantly as a function
+    of epsilon for $L_\infty$ attacks. 
+  </p>
+  <p>
+    In this work, we prove that aliasing is a driver of adversarial attacks: one vulnerability that attack algorithms leverage to confound neural
+    networks. Our conclusion is that anti-aliasing is a component that a successful defense must have.
+  </p>
+</div>
+<hr>
 
 <!-- <table>
   <tr>
