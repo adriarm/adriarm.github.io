@@ -389,15 +389,16 @@ BODY {
 
 <div style="text-align: justify;">
   <p>
-    The results show that aliasing plays a significant role in the vulnerability of vanilla networks to adversarial attacks. 
+    No, anti-aliasing is not the full picture. Anti-aliasing by itself is not sufficient to reach the level of robustness of
+    adversarial training: there is still a significant performance gap for high-amplitude attacks. Combining anti-aliasing with adversarial 
+    training, while better than adversarial training alone, is also not $100\%$ robust, as accuracy still decays significantly as a 
+    function of epsilon for $L_\infty$ attacks.
+  </p>
+  <p>
+    Instead, the results show that aliasing plays a significant role in the vulnerability of vanilla networks to adversarial attacks. 
     Simply adding anti-aliasing is enough to obtain a significant measure of robustness over the undefended network,
     and combining anti-aliasing with adversarial training yields a more globally robust model over base AT. Indeed, 
     the combined model seems almost completely impervious to FGSM-$L_2$ and PGD-$L_2$.
-  </p>
-  <p>
-    However, anti-aliasing is not the full picture. Anti-aliasing by itself is not sufficient to reach the level of performance of
-    adversarial training, and the combination model, while better than adversarial training alone, is also not $100\%$ robust, as accuracy 
-    still decays significantly as a function of epsilon for $L_\infty$ attacks. 
   </p>
   <p>
     In this work, we prove that aliasing is a driver of adversarial attacks: one vulnerability that attack algorithms leverage to confound neural
