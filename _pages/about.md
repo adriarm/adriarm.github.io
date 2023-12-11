@@ -10,7 +10,7 @@ redirect_from:
 
 <div class="intro">
 <p align="justify">
-I am Adrián Rodríguez-Muñoz, a 1st year grad student at MIT EECS under the supervision of 
+I am Adrián Rodríguez-Muñoz, a 2nd year grad student at MIT EECS under the supervision of 
 <a href="http://web.mit.edu/torralba/www/">Prof. Antonio Torralba</a>. Currently my research focuses on bridging classical signal processing concepts with Deep Learning.
 </p>
 
