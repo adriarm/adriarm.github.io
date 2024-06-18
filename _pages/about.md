@@ -33,11 +33,7 @@ Click <a href="./files/cv.pdf">here</a> for my CV.
                 Stephanie Fu, <b>Adrián Rodríguez-Muñoz</b>, Shivam Duggal, Phillip Isola, Antonio Torralba
             </h4>
             <p class="conference">CVPR 2024 (Highlight)</p>
-            [
-            <a href="https://arxiv.org/abs/2401.01862">paper</a>
-            ] [
-            <a href="https://vision-checkup.csail.mit.edu">webpage</a>
-            ]
+            <br /> <font size="-1">[<a href="https://arxiv.org/abs/2401.01862">paper</a>] [<a href="https://vision-checkup.csail.mit.edu">webpage</a>]
         </div>
         <a classa="pub_image">
             <img src="_pages/vision_checkup/vision_checkup_row.png"/>
