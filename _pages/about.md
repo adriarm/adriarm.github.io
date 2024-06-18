@@ -25,6 +25,24 @@ Click <a href="./files/cv.pdf">here</a> for my CV.
 
 <div><h1 style="position: relative; top: 20px;"> Publications</h1></div>
 <div id="publications"  style="position: relative; top: -20px;">
+    <article class="pub">
+        <a classa="pub_image">
+            <img src="files/publications/10_vision_checkup/vision_checkup.png"/>
+        </a>
+        <div class="pub_text">
+            <h3 class="papertitle">A Vision Check-up for Language Models</h3>
+            <h4 class="authors">
+                Pratyusha Sharma*, Tamar Rott Shaham*, Manel Baradad,
+                Stephanie Fu, <b>Adrián Rodríguez-Muñoz</b>, Shivam Duggal, Phillip Isola, Antonio Torralba
+            </h4>
+            <p class="conference">CVPR 2024 (Highlight)</p>
+            [
+            <a href="https://arxiv.org/abs/2401.01862">paper</a>
+            ] [
+            <a href="https://vision-checkup.csail.mit.edu">webpage</a>
+            ]
+        </div>
+    </article>
     <article>
         <div class="pub_text">
             <h2>Aliasing is a Driver of Adversarial Attacks <br /> <font size="-1"><b>Adrián Rodríguez-Muñoz</b>, <span style="font-weight:normal">Antonio Torralba</span></font> <br /> <font size="-1">[<a href="https://arxiv.org/abs/2212.11760">paper</a>] [<a href="_pages/aliasing_is_a_driver">webpage</a>] [<a href="https://github.com/adriarm/aliasing_is_a_driver">code</a>] <br /> <br /> <a classa="pub_image"><img src="_pages/aliasing_is_a_driver/files/toy_example_2.svg"></a></font>
