@@ -27,7 +27,7 @@ Click <a href="./files/cv.pdf">here</a> for my CV.
 <div id="publications"  style="position: relative; top: -20px;">
     <article class="pub">
         <a classa="pub_image">
-            <img src="files/publications/10_vision_checkup/vision_checkup.png"/>
+            <img src="_pages/vision_checkup/vision_checkup.png"/>
         </a>
         <div class="pub_text">
             <h3 class="papertitle">A Vision Check-up for Language Models</h3>
