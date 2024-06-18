@@ -38,6 +38,7 @@ Click <a href="./files/cv.pdf">here</a> for my CV.
             <img src="_pages/vision_checkup/vision_checkup_row.png">
         </a>
     </article>
+    <br />
     <article>
         <div class="pub_text">
             <h3 class="papertitle">Aliasing is a Driver of Adversarial Attacks</h3>
