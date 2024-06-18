@@ -25,14 +25,14 @@ Click <a href="./files/cv.pdf">here</a> for my CV.
 
 <div><h1 style="position: relative; top: 20px;"> Publications</h1></div>
 <div id="publications"  style="position: relative; top: -20px;">
-    <article class="pub">
+    <article>
         <div class="pub_text">
             <h3 class="papertitle">A Vision Check-up for Language Models - CVPR 2024 (Highlight)</h3>
             <h4 class="authors">
                 Pratyusha Sharma*, Tamar Rott Shaham*, Manel Baradad,
                 Stephanie Fu, <b>Adrián Rodríguez-Muñoz</b>, Shivam Duggal, Phillip Isola, Antonio Torralba
             </h4>
-            <br /> <font size="-1">[<a href="https://arxiv.org/abs/2401.01862">paper</a>] [<a href="https://vision-checkup.csail.mit.edu">webpage</a>]
+            <br /> <font size="-1">[<a href="https://arxiv.org/abs/2401.01862">paper</a>] [<a href="https://vision-checkup.csail.mit.edu">webpage</a>] <br />
         </div>
         <a classa="pub_image">
             <img src="_pages/vision_checkup/vision_checkup_row.png"/>
