@@ -32,7 +32,7 @@ Click <a href="./files/cv.pdf">here</a> for my CV.
                 Pratyusha Sharma*, Tamar Rott Shaham*, Manel Baradad,
                 Stephanie Fu, <b>Adrián Rodríguez-Muñoz</b>, Shivam Duggal, Phillip Isola, Antonio Torralba
             </h4>
-            <font size="-1">[<a href="https://arxiv.org/abs/2401.01862">paper</a>] [<a href="https://vision-checkup.csail.mit.edu">webpage</a>]
+            [<a font size="-1" href="https://arxiv.org/abs/2401.01862">paper</a>] [<a font size="-1" href="https://vision-checkup.csail.mit.edu">webpage</a>]
         </div>
         <a classa="pub_image">
             <img src="_pages/vision_checkup/vision_checkup_row.png">
@@ -44,7 +44,7 @@ Click <a href="./files/cv.pdf">here</a> for my CV.
             <h4 class="authors">
                 <b>Adrián Rodríguez-Muñoz</b>, Antonio Torralba
             </h4>
-            <font size="-1">[<a href="https://arxiv.org/abs/2212.11760">paper</a>] [<a href="_pages/aliasing_is_a_driver">webpage</a>] [<a href="https://github.com/adriarm/aliasing_is_a_driver">code</a>]
+            [<a font size="-1" href="https://arxiv.org/abs/2212.11760">paper</a>] [<a font size="-1" href="_pages/aliasing_is_a_driver">webpage</a>] [<a font size="-1" href="https://github.com/adriarm/aliasing_is_a_driver">code</a>]
         </div>
         <a classa="pub_image">
             <img src="_pages/aliasing_is_a_driver/files/toy_example_2.svg">
