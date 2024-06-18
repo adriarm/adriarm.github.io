@@ -146,7 +146,7 @@
             In this work, we show the surprising effectiveness of instead regularizing the gradient \wrt model inputs <em>on natural examples only</em>. 
             Penalizing input <em>Gradient Norm</em> is commonly believed to be a much inferior approach. 
             Our analyses identify that the performance of <em>Gradient Norm</em> regularization critically depends on the smoothness of activation functions, 
-            and are in fact extremely effective on modern vision transformers that adopt smooth activations over piecewise linear ones (\eg, ReLU). 
+            and are in fact extremely effective on modern vision transformers that adopt smooth activations over piecewise linear ones (eg, ReLU). 
             On ImageNet-1k, <em>Gradient Norm</em> training achieves > 90%  performance of state-of-the-art PGD-3 <em>Adversarial Training</em> (52% vs.~56%), 
             while using only 60% computation cost of the state-of-the-art without complex adversarial optimization. 
             Our analyses further highlight the relationship between model robustness and properties of natural input gradients, such as asymmetric channel statistics. 
@@ -245,7 +245,7 @@
         Empirically, it has been observed that adversarial robustness (obtained with adversarial training) <a href="https://arxiv.org/abs/1706.06083">(Madry2018)</a> 
         correlates with small gradient norm <a href="https://proceedings.mlr.press/v97/simon-gabriel19a.html">(SimonGabriel2019)</a>. As we can see in the table, 
         this continues to hold with state-of-the-art robust transformers. The expected L<sub>1</sub> norm of the loss-input gradient 
-        |&nabla;<sub>x</sub>&Lscr;<sub>CE</sub>(f<sub>&theta</sub>;(x),y)| is around two orders of magnitude smaller 
+        |&nabla;<sub>x</sub><big>&Lscr;</big><sub>CE</sub>(f<sub>&theta;</sub>(x),y)| is around two orders of magnitude smaller 
         for robust models than for their non-robust counterparts of the same architecture. Furthermore, fixing the models and taking expectations over inputs 
         conditioning on PGD10 attack success, the gradient is much smaller when the attack fails than when it succeeds (last two columns).
 
