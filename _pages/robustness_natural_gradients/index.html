@@ -209,9 +209,9 @@
       <img src="./images/eq2.png" style="display: block; margin: auto; width: 75%;"/>
         <figcaption style="font-size: 0.8em;">
           <b>Gradient Norm Regularization objective</b>
-          as presented in equation 4 of <a href="https://proceedings.mlr.press/v97/simon-gabriel19a.html">(SimonGabriel2019)</a> and optimized in <a href="https://arxiv.org/abs/1711.09404">(Ross2017)</a>. $\mathcal{L}_{\text{CE}}$ is the cross-entropy loss, 
-          &epsilon;=4 is the adversarial strength, $\sigma=0.225$ is the standard deviation used for normalization on ImageNet, and $\lambda_{\text{CE}}, 
-          \lambda_{\text{GN}}$ are weighing hyper-parameters set $0.8$ and $1.2$ respectively.
+          as presented in equation 4 of <a href="https://proceedings.mlr.press/v97/simon-gabriel19a.html">(SimonGabriel2019)</a> and optimized in <a href="https://arxiv.org/abs/1711.09404">(Ross2017)</a>. &Lscr;<sub>CE</sub> is the cross-entropy loss, 
+          &epsilon;=4/255 is the adversarial strength, &sigma;=0.225 is the standard deviation used for normalization on ImageNet, and &lambda;<sub>CE<\sub>, 
+          &lambda;<sub>GN<\sub> are weighing hyper-parameters set 0.8 and 1.2 respectively.
         </figcaption>
     </figure>
     <br />
@@ -220,7 +220,7 @@
     <img src="./images/resnet_acc_vs_epoch.pdf" style="display: block; margin: auto; width: 90%;"/>
       <figcaption style="font-size: 0.8em;">
         <b>ResNet50 activation swapping</b>
-        Clean and PGD10 (&epsilon;=4) robust accuracy vs epoch for ResNet50 with ReLU and GeLU trained with Adversarial Training and Gradient Norm Regularization. 
+        Clean and PGD10 (&epsilon;=4/255) robust accuracy vs epoch for ResNet50 with ReLU and GeLU trained with Adversarial Training and Gradient Norm Regularization. 
         We observe how the ReLU ResNet is not capable of handling the regularization objective at the appropriate strength. 
       </figcaption>
     </figure>
@@ -228,7 +228,7 @@
     <img src="./images/table4.png" style="display: block; margin: auto; width: 50%;"/>
       <figcaption style="font-size: 0.8em;">
         <b>AutoAttack performance comparison</b>
-        Clean and $L_\infty$-AutoAttack accuracy for ResNet50 with ReLU, GeLU, and SiLU non-linearities trained with both Adversarial Training and GradNorm for 
+        Clean and L<sub>&infin;<sub>-AutoAttack accuracy for ResNet50 with ReLU, GeLU, and SiLU non-linearities trained with both Adversarial Training and GradNorm for 
         50 epochs using a shortened version of the Adversarial Transformer recipe of <a href="https://arxiv.org/abs/2302.14301">(Liu2023)</a>.
       </figcaption>
     </figure>
@@ -245,7 +245,7 @@
         Mathematically, a function stable to perturbations of the input has a small gradient \wrt the input. 
         Empirically, it has been observed that adversarial robustness (obtained with adversarial training) <a href="https://arxiv.org/abs/1706.06083">(Madry2018)</a> 
         correlates with small gradient norm <a href="https://proceedings.mlr.press/v97/simon-gabriel19a.html">(SimonGabriel2019)</a>. As we can see in \cref{tab:evidence-low-gradient-norms}, 
-        this continues to hold with state-of-the-art robust transformers. The expected $L_1$ norm of the loss-input gradient 
+        this continues to hold with state-of-the-art robust transformers. The expected L<sub>1</sub> norm of the loss-input gradient 
         $\norm{\nabla_x \mathcal{L}} := \norm{\nabla_{\mathbf{x}}\mathcal{L}_{\text{CE}}(f_\theta(\mathbf{x},y)}_1$ is around two orders of magnitude smaller 
         for robust models than for their non-robust counterparts of the same architecture. Furthermore, fixing the models and taking expectations over inputs 
         conditioning on PGD10 attack success, the gradient is much smaller when the attack fails than when it succeeds (last two columns of \cref{tab:evidence-low-gradient-norms}).
@@ -258,7 +258,7 @@
       <figcaption style="font-size: 0.8em;">
         <b>Performance comparison on AutoAttack (standard)</b>
         Robustness of a Swin Transformer trained with gradient norm regularization compared to natural training 
-        and state-of-the-art adversarial training on AutoAttack-$L_\infty$. Adversarial training performed from pretrained timm <a href="https://github.com/rwightman/timm">(Wightman2019)</a> 
+        and state-of-the-art adversarial training on AutoAttack-L<sub>&infin;</sub>. Adversarial training performed from pretrained timm <a href="https://github.com/rwightman/timm">(Wightman2019)</a> 
         checkpoint using the recipe of <a href="https://arxiv.org/pdf/2302.14301">(Liu2023)</a>.
       </figcaption>
     </figure>
