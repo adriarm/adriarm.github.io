@@ -202,7 +202,7 @@
     </div>
    <figure>
     <!-- <iframe src="./static/figures/dataset.png" width="600" height="500"></iframe> -->
-    <img src="index.html" />
+    <img src="./images/table1.png" />
       <figcaption style="font-size: 0.8em;">
         <b>Gradient norm and robustness statistics of SOTA public models</b>
         Accuracy, robustness, and gradient norm statistics on 10k ImageNet validation images for publicly available vulnerable and robust models 
@@ -218,32 +218,44 @@
 <section class="section" style="margin-top: -5px;">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
-	    <h3 class="title is-4">Textual feedback: Correcting with Text</h3>
+	    <h3 class="title is-4">Performance comparison with SOTA AdvTrain</h3>
     </div>
-    <figure>
-      <!-- <iframe src="./static/figures/dataset.pdf" width="600" height="500"></iframe> -->
-      <img src="./static/figures/feedback.png" />
-        <figcaption style="font-size: 0.8em;">
-          <b>Improved visual generation with text feedback.</b> 
-          The improvement in the visual generation of models due to feedback is oftentimes gradual, with the addition of a few features at a time over the course of the feedback process. 
-        </figcaption>
-      </figure> 
-      <br>
     <div class="content has-text-justified">
       <p>
-        We demonstrate that the visual generation competence of a language model can be improved 
-        using text-based corrections. We do this by closing the feedback loop between the LLM and 
-        itself. Here, we first use the language model to generate code illustrating a concept. 
-        Following that, the model is repeatedly called by conditioning its generation on its 
-        previously generated code and prompted to ``improve its generated code''. We find that 
-        making such iterative calls to the model results in improved visual depictions.
+        Mathematically, a function stable to perturbations of the input has a small gradient \wrt the input. 
+        Empirically, it has been observed that adversarial robustness (obtained with adversarial training) \cite{madry_towards_2018} 
+        correlates with small gradient norm \cite{simon-gabriel_first-order_2019}. As we can see in \cref{tab:evidence-low-gradient-norms}, 
+        this continues to hold with state-of-the-art robust transformers. The expected $L_1$ norm of the loss-input gradient 
+        $\norm{\nabla_x \mathcal{L}} := \norm{\nabla_{\mathbf{x}}\mathcal{L}_{\text{CE}}(f_\theta(\mathbf{x},y)}_1$ is around two orders of magnitude smaller 
+        for robust models than for their non-robust counterparts of the same architecture. Furthermore, fixing the models and taking expectations over inputs 
+        conditioning on PGD10 attack success, the gradient is much smaller when the attack fails than when it succeeds (last two columns of \cref{tab:evidence-low-gradient-norms}).
+
       </p>
     </div>
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/figures/feedback_res.mp4"
-                type="video/mp4">
-      </video>
-  </div>
+   <figure>
+    <!-- <iframe src="./static/figures/dataset.png" width="600" height="500"></iframe> -->
+    <img src="./images/eq2.png" />
+      <figcaption style="font-size: 0.8em;">
+        <b>Gradient Norm Regularization objective</b>
+        as presented in equation 4 of \cite{simon-gabriel_first-order_2019} and optimized in \cite{ross_improving_2017}. $\mathcal{L}_{\text{CE}}$ is the cross-entropy loss, 
+        $\epsilon=4$ is the adversarial strength, $\sigma=0.225$ is the standard deviation used for normalization on ImageNet, and $\lambda_{\text{CE}}, 
+        \lambda_{\text{GN}}$ are weighing hyper-parameters set $0.8$ and $1.2$ respectively.
+      </figcaption>
+    <img src="./images/table2.png" />
+      <figcaption style="font-size: 0.8em;">
+        <b>Performance comparison on AutoAttack (standard)</b>
+        Robustness of a Swin Transformer trained with gradient norm regularization compared to natural training 
+        and state-of-the-art adversarial training on AutoAttack-$L_\infty$. Adversarial training performed from pretrained timm \cite{wightman_pytorch_2019} 
+        checkpoint using the recipe of \cite{liu_comprehensive_2023}.
+      </figcaption>
+    </figure>
+    <img src="./images/pgd100_accuracy_vs_epsilon.pdf" />
+      <figcaption style="font-size: 0.8em;">
+        <b>Robust accuracy vs epsilon for the PGD100 attack on ImageNet or Swin Transformer trained on Gradient Norm Regularization and state-of-the-art Adversarial Training.</b>
+         Gradient Norm Regularization achieves slightly better accuracy on clean images ($\epsilon = 0$) and good robust performance ($\epsilon > 0$), despite seeing only natural examples and having 60\% of the computational cost of Adversarial Training with PGD-3. 
+         Robust accuracy for both models smoothly converges towards 0\% as the adversarial strength grows.
+      </figcaption>
+    </figure> 
 </section>
 
 
