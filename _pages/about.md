@@ -32,7 +32,7 @@ Click <a href="./files/cv.pdf">here</a> for my CV.
                 Pratyusha Sharma*, Tamar Rott Shaham*, Manel Baradad,
                 Stephanie Fu, <b>Adrián Rodríguez-Muñoz</b>, Shivam Duggal, Phillip Isola, Antonio Torralba
             </h4>
-            [<a href="https://arxiv.org/abs/2401.01862">paper</a>] [<a href="https://vision-checkup.csail.mit.edu">webpage</a>]
+            <font size="-1">[<a href="https://arxiv.org/abs/2401.01862">paper</a>] [<a href="https://vision-checkup.csail.mit.edu">webpage</a>]
         </div>
         <a classa="pub_image">
             <img src="_pages/vision_checkup/vision_checkup_row.png">
@@ -40,8 +40,20 @@ Click <a href="./files/cv.pdf">here</a> for my CV.
     </article>
     <article>
         <div class="pub_text">
+            <h3 class="papertitle">Aliasing is a Driver of Adversarial Attacks</h3>
+            <h4 class="authors">
+                <b>Adrián Rodríguez-Muñoz</b>, Antonio Torralba
+            </h4>
+            <font size="-1">[<a href="https://arxiv.org/abs/2212.11760">paper</a>] [<a href="_pages/aliasing_is_a_driver">webpage</a>] [<a href="https://github.com/adriarm/aliasing_is_a_driver">code</a>]
+        </div>
+        <a classa="pub_image">
+            <img src="_pages/aliasing_is_a_driver/files/toy_example_2.svg">
+        </a>
+    </article>
+<!--     <article>
+        <div class="pub_text">
             <h2>Aliasing is a Driver of Adversarial Attacks <br /> <font size="-1"><b>Adrián Rodríguez-Muñoz</b>, <span style="font-weight:normal">Antonio Torralba</span></font> <br /> <font size="-1">[<a href="https://arxiv.org/abs/2212.11760">paper</a>] [<a href="_pages/aliasing_is_a_driver">webpage</a>] [<a href="https://github.com/adriarm/aliasing_is_a_driver">code</a>] <br /> <br /> <a classa="pub_image"><img src="_pages/aliasing_is_a_driver/files/toy_example_2.svg"></a></font>
             </h2>
         </div>       
-    </article>
+    </article> -->
 </div>
