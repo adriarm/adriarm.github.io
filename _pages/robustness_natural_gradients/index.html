@@ -172,7 +172,7 @@
       <br>
       <div class="content has-text-justified">
         <p><b>Characterizing robustness via natural input gradients.</b> Comparison of loss-input gradients of non-robust and robust models across architectures for a set of images. 
-          Non-robust models taken from timm <a href="https://github.com/rwightman/timm">(Wightman2019)</a>. Adversarial training is from the work of Liu \etal \cite{liu_comprehensive_2023}. 
+          Non-robust models taken from timm <a href="https://github.com/rwightman/timm">(Wightman2019)</a>. Adversarial training is from the work of Liu et al. <a href="https://arxiv.org/pdf/2302.14301">(Liu2023)</a>. 
           Gradient norm regularization done with the objective in \cref{eq:gradnorm-objective} and with the same recipe as adversarial training otherwise. 
           As can be seen, a model can be easily identified as vulnerable or robust simply by looking at clean input gradients. 
           Gradients of robust models (adversarial training and gradient norm regularization) highly resemble the input images, 
@@ -197,7 +197,7 @@
         despite training on the same recipe with the same regularization objective and weights. In contrast, the gradient norm regularized GeLU ResNet displays similar 
         convergence behaviour to the adversarially trained model, obtaining extremely similar final clean and robust accuracies.
 
-        The work of \cite{xie_smooth_2021} conducted a similar analysis for Adversarial Training, observing small increases in performance from using smooth non-linearities. 
+        The work of <a href="https://arxiv.org/abs/2006.14536">(Xie2021)</a> conducted a similar analysis for Adversarial Training, observing small increases in performance from using smooth non-linearities. 
         As we can see from \cref{tab:resnet50-autoattack}, for Gradient Norm regularization the effect is more than 20 times larger: robust performance on AutoAttack with 
         adversarial training increases by 1\%, while for gradient norm the increase is roughly 23\%. In essence, the gradient norm regularization objective minimizes a 
         penalty on the gradients of the network; since for ReLU networks the latter is non-differentiable, Taylor's theorem does not necessarily hold on the gradient loss, 
@@ -209,7 +209,7 @@
       <img src="./images/eq2.png" style="display: block; margin: auto; width: 75%;"/>
         <figcaption style="font-size: 0.8em;">
           <b>Gradient Norm Regularization objective</b>
-          as presented in equation 4 of \cite{simon-gabriel_first-order_2019} and optimized in \cite{ross_improving_2017}. $\mathcal{L}_{\text{CE}}$ is the cross-entropy loss, 
+          as presented in equation 4 of <a href="https://proceedings.mlr.press/v97/simon-gabriel19a.html">(SimonGabriel2019)</a> and optimized in <a href="https://arxiv.org/abs/1711.09404">(Ross2017)</a>. $\mathcal{L}_{\text{CE}}$ is the cross-entropy loss, 
           $\epsilon=4$ is the adversarial strength, $\sigma=0.225$ is the standard deviation used for normalization on ImageNet, and $\lambda_{\text{CE}}, 
           \lambda_{\text{GN}}$ are weighing hyper-parameters set $0.8$ and $1.2$ respectively.
         </figcaption>
@@ -229,7 +229,7 @@
       <figcaption style="font-size: 0.8em;">
         <b>AutoAttack performance comparison</b>
         Clean and $L_\infty$-AutoAttack accuracy for ResNet50 with ReLU, GeLU, and SiLU non-linearities trained with both Adversarial Training and GradNorm for 
-        50 epochs using a shortened version of the Adversarial Transformer recipe of \cite{liu_comprehensive_2023}.
+        50 epochs using a shortened version of the Adversarial Transformer recipe of <a href="https://arxiv.org/abs/2302.14301">(Liu2023)</a>.
       </figcaption>
     </figure>
 <hr>
@@ -243,8 +243,8 @@
     <div class="content has-text-justified">
       <p>
         Mathematically, a function stable to perturbations of the input has a small gradient \wrt the input. 
-        Empirically, it has been observed that adversarial robustness (obtained with adversarial training) \cite{madry_towards_2018} 
-        correlates with small gradient norm \cite{simon-gabriel_first-order_2019}. As we can see in \cref{tab:evidence-low-gradient-norms}, 
+        Empirically, it has been observed that adversarial robustness (obtained with adversarial training) <a href="https://arxiv.org/abs/1706.06083">(Madry2018)</a> 
+        correlates with small gradient norm <a href="https://proceedings.mlr.press/v97/simon-gabriel19a.html">(SimonGabriel2019)</a>. As we can see in \cref{tab:evidence-low-gradient-norms}, 
         this continues to hold with state-of-the-art robust transformers. The expected $L_1$ norm of the loss-input gradient 
         $\norm{\nabla_x \mathcal{L}} := \norm{\nabla_{\mathbf{x}}\mathcal{L}_{\text{CE}}(f_\theta(\mathbf{x},y)}_1$ is around two orders of magnitude smaller 
         for robust models than for their non-robust counterparts of the same architecture. Furthermore, fixing the models and taking expectations over inputs 
@@ -258,8 +258,8 @@
       <figcaption style="font-size: 0.8em;">
         <b>Performance comparison on AutoAttack (standard)</b>
         Robustness of a Swin Transformer trained with gradient norm regularization compared to natural training 
-        and state-of-the-art adversarial training on AutoAttack-$L_\infty$. Adversarial training performed from pretrained timm \cite{wightman_pytorch_2019} 
-        checkpoint using the recipe of \cite{liu_comprehensive_2023}.
+        and state-of-the-art adversarial training on AutoAttack-$L_\infty$. Adversarial training performed from pretrained timm <a href="https://github.com/rwightman/timm">(Wightman2019)</a> 
+        checkpoint using the recipe of <a href="https://arxiv.org/pdf/2302.14301">(Liu2023)</a>.
       </figcaption>
     </figure>
     <br />
@@ -276,12 +276,22 @@
 <hr>
 <h2 style="text-align: left; font-weight: normal">Related work</h2>
 <p style="font-size:14px; text-align: justify">
-  \cite{wightman_pytorch_2019}
-  \cite{liu_comprehensive_2023}
-  \cite{xie_smooth_2021}
-  \cite{simon-gabriel_first-order_2019}
-  \cite{ross_improving_2017}
-  \cite{madry_towards_2018}
+  [1] Wightman, R.: PyTorch Image Models (2019). https://doi.org/10.5281/zenodo.4414861, https://github.com/rwightman/pytorch-image-models
+  [2] Liu, C., Dong, Y., Xiang, W., Yang, X., Su, H., Zhu, J., Chen, Y., He, Y., Xue, H., Zheng, S.:
+      A Comprehensive Study on Robustness of Image Classification Models: Benchmarking and
+      Rethinking (Feb 2023). https://doi.org/10.48550/arXiv.2302.14301, http://arxiv.org/abs/
+      2302.14301, arXiv:2302.14301 [cs]
+  [3] Xie, C., Tan, M., Gong, B., Yuille, A., Le, Q.V.: Smooth Adversarial Training (Jul 2021),
+      http://arxiv.org/abs/2006.14536, arXiv:2006.14536 [cs]
+  [4] Simon-Gabriel, C.J., Ollivier, Y., Bottou, L., Schölkopf, B., Lopez-Paz, D.: First-order Adversarial
+      Vulnerability of Neural Networks and Input Dimension (Jun 2019), http://arxiv.
+      org/abs/1802.01421, arXiv:1802.01421 [cs, stat]
+  [5] Ross, A.S., Doshi-Velez, F.: Improving the Adversarial Robustness and Interpretability of Deep
+      Neural Networks by Regularizing their Input Gradients (Nov 2017), http://arxiv.org/abs/
+      1711.09404, arXiv:1711.09404 [cs]
+  [6] Madry, A., Makelov, A., Schmidt, L., Tsipras, D., Vladu, A.: Towards Deep Learning Models
+      Resistant to Adversarial Attacks. In: International Conference on Learning Representations
+      (2018), https://arxiv.org/abs/1706.06083
 </p>
 </center>
 
