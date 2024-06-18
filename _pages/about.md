@@ -34,7 +34,7 @@ Click <a href="./files/cv.pdf">here</a> for my CV.
             [<a font size="-2" href="">paper</a>] [<a font size="-2" href="">webpage</a>]
         </div>
         <a classa="pub_image">
-            <img src="_pages/robustness_natural_gradients/zzz_gradient_comparison.pdf">
+            <img src="_pages/robustness_natural_gradients/cover.pdf">
         </a>
     </article>
     <br />
