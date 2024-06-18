@@ -188,34 +188,40 @@
 <section class="section" style="margin-top: -5px;">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
-	    <h3 class="title is-4">Robust gradients have small $L_1$ norm</h3>
+	    <h3 class="title is-4">Smooth activation functions make gradient norm regularization effective</h3>
     </div>
     <div class="content has-text-justified">
       <p>
-        Mathematically, a function stable to perturbations of the input has a small gradient \wrt the input. 
-        Empirically, it has been observed that adversarial robustness (obtained with adversarial training) \cite{madry_towards_2018} 
-        correlates with small gradient norm \cite{simon-gabriel_first-order_2019}. As we can see in \cref{tab:evidence-low-gradient-norms}, 
-        this continues to hold with state-of-the-art robust transformers. The expected $L_1$ norm of the loss-input gradient 
-        $\norm{\nabla_x \mathcal{L}} := \norm{\nabla_{\mathbf{x}}\mathcal{L}_{\text{CE}}(f_\theta(\mathbf{x},y)}_1$ is around two orders of magnitude smaller 
-        for robust models than for their non-robust counterparts of the same architecture. Furthermore, fixing the models and taking expectations over inputs 
-        conditioning on PGD10 attack success, the gradient is much smaller when the attack fails than when it succeeds (last two columns of \cref{tab:evidence-low-gradient-norms}).
+        As we can see in \cref{tab:resnet50-autoattack} and \cref{fig:resnet-performance-epoch}, the ResNet with ReLU is completely incapable of properly fitting 
+        the objective at the appropriate strength, with clean performance sharply decaying and robust performance barely increasing, compared to the ResNet with GeLU, 
+        despite training on the same recipe with the same regularization objective and weights. In contrast, the gradient norm regularized GeLU ResNet displays similar 
+        convergence behaviour to the adversarially trained model, obtaining extremely similar final clean and robust accuracies.
 
+        The work of \cite{xie_smooth_2021} conducted a similar analysis for Adversarial Training, observing small increases in performance from using smooth non-linearities. 
+        As we can see from \cref{tab:resnet50-autoattack}, for Gradient Norm regularization the effect is more than 20 times larger: robust performance on AutoAttack with 
+        adversarial training increases by 1\%, while for gradient norm the increase is roughly 23\%. In essence, the gradient norm regularization objective minimizes a 
+        penalty on the gradients of the network; since for ReLU networks the latter is non-differentiable, Taylor's theorem does not necessarily hold on the gradient loss, 
+        so there is no guarantee that gradient descent will work.
       </p>
     </div>
    <figure>
     <!-- <iframe src="./static/figures/dataset.png" width="600" height="500"></iframe> -->
-    <img src="./images/table1.png" style="display: block; margin: auto;"/>
+    <img src="./images/resnet_acc_vs_epoch.pdf" style="display: block; margin: auto;"/>
       <figcaption style="font-size: 0.8em;">
-        <b>Gradient norm and robustness statistics of SOTA public models</b>
-        Accuracy, robustness, and gradient norm statistics on 10k ImageNet validation images for publicly available vulnerable and robust models 
-        from timm \cite{wightman_pytorch_2019} and robustbench \cite{croce_robustbench_2021} respectively. 
-        The quantities Standard, AA, and PGD10 refer to clean accuracy, and AutoAttack and PGD10 robust accuracy respectively. 
-        The quantities $\mathbf{E}[L_1 | \protect\checkmark]$ and $\mathbf{E}[L_1 | \protect\crossmark]$ are the conditional expectations of the 
-        loss input-gradient $L_1$ norm conditioned on the PGD10 attack failing and succeeding respectively.
+        <b>ResNet50 activation swapping</b>
+        Clean and PGD10 ($\epsilon=4$) robust accuracy vs epoch for ResNet50 with ReLU and GeLU trained with Adversarial Training and Gradient Norm Regularization. 
+        We observe how the ReLU ResNet is not capable of handling the regularization objective at the appropriate strength. 
       </figcaption>
-    </figure> 
+    </figure>
+    <br />
+    <img src="./images/table4.png" style="display: block; margin: auto;"/>
+      <figcaption style="font-size: 0.8em;">
+        <b>AutoAttack performance comparison</b>
+        Clean and $L_\infty$-AutoAttack accuracy for ResNet50 with ReLU, GeLU, and SiLU non-linearities trained with both Adversarial Training and GradNorm for 
+        50 epochs using a shortened version of the Adversarial Transformer recipe of \cite{liu_comprehensive_2023}.
+      </figcaption>
+    </figure>
 </section>
-
 
 <section class="section" style="margin-top: -5px;">
   <div class="container is-max-desktop">
@@ -266,43 +272,14 @@
     </figure> 
 </section>
 
-
-<section class="section" style="margin-top: -5px;">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-	    <h3 class="title is-4">Learning a Vision System from Text</h3>
-    </div>
-    <div class="content has-text-justified">
-      <p>
-        We study if LLM-generated images could serve as a data source for pre-training 
-        vision models and compare them to synthetically generated and natural images. 
-        <!-- We show that the images generated by LLMs are
-        useful for training visual backbones, achieving state-of-the-art 
-        performance when compared to and used alongside other synthetic datasets. -->
-        We show it is possible for models trained entirely on procedurally generated data from LLMs 
-        to perform semantic judgments on natural images despite never having seen one before.
-      </p>
-    </div>
-    <div class="content has-text-centered">
-      <figure>
-        <!-- <iframe src="./static/figures/dataset.pdf" width="600" height="500"></iframe> -->
-        <img src="./static/figures/nearest_neighbors.png"  width=75% />
-        <figcaption style="font-size: 0.8em;">
-        </figcaption>
-      </figure> 
-    </div>
-  </div>
-</section>
-
-
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@inproceedings{sharma2024vision,
-      title={A Vision Check-up for Language Models},
-      author={Sharma, Pratyusha and Rott Shaham, Tamar and Baradad, Manel and Fu, Stephanie and Rodriguez-Munoz, Adrian and Duggal, Shivam and Isola, Phillip and Torralba, Antonio},
-      booktitle={arXiv preprint}
-      year={2024}
+    <pre><code>@inproceedings{rodriguez2024characterizing,
+      title={Characterizing model robustness via natural input gradients},
+      author={Adrián Rodríguez-Muñoz and Tongzhou Wang and Antonio Torralba},
+      year={2024},
+      url={}
     }
     </code></pre>
   </div>
