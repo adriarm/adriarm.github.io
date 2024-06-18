@@ -199,7 +199,7 @@
 
         The work of <a href="https://arxiv.org/abs/2006.14536">(Xie2021)</a> conducted a similar analysis for Adversarial Training, observing small increases in performance from using smooth non-linearities. 
         As we can see from \cref{tab:resnet50-autoattack}, for Gradient Norm regularization the effect is more than 20 times larger: robust performance on AutoAttack with 
-        adversarial training increases by 1\%, while for gradient norm the increase is roughly 23\%. In essence, the gradient norm regularization objective minimizes a 
+        adversarial training increases by 1%, while for gradient norm the increase is roughly 23%. In essence, the gradient norm regularization objective minimizes a 
         penalty on the gradients of the network; since for ReLU networks the latter is non-differentiable, Taylor's theorem does not necessarily hold on the gradient loss, 
         so there is no guarantee that gradient descent will work.
       </p>
@@ -277,18 +277,23 @@
 <h2 style="text-align: left; font-weight: normal">Related work</h2>
 <p style="font-size:14px; text-align: justify">
   [1] Wightman, R.: PyTorch Image Models (2019). https://doi.org/10.5281/zenodo.4414861, https://github.com/rwightman/pytorch-image-models <br />
+
   [2] Liu, C., Dong, Y., Xiang, W., Yang, X., Su, H., Zhu, J., Chen, Y., He, Y., Xue, H., Zheng, S.:
       A Comprehensive Study on Robustness of Image Classification Models: Benchmarking and
       Rethinking (Feb 2023). https://doi.org/10.48550/arXiv.2302.14301, http://arxiv.org/abs/
       2302.14301, arXiv:2302.14301 [cs] <br />
+
   [3] Xie, C., Tan, M., Gong, B., Yuille, A., Le, Q.V.: Smooth Adversarial Training (Jul 2021),
       http://arxiv.org/abs/2006.14536, arXiv:2006.14536 [cs] <br />
+
   [4] Simon-Gabriel, C.J., Ollivier, Y., Bottou, L., Schölkopf, B., Lopez-Paz, D.: First-order Adversarial
       Vulnerability of Neural Networks and Input Dimension (Jun 2019), http://arxiv.
       org/abs/1802.01421, arXiv:1802.01421 [cs, stat] <br />
+
   [5] Ross, A.S., Doshi-Velez, F.: Improving the Adversarial Robustness and Interpretability of Deep
       Neural Networks by Regularizing their Input Gradients (Nov 2017), http://arxiv.org/abs/
       1711.09404, arXiv:1711.09404 [cs] <br />
+      
   [6] Madry, A., Makelov, A., Schmidt, L., Tsipras, D., Vladu, A.: Towards Deep Learning Models
       Resistant to Adversarial Attacks. In: International Conference on Learning Representations
       (2018), https://arxiv.org/abs/1706.06083 <br />
