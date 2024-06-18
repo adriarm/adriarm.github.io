@@ -26,9 +26,6 @@ Click <a href="./files/cv.pdf">here</a> for my CV.
 <div><h1 style="position: relative; top: 20px;"> Publications</h1></div>
 <div id="publications"  style="position: relative; top: -20px;">
     <article class="pub">
-        <a classa="pub_image">
-            <img src="_pages/vision_checkup/vision_checkup.png"/>
-        </a>
         <div class="pub_text">
             <h3 class="papertitle">A Vision Check-up for Language Models</h3>
             <h4 class="authors">
@@ -42,6 +39,9 @@ Click <a href="./files/cv.pdf">here</a> for my CV.
             <a href="https://vision-checkup.csail.mit.edu">webpage</a>
             ]
         </div>
+        <a classa="pub_image">
+            <img src="_pages/vision_checkup/vision_checkup_row.png"/>
+        </a>
     </article>
     <article>
         <div class="pub_text">
