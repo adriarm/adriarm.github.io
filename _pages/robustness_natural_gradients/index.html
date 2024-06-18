@@ -173,7 +173,7 @@
       <div class="content has-text-justified">
         <p><b>Characterizing robustness via natural input gradients.</b> Comparison of loss-input gradients of non-robust and robust models across architectures for a set of images. 
           Non-robust models taken from timm <a href="https://github.com/rwightman/timm">(Wightman2019)</a>. Adversarial training is from the work of Liu et al. <a href="https://arxiv.org/pdf/2302.14301">(Liu2023)</a>. 
-          Gradient norm regularization done with the objective in \cref{eq:gradnorm-objective} and with the same recipe as adversarial training otherwise. 
+          Gradient norm regularization done with the objective in Eq. 2 above and with the same recipe as adversarial training otherwise. 
           As can be seen, a model can be easily identified as vulnerable or robust simply by looking at clean input gradients. 
           Gradients of robust models (adversarial training and gradient norm regularization) highly resemble the input images, 
           and look visually similar to each other to the human eye. By contrast, gradients of vulnerable models are noise-like, bearing apparently little resemblance 
@@ -192,13 +192,13 @@
     </div>
     <div class="content has-text-justified">
       <p>
-        As we can see in \cref{tab:resnet50-autoattack} and \cref{fig:resnet-performance-epoch}, the ResNet with ReLU is completely incapable of properly fitting 
+        As we can see in the figures below, the ResNet with ReLU is completely incapable of properly fitting 
         the objective at the appropriate strength, with clean performance sharply decaying and robust performance barely increasing, compared to the ResNet with GeLU, 
         despite training on the same recipe with the same regularization objective and weights. In contrast, the gradient norm regularized GeLU ResNet displays similar 
         convergence behaviour to the adversarially trained model, obtaining extremely similar final clean and robust accuracies.
 
         The work of <a href="https://arxiv.org/abs/2006.14536">(Xie2021)</a> conducted a similar analysis for Adversarial Training, observing small increases in performance from using smooth non-linearities. 
-        As we can see from \cref{tab:resnet50-autoattack}, for Gradient Norm regularization the effect is more than 20 times larger: robust performance on AutoAttack with 
+        For Gradient Norm regularization the effect is more than 20 times larger: robust performance on AutoAttack with 
         adversarial training increases by 1%, while for gradient norm the increase is roughly 23%. In essence, the gradient norm regularization objective minimizes a 
         penalty on the gradients of the network; since for ReLU networks the latter is non-differentiable, Taylor's theorem does not necessarily hold on the gradient loss, 
         so there is no guarantee that gradient descent will work.
@@ -244,11 +244,11 @@
       <p>
         Mathematically, a function stable to perturbations of the input has a small gradient \wrt the input. 
         Empirically, it has been observed that adversarial robustness (obtained with adversarial training) <a href="https://arxiv.org/abs/1706.06083">(Madry2018)</a> 
-        correlates with small gradient norm <a href="https://proceedings.mlr.press/v97/simon-gabriel19a.html">(SimonGabriel2019)</a>. As we can see in \cref{tab:evidence-low-gradient-norms}, 
+        correlates with small gradient norm <a href="https://proceedings.mlr.press/v97/simon-gabriel19a.html">(SimonGabriel2019)</a>. As we can see in the table, 
         this continues to hold with state-of-the-art robust transformers. The expected L<sub>1</sub> norm of the loss-input gradient 
         $\norm{\nabla_x \mathcal{L}} := \norm{\nabla_{\mathbf{x}}\mathcal{L}_{\text{CE}}(f_\theta(\mathbf{x},y)}_1$ is around two orders of magnitude smaller 
         for robust models than for their non-robust counterparts of the same architecture. Furthermore, fixing the models and taking expectations over inputs 
-        conditioning on PGD10 attack success, the gradient is much smaller when the attack fails than when it succeeds (last two columns of \cref{tab:evidence-low-gradient-norms}).
+        conditioning on PGD10 attack success, the gradient is much smaller when the attack fails than when it succeeds (last two columns).
 
       </p>
     </div>
