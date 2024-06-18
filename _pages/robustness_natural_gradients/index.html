@@ -172,7 +172,7 @@
       <br>
       <div class="content has-text-justified">
         <p><b>Characterizing robustness via natural input gradients.</b> Comparison of loss-input gradients of non-robust and robust models across architectures for a set of images. 
-          Non-robust models taken from timm \cite{wightman_pytorch_2019}. Adversarial training is from the work of Liu \etal \cite{liu_comprehensive_2023}. 
+          Non-robust models taken from timm [(Wightman2019)](https://github.com/rwightman/timm). Adversarial training is from the work of Liu \etal \cite{liu_comprehensive_2023}. 
           Gradient norm regularization done with the objective in \cref{eq:gradnorm-objective} and with the same recipe as adversarial training otherwise. 
           As can be seen, a model can be easily identified as vulnerable or robust simply by looking at clean input gradients. 
           Gradients of robust models (adversarial training and gradient norm regularization) highly resemble the input images, 
@@ -272,6 +272,18 @@
       </figcaption>
     </figure> 
 </section>
+
+<hr>
+<h2 style="text-align: left; font-weight: normal">Related work</h2>
+<p style="font-size:14px; text-align: justify">
+  \cite{wightman_pytorch_2019}
+  \cite{liu_comprehensive_2023}
+  \cite{xie_smooth_2021}
+  \cite{simon-gabriel_first-order_2019}
+  \cite{ross_improving_2017}
+  \cite{madry_towards_2018}
+</p>
+</center>
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
