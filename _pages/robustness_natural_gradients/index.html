@@ -246,7 +246,7 @@
         Empirically, it has been observed that adversarial robustness (obtained with adversarial training) <a href="https://arxiv.org/abs/1706.06083">(Madry2018)</a> 
         correlates with small gradient norm <a href="https://proceedings.mlr.press/v97/simon-gabriel19a.html">(SimonGabriel2019)</a>. As we can see in the table, 
         this continues to hold with state-of-the-art robust transformers. The expected L<sub>1</sub> norm of the loss-input gradient 
-        $\norm{\nabla_x \mathcal{L}} := \norm{\nabla_{\mathbf{x}}\mathcal{L}_{\text{CE}}(f_\theta(\mathbf{x},y)}_1$ is around two orders of magnitude smaller 
+        |&nabla;<sub>x</sub>&Lscr;<sub>CE</sub>(f<sub>&theta</sub>;(x),y)| is around two orders of magnitude smaller 
         for robust models than for their non-robust counterparts of the same architecture. Furthermore, fixing the models and taking expectations over inputs 
         conditioning on PGD10 attack success, the gradient is much smaller when the attack fails than when it succeeds (last two columns).
 
@@ -268,7 +268,7 @@
       <figcaption style="font-size: 0.8em;">
         <b>Robust accuracy vs epsilon for the PGD100 attack on ImageNet or Swin Transformer trained on Gradient Norm Regularization and state-of-the-art Adversarial Training.</b>
          Gradient Norm Regularization achieves slightly better accuracy on clean images (&epsilon; = 0) and good robust performance (&epsilon; > 0), despite seeing only natural examples and having 60\% of the computational cost of Adversarial Training with PGD-3. 
-         Robust accuracy for both models smoothly converges towards 0\% as the adversarial strength grows.
+         Robust accuracy for both models smoothly converges towards 0% as the adversarial strength grows.
       </figcaption>
     </figure> 
 </section>
