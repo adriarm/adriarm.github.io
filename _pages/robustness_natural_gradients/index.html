@@ -204,7 +204,7 @@
     </div>
    <figure>
     <!-- <iframe src="./static/figures/dataset.png" width="600" height="500"></iframe> -->
-    <img src="./images/table1.png" class="pub_image"/>
+    <img src="./images/table1.png" class="centerImage"/>
       <figcaption style="font-size: 0.8em;">
         <b>Gradient norm and robustness statistics of SOTA public models</b>
         Accuracy, robustness, and gradient norm statistics on 10k ImageNet validation images for publicly available vulnerable and robust models 
@@ -236,14 +236,14 @@
     </div>
    <figure>
     <!-- <iframe src="./static/figures/dataset.png" width="600" height="500"></iframe> -->
-    <img src="./images/eq2.png" class="pub_image"/>
+    <img src="./images/eq2.png" class="centerImage"/>
       <figcaption style="font-size: 0.8em;">
         <b>Gradient Norm Regularization objective</b>
         as presented in equation 4 of \cite{simon-gabriel_first-order_2019} and optimized in \cite{ross_improving_2017}. $\mathcal{L}_{\text{CE}}$ is the cross-entropy loss, 
         $\epsilon=4$ is the adversarial strength, $\sigma=0.225$ is the standard deviation used for normalization on ImageNet, and $\lambda_{\text{CE}}, 
         \lambda_{\text{GN}}$ are weighing hyper-parameters set $0.8$ and $1.2$ respectively.
       </figcaption>
-    <img src="./images/table2.png" class="pub_image"/>
+    <img src="./images/table2.png" class="centerImage"/>
       <figcaption style="font-size: 0.8em;">
         <b>Performance comparison on AutoAttack (standard)</b>
         Robustness of a Swin Transformer trained with gradient norm regularization compared to natural training 
@@ -251,7 +251,7 @@
         checkpoint using the recipe of \cite{liu_comprehensive_2023}.
       </figcaption>
     </figure>
-    <img src="./images/zzz_pgd100_epsilon.pdf" class="pub_image"/>
+    <img src="./images/zzz_pgd100_epsilon.pdf" class="centerImage"/>
       <figcaption style="font-size: 0.8em;">
         <b>Robust accuracy vs epsilon for the PGD100 attack on ImageNet or Swin Transformer trained on Gradient Norm Regularization and state-of-the-art Adversarial Training.</b>
          Gradient Norm Regularization achieves slightly better accuracy on clean images ($\epsilon = 0$) and good robust performance ($\epsilon > 0$), despite seeing only natural examples and having 60\% of the computational cost of Adversarial Training with PGD-3. 
