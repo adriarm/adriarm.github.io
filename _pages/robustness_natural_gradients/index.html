@@ -143,13 +143,13 @@
         <div class="content has-text-justified">
           <p>
             Adversarially robust models are locally smooth around each data sample so that small perturbations cannot drastically change model outputs. 
-            In modern systems, such smoothness is usually obtained via \emph{Adversarial Training}, which explicitly enforces models to perform well on perturbed examples. 
-            In this work, we show the surprising effectiveness of instead regularizing the gradient \wrt model inputs \emph{on natural examples only}. 
-            Penalizing input \emph{Gradient Norm} is commonly believed to be a much inferior approach. 
-            Our analyses identify that the performance of \emph{Gradient Norm} regularization critically depends on the smoothness of activation functions, 
+            In modern systems, such smoothness is usually obtained via <em>Adversarial Training</em>, which explicitly enforces models to perform well on perturbed examples. 
+            In this work, we show the surprising effectiveness of instead regularizing the gradient \wrt model inputs <em>on natural examples only</em>. 
+            Penalizing input <em>Gradient Norm</em> is commonly believed to be a much inferior approach. 
+            Our analyses identify that the performance of <em>Gradient Norm</em> regularization critically depends on the smoothness of activation functions, 
             and are in fact extremely effective on modern vision transformers that adopt smooth activations over piecewise linear ones (\eg, ReLU). 
-            On ImageNet-1k, \emph{Gradient Norm} training achieves $> 90\%$  performance of state-of-the-art PGD-3 \emph{Adversarial Training} (52\% vs.~56\%), 
-            while using only $60\%$ computation cost of the state-of-the-art without complex adversarial optimization. 
+            On ImageNet-1k, <em>Gradient Norm</em> training achieves > 90%  performance of state-of-the-art PGD-3 <em>Adversarial Training</em> (52% vs.~56%), 
+            while using only 60% computation cost of the state-of-the-art without complex adversarial optimization. 
             Our analyses further highlight the relationship between model robustness and properties of natural input gradients, such as asymmetric channel statistics. 
             Surprisingly, we also find model robustness can be significantly improved by simply regularizing its gradients to focus on image edges without explicit conditioning 
             on the norm. 
@@ -276,22 +276,22 @@
 <hr>
 <h2 style="text-align: left; font-weight: normal">Related work</h2>
 <p style="font-size:14px; text-align: justify">
-  [1] Wightman, R.: PyTorch Image Models (2019). https://doi.org/10.5281/zenodo.4414861, https://github.com/rwightman/pytorch-image-models
+  [1] Wightman, R.: PyTorch Image Models (2019). https://doi.org/10.5281/zenodo.4414861, https://github.com/rwightman/pytorch-image-models <br />
   [2] Liu, C., Dong, Y., Xiang, W., Yang, X., Su, H., Zhu, J., Chen, Y., He, Y., Xue, H., Zheng, S.:
       A Comprehensive Study on Robustness of Image Classification Models: Benchmarking and
       Rethinking (Feb 2023). https://doi.org/10.48550/arXiv.2302.14301, http://arxiv.org/abs/
-      2302.14301, arXiv:2302.14301 [cs]
+      2302.14301, arXiv:2302.14301 [cs] <br />
   [3] Xie, C., Tan, M., Gong, B., Yuille, A., Le, Q.V.: Smooth Adversarial Training (Jul 2021),
-      http://arxiv.org/abs/2006.14536, arXiv:2006.14536 [cs]
+      http://arxiv.org/abs/2006.14536, arXiv:2006.14536 [cs] <br />
   [4] Simon-Gabriel, C.J., Ollivier, Y., Bottou, L., Schölkopf, B., Lopez-Paz, D.: First-order Adversarial
       Vulnerability of Neural Networks and Input Dimension (Jun 2019), http://arxiv.
-      org/abs/1802.01421, arXiv:1802.01421 [cs, stat]
+      org/abs/1802.01421, arXiv:1802.01421 [cs, stat] <br />
   [5] Ross, A.S., Doshi-Velez, F.: Improving the Adversarial Robustness and Interpretability of Deep
       Neural Networks by Regularizing their Input Gradients (Nov 2017), http://arxiv.org/abs/
-      1711.09404, arXiv:1711.09404 [cs]
+      1711.09404, arXiv:1711.09404 [cs] <br />
   [6] Madry, A., Makelov, A., Schmidt, L., Tsipras, D., Vladu, A.: Towards Deep Learning Models
       Resistant to Adversarial Attacks. In: International Conference on Learning Representations
-      (2018), https://arxiv.org/abs/1706.06083
+      (2018), https://arxiv.org/abs/1706.06083 <br />
 </p>
 </center>
 
