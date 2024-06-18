@@ -31,7 +31,7 @@ Click <a href="./files/cv.pdf">here</a> for my CV.
             <h4 class="authors">
                 <b>Adrián Rodríguez-Muñoz</b>, Tongzhou Wang, Antonio Torralba
             </h4>
-            [<a font size="-2" href="">paper</a>] [<a font size="-2" href="">webpage</a>]
+            [<a font size="-2" href="">paper</a>] [<a font size="-2" href="_pages/robustness_natural_gradients">webpage</a>]
         </div>
         <a classa="pub_image">
             <img src="_pages/robustness_natural_gradients/cover.pdf">

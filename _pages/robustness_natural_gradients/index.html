@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Adversarially robust models are locally smooth around each data sample so that small perturbations cannot drastically change model outputs. 
+        In modern systems, such smoothness is usually obtained via Adversarial Training, which explicitly enforces models to perform well on perturbed examples. 
+        In this work, we show the surprising effectiveness of instead regularizing the gradient wrt model inputs on natural examples only.">
+  <meta name="keywords" content="Adversarial Robustness, Gradient Norm, Comptuter Vision">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Characterizing model robustness via natural input gradients</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Characterizing Model Robustness via Natural Input Gradients</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://adriarm.github.io">Adrián Rodríguez-Muñoz</a>,</span>
+            <span class="author-block">
+              <a href="https://ssnl.github.io">Tongzhou Wang</a>,</span>
+            <span class="author-block">
+              <a href="https://groups.csail.mit.edu/vision/torralbalab/">Antonio Torralba</a></span>
+          </div>
+	        * indicates equal contribution
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">MIT CSAIL</span>
+          </div> 
+          <!-- <div class="is-size-3 publication-authors">
+            <span class="author-block">CVPR 2024</span>
+          </div>  -->
+
+          <!-- <div class="is-size-4 publication-authors">
+            <span class="author-block">NeurIPS 2023</span>
+          </div>  -->
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+		            <a href="https://arxiv.org/abs/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+             	 </a>   
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <!-- <span class="link-block">
+              	<a href="https://github.com/multimodal-interpretability/FIND" 
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+              	</a>  
+              </span> -->
+              <!-- <span class="link-block">
+		            <a href="https://text-vision-data.csail.mit.edu/web/supplementary.html"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-bars"></i>
+                  </span>
+                  <span>More Results</span>
+             	 </a>   
+              <!-- </span> -->
+              <span class="link-block">
+		            <a href="./static/figures/sm.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file"></i>
+                  </span>
+                  <span>Supplementary</span>
+             	 </a>   
+              </span> -->
+            
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Adversarially robust models are locally smooth around each data sample so that small perturbations cannot drastically change model outputs. 
+            In modern systems, such smoothness is usually obtained via \emph{Adversarial Training}, which explicitly enforces models to perform well on perturbed examples. 
+            In this work, we show the surprising effectiveness of instead regularizing the gradient \wrt model inputs \emph{on natural examples only}. 
+            Penalizing input \emph{Gradient Norm} is commonly believed to be a much inferior approach. 
+            Our analyses identify that the performance of \emph{Gradient Norm} regularization critically depends on the smoothness of activation functions, 
+            and are in fact extremely effective on modern vision transformers that adopt smooth activations over piecewise linear ones (\eg, ReLU). 
+            On ImageNet-1k, \emph{Gradient Norm} training achieves $> 90\%$  performance of state-of-the-art PGD-3 \emph{Adversarial Training} (52\% vs.~56\%), 
+            while using only $60\%$ computation cost of the state-of-the-art without complex adversarial optimization. 
+            Our analyses further highlight the relationship between model robustness and properties of natural input gradients, such as asymmetric channel statistics. 
+            Surprisingly, we also find model robustness can be significantly improved by simply regularizing its gradients to focus on image edges without explicit conditioning 
+            on the norm. 
+          </p>
+          <hr>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./images/zzz_gradient_comparison.pdf"
+                type="video/mp4">
+      </video>
+      <br>
+      <div class="content has-text-justified">
+        <p><b>Characterizing robustness via natural input gradients.</b> Comparison of loss-input gradients of non-robust and robust models across architectures for a set of images. 
+          Non-robust models taken from timm \cite{wightman_pytorch_2019}. Adversarial training is from the work of Liu \etal \cite{liu_comprehensive_2023}. 
+          Gradient norm regularization done with the objective in \cref{eq:gradnorm-objective} and with the same recipe as adversarial training otherwise. 
+          As can be seen, a model can be easily identified as vulnerable or robust simply by looking at clean input gradients. 
+          Gradients of robust models (adversarial training and gradient norm regularization) highly resemble the input images, 
+          and look visually similar to each other to the human eye. By contrast, gradients of vulnerable models are noise-like, bearing apparently little resemblance 
+          to each other or the input images. Numerically, the norm of the input gradient (top right for each gradient) is also highly discriminative of vulnerability 
+          or robustness.</p>
+        <hr>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="margin-top: -5px;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+	    <h3 class="title is-4">Robust gradients have small $L_1$ norm</h3>
+    </div>
+    <div class="content has-text-justified">
+      <p>
+        Mathematically, a function stable to perturbations of the input has a small gradient \wrt the input. 
+        Empirically, it has been observed that adversarial robustness (obtained with adversarial training) \cite{madry_towards_2018} 
+        correlates with small gradient norm \cite{simon-gabriel_first-order_2019}. As we can see in \cref{tab:evidence-low-gradient-norms}, 
+        this continues to hold with state-of-the-art robust transformers. The expected $L_1$ norm of the loss-input gradient 
+        $\norm{\nabla_x \mathcal{L}} := \norm{\nabla_{\mathbf{x}}\mathcal{L}_{\text{CE}}(f_\theta(\mathbf{x},y)}_1$ is around two orders of magnitude smaller 
+        for robust models than for their non-robust counterparts of the same architecture. Furthermore, fixing the models and taking expectations over inputs 
+        conditioning on PGD10 attack success, the gradient is much smaller when the attack fails than when it succeeds (last two columns of \cref{tab:evidence-low-gradient-norms}).
+
+      </p>
+    </div>
+   <figure>
+    <!-- <iframe src="./static/figures/dataset.png" width="600" height="500"></iframe> -->
+    <img src="./static/figures/dataset.png" />
+      <figcaption style="font-size: 0.8em;">
+        <b>Gradient norm and robustness statistics of SOTA public models</b>
+        Accuracy, robustness, and gradient norm statistics on 10k ImageNet validation images for publicly available vulnerable and robust models 
+        from timm \cite{wightman_pytorch_2019} and robustbench \cite{croce_robustbench_2021} respectively. 
+        The quantities Standard, AA, and PGD10 refer to clean accuracy, and AutoAttack and PGD10 robust accuracy respectively. 
+        The quantities $\mathbf{E}[L_1 | \protect\checkmark]$ and $\mathbf{E}[L_1 | \protect\crossmark]$ are the conditional expectations of the 
+        loss input-gradient $L_1$ norm conditioned on the PGD10 attack failing and succeeding respectively.
+      </figcaption>
+    </figure> 
+</section>
+
+
+<section class="section" style="margin-top: -5px;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+	    <h3 class="title is-4">Textual feedback: Correcting with Text</h3>
+    </div>
+    <figure>
+      <!-- <iframe src="./static/figures/dataset.pdf" width="600" height="500"></iframe> -->
+      <img src="./static/figures/feedback.png" />
+        <figcaption style="font-size: 0.8em;">
+          <b>Improved visual generation with text feedback.</b> 
+          The improvement in the visual generation of models due to feedback is oftentimes gradual, with the addition of a few features at a time over the course of the feedback process. 
+        </figcaption>
+      </figure> 
+      <br>
+    <div class="content has-text-justified">
+      <p>
+        We demonstrate that the visual generation competence of a language model can be improved 
+        using text-based corrections. We do this by closing the feedback loop between the LLM and 
+        itself. Here, we first use the language model to generate code illustrating a concept. 
+        Following that, the model is repeatedly called by conditioning its generation on its 
+        previously generated code and prompted to ``improve its generated code''. We find that 
+        making such iterative calls to the model results in improved visual depictions.
+      </p>
+    </div>
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/figures/feedback_res.mp4"
+                type="video/mp4">
+      </video>
+  </div>
+</section>
+
+
+<section class="section" style="margin-top: -5px;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+	    <h3 class="title is-4">Learning a Vision System from Text</h3>
+    </div>
+    <div class="content has-text-justified">
+      <p>
+        We study if LLM-generated images could serve as a data source for pre-training 
+        vision models and compare them to synthetically generated and natural images. 
+        <!-- We show that the images generated by LLMs are
+        useful for training visual backbones, achieving state-of-the-art 
+        performance when compared to and used alongside other synthetic datasets. -->
+        We show it is possible for models trained entirely on procedurally generated data from LLMs 
+        to perform semantic judgments on natural images despite never having seen one before.
+      </p>
+    </div>
+    <div class="content has-text-centered">
+      <figure>
+        <!-- <iframe src="./static/figures/dataset.pdf" width="600" height="500"></iframe> -->
+        <img src="./static/figures/nearest_neighbors.png"  width=75% />
+        <figcaption style="font-size: 0.8em;">
+        </figcaption>
+      </figure> 
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{sharma2024vision,
+      title={A Vision Check-up for Language Models},
+      author={Sharma, Pratyusha and Rott Shaham, Tamar and Baradad, Manel and Fu, Stephanie and Rodriguez-Munoz, Adrian and Duggal, Shivam and Isola, Phillip and Torralba, Antonio},
+      booktitle={arXiv preprint}
+      year={2024}
+    }
+    </code></pre>
+  </div>
+</section>
+
+	
+<footer class="footer">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content" style="text-align: center;">
+          <p>
+            This website is adapted from the <a href="https://github.com/nerfies/nerfies.github.io">Nerfies template</a>, which you are free to borrow if you link back to it in the footer.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+	
+
+
+</body>
+</html>
