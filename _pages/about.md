@@ -35,7 +35,7 @@ Click <a href="./files/cv.pdf">here</a> for my CV.
             <br /> <font size="-1">[<a href="https://arxiv.org/abs/2401.01862">paper</a>] [<a href="https://vision-checkup.csail.mit.edu">webpage</a>] <br />
         </div>
         <a classa="pub_image">
-            <img src="_pages/vision_checkup/vision_checkup_row.png"/>
+            <img src="_pages/vision_checkup/vision_checkup_row.png">
         </a>
     </article>
     <article>
