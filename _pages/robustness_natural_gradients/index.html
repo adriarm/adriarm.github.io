@@ -256,7 +256,55 @@
     </div>
     <br />
     <figure>
-    <img src="./images/table2.png" style="display: block; margin: auto; width: 75%;"/>
+    
+      <style type="text/css">
+        .tg  {border-collapse:collapse;border-spacing:0;}
+        .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+          overflow:hidden;padding:10px 5px;word-break:normal;}
+        .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+          font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+        .tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+        .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+        .tg .tg-7btt{border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
+        .tg .tg-fymr{border-color:inherit;font-weight:bold;text-align:left;vertical-align:top}
+        </style>
+        <table class="tg"><thead>
+          <tr>
+            <th class="tg-0pky"></th>
+            <th class="tg-7btt">Clean</th>
+            <th class="tg-7btt" colspan="3">AutoAttack-\(L_\infty)\</th>
+          </tr></thead>
+        <tbody>
+          <tr>
+            <td class="tg-fymr">Method</td>
+            <td class="tg-c3ow">-</td>
+            <td class="tg-c3ow">\(\epsilon=\frac{1}{255})\</td>
+            <td class="tg-c3ow">\(\epsilon=\frac{2}{255})\</td>
+            <td class="tg-c3ow">\(\epsilon=\frac{4}{255})\</td>
+          </tr>
+          <tr>
+            <td class="tg-0pky">Natural Training</td>
+            <td class="tg-c3ow">84.19</td>
+            <td class="tg-c3ow">00.00</td>
+            <td class="tg-c3ow">00.00</td>
+            <td class="tg-c3ow">00.00</td>
+          </tr>
+          <tr>
+            <td class="tg-0pky">Grad. Norm (\(\lambda_{\text{CE}}=0.8,\lambda_{\text{GN}}=1.2)\)</td>
+            <td class="tg-c3ow">77.78</td>
+            <td class="tg-c3ow">72.04</td>
+            <td class="tg-c3ow">66.20</td>
+            <td class="tg-c3ow">51.58</td>
+          </tr>
+          <tr>
+            <td class="tg-0pky">Adv. Train. (PGD-3, \(\epsilon=4)\)</td>
+            <td class="tg-c3ow">77.20</td>
+            <td class="tg-c3ow">72.46</td>
+            <td class="tg-c3ow">67.38</td>
+            <td class="tg-c3ow">56.12</td>
+          </tr>
+        </tbody></table>
+
       <figcaption style="font-size: 0.8em;">
         <b>Performance comparison on AutoAttack (standard)</b>
         Robustness of a Swin Transformer trained with gradient norm regularization compared to natural training 
