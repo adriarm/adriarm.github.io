@@ -248,7 +248,7 @@
         Empirically, it has been observed that adversarial robustness (obtained with adversarial training) <a href="https://arxiv.org/abs/1706.06083">(Madry2018)</a> 
         correlates with small gradient norm <a href="https://proceedings.mlr.press/v97/simon-gabriel19a.html">(SimonGabriel2019)</a>. As we can see in the table, 
         this continues to hold with state-of-the-art robust transformers. The expected \(L_1\) norm of the loss-input gradient 
-        \(\left\lVert\\nabla_x\mathcal{L}_{\text{CE}}(f_{\theta}(x), y)}\right\rVert_1\) is around two orders of magnitude smaller 
+        \(\left\lVert\\nabla_x\mathcal{L}_{\text{CE}}(f_{\theta}(x), y)\right\rVert_1\) is around two orders of magnitude smaller 
         for robust models than for their non-robust counterparts of the same architecture. Furthermore, fixing the models and taking expectations over inputs 
         conditioning on PGD10 attack success, the gradient is much smaller when the attack fails than when it succeeds (last two columns).
 
