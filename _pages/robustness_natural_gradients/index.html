@@ -208,7 +208,7 @@
       <script type="text/javascript" id="MathJax-script" async
       src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
       </script>
-      $$\mathcal{L}_{\text{GradNorm}}(\mathbf{x},y) = \lambda_{\text{CE}}\mathcal{L}_{\text{CE}}(f_\theta(\mathbf{x}),y) + \lambda_{\text{GN}}\frac{\epsilon}{\sigma}\norm{\nabla_{\mathbf{x}}\mathcal{L}_{\text{CE}}(f_\theta(\mathbf{x}), y))}_1$$
+      $$\mathcal{L}_{\text{GradNorm}}(\mathbf{x},y) = \lambda_{\text{CE}}\mathcal{L}_{\text{CE}}(f_\theta(\mathbf{x}),y) + \lambda_{\text{GN}}\frac{\epsilon}{\sigma}\left\lVert\nabla_{\mathbf{x}}\mathcal{L}_{\text{CE}}(f_\theta(\mathbf{x}), y))\right\rVert_1$$
         <figcaption style="font-size: 0.8em;">
           <b>Gradient Norm Regularization objective</b>
           as presented in equation 4 of <a href="https://proceedings.mlr.press/v97/simon-gabriel19a.html">(SimonGabriel2019)</a> and optimized in <a href="https://arxiv.org/abs/1711.09404">(Ross2017)</a>. &Lscr;<sub>CE</sub> is the cross-entropy loss, 
