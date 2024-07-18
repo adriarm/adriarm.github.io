@@ -34,7 +34,7 @@ Click <a href="./files/cv.pdf">here</a> for my CV.
             [<a font size="-2" href="">paper</a>] [<a font size="-2" href="_pages/robustness_natural_gradients">webpage</a>] [<a font size="-2" href="https://github.com/adriarm/robustness_natural_gradients">code</a>]
         </div>
         <a classa="pub_image">
-            <img src="_pages/robustness_natural_gradients/cover.pdf">
+            <img src="_pages/robustness_natural_gradients/cover.png">
         </a>
     </article>
     <br />
