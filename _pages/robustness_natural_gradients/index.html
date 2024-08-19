@@ -261,16 +261,15 @@
     <img src="./images/resnet_acc_vs_epoch.pdf" style="display: block; margin: auto; width: 90%;"/>
       <figcaption style="font-size: 0.8em;">
         <b>ResNet50 activation swapping</b>
-        Clean and PGD10 (\(\epsilon=\frac{4}{255}\)) robust accuracy vs epoch for ResNet50 with ReLU and GeLU trained with Adversarial Training and Gradient Norm Regularization. 
-        We observe how the ReLU ResNet is not capable of handling the regularization objective at the appropriate strength. 
+        Clean and PGD10 (\(\epsilon=\frac{4}{255}\)) robust accuracy vs epoch for ResNet50 with ReLU and GeLU trained with adversarial training and gradient norm. 
+        We observe how the ReLU ResNet is not capable of handling the regularization objective. 
       </figcaption>
     </figure>
     <br />
     <img src="./images/table4.png" style="display: block; margin: auto; width: 45%;"/>
       <figcaption style="font-size: 0.8em;">
         <b>AutoAttack performance comparison</b>
-        Clean and L<sub>&infin;</sub>-AutoAttack accuracy for ResNet50 with ReLU, GeLU, and SiLU non-linearities trained with both Adversarial Training and GradNorm for 
-        50 epochs using a shortened version of the Adversarial Transformer recipe of <a href="https://arxiv.org/abs/2302.14301">(Liu2023)</a>.
+        Clean and AutoAttack-\(L_{\infty}\) accuracy at \(\epsilon=\frac{4}{255}\) for ResNet50 with ReLU, GeLU, and SiLU non-linearities trained with both adversarial training and gradient norm.
       </figcaption>
     </figure>
 <hr>
