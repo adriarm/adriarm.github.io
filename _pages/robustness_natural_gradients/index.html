@@ -233,10 +233,10 @@
     <div class="content has-text-justified">
       <p>
         As we can see in the figures below, the ResNet with ReLU is completely incapable of properly fitting gradient norm regularization, with clean performance sharply decaying and robust performance barely increasing. 
-        In contrast, the GeLU ResNet displays similar convergence behaviour to the adversarially trained models, obtaining extremely similar final clean and robust accuracies.
+        In contrast, the GeLU ResNet displays similar convergence behaviour to the adversarially trained models, obtaining extremely similar clean and robust accuracies.
 
         The work of <a href="https://arxiv.org/abs/2006.14536">(Xie2021)</a> conducted a similar analysis for Adversarial Training, observing small increases in performance from using smooth non-linearities. 
-        For Gradient Norm regularization the effect is more than 20 times larger (1% vs 23%). 
+        For gradient norm the effect is more than 20 times larger (1% vs 23%). 
         <!-- In essence, the gradient norm regularization objective minimizes a 
         penalty on the gradients of the network; since for ReLU networks the latter is non-differentiable, Taylor's theorem does not necessarily hold on the gradient loss, 
         so there is no guarantee that gradient descent will work. -->
