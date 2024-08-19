@@ -197,14 +197,9 @@
     </div>
     <div class="content has-text-justified">
       <p>
-        Mathematically, a function stable to perturbations of the input has a small gradient \wrt the input. 
-        Empirically, it has been observed that adversarial robustness (obtained with adversarial training) <a href="https://arxiv.org/abs/1706.06083">(Madry2018)</a> 
-        correlates with small gradient norm <a href="https://proceedings.mlr.press/v97/simon-gabriel19a.html">(SimonGabriel2019)</a>. As we can see in the table, 
-        this continues to hold with state-of-the-art robust transformers. The expected \(L_1\) norm of the loss-input gradient 
-        \(\left\lVert\nabla_x\mathcal{L}_{\text{CE}}(f_{\theta}(x), y)\right\rVert_1\) is around two orders of magnitude smaller 
-        for robust models than for their non-robust counterparts of the same architecture. Furthermore, fixing the models and taking expectations over inputs 
-        conditioning on PGD10 attack success, the gradient is much smaller when the attack fails than when it succeeds (last two columns).
-
+        Minimizing gradient norm yields a highly competitive model despite the constraints of seeing only natural examples and having 60% of the computational budget. On
+        AutoAttack $$L_{\infty}$$ with $$\epsilon=\frac{4}{255}$, the standard benchmark for ImageNet, we report 51.58% robust performance compared to the 56.12% obtained by state-of-the-art adversarial
+        training.
       </p>
     </div>
     <br />
@@ -248,8 +243,7 @@
         so there is no guarantee that gradient descent will work.
       </p>
     </div>
-    <figure>
-      <!-- <iframe src="./static/figures/dataset.png" width="600" height="500"></iframe> -->
+    <!-- <figure>
       <script type="text/javascript" id="MathJax-script" async
       src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
       </script>
@@ -261,7 +255,8 @@
           \(\lambda_{\text{GN}}\) are weighing hyper-parameters set 0.8 and 1.2 respectively.
         </figcaption>
     </figure>
-    <br />
+    <br /> -->
+
    <figure>
     <!-- <iframe src="./static/figures/dataset.png" width="600" height="500"></iframe> -->
     <img src="./images/resnet_acc_vs_epoch.pdf" style="display: block; margin: auto; width: 90%;"/>
