@@ -151,13 +151,13 @@
         <div class="content has-text-justified">
           <p>
             Adversarially robust models are locally smooth around each data sample so that small perturbations cannot drastically change model outputs. 
-            In modern systems, such smoothness is usually obtained via <em>Adversarial Training}, which explicitly enforces models to perform well on perturbed examples. 
-            In this work, we show the surprising effectiveness of instead regularizing the gradient \wrt model inputs <em>on natural examples only</em>. 
+            In modern systems, such smoothness is usually obtained via <em>Adversarial Training, which explicitly enforces models to perform well on perturbed examples. 
+            In this work, we show the surprising effectiveness of instead regularizing the gradient with respect to model inputs <em>on natural examples only</em>. 
             Penalizing input <em>Gradient Norm</em> is commonly believed to be a much inferior approach. 
             Our analyses identify that the performance of <em>Gradient Norm</em> regularization critically depends on the smoothness of activation functions, 
             and are in fact extremely effective on modern vision transformers that adopt smooth activations over piecewise linear ones (\eg, ReLU), contrary to prior belief. 
-            On ImageNet-1k, <em>Gradient Norm</em> training achieves $> 90\%$ the performance of state-of-the-art PGD-3 <em>Adversarial Training</em> (52\% vs.~56\%), 
-            while using only $60\%$ computation cost of the state-of-the-art without complex adversarial optimization. 
+            On ImageNet-1k, <em>Gradient Norm</em> training achieves $> 90%$ the performance of state-of-the-art PGD-3 <em>Adversarial Training</em> (52% vs.~56%), 
+            while using only $60%$ computation cost of the state-of-the-art without complex adversarial optimization. 
           </p>
           <hr>
         </div>
@@ -193,7 +193,7 @@
 <section class="section" style="margin-top: -5px;">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
-	    <h3 class="title is-4">Performance comparison with SOTA AdvTrain</h3>
+	    <h3 class="title is-4">Performance comparison with SOTA adversarial training</h3>
     </div>
     <div class="content has-text-justified">
       <script type="text/javascript" id="MathJax-script" async
@@ -211,8 +211,7 @@
     <img src="./images/table2.png" style="display: block; margin: auto; width: 65%;"/>
       <figcaption style="font-size: 0.8em;">
         <b>Performance comparison on AutoAttack (standard)</b>
-        Robustness of a Swin Transformer trained with gradient norm regularization compared to natural training 
-        and state-of-the-art adversarial training on AutoAttack-L<sub>&infin;</sub>. Adversarial training performed from pretrained timm <a href="https://github.com/rwightman/timm">(Wightman2019)</a> 
+        Robustness of Swin Transformers trained with gradient norm, natural training, and state-of-the-art adversarial training, on AutoAttack-\(L_{\infty}\). Training performed from pretrained timm <a href="https://github.com/rwightman/timm">(Wightman2019)</a> 
         checkpoint using the recipe of <a href="https://arxiv.org/pdf/2302.14301">(Liu2023)</a>.
       </figcaption>
     </figure>
@@ -221,7 +220,7 @@
     <img src="./images/zzz_pgd100_epsilon.pdf" style="display: block; margin: auto;"/>
       <figcaption style="font-size: 0.8em;">
         <b>Robust accuracy vs epsilon for the PGD100 attack on ImageNet</b>
-         Gradient Norm Regularization achieves slightly better accuracy on clean images (&epsilon; = 0) and good robust performance for large $$\epsilon$$. (&epsilon; > 0). Robust accuracy for both models smoothly converges towards 0% as the adversarial strength grows.
+         Gradient norm achieves slightly better accuracy on clean images (\(\epsilon=0\)) and good robust performance for large (\(\epsilon>0\)). Robust accuracy for both models smoothly converges towards 0% as the adversarial strength (\(\epsilon\)) grows.
       </figcaption>
     </figure> 
 </section>
