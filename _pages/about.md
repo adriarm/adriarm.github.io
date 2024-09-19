@@ -27,7 +27,7 @@ Click <a href="./files/cv.pdf">here</a> for my CV.
 <div id="publications"  style="position: relative; top: -20px;">
     <article>
         <div class="pub_text">
-            <h3 class="papertitle">Characterizing Model Robustness with Natural Input Gradients </h3>
+            <h3 class="papertitle">[ECCV 2024] Characterizing Model Robustness with Natural Input Gradients </h3>
             <h4 class="authors">
                 <b>Adrián Rodríguez-Muñoz</b>, Tongzhou Wang, Antonio Torralba
             </h4>
@@ -40,7 +40,7 @@ Click <a href="./files/cv.pdf">here</a> for my CV.
     <br />
     <article>
         <div class="pub_text">
-            <h3 class="papertitle">A Vision Check-up for Language Models - CVPR 2024 (Highlight)</h3>
+            <h3 class="papertitle">[CVPR 2024 - Highlight] A Vision Check-up for Language Models</h3>
             <h4 class="authors">
                 Pratyusha Sharma*, Tamar Rott Shaham*, Manel Baradad,
                 Stephanie Fu, <b>Adrián Rodríguez-Muñoz</b>, Shivam Duggal, Phillip Isola, Antonio Torralba
