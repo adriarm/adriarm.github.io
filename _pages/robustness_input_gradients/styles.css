@@ -1,19 +1,17 @@
-.table2 {
-  width: 100%; /* Default to full width */
-  height: auto; /* Maintain aspect ratio */
+.table2, .table4 {
+  width: 100%; /* Default to full width for small screens */
+  height: auto; /* Optional: adjust as needed */
+  margin: 10px auto; /* Center the divs with some spacing */
+  padding: 10px; /* Optional: padding for content */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Optional: add some shadow */
 }
 
-.table4 {
-  width: 100%; /* Default to full width */
-  height: auto; /* Maintain aspect ratio */
-}
-
-@media (min-width: 600px) { /* For devices larger than 600px (like laptops) */
+@media (min-width: 600px) { /* For devices larger than 600px */
   .table2 {
-      width: 60%; /* Adjust the width for larger screens */
+      width: 60%; /* Set width to 60% for larger screens */
   }
-
+  
   .table4 {
-    width: 45%; /* Adjust the width for larger screens */
+      width: 45%; /* Set width to 45% for larger screens */
   }
 }
