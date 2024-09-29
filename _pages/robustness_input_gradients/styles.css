@@ -1,0 +1,10 @@
+.responsive-image {
+  width: 100%; /* Default to full width */
+  height: auto; /* Maintain aspect ratio */
+}
+
+@media (min-width: 600px) { /* For devices larger than 600px (like laptops) */
+  .responsive-image {
+      width: 60%; /* Adjust the width for larger screens */
+  }
+}
