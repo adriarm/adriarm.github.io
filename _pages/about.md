@@ -21,7 +21,7 @@ My goal is to help create intelligent visual systems that:
 </p>
 
 <p align="justify">
-I studied Mathematics and Data Science and Engineering at <a href="https://cfis.upc.edu/en">CFIS-UPC</a> until 2022. During my undergrad, I did internships at the <a href="https://www.bsc.es">Barcelona Supercomputing Center</a>, the biotech company <a href="https://www.zeclinics.com">ZeClinics</a>, and the finance firms <a href="https://www.aspectcapital.com">Aspect Capital</a> (London) and <a href="https://sig.com">Susquehanna International Group</a> (Dublin).
+Prior to my PhD, I studied Mathematics and Data Science and Engineering at <a href="https://cfis.upc.edu/en">CFIS-UPC</a> until 2022. During my undergrad, I did internships at the <a href="https://www.bsc.es">Barcelona Supercomputing Center</a>, the biotech company <a href="https://www.zeclinics.com">ZeClinics</a>, and the finance firms <a href="https://www.aspectcapital.com">Aspect Capital</a> (London) and <a href="https://sig.com">Susquehanna International Group</a> (Dublin).
 </p>
 
 <p align="justify">
