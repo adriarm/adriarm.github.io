@@ -11,11 +11,11 @@ redirect_from:
 <div class="intro">
 <p align="justify">
 I am Adrián Rodríguez-Muñoz, a 2nd year grad student at MIT EECS under the supervision of 
-<a href="http://web.mit.edu/torralba/www/">Prof. Antonio Torralba</a>. My research focuses on <a href="https://mbaradad.github.io/learning_with_noise/">procedural data</a> and efficient <a href="https://adriarm.github.io/_pages/robustness_input_gradients/">adversarial robustness</a>. 
+<a href="http://web.mit.edu/torralba/www/">Prof. Antonio Torralba</a>. My research focuses on <a href="https://mbaradad.github.io/learning_with_noise/">procedurally generated data</a> and efficient <a href="https://adriarm.github.io/_pages/robustness_input_gradients/">adversarial robustness</a>. 
 My goal is to help create intelligent visual systems that:
 <ol>
-  <li>Make decisions on personal private data fully in-context, without extra training.</li>
-  <li>Provide <a href="https://jolt.law.harvard.edu/assets/articlePDFs/v31/Counterfactual-Explanations-without-Opening-the-Black-Box-Sandra-Wachter-et-al.pdf">counterfactual explanations</a>.</li>
+  <li>Make decisions on personalized private data fully in-context, without additional training and ideal (k=1) data compartmentalization.</li>
+  <li>Provide <a href="https://jolt.law.harvard.edu/assets/articlePDFs/v31/Counterfactual-Explanations-without-Opening-the-Black-Box-Sandra-Wachter-et-al.pdf">counterfactual explanations</a> grounded on common-sense visual similarity.</li>
   <li>Are robust to adversarial conditions.</li>
 </ol>
 </p>
