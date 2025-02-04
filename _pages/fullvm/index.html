@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Visual memory approaches leverage an explicit database of image neural embeddings, permitting flexible adding and removal of data by editing of the database.
+        However, prior work requires a pre-trained embedding model from which it remains difficult to learn or unlearn data.
+        By training the embedding model on procedural data, our approach achieves full compartmentalization with respect to all real-world images 
+        while retaining strong performance.">
+  <meta name="keywords" content="Visual Memory, Procedural Data, Computer Vision">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Characterizing model robustness via natural input gradients</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="styles.css">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+
+  <link rel="stylesheet" href="./static/css/images.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Fully Compartmentalizing Visual Memory Perception with Procedural Data</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://adriarm.github.io">Adrián Rodríguez-Muñoz</a>,</span>
+            <span class="author-block">
+              <a href="https://mbaradad.github.io">Manel Baradad</a>,</span>
+            <span class="author-block">
+                <a href="https://web.mit.edu/phillipi/">Phillip Isola</a>,</span>
+            <span class="author-block">
+              <a href="https://groups.csail.mit.edu/vision/torralbalab/">Antonio Torralba</a></span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">MIT CSAIL</span>
+          </div> 
+          <!-- <div class="is-size-3 publication-authors">
+            <span class="author-block">CVPR 2024</span>
+          </div>  -->
+
+          <!-- <div class="is-size-4 publication-authors">
+            <span class="author-block">NeurIPS 2023</span>
+          </div>  -->
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+		            <a href="https://arxiv.org/abs/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+             	 </a>   
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/adriarm/fullvm"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <!-- <span class="link-block">
+              	<a href="https://github.com/multimodal-interpretability/FIND" 
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+              	</a>  
+              </span> -->
+              <!-- <span class="link-block">
+		            <a href="https://text-vision-data.csail.mit.edu/web/supplementary.html"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-bars"></i>
+                  </span>
+                  <span>More Results</span>
+             	 </a>   
+              <!-- </span> -->
+              <!-- <span class="link-block">
+		            <a href="./static/figures/sm.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file"></i>
+                  </span>
+                  <span>Supplementary</span>
+             	 </a>   
+              </span> -->
+            
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <a classa="pub_image">
+        <img src="./images/teaser_v6.png" class="pub_image"/>
+      </a>
+      <br>
+      <div class="content has-text-justified">
+        <p><b>Characterizing robustness via natural input gradients.</b> Comparison of loss-input gradients of non-robust and robust models across architectures for a set of images. 
+          <!-- Non-robust models taken from timm <a href="https://github.com/rwightman/timm">(Wightman2019)</a>. Adversarial training is from the work of Liu et al. <a href="https://arxiv.org/pdf/2302.14301">(Liu2023)</a>. 
+          Gradient norm regularization done with the objective in Eq. 2 above and with the same recipe as adversarial training otherwise.  -->
+          <!-- As can be seen, a model can be easily identified as vulnerable or robust simply by looking at clean input gradients.  -->
+          Gradients of robust models (adversarial training and gradient norm regularization) highly resemble the input images, 
+          and look visually similar to each other to the human eye. By contrast, gradients of vulnerable models are noise-like, bearing apparently little resemblance 
+          to each other or the input images. Numerically, the norm of the input gradient (top right for each gradient) is also highly discriminative of vulnerability 
+          or robustness.</p>
+        <hr>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We train representation models with procedural data only, and apply them on visual similarity, classification, and semantic segmentation tasks 
+            without further training by using visual memory---an explicit database of reference image embeddings. Unlike prior work on visual memory, our 
+            approach achieves full compartmentalization with respect to all real-world images while retaining strong performance. Compared to a model trained 
+            on Places, our procedural model performs within 1% on NIGHTS visual similarity, outperforms by 8% and 15% on CUB200 and Flowers102 fine-grained 
+            classification, and is within 10% on  ImageNet-1K classification. It also demonstrates strong zero-shot segmentation, achieving an $R^2$ on COCO 
+            within 10% of the models trained on real data. Finally, we analyze procedural versus real data models, showing that parts of the same object have 
+            dissimilar representations in procedural models, resulting in incorrect searches in memory and explaining the remaining performance gap.
+          </p>
+          <hr>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+<section class="section" style="margin-top: -5px;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+	    <h3 class="title is-4">Performance comparison with SOTA adversarial training</h3>
+    </div>
+    <div class="content has-text-justified">
+      <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+      </script>
+      <p>
+        Minimizing gradient norm yields a highly competitive model despite seeing only natural examples and having 60% of the computational budget. On
+        AutoAttack \(L_{\infty}\) with \(\epsilon=\frac{4}{255}\), the standard benchmark for ImageNet, we report 51.58% robust performance compared to the 56.12% obtained by state-of-the-art adversarial
+        training.
+      </p>
+    </div>
+    <figure>
+    <img src="./images/table2.png" style="display: block; margin: auto;" class="table2"/>
+      <figcaption style="font-size: 1.0em;">
+        <b>Performance comparison on AutoAttack (standard)</b>
+        Robustness of Swin Transformers trained with gradient norm, natural training, and state-of-the-art adversarial training, on AutoAttack-\(L_{\infty}\). Training performed from pretrained timm <a href="https://github.com/rwightman/timm">(Wightman2019)</a> 
+        checkpoint using the recipe of <a href="https://arxiv.org/pdf/2302.14301">(Liu2023)</a>.
+      </figcaption>
+    </figure>
+    <figure>
+    <img src="./images/zzz_pgd100_epsilon.png" style="display: block; margin: auto;  width: 90%;"/>
+      <figcaption style="font-size: 1.0em;">
+        <b>Robust accuracy vs epsilon for the PGD100 attack on ImageNet</b>
+         Gradient norm achieves slightly better accuracy on clean images (\(\epsilon=0\)) and good robust performance for large \(\epsilon>0\). Robust accuracy for both models smoothly converges towards 0% as the adversarial strength (\(\epsilon\)) grows.
+      </figcaption>
+    </figure> 
+</section>
+
+<section class="section" style="margin-top: -5px;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+	    <h3 class="title is-4">Smooth activation functions make gradient norm regularization effective</h3>
+    </div>
+    <div class="content has-text-justified">
+      <p>
+        As we can see in the figures below, the ResNet with ReLU is completely incapable of properly fitting gradient norm regularization, with clean performance sharply decaying and robust performance barely increasing. 
+        In contrast, the GeLU ResNet displays similar convergence behaviour to the adversarially trained models, obtaining extremely similar clean and robust accuracies.
+
+        The work of <a href="https://arxiv.org/abs/2006.14536">(Xie2021)</a> conducted a similar analysis for Adversarial Training, observing small increases in performance from using smooth non-linearities. 
+        For gradient norm the effect is more than 20 times larger (1% vs 23%). 
+        <!-- In essence, the gradient norm regularization objective minimizes a 
+        penalty on the gradients of the network; since for ReLU networks the latter is non-differentiable, Taylor's theorem does not necessarily hold on the gradient loss, 
+        so there is no guarantee that gradient descent will work. -->
+      </p>
+    </div>
+    <!-- <figure>
+      <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+      </script>
+      $$\mathcal{L}_{\text{GradNorm}}(\mathbf{x},y) = \lambda_{\text{CE}}\mathcal{L}_{\text{CE}}(f_\theta(\mathbf{x}),y) + \lambda_{\text{GN}}\frac{\epsilon}{\sigma}\left\lVert\nabla_{\mathbf{x}}\mathcal{L}_{\text{CE}}(f_\theta(\mathbf{x}), y))\right\rVert_1$$
+        <figcaption style="font-size: 0.8em;">
+          <b>Gradient Norm Regularization objective</b>
+          as presented in equation 4 of <a href="https://proceedings.mlr.press/v97/simon-gabriel19a.html">(SimonGabriel2019)</a> and optimized in <a href="https://arxiv.org/abs/1711.09404">(Ross2017)</a>. \(\mathcal{L}_{\text{CE}}\) is the cross-entropy loss, 
+          \(\epsilon=\frac{4}{255}\) is the adversarial strength, \(\sigma=0.225\) is the standard deviation used for normalization on ImageNet, and \(\lambda_{\text{CE}}\), 
+          \(\lambda_{\text{GN}}\) are weighing hyper-parameters set 0.8 and 1.2 respectively.
+        </figcaption>
+    </figure>
+    <br /> -->
+
+   <figure>
+    <!-- <iframe src="./static/figures/dataset.png" width="600" height="500"></iframe> -->
+    <img src="./images/resnet_acc_vs_epoch.png" style="display: block; margin: auto; width: 100%;"/>
+      <figcaption style="font-size: 1em;">
+        <b>ResNet50 activation swapping</b>
+        Clean and PGD10 (\(\epsilon=\frac{4}{255}\)) robust accuracy vs epoch for ResNet50 with ReLU and GeLU trained with adversarial training and gradient norm. 
+        We observe how the ReLU ResNet is not capable of handling the regularization objective. 
+      </figcaption>
+    </figure>
+    <br />
+    <img src="./images/table4.png" style="display: block; margin: auto;" class="table4"/>
+      <figcaption style="font-size: 1em;">
+        <b>AutoAttack performance comparison</b>
+        Clean and AutoAttack-\(L_{\infty}\) accuracy at \(\epsilon=\frac{4}{255}\) for ResNet50 with ReLU, GeLU, and SiLU non-linearities trained with both adversarial training and gradient norm.
+      </figcaption>
+    </figure>
+<hr>
+</section>
+
+<section class="section" id="BibTeX">
+<div class="container is-max-desktop content">
+<h2 class="title">Related Work</h2>
+<p style="font-size:14px; text-align: justify">
+  [1] Wightman, R.: PyTorch Image Models (2019). https://doi.org/10.5281/zenodo.4414861, https://github.com/rwightman/pytorch-image-models <br />
+
+  [2] Liu, C., Dong, Y., Xiang, W., Yang, X., Su, H., Zhu, J., Chen, Y., He, Y., Xue, H., Zheng, S.:
+      A Comprehensive Study on Robustness of Image Classification Models: Benchmarking and
+      Rethinking (Feb 2023). https://doi.org/10.48550/arXiv.2302.14301, http://arxiv.org/abs/
+      2302.14301, arXiv:2302.14301 [cs] <br />
+
+  [3] Xie, C., Tan, M., Gong, B., Yuille, A., Le, Q.V.: Smooth Adversarial Training (Jul 2021),
+      http://arxiv.org/abs/2006.14536, arXiv:2006.14536 [cs] <br />
+
+  [4] Simon-Gabriel, C.J., Ollivier, Y., Bottou, L., Schölkopf, B., Lopez-Paz, D.: First-order Adversarial
+      Vulnerability of Neural Networks and Input Dimension (Jun 2019), http://arxiv.
+      org/abs/1802.01421, arXiv:1802.01421 [cs, stat] <br />
+
+  [5] Ross, A.S., Doshi-Velez, F.: Improving the Adversarial Robustness and Interpretability of Deep
+      Neural Networks by Regularizing their Input Gradients (Nov 2017), http://arxiv.org/abs/
+      1711.09404, arXiv:1711.09404 [cs] <br />
+
+  [6] Madry, A., Makelov, A., Schmidt, L., Tsipras, D., Vladu, A.: Towards Deep Learning Models
+      Resistant to Adversarial Attacks. In: International Conference on Learning Representations
+      (2018), https://arxiv.org/abs/1706.06083 <br />
+</p>
+</center>
+</div>
+</section>
+
+<section class="section" id="BibTeX">
+<div class="container is-max-desktop content">
+  <h2 class="title">BibTeX</h2>
+  <pre><code>
+    @inproceedings{rodriguezmunoz2024characterizing,
+      title={Characterizing model robustness via natural input gradients},
+      author={Adrián Rodríguez-Muñoz and Tongzhou Wang and Antonio Torralba},
+      booktitle={Proceedings of the European Conference on Computer Vision (ECCV)},
+      year={2024},
+      url={}
+    }
+  </code></pre>
+</div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Acknowledgements</h2>
+    Adrián Rodríguez-Muñoz is supported by the LaCaixa fellowship. Tongzhou Wang is supported by the ONR MURI program.
+  </div>
+  </section>
+
+<!-- </div> -->
+
+	
+<!-- <footer class="footer">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content" style="text-align: center;">
+          <p>
+           
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer> -->
+
+<style type="text/css" media="all">
+  .page__footer {
+    /*float: left;*/
+    padding-top: 1em;
+    padding-bottom: 0.5em;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    clear: both;
+    /* sticky footer fix start */
+    /*position: absolute;*/
+    bottom: 0;
+    height: auto;
+    /* sticky footer fix end */
+    margin-top: 3em;
+    color: #898c8f;
+    background-color: #f2f3f3;
+    padding-left: 0em;
+    padding-right: 0em;
+    max-width: 100%;
+  }
+  
+  .page__footer .links {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1000px;
+    /*padding: 0;*/
+  }
+  
+  .page__footer .links .social-icons {
+    padding-left: 0;
+    text-align: left;
+  }
+  </style>
+  
+  <div class="page__footer">
+    <div class="links">
+      <ul class="social-icons">
+        <li style='display: inline-block; margin-right: 5px; font-style: bold'><strong>Links:</strong></li>
+        <li style='display: inline-block; margin-right: 5px; font-style: normal;'><a href="https://accessibility.mit.edu"><i class="fa fa-fw fas fa-universal-access" aria-hidden="true"></i> Accessibility</a></li>
+      </ul>
+      This website is adapted from the <a href="https://github.com/nerfies/nerfies.github.io">Nerfies template</a>, which you are free to borrow if you link back to it in the footer.
+    </div>
+    <br>
+  </div>
+
+</body>
+</html>

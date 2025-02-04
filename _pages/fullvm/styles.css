@@ -1,0 +1,14 @@
+.table2, .table4 {
+  width: 100%; /* Default to full width for small screens */
+  height: auto; /* Optional: adjust as needed */
+}
+
+@media (min-width: 600px) { /* For devices larger than 600px */
+  .table2 {
+      width: 60%; /* Set width to 60% for larger screens */
+  }
+  
+  .table4 {
+      width: 50%; /* Set width to 45% for larger screens */
+  }
+}

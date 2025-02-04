@@ -33,7 +33,20 @@ Click <a href="./files/cv.pdf">here</a> for my CV.
 <div id="publications"  style="position: relative; top: -20px;">
     <article>
         <div class="pub_text">
-            <h3 class="papertitle">[ECCV 2024] Characterizing Model Robustness with Natural Input Gradients </h3>
+            <h3 class="papertitle">Fully Compartmentalizing Visual Memory Perception with Procedural Data</h3>
+            <h4 class="authors">
+                <b>Adrián Rodríguez-Muñoz</b>, Manel Baradad, Phillip Isola, Antonio Torralba
+            </h4>
+            [<a font size="-2" href="">paper</a>] [<a font size="-2" href="_pages/fullvm">webpage</a>] [<a font size="-2" href="https://github.com/adriarm/fullvm">code</a>]
+        </div>
+        <a classa="pub_image">
+            <img src="_pages/fullvm/images/teaser_v6.png">
+        </a>
+    </article>
+    <br />
+    <article>
+        <div class="pub_text">
+            <h3 class="papertitle">[ECCV 2024] Characterizing Model Robustness with Natural Input Gradients</h3>
             <h4 class="authors">
                 <b>Adrián Rodríguez-Muñoz</b>, Tongzhou Wang, Antonio Torralba
             </h4>
