@@ -145,28 +145,6 @@
   </div>
 </section>
 
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <a classa="pub_image">
-        <img src="./images/teaser_v6.png" class="pub_image"/>
-      </a>
-      <br>
-      <div class="content has-text-justified">
-        <p><b>Characterizing robustness via natural input gradients.</b> Comparison of loss-input gradients of non-robust and robust models across architectures for a set of images. 
-          <!-- Non-robust models taken from timm <a href="https://github.com/rwightman/timm">(Wightman2019)</a>. Adversarial training is from the work of Liu et al. <a href="https://arxiv.org/pdf/2302.14301">(Liu2023)</a>. 
-          Gradient norm regularization done with the objective in Eq. 2 above and with the same recipe as adversarial training otherwise.  -->
-          <!-- As can be seen, a model can be easily identified as vulnerable or robust simply by looking at clean input gradients.  -->
-          Gradients of robust models (adversarial training and gradient norm regularization) highly resemble the input images, 
-          and look visually similar to each other to the human eye. By contrast, gradients of vulnerable models are noise-like, bearing apparently little resemblance 
-          to each other or the input images. Numerically, the norm of the input gradient (top right for each gradient) is also highly discriminative of vulnerability 
-          or robustness.</p>
-        <hr>
-      </div>
-    </div>
-  </div>
-</section>
-
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -181,7 +159,7 @@
             approach achieves full compartmentalization with respect to all real-world images while retaining strong performance. Compared to a model trained 
             on Places, our procedural model performs within 1% on NIGHTS visual similarity, outperforms by 8% and 15% on CUB200 and Flowers102 fine-grained 
             classification, and is within 10% on  ImageNet-1K classification. It also demonstrates strong zero-shot segmentation, achieving an $R^2$ on COCO 
-            within 10% of the models trained on real data. Finally, we analyze procedural versus real data models, showing that parts of the same object have 
+            within 10\% of the models trained on real data. Finally, we analyze procedural versus real data models, showing that parts of the same object have 
             dissimilar representations in procedural models, resulting in incorrect searches in memory and explaining the remaining performance gap.
           </p>
           <hr>
@@ -189,6 +167,29 @@
       </div>
     </div>
     <!--/ Abstract. -->
+  </div>
+</section>
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <a classa="pub_image">
+        <img src="./images/zzz_gradient_comparison_poster_white.png" class="pub_image"/>
+      </a>
+      <br>
+      <div class="content has-text-justified">
+        <p><b>Characterizing robustness via natural input gradients.</b> Comparison of loss-input gradients of non-robust and robust models across architectures for a set of images. 
+          <!-- Non-robust models taken from timm <a href="https://github.com/rwightman/timm">(Wightman2019)</a>. Adversarial training is from the work of Liu et al. <a href="https://arxiv.org/pdf/2302.14301">(Liu2023)</a>. 
+          Gradient norm regularization done with the objective in Eq. 2 above and with the same recipe as adversarial training otherwise.  -->
+          <!-- As can be seen, a model can be easily identified as vulnerable or robust simply by looking at clean input gradients.  -->
+          Gradients of robust models (adversarial training and gradient norm regularization) highly resemble the input images, 
+          and look visually similar to each other to the human eye. By contrast, gradients of vulnerable models are noise-like, bearing apparently little resemblance 
+          to each other or the input images. Numerically, the norm of the input gradient (top right for each gradient) is also highly discriminative of vulnerability 
+          or robustness.</p>
+        <hr>
+      </div>
+    </div>
   </div>
 </section>
 
