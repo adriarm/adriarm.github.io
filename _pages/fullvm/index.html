@@ -179,7 +179,7 @@
       </a>
       <br>
       <div class="content has-text-justified">
-        <p><b>Our approach is as follows: first, an embedding model is trained on procedural data generated with OpenGL code using self-supervised learning (SSL). 
+        <p><b>Our approach is as follows</b>: first, an embedding model is trained on procedural data generated with OpenGL code using self-supervised learning (SSL). 
           In this stage, unlearning and attribution is difficult, but procedural data is much less exposed to privacy/bias risk and real-world semantics. 
           Next, we use the embedding model on real world tasks using only a visual memory of reference image embeddings, without extra training. 
           When working with real instead of procedural data, there is high privacy/bias risk and real world semantics. 
@@ -194,20 +194,18 @@
 <section class="section" style="margin-top: -5px;">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
-	    <h3 class="title is-4">Performance comparison with SOTA adversarial training</h3>
+	    <h3 class="title is-4">Procedural models are effective KNN classifiers of real images, without any kind of training including linear probes </h3>
     </div>
     <div class="content has-text-justified">
       <script type="text/javascript" id="MathJax-script" async
       src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
       </script>
       <p>
-        Minimizing gradient norm yields a highly competitive model despite seeing only natural examples and having 60% of the computational budget. On
-        AutoAttack \(L_{\infty}\) with \(\epsilon=\frac{4}{255}\), the standard benchmark for ImageNet, we report 51.58% robust performance compared to the 56.12% obtained by state-of-the-art adversarial
-        training.
+        On fine-grained datasets, procedural data performs better than realistic data with no semantic overlap. When there is semantic overlap, procedural data is within &lt 10%
       </p>
     </div>
     <figure>
-    <img src="./images/table2.png" style="display: block; margin: auto;" class="table2"/>
+    <img src="./images/classification.png" style="display: block; margin: auto; width: 50%" class="table2"/>
       <figcaption style="font-size: 1.0em;">
         <b>Performance comparison on AutoAttack (standard)</b>
         Robustness of Swin Transformers trained with gradient norm, natural training, and state-of-the-art adversarial training, on AutoAttack-\(L_{\infty}\). Training performed from pretrained timm <a href="https://github.com/rwightman/timm">(Wightman2019)</a> 
@@ -215,7 +213,7 @@
       </figcaption>
     </figure>
     <figure>
-    <img src="./images/zzz_pgd100_epsilon.png" style="display: block; margin: auto;  width: 90%;"/>
+    <img src="./images/zzz_pgd100_epsilon.png" style="display: block; margin: auto;  width: 50%;"/>
       <figcaption style="font-size: 1.0em;">
         <b>Robust accuracy vs epsilon for the PGD100 attack on ImageNet</b>
          Gradient norm achieves slightly better accuracy on clean images (\(\epsilon=0\)) and good robust performance for large \(\epsilon>0\). Robust accuracy for both models smoothly converges towards 0% as the adversarial strength (\(\epsilon\)) grows.
