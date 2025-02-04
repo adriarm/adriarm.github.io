@@ -13,28 +13,3 @@
   }
 }
 
-.gallery-container {
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  width: 80%;
-  margin: auto;
-}
-.gallery {
-  display: flex;
-  transition: transform 0.3s ease-in-out;
-}
-.gallery img {
-  width: 200px;
-  margin: 5px;
-  border-radius: 8px;
-}
-.button {
-  background-color: #333;
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  margin: 10px;
-}
-
