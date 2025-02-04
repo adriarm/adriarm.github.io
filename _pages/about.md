@@ -31,7 +31,7 @@ Click <a href="./files/cv.pdf">here</a> for my CV.
 
 <div><h1 style="position: relative; top: 20px;"> Publications</h1></div>
 <div id="publications"  style="position: relative; top: -20px;">
-    <article>
+    <!-- <article>
         <div class="pub_text">
             <h3 class="papertitle">Fully Compartmentalizing Visual Memory Perception with Procedural Data</h3>
             <h4 class="authors">
@@ -43,7 +43,7 @@ Click <a href="./files/cv.pdf">here</a> for my CV.
             <img src="_pages/fullvm/images/teaser_v6.png">
         </a>
     </article>
-    <br />
+    <br /> -->
     <article>
         <div class="pub_text">
             <h3 class="papertitle">[ECCV 2024] Characterizing Model Robustness with Natural Input Gradients</h3>
