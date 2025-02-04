@@ -170,6 +170,163 @@
   </div>
 </section>
 
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <a classa="pub_image">
+        <img src="./images/zzz_gradient_comparison_poster_white.png" class="pub_image"/>
+      </a>
+      <br>
+      <div class="content has-text-justified">
+        <p><b>Characterizing robustness via natural input gradients.</b> Comparison of loss-input gradients of non-robust and robust models across architectures for a set of images. 
+          <!-- Non-robust models taken from timm <a href="https://github.com/rwightman/timm">(Wightman2019)</a>. Adversarial training is from the work of Liu et al. <a href="https://arxiv.org/pdf/2302.14301">(Liu2023)</a>. 
+          Gradient norm regularization done with the objective in Eq. 2 above and with the same recipe as adversarial training otherwise.  -->
+          <!-- As can be seen, a model can be easily identified as vulnerable or robust simply by looking at clean input gradients.  -->
+          Gradients of robust models (adversarial training and gradient norm regularization) highly resemble the input images, 
+          and look visually similar to each other to the human eye. By contrast, gradients of vulnerable models are noise-like, bearing apparently little resemblance 
+          to each other or the input images. Numerically, the norm of the input gradient (top right for each gradient) is also highly discriminative of vulnerability 
+          or robustness.</p>
+        <hr>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="margin-top: -5px;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+	    <h3 class="title is-4">Performance comparison with SOTA adversarial training</h3>
+    </div>
+    <div class="content has-text-justified">
+      <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+      </script>
+      <p>
+        Minimizing gradient norm yields a highly competitive model despite seeing only natural examples and having 60% of the computational budget. On
+        AutoAttack \(L_{\infty}\) with \(\epsilon=\frac{4}{255}\), the standard benchmark for ImageNet, we report 51.58% robust performance compared to the 56.12% obtained by state-of-the-art adversarial
+        training.
+      </p>
+    </div>
+    <figure>
+    <img src="./images/table2.png" style="display: block; margin: auto;" class="table2"/>
+      <figcaption style="font-size: 1.0em;">
+        <b>Performance comparison on AutoAttack (standard)</b>
+        Robustness of Swin Transformers trained with gradient norm, natural training, and state-of-the-art adversarial training, on AutoAttack-\(L_{\infty}\). Training performed from pretrained timm <a href="https://github.com/rwightman/timm">(Wightman2019)</a> 
+        checkpoint using the recipe of <a href="https://arxiv.org/pdf/2302.14301">(Liu2023)</a>.
+      </figcaption>
+    </figure>
+    <figure>
+    <img src="./images/zzz_pgd100_epsilon.png" style="display: block; margin: auto;  width: 90%;"/>
+      <figcaption style="font-size: 1.0em;">
+        <b>Robust accuracy vs epsilon for the PGD100 attack on ImageNet</b>
+         Gradient norm achieves slightly better accuracy on clean images (\(\epsilon=0\)) and good robust performance for large \(\epsilon>0\). Robust accuracy for both models smoothly converges towards 0% as the adversarial strength (\(\epsilon\)) grows.
+      </figcaption>
+    </figure> 
+</section>
+
+<section class="section" style="margin-top: -5px;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+	    <h3 class="title is-4">Smooth activation functions make gradient norm regularization effective</h3>
+    </div>
+    <div class="content has-text-justified">
+      <p>
+        As we can see in the figures below, the ResNet with ReLU is completely incapable of properly fitting gradient norm regularization, with clean performance sharply decaying and robust performance barely increasing. 
+        In contrast, the GeLU ResNet displays similar convergence behaviour to the adversarially trained models, obtaining extremely similar clean and robust accuracies.
+
+        The work of <a href="https://arxiv.org/abs/2006.14536">(Xie2021)</a> conducted a similar analysis for Adversarial Training, observing small increases in performance from using smooth non-linearities. 
+        For gradient norm the effect is more than 20 times larger (1% vs 23%). 
+        <!-- In essence, the gradient norm regularization objective minimizes a 
+        penalty on the gradients of the network; since for ReLU networks the latter is non-differentiable, Taylor's theorem does not necessarily hold on the gradient loss, 
+        so there is no guarantee that gradient descent will work. -->
+      </p>
+    </div>
+    <!-- <figure>
+      <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+      </script>
+      $$\mathcal{L}_{\text{GradNorm}}(\mathbf{x},y) = \lambda_{\text{CE}}\mathcal{L}_{\text{CE}}(f_\theta(\mathbf{x}),y) + \lambda_{\text{GN}}\frac{\epsilon}{\sigma}\left\lVert\nabla_{\mathbf{x}}\mathcal{L}_{\text{CE}}(f_\theta(\mathbf{x}), y))\right\rVert_1$$
+        <figcaption style="font-size: 0.8em;">
+          <b>Gradient Norm Regularization objective</b>
+          as presented in equation 4 of <a href="https://proceedings.mlr.press/v97/simon-gabriel19a.html">(SimonGabriel2019)</a> and optimized in <a href="https://arxiv.org/abs/1711.09404">(Ross2017)</a>. \(\mathcal{L}_{\text{CE}}\) is the cross-entropy loss, 
+          \(\epsilon=\frac{4}{255}\) is the adversarial strength, \(\sigma=0.225\) is the standard deviation used for normalization on ImageNet, and \(\lambda_{\text{CE}}\), 
+          \(\lambda_{\text{GN}}\) are weighing hyper-parameters set 0.8 and 1.2 respectively.
+        </figcaption>
+    </figure>
+    <br /> -->
+
+   <figure>
+    <!-- <iframe src="./static/figures/dataset.png" width="600" height="500"></iframe> -->
+    <img src="./images/resnet_acc_vs_epoch.png" style="display: block; margin: auto; width: 100%;"/>
+      <figcaption style="font-size: 1em;">
+        <b>ResNet50 activation swapping</b>
+        Clean and PGD10 (\(\epsilon=\frac{4}{255}\)) robust accuracy vs epoch for ResNet50 with ReLU and GeLU trained with adversarial training and gradient norm. 
+        We observe how the ReLU ResNet is not capable of handling the regularization objective. 
+      </figcaption>
+    </figure>
+    <br />
+    <img src="./images/table4.png" style="display: block; margin: auto;" class="table4"/>
+      <figcaption style="font-size: 1em;">
+        <b>AutoAttack performance comparison</b>
+        Clean and AutoAttack-\(L_{\infty}\) accuracy at \(\epsilon=\frac{4}{255}\) for ResNet50 with ReLU, GeLU, and SiLU non-linearities trained with both adversarial training and gradient norm.
+      </figcaption>
+    </figure>
+<hr>
+</section>
+
+<section class="section" id="BibTeX">
+<div class="container is-max-desktop content">
+<h2 class="title">Related Work</h2>
+<p style="font-size:14px; text-align: justify">
+  [1] Wightman, R.: PyTorch Image Models (2019). https://doi.org/10.5281/zenodo.4414861, https://github.com/rwightman/pytorch-image-models <br />
+
+  [2] Liu, C., Dong, Y., Xiang, W., Yang, X., Su, H., Zhu, J., Chen, Y., He, Y., Xue, H., Zheng, S.:
+      A Comprehensive Study on Robustness of Image Classification Models: Benchmarking and
+      Rethinking (Feb 2023). https://doi.org/10.48550/arXiv.2302.14301, http://arxiv.org/abs/
+      2302.14301, arXiv:2302.14301 [cs] <br />
+
+  [3] Xie, C., Tan, M., Gong, B., Yuille, A., Le, Q.V.: Smooth Adversarial Training (Jul 2021),
+      http://arxiv.org/abs/2006.14536, arXiv:2006.14536 [cs] <br />
+
+  [4] Simon-Gabriel, C.J., Ollivier, Y., Bottou, L., Schölkopf, B., Lopez-Paz, D.: First-order Adversarial
+      Vulnerability of Neural Networks and Input Dimension (Jun 2019), http://arxiv.
+      org/abs/1802.01421, arXiv:1802.01421 [cs, stat] <br />
+
+  [5] Ross, A.S., Doshi-Velez, F.: Improving the Adversarial Robustness and Interpretability of Deep
+      Neural Networks by Regularizing their Input Gradients (Nov 2017), http://arxiv.org/abs/
+      1711.09404, arXiv:1711.09404 [cs] <br />
+
+  [6] Madry, A., Makelov, A., Schmidt, L., Tsipras, D., Vladu, A.: Towards Deep Learning Models
+      Resistant to Adversarial Attacks. In: International Conference on Learning Representations
+      (2018), https://arxiv.org/abs/1706.06083 <br />
+</p>
+</center>
+</div>
+</section>
+
+<section class="section" id="BibTeX">
+<div class="container is-max-desktop content">
+  <h2 class="title">BibTeX</h2>
+  <pre><code>
+    @inproceedings{rodriguezmunoz2024characterizing,
+      title={Characterizing model robustness via natural input gradients},
+      author={Adrián Rodríguez-Muñoz and Tongzhou Wang and Antonio Torralba},
+      booktitle={Proceedings of the European Conference on Computer Vision (ECCV)},
+      year={2024},
+      url={}
+    }
+  </code></pre>
+</div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Acknowledgements</h2>
+    Adrián Rodríguez-Muñoz is supported by the LaCaixa fellowship. Tongzhou Wang is supported by the ONR MURI program.
+  </div>
+  </section>
+
 <!-- </div> -->
 
 	
