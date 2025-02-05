@@ -15,8 +15,7 @@
 
 .box {
   width: 45%; /* Adjust as needed */
-  padding: 20px;
-  background-color: lightblue;
+  padding: 0px;
   text-align: center;
   border: 1px solid #000;
 }
