@@ -14,14 +14,16 @@
 }
 
 .box-container {
-  display: flex; /* Enables side-by-side layout */
-  justify-content: space-between; /* Spaces out the boxes */
+  display: flex; /* Places divs side by side */
+  width: 100vw; /* Full width of viewport */
+  height: 100vh; /* Full height of viewport */
 }
 
 .box {
-  width: 45%; /* Adjust as needed */
-  padding: 0px;
+  width: 50%; /* Each box takes up half the screen */
+  height: 100%;
+  background: transparent; /* Transparent background */
   text-align: center;
-  border: 1px solid #000;
+  border: none; /* Removes borders */
 }
 
