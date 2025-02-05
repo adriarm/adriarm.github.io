@@ -13,6 +13,11 @@
   }
 }
 
+.box-container {
+  display: flex; /* Enables side-by-side layout */
+  justify-content: space-between; /* Spaces out the boxes */
+}
+
 .box {
   width: 45%; /* Adjust as needed */
   padding: 0px;
