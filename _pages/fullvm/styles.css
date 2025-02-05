@@ -13,3 +13,14 @@
   }
 }
 
+.container .box {
+    display : flex;
+    flex-direction : row;
+}
+.container .box .box-cell.box1 {
+   text-align:justify;
+}
+.container .box .box-cell.box2 {
+   text-align:justify
+}
+
