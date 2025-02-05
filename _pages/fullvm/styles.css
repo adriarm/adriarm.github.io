@@ -15,7 +15,7 @@
 
 .box-container {
   display: flex; /* Places divs side by side */
-  width: 100%; /* Full width of viewport */
+  width: 50%; /* Full width of viewport */
   /* height: 100vh; /* Full height of viewport */
 }
 
