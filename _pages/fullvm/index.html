@@ -198,29 +198,16 @@
 <section class="section" style="margin-top: -5px;">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
-	    <h3 class="title is-4">Memory</h3>
+	    <h3 class="title is-4">Classification with visual memory</h3>
     </div>
-    <div class="box-container">
-      <div class="box">
-        <figure>
-          <img src="./static/images/visual_memory_compact.png"/>
-            <figcaption style="font-size: 1.0em; text-align: justify; display: block; padding-top: 19px;">
-              <b>Performance:</b>
-              On fine-grained datasets, procedural data performs better than realistic data with no semantic overlap. When there is semantic overlap, procedural data is within &lt 10%</a>.
-            </figcaption>
-        </figure>
-      </div>
-      <div class="box" style="padding: 0px">
-        <figure>
-          <img src="./static/images/unlearning_website.png"/>
-            <figcaption style="font-size: 1.0em; text-align: justify; display: block; padding-top: 19px;">
-              <b>Performance:</b>
-              On fine-grained datasets, procedural data performs better than realistic data with no semantic overlap. When there is semantic overlap, procedural data is within &lt 10%</a>.
-            </figcaption>
-        </figure>
-      </div>
-    </div>
-  </div>
+    <figure>
+      <img src="./static/images/visual_memory_row.png"/>
+        <figcaption style="font-size: 1.0em; text-align: justify; display: block; padding-top: 19px;">
+          Classification with visual memory uses k-nearest neighbours (KNN) \wrt 
+          a database of embeddings rather than a parametric classifier (top). This 
+          allows efficient adding and removal of data through modification of the database (bottom).
+        </figcaption>
+    </figure>
 </section>
 
 <section class="section" style="margin-top: -5px;">
