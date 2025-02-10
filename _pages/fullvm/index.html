@@ -204,8 +204,8 @@
       <img src="./static/images/visual_memory_row.png"/>
         <figcaption style="font-size: 1.0em; text-align: justify; display: block; padding-top: 19px;">
           Classification with visual memory uses k-nearest neighbours (KNN) \wrt 
-          a database of embeddings rather than a parametric classifier (top). This 
-          allows efficient adding and removal of data through modification of the database (bottom).
+          a database of embeddings rather than a parametric classifier (left). This 
+          allows efficient adding and removal of data through modification of the database (right).
         </figcaption>
     </figure>
 </section>
@@ -213,7 +213,38 @@
 <section class="section" style="margin-top: -5px;">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
-	    <h3 class="title is-4">Procedural embeddings are effective KNN classifiers of real images, without any kind of training including linear probes </h3>
+	    <h3 class="title is-4">Limitations of prior approaches</h3>
+    </div>
+    <figure>
+      <img src="./static/images/unlearning_website.png"/>
+        <figcaption style="font-size: 1.0em; text-align: justify; display: block; padding-top: 19px;">
+          Prior visual memory approaches can efficiently unlearn
+          data in the memory, but not data used to train the embedding model. Our proposal to use <em>procedural data</em> makes the latter case much less
+          likely, as procedural data has drastically lower exposure to privacy risk.
+        </figcaption>
+    </figure>
+</section>
+
+<section class="section" style="margin-top: -5px;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+	    <h3 class="title is-4">Examples of procedural data</h3>
+    </div>
+    <figure>
+      <img src="./static/images/datasets_examples_small.png"/>
+        <figcaption style="font-size: 1.0em; text-align: justify; display: block; padding-top: 19px;">
+          Examples of procedural data from prior work, our new Masked Shaders: Shaders KML and Shaders KML Mixup, and the real
+          datasets Places and ImageNet. Unlike real world data, procedural data is non-realistic and
+          is generated via simple code, and thus is much less exposed
+          to the privacy or bias risks that motivate unlearning. 
+        </figcaption>
+    </figure>
+</section>
+
+<section class="section" style="margin-top: -5px;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+	    <h3 class="title is-4">Procedurally trained embeddings are effective KNN classifiers of real images</h3>
     </div>
     <div class="box-container">
       <div class="box">
