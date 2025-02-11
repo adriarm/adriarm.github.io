@@ -246,27 +246,21 @@
     <div class="columns is-centered">
 	    <h3 class="title is-4">Limitations of prior visual memory approaches</h3>
     </div>
-    <div class="box-container">
-      <div class="box" style="width: 46.8%;">
-        <figure>
+    <figure>
+      <div class="box-container">
+        <div class="box" style="width: 46.8%;">
           <img src="./static/images/unlearning.png"/>
-            <figcaption style="font-size: 1.0em; text-align: justify; display: block; padding-top: 19px;">
-              Prior visual memory approaches can efficiently unlearn data in the memory, but not data used to train the embedding model. 
-              Our proposal to use procedural data makes the latter case much less likely, as procedural data has drastically lower exposure to privacy risk.
-            </figcaption>
-        </figure>
+        </div>
+        <div class="box" style="width: 53.2%;">
+            <img src="./static/images/datasets_examples_website.png"/>
+        </div>
       </div>
-      <div class="box" style="width: 53.2%;">
-        <figure>
-          <img src="./static/images/datasets_examples_website.png"/>
-            <figcaption style="font-size: 1.0em; text-align: justify; display: block; padding-top: 19px;">
-              Unlike real world data, procedural data is non-realistic and
-              is generated via simple code, and thus is much less exposed
-              to the privacy or bias risks that motivate unlearning. 
-            </figcaption>
-        </figure>
-      </div>
-    </div>
+    </figure>
+    <figcaption style="font-size: 1.0em; text-align: justify; display: block; padding-top: 19px;">
+      Prior visual memory approaches can efficiently unlearn data in the memory, but not data used to train the embedding model;
+      our proposal to use procedural data makes the latter case much less likely (left). Unlike real world data, procedural data is non-realistic and
+      is generated via simple code, and thus is much less exposed to the privacy or bias risks that motivate unlearning (right). 
+    </figcaption>
   </div>
 </section>
 
