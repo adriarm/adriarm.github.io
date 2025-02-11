@@ -248,14 +248,14 @@
     </div>
     <figure>
     <img src="./static/images/unlearning.png" style="display: block; margin: auto; width: 70%"/>
-      <figcaption style="font-size: 1.0em; padding-bottom: 20px">
+      <figcaption style="font-size: 1.0em; padding-bottom: 20px; width: 70%">
         Prior visual memory approaches can efficiently unlearn data in the memory, but not data used to train the embedding model;
         our proposal to use procedural data makes the latter case much less likely.
       </figcaption>
     </figure>
     <figure>
     <img src="./static/images/datasets_examples_website.png" style="display: block; margin: auto; width: 70%"/>
-      <figcaption style="font-size: 1.0em">
+      <figcaption style="font-size: 1.0em; width: 70%">
         Unlike real world data, procedural data is non-realistic and
         is generated via simple code, and thus is much less exposed to the privacy or bias risks that motivate unlearning.
       </figcaption>
@@ -354,14 +354,16 @@
     <div class="columns is-centered">
 	    <h3 class="title is-4">Handling of sensitive data</h3>
     </div>
-    <figure>
-    <img src="./static/images/celeba_similarity_row.png" style="display: block; margin: auto"/>
-      <figcaption style="font-size: 1.0em; padding-bottom: 20px">
-        Sensitive data is information that legally or ethically needs to be handled with high standards of care and control, such that directly
-        training on the data is often not acceptable. Despite never training on faces, a model trained on the Shaders KML Mixup procedural dataset 
-        can match for appearance and facial expressions on CelebA.
-      </figcaption>
-    </figure>
+    <div class="box">
+      <figure>
+        <img src="./static/images/celeba_similarity_row.png"/>
+          <figcaption style="font-size: 1.0em; text-align: justify; display: block;">
+            Sensitive data is information that legally or ethically needs to be handled with high standards of care and control, such that directly
+            training on the data is often not acceptable. Despite never training on faces, a model trained on the Shaders KML Mixup procedural dataset 
+            can match for appearance and facial expressions on CelebA.
+          </figcaption>
+      </figure>
+    </div>
 </section>
 
 <section class="section" id="BibTeX">
