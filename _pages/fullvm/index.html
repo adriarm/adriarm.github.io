@@ -247,21 +247,22 @@
 	    <h3 class="title is-4">Procedurally trained embeddings are effective KNN classifiers of real images</h3>
     </div>
     <div class="box-container">
-      <div class="box" style="width: 47%;">
+      <div class="box" style="width: 46.8%;">
         <figure>
           <img src="./static/images/unlearning.png"/>
             <figcaption style="font-size: 1.0em; text-align: justify; display: block; padding-top: 19px;">
-              <b>Performance:</b>
-              On fine-grained datasets, procedural data performs better than realistic data with no semantic overlap. When there is semantic overlap, procedural data is within &lt 10%</a>.
+              Prior visual memory approaches can efficiently unlearn data in the memory, but not data used to train the embedding model. 
+              Our proposal to use procedural data makes the latter case much less likely, as procedural data has drastically lower exposure to privacy risk.
             </figcaption>
         </figure>
       </div>
-      <div class="box" style="width: 53%;">
+      <div class="box" style="width: 53.2%;">
         <figure>
           <img src="./static/images/datasets_examples_website.png"/>
             <figcaption style="font-size: 1.0em; text-align: justify; display: block; padding-top: 19px;">
-              <b>Performance:</b>
-              On fine-grained datasets, procedural data performs better than realistic data with no semantic overlap. When there is semantic overlap, procedural data is within &lt 10%</a>.
+              Unlike real world data, procedural data is non-realistic and
+              is generated via simple code, and thus is much less exposed
+              to the privacy or bias risks that motivate unlearning. 
             </figcaption>
         </figure>
       </div>
