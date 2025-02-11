@@ -347,56 +347,39 @@
       <div class="box" style="width: 30%;">
         <figure>
           <img src="./static/images/segmentation_zeroshot_table.png"/>
-            <figcaption style="font-size: 1.0em; text-align: justify; display: block; padding-top: 19px;">
+            <figcaption style="font-size: 1.0em; text-align: justify; display: block; padding-top: 0px;">
               <b>Performance:</b>
               R2 of PCA features and human label segmentations. The best procedural model is within 10% of real data
               models and highly above random and RGB features. </a>.
             </figcaption>
         </figure>
       </div>
-      <div class="box" style="width: 70%; padding: 0px">
+      <div class="box" style="padding: 0px; width: 70%;">
+        <figure>
           <div id="results-carousel" class="carousel results-carousel" style="background-size: 0px">
             <div class="item item-zeroshot">
-              <figure>
-                <img src="./static/images/segmentation_zeroshot.png"/>
-                  <figcaption style="font-size: 1.0em; text-align: justify; display: block; padding-top: 19px;">
-                    <b>Visualization:</b>
-                    Zero-shot segmentation on COCO (Lin et al., 2015) using principal component analysis (PCA) features. Procedural models
-                    clearly separate the bike and zebra from the background.</a>.
-                  </figcaption>
-              </figure>
+              <img src="./static/images/segmentation_zeroshot.png" style="width: 96%">
             </div>
-            <div class="item item-cub">
-              <figure>
-                <img src="./static/images/segmentation_zeroshot.png"/>
-                  <figcaption style="font-size: 1.0em; text-align: justify; display: block; padding-top: 19px;">
-                    <b>Visualization:</b>
-                    Zero-shot segmentation on COCO (Lin et al., 2015) using principal component analysis (PCA) features. Procedural models
-                    clearly separate the bike and zebra from the background.</a>.
-                  </figcaption>
-              </figure>
+            <div class="item item-zeroshot">
+              <img src="./static/images/segmentation_zeroshot.png" style="width: 96%">
             </div>
-            <div class="item item-food">
-              <figure>
-                <img src="./static/images/segmentation_zeroshot.png"/>
-                  <figcaption style="font-size: 1.0em; text-align: justify; display: block; padding-top: 19px;">
-                    <b>Visualization:</b>
-                    Zero-shot segmentation on COCO (Lin et al., 2015) using principal component analysis (PCA) features. Procedural models
-                    clearly separate the bike and zebra from the background.</a>.
-                  </figcaption>
-              </figure>
+            <div class="item item-zeroshot">
+              <img src="./static/images/segmentation_zeroshot.png" style="width: 96%">
             </div>
-            <div class="item item-flowers">
-              <figure>
-                <img src="./static/images/segmentation_zeroshot.png"/>
-                  <figcaption style="font-size: 1.0em; text-align: justify; display: block; padding-top: 19px;">
-                    <b>Visualization:</b>
-                    Zero-shot segmentation on COCO (Lin et al., 2015) using principal component analysis (PCA) features. Procedural models
-                    clearly separate the bike and zebra from the background.</a>.
-                  </figcaption>
-              </figure>
+            <div class="item item-zeroshot">
+              <img src="./static/images/segmentation_zeroshot.png" style="width: 96%">
             </div>
           </div>
+          <figcaption style="font-size: 1.0em; text-align: justify; display: block; padding-bottom: 0px;">
+            <b>Visualization:</b>
+            (1) Zero-shot segmentation on COCO (Lin et al., 2015) using principal component analysis (PCA) features. Procedural models
+            clearly separate the bike and zebra from the background.
+            (2) In-context segmentation on Ade20k (Zhou et al., 2018b). Procedural models can segment arbitrary classes given a single
+            exemplar prompt. This holds even in the second image, where there are many distractors of the same color
+            (3) KNN segmentation on Pascal (Everingham et al., 2010). Procedural models are limited at segmenting with KNN, due to not 
+            seeing real-world objects during training.
+          </figcaption>
+      </figure>
       </div>
     </div>
   </div>
