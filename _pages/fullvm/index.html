@@ -246,19 +246,19 @@
     <div class="columns is-centered">
 	    <h3 class="title is-4">Limitations of prior visual memory approaches</h3>
     </div>
-    <div class="box" style="width: 70%; margin:0 auto;">
+    <div class="box" style="width: 100%; margin:0 auto;">
       <figure>
         <img src="./static/images/unlearning.png" style="display: block; margin: auto;"/>
-        <figcaption style="font-size: 1.0em; padding-bottom: 20px">
+        <figcaption style="font-size: 1.0em; padding-bottom: 20px; text-align: justify">
           Prior visual memory approaches can efficiently unlearn data in the memory, but not data used to train the embedding model;
           our proposal to use procedural data makes the latter case much less likely.
         </figcaption>
       </figure>
     </div>
-    <div class="box" style="width: 70%; display: block; margin: auto;">
+    <div class="box" style="width: 100%; display: block; margin: auto;">
       <figure>
         <img src="./static/images/datasets_examples_website.png" style="display: block; margin: auto"/>
-        <figcaption style="font-size: 1.0em">
+        <figcaption style="font-size: 1.0em; text-align: justify">
           Unlike real world data, procedural data is non-realistic and
           is generated via simple code, and thus is much less exposed to the privacy or bias risks that motivate unlearning.
         </figcaption>
@@ -269,8 +269,9 @@
 <section class="section" style="margin-top: -5px;">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
-	    <h3 class="title is-4">Procedurally trained embeddings are effective KNN classifiers of real images</h3>
+	    <h3 class="title is-4">KNN classification with procedural embeddings and visual memory</h3>
     </div>
+    <p>Despite having no training on real images, not even linear probes, procedural models are effecitve KNN classifiers of real images.</p>
     <div class="box-container">
       <div class="box">
         <figure>
@@ -315,8 +316,9 @@
 <section class="section" style="margin-top: -5px;">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
-	    <h3 class="title is-4">Procedural models are also capable of semantic segmentation</h3>
+	    <h3 class="title is-4">Semantic segmentation with procedural embeddings and visual memory</h3>
     </div>
+    <p>Procedural models have remarkable semantic segmentation ability. </p>
     <div class="box-container">
       <div class="box" style="padding-top: 0px; width: 30%;">
         <figure>
