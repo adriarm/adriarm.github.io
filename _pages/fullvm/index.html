@@ -271,7 +271,7 @@
     <div class="columns is-centered">
 	    <h3 class="title is-4">KNN classification with procedural embeddings and visual memory</h3>
     </div>
-    <p>Despite having no training on real images, not even linear probes, procedural models are effecitve KNN classifiers of real images.</p>
+    <p>Despite having no training on real images, not even linear probes, procedural models are effective KNN classifiers.</p>
     <div class="box-container">
       <div class="box">
         <figure>
@@ -318,7 +318,7 @@
     <div class="columns is-centered">
 	    <h3 class="title is-4">Semantic segmentation with procedural embeddings and visual memory</h3>
     </div>
-    <p>Procedural models have remarkable semantic segmentation ability. </p>
+    <p>Additionally, procedural models have remarkable semantic segmentation ability. </p>
     <div class="box-container">
       <div class="box" style="padding-top: 0px; width: 30%;">
         <figure>
@@ -360,13 +360,23 @@
     <div class="columns is-centered">
 	    <h3 class="title is-4">Handling of sensitive data</h3>
     </div>
+    <p>Sensitive data is information that legally or ethically needs
+      to be handled with high standards of care and control, such
+      as facial identity or medical data. In this scenario, directly
+      training on the data is often not acceptable; procedural mod-
+      els with memory thus offer an elegant solution.</p>
     <div class="box" style="width: 100%;">
       <figure>
         <img src="./static/images/celeba_similarity_row.png"/>
           <figcaption style="font-size: 1.0em; text-align: justify; display: block;">
-            Sensitive data is information that legally or ethically needs to be handled with high standards of care and control, such that directly
-            training on the data is often not acceptable. Despite never training on faces, a model trained on the Shaders KML Mixup procedural dataset 
-            can match for appearance and facial expressions on CelebA.
+            Despite never training on faces, the Shaders KML Mixup model can match for appearance and facial expressions on CelebA
+          </figcaption>
+      </figure>
+      <figure>
+        <img src="./static/images/medicalmnist.png"/>
+          <figcaption style="font-size: 1.0em; text-align: justify; display: block;">
+            KNN classification accuracy on the MedMNIST datasets. Procedural models match or exceed the best result from the original paper (Yang et al., 2022) 
+            (a normally trained ResNet) in 7/10 datasets.
           </figcaption>
       </figure>
     </div>
