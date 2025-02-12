@@ -158,13 +158,15 @@
             src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
           </script>
           <p>
-            We train representation models with procedural data only, and apply them on visual similarity, classification, and semantic segmentation tasks 
-            without further training by using visual memory&mdash;an explicit database of reference image embeddings. Unlike prior work on visual memory, our 
+            We train representation models with <a href="https://mbaradad.github.io/learning_with_noise/">procedural data</a> only, and apply them on visual similarity, classification, and semantic segmentation tasks 
+            without further training by using <a href="https://arxiv.org/pdf/2408.08172">visual memory</a>&mdash;an explicit database of reference image embeddings. Unlike prior work on visual memory, our 
             approach achieves full compartmentalization with respect to all real-world images while retaining strong performance. Compared to a model trained 
-            on Places, our procedural model performs within 1% on NIGHTS visual similarity, outperforms by 8% and 15% on CUB200 and Flowers102 fine-grained 
-            classification, and is within 10% on  ImageNet-1K classification. It also demonstrates strong zero-shot segmentation, achieving an \(R^2\) on COCO 
-            within 10% of the models trained on real data. Finally, we analyze procedural versus real data models, showing that parts of the same object have 
-            dissimilar representations in procedural models, resulting in incorrect searches in memory and explaining the remaining performance gap.
+            on Places, our procedural model performs within 1% on <a href="https://dreamsim-nights.github.io">NIGHTS</a> visual similarity, outperforms by 8% 
+            and 15% on <a href="https://www.vision.caltech.edu/datasets/cub_200_2011/">CUB200</a> and <a href="https://www.robots.ox.ac.uk/~vgg/data/flowers/102/">Flowers102</a> 
+            fine-grained classification, and is within 10% on <a href="https://www.image-net.org">ImageNet-1K</a> classification. It also demonstrates 
+            strong zero-shot segmentation, achieving an \(R^2\) on <a href="https://cocodataset.org/#home">COCO</a> within 10% of the models trained on real data. 
+            Finally, we analyze procedural versus real data models, showing that parts of the same object have dissimilar representations in procedural models, resulting 
+            in incorrect searches in memory and explaining the remaining performance gap.
           </p>
           <hr>
         </div>
@@ -183,7 +185,8 @@
       </a>
       <br>
       <div class="content has-text-justified">
-        <p><b>Our approach is as follows</b>: first, an embedding model is trained on procedural data generated with OpenGL code using self-supervised learning (SSL). 
+        <p><b>Our approach is as follows</b>: first, an embedding model is trained on procedural data generated with OpenGL code using 
+          <a href="https://ai.meta.com/blog/dino-paws-computer-vision-with-self-supervised-transformers-and-10x-more-efficient-training/">self-supervised learning (SSL)</a>. 
           In this stage, unlearning and attribution is difficult, but procedural data is much less exposed to privacy/bias risk and real-world semantics. 
           Next, we use the embedding model on real world tasks using only a visual memory of reference image embeddings, without extra training. 
           When working with real instead of procedural data, there is high privacy/bias risk and real world semantics. 
@@ -369,7 +372,7 @@
       <figure>
         <img src="./static/images/celeba_similarity_row.png"/>
           <figcaption style="font-size: 1.0em; text-align: justify; display: block; padding-bottom: 0px;">
-            Despite never training on faces, the Shaders KML Mixup model can match for appearance and facial expressions on CelebA
+            Despite never training on faces, the Shaders KML Mixup model can match for appearance and facial expressions on <a href="https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html">CelebA</a>
           </figcaption>
       </figure>
     </div>
@@ -377,7 +380,7 @@
       <figure>
         <img src="./static/images/medicalmnist.png"/>
           <figcaption style="font-size: 1.0em; text-align: justify; display: block;">
-            KNN classification accuracy on the MedMNIST datasets. Procedural models match or exceed the best result from the original paper (Yang et al., 2022) 
+            KNN classification accuracy on the <a href="https://medmnist.com">MedMNIST</a> datasets. Procedural models match or exceed the best result from the original paper (Yang et al., 2022) 
             (a normally trained ResNet) in 7/10 datasets.
           </figcaption>
       </figure>
