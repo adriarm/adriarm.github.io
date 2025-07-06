@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="We train representation models with procedural data only, and apply them on visual similarity, classification, and semantic segmentation 
+        tasks without further training by using visual memory---an explicit database of reference image embeddings. Unlike prior work on visual memory, 
+        our approach achieves full separation of perceptiona and knowledge with respect to all real-world images while retaining strong performance.">
+  <meta name="keywords" content="Visual Memory, Procedural Data, Computer Vision">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Compartmentalizing Knowledge with Procedural Data</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="styles.css">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+
+  <link rel="stylesheet" href="./static/css/images.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+</head>
+<body>
+
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Separating Knowledge with Procedural Data</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://adriarm.github.io">Adrián Rodríguez-Muñoz</a>,</span>
+            <span class="author-block">
+              <a href="https://mbaradad.github.io">Manel Baradad</a>,</span>
+            <span class="author-block">
+                <a href="https://web.mit.edu/phillipi/">Phillip Isola</a>,</span>
+            <span class="author-block">
+              <a href="https://groups.csail.mit.edu/vision/torralbalab/">Antonio Torralba</a></span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">MIT CSAIL</span>
+          </div> 
+          <!-- <div class="is-size-3 publication-authors">
+            <span class="author-block">CVPR 2024</span>
+          </div>  -->
+
+          <!-- <div class="is-size-4 publication-authors">
+            <span class="author-block">NeurIPS 2023</span>
+          </div>  -->
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+		            <a href="https://arxiv.org/abs/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+             	 </a>   
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/adriarm/separating_knowledge"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <!-- <span class="link-block">
+              	<a href="https://github.com/multimodal-interpretability/FIND" 
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+              	</a>  
+              </span> -->
+              <!-- <span class="link-block">
+		            <a href="https://text-vision-data.csail.mit.edu/web/supplementary.html"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-bars"></i>
+                  </span>
+                  <span>More Results</span>
+             	 </a>   
+              <!-- </span> -->
+              <!-- <span class="link-block">
+		            <a href="./static/figures/sm.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file"></i>
+                  </span>
+                  <span>Supplementary</span>
+             	 </a>   
+              </span> -->
+            
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <script type="text/javascript" id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+          </script>
+          <p>
+            We train representation models with <a href="https://mbaradad.github.io/learning_with_noise/">procedural data</a> only, and apply them on visual similarity, classification, and semantic segmentation tasks 
+            without further training by using <a href="https://arxiv.org/pdf/2408.08172">visual memory</a>&mdash;an explicit database of reference image embeddings. Unlike prior work on visual memory, our 
+            approach achieves full compartmentalization with respect to all real-world images while retaining strong performance. Compared to a model trained 
+            on Places, our procedural model performs within 1% on <a href="https://dreamsim-nights.github.io">NIGHTS</a> visual similarity, outperforms by 8% 
+            and 15% on <a href="https://www.vision.caltech.edu/datasets/cub_200_2011/">CUB200</a> and <a href="https://www.robots.ox.ac.uk/~vgg/data/flowers/102/">Flowers102</a> 
+            fine-grained classification, and is within 10% on <a href="https://www.image-net.org">ImageNet-1K</a> classification. It also demonstrates 
+            strong zero-shot segmentation, achieving an \(R^2\) on <a href="https://cocodataset.org/#home">COCO</a> within 10% of the models trained on real data. 
+            Finally, we analyze procedural versus real data models, showing that parts of the same object have dissimilar representations in procedural models, resulting 
+            in incorrect searches in memory and explaining the remaining performance gap.
+          </p>
+          <hr>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <a classa="pub_image">
+        <img src="./static/images/teaser_v7.png" class="pub_image"/>
+      </a>
+      <br>
+      <div class="content has-text-justified">
+        <p><b>Our approach is as follows</b>: first, an embedding model is trained on procedural data generated with OpenGL code using 
+          <a href="https://ai.meta.com/blog/dino-paws-computer-vision-with-self-supervised-transformers-and-10x-more-efficient-training/">self-supervised learning (SSL)</a>. 
+          In this stage, unlearning and attribution is difficult, but procedural data is much less exposed to privacy/bias risk and real-world semantics. 
+          Next, we use the embedding model on real world tasks using only a visual memory of reference image embeddings, without extra training. 
+          When working with real instead of procedural data, there is high privacy/bias risk and real world semantics. 
+          However, isolating all real data to only the memory makes efficient data unlearning and privacy analysis possible. 
+          The overall system has perfect control over all real world data, while approximating the performance of standard training.</p>
+        <hr>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="section" style="margin-top: -5px;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+	    <h3 class="title is-4">Classification with visual memory</h3>
+    </div>
+    <figure>
+      <img src="./static/images/visual_memory_row.png"/>
+        <figcaption style="font-size: 1.0em; text-align: justify; display: block; padding-top: 19px;">
+          Classification with visual memory uses k-nearest neighbours (KNN) \wrt 
+          a database of embeddings rather than a parametric classifier (left). This 
+          allows efficient adding and removal of data through modification of the database (right).
+        </figcaption>
+    </figure>
+</section>
+
+<section class="section" style="margin-top: -5px;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+	    <h3 class="title is-4">Limitations of prior approaches</h3>
+    </div>
+    <figure>
+      <img src="./static/images/unlearning.png"/>
+        <figcaption style="font-size: 1.0em; text-align: justify; display: block; padding-top: 19px;">
+          Prior visual memory approaches can efficiently unlearn
+          data in the memory, but not data used to train the embedding model. Our proposal to use <em>procedural data</em> makes the latter case much less
+          likely, as procedural data has drastically lower exposure to privacy risk.
+        </figcaption>
+    </figure>
+</section>
+
+<section class="section" style="margin-top: -5px;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+	    <h3 class="title is-4">Examples of procedural data</h3>
+    </div>
+    <figure>
+      <img src="./static/images/datasets_examples_small.png"/>
+        <figcaption style="font-size: 1.0em; text-align: justify; display: block; padding-top: 19px;">
+          Examples of procedural data from prior work, our new Masked Shaders: Shaders KML and Shaders KML Mixup, and the real
+          datasets Places and ImageNet. Unlike real world data, procedural data is non-realistic and
+          is generated via simple code, and thus is much less exposed
+          to the privacy or bias risks that motivate unlearning. 
+        </figcaption>
+    </figure>
+</section> -->
+
+<section class="section" style="margin-top: -5px;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+	    <h3 class="title is-4">Limitations of prior visual memory approaches</h3>
+    </div>
+    <div class="box" style="width: 100%; margin:0 auto;">
+      <figure>
+        <img src="./static/images/unlearning.png" style="display: block; margin: auto;"/>
+        <figcaption style="font-size: 1.0em; padding-bottom: 20px; text-align: justify">
+          Prior visual memory approaches can efficiently unlearn data in the memory, but not data used to train the embedding model;
+          our proposal to use procedural data makes the latter case much less likely.
+        </figcaption>
+      </figure>
+    </div>
+    <div class="box" style="width: 100%; display: block; margin: auto;">
+      <figure>
+        <img src="./static/images/datasets_examples_website.png" style="display: block; margin: auto"/>
+        <figcaption style="font-size: 1.0em; text-align: justify">
+          Unlike real world data, procedural data is non-realistic and
+          is generated via simple code, and thus is much less exposed to the privacy or bias risks that motivate unlearning.
+        </figcaption>
+      </figure> 
+  </div>
+</section>
+
+<section class="section" style="margin-top: -5px;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+	    <h3 class="title is-4">KNN classification with procedural embeddings and visual memory</h3>
+    </div>
+    <p>Despite having no training on real images, not even linear probes, procedural models are effective KNN classifiers.</p>
+    <div class="box-container">
+      <div class="box">
+        <figure>
+          <img src="./static/images/classification.png"/>
+            <figcaption style="font-size: 1.0em; text-align: justify; display: block; padding-top: 19px;">
+              <b>Performance:</b>
+              On fine-grained datasets, procedural data performs better than realistic data with no semantic overlap. When there is semantic overlap, procedural data is within &lt 10%</a>.
+            </figcaption>
+        </figure>
+      </div>
+      <div class="box" style="padding: 0px">
+        <figure>
+          <div id="results-carousel" class="carousel results-carousel" style="background-size: 0px">
+            <div class="item item-imagenet">
+              <img src="./static/images/imagenet_neighbours.png" style="width: 96%">
+            </div>
+            <div class="item item-cub">
+              <img src="./static/images/cub_neighbours.png" style="width: 96%">
+            </div>
+            <div class="item item-food">
+              <img src="./static/images/food_neighbours.png" style="width: 96%">
+            </div>
+            <div class="item item-flowers">
+              <img src="./static/images/flowers_neighbours.png" style="width: 96%">
+            </div>
+            <!-- <div class="item item-imagenet">
+              <img src="./static/images/imagenet_neighbours.png" style="width: 96%">
+            </div> -->
+          </div>
+          <figcaption style="font-size: 1.0em; text-align: justify; display: block; padding-bottom: 42px;">
+            <b>Visualization:</b>
+            Procedural models can effectively search for perceptually
+            similar images on a wide variety of datasets, despite not seeing
+            real-world data during training.
+          </figcaption>
+      </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="margin-top: -5px;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+	    <h3 class="title is-4">Semantic segmentation with procedural embeddings and visual memory</h3>
+    </div>
+    <p>Additionally, procedural models have remarkable semantic segmentation ability. </p>
+    <div class="box-container">
+      <div class="box" style="padding-top: 0px; width: 30%;">
+        <figure>
+          <img src="./static/images/segmentation_zeroshot_table.png"/>
+            <figcaption style="font-size: 1.0em; text-align: justify; display: block; padding-top: 0px;">
+              <b>Performance:</b> \(R^2\) of PCA features and human label segmentations. The best procedural model is within 10% of real data
+              models and highly above random and RGB features.
+            </figcaption>
+        </figure>
+      </div>
+      <div class="box" style="padding: 0px; width: 70%;">
+        <figure>
+          <div id="results-carousel" class="carousel results-carousel" style="background-size: 0px">
+            <div class="item item-zeroshot">
+              <img src="./static/images/segmentation_zeroshot.png" style="width: 96%">
+            </div>
+            <div class="item item-zeroshot">
+              <img src="./static/images/segmentation_incontext_website.png" style="width: 96%">
+            </div>
+            <div class="item item-zeroshot">
+              <img src="./static/images/segmentation_knn.png" style="width: 96%">
+            </div>
+            <!-- <div class="item item-zeroshot">
+              <img src="./static/images/segmentation_zeroshot.png" style="width: 96%">
+            </div> -->
+          </div>
+          <figcaption style="font-size: 1.0em; text-align: justify; display: block; padding-top: 10px; padding-bottom: 110px;">
+            <b>Visualization:</b> Procedurally trained models are effective at zero-shot and in-context segmentations, but struggle at KNN segmentation due to not 
+            seeing real-world objects during training.
+          </figcaption>
+      </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="margin-top: -5px;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+	    <h3 class="title is-4">Handling of sensitive data</h3>
+    </div>
+    <p>
+      Sensitive data is information that legally or ethically needs to be handled with high standards of care and control, such
+      as facial identity or medical data. In this scenario, directly training on the data is often not acceptable; procedural models
+      with memory thus offer an elegant solution.
+    </p>
+    <div class="box" style="width: 100%;">
+      <figure>
+        <img src="./static/images/celeba_similarity_row.png"/>
+          <figcaption style="font-size: 1.0em; text-align: justify; display: block; padding-bottom: 0px;">
+            Despite never training on faces, a model trained on the Shaders KML Mixup procedural dataset can match for appearance and facial expressions on <a href="https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html">CelebA</a>.
+          </figcaption>
+      </figure>
+    </div>
+    <div class="box" style="width: 100%;">
+      <figure>
+        <img src="./static/images/medicalmnist.png"/>
+          <figcaption style="font-size: 1.0em; text-align: justify; display: block;">
+            KNN classification accuracy on the <a href="https://medmnist.com">MedMNIST</a> datasets. Procedural models match or exceed the best result from the original paper (Yang et al., 2022) 
+            (a normally trained ResNet) in 7/10 datasets.
+          </figcaption>
+      </figure>
+    </div>
+</section>
+
+<section class="section" id="BibTeX">
+<div class="container is-max-desktop content">
+<h2 class="title">Related Work</h2>
+<p style="font-size:14px; text-align: justify">
+  [1] Baradad, M., Wulff, J., Wang, T., Isola, P., and Torralba, A. Learning to See by Looking at Noise<br />
+
+  [2] Baradad, M., Chen, C.-F., Wulff, J., Wang, T., Feris, R., Torralba, A., and Isola, P. Procedural Image Programs for Representation Learning<br />
+
+  [3] Geirhos, R., Jaini, P., Stone, A., Medapati, S., Yi, X., Toderici, G., Ogale, A., and Shlens, J. Towards flexible perception with visual memory<br />
+
+  [4] Caron, M., Touvron, H., Misra, I., Jegou, H., Mairal, J., Bojanowski, P., and Joulin, A. Emerging Properties in Self-Supervised Vision Transformers<br />
+
+  [5] Wah, C., Branson, S., Welinder, P., Perona, P., and Belongie, S. The Caltech-UCSD Birds-200-2011 Dataset. Technical Report CNS-TR-2011-001<br />
+
+  [6] Nilsback, M.-E. and Zisserman, A. Automated Flower Classification over a Large Number of Classes<br />
+
+  [7] Bossard, L., Guillaumin, M., and Van Gool, L. Food-101 – Mining Discriminative Components with Random Forests<br />
+
+  [8] Russakovsky, O., Deng, J., Su, H., Krause, J., Satheesh, S., Ma, S., Huang, Z., Karpathy, A., Khosla, A., Bernstein, M., Berg, A. C., and Fei-Fei, L. ImageNet Large Scale Visual Recognition Challenge<br />
+
+  [9] Lin, T.-Y., Maire, M., Belongie, S., Bourdev, L., Girshick, R., Hays, J., Perona, P., Ramanan, D., Zitnick, C. L., and Dollar, P. Microsoft COCO: Common Objects in Context<br />
+
+  [10] Liu, Z., Luo, P.,Wang, X., and Tang, X. Deep Learning Face Attributes in the Wild<br />
+</p>
+</div>
+</section>
+
+<section class="section" id="BibTeX">
+<div class="container is-max-desktop content">
+  <h2 class="title">BibTeX</h2>
+  <pre><code>
+    @misc{rodriguezmunoz2025compartmentalizing,
+      title = {Compartmentalizing Knowledge with Procedural Data},
+      author = {Rodríguez-Muñoz, Adrián and Baradad, Manel and Isola, Phillip and Torralba, Antonio},
+      year={2025},
+    }
+  </code></pre>
+</div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Acknowledgements</h2>
+    Adrián Rodríguez-Muñoz is supported by the LaCaixa fellowship. The Torralba and Isola labs are supported by DSTA Singapore and the ONR MURI program.
+  </div>
+</section>
+
+<!-- </div> -->
+
+	
+<!-- <footer class="footer">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content" style="text-align: center;">
+          <p>
+           
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer> -->
+
+<style type="text/css" media="all">
+  .page__footer {
+    /*float: left;*/
+    padding-top: 1em;
+    padding-bottom: 0.5em;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    clear: both;
+    /* sticky footer fix start */
+    /*position: absolute;*/
+    bottom: 0;
+    height: auto;
+    /* sticky footer fix end */
+    margin-top: 3em;
+    color: #898c8f;
+    background-color: #f2f3f3;
+    padding-left: 0em;
+    padding-right: 0em;
+    max-width: 100%;
+  }
+  
+  .page__footer .links {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1000px;
+    /*padding: 0;*/
+  }
+  
+  .page__footer .links .social-icons {
+    padding-left: 0;
+    text-align: left;
+  }
+  </style>
+  
+  <div class="page__footer">
+    <div class="links">
+      <ul class="social-icons">
+        <li style='display: inline-block; margin-right: 5px; font-style: bold'><strong>Links:</strong></li>
+        <li style='display: inline-block; margin-right: 5px; font-style: normal;'><a href="https://accessibility.mit.edu"><i class="fa fa-fw fas fa-universal-access" aria-hidden="true"></i> Accessibility</a></li>
+      </ul>
+      This website is adapted from the <a href="https://github.com/nerfies/nerfies.github.io">Nerfies template</a>, which you are free to borrow if you link back to it in the footer.
+    </div>
+    <br>
+  </div>
+
+</body>
+</html>

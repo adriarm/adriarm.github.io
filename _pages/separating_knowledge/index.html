@@ -4,11 +4,22 @@
   <meta charset="utf-8">
   <meta name="description"
         content="We train representation models with procedural data only, and apply them on visual similarity, classification, and semantic segmentation 
-        tasks without further training by using visual memory---an explicit database of reference image embeddings. Unlike prior work on visual memory, 
-        our approach achieves full separation of perceptiona and knowledge with respect to all real-world images while retaining strong performance.">
-  <meta name="keywords" content="Visual Memory, Procedural Data, Computer Vision">
+        tasks without further training by using visual memory—an explicit database of reference image embeddings. Unlike prior work on visual memory, 
+        our approach achieves full separation of perception and knowledge with respect to all real-world images while retaining strong performance.">
+  <meta name="keywords" content="Visual Memory, Procedural Data, Computer Vision, Machine Learning, Representation Learning, Privacy-Preserving AI, MIT CSAIL">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Compartmentalizing Knowledge with Procedural Data</title>
+  <meta name="author" content="Adrián Rodríguez-Muñoz, Manel Baradad, Phillip Isola, Antonio Torralba">
+  <meta property="og:title" content="Separating Knowledge and Perception with Procedural Data">
+  <meta property="og:description" content="Train embeddings on procedural data, apply on real images with visual memory for separation between perception and knowledge.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://adriarm.github.io/separating_knowledge/">
+  <meta property="og:image" content="./static/images/teaser_v7.png">
+  <!-- <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Separating Knowledge and Perception with Procedural Data">
+  <meta name="twitter:description" content="A novel approach to computer vision that separates perceptual skills from knowledge using procedural data and visual memory.">
+  <meta name="twitter:image" content="./static/images/teaser_v7.png"> -->
+  
+  <title>Separating Knowledge and Perception with Procedural Data</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -35,7 +46,7 @@
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
   <link rel="stylesheet" href="styles.css">
-  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+  <link rel="icon" href="./static/images/favicon.svg">
 
   <link rel="stylesheet" href="./static/css/images.css">
 
@@ -48,14 +59,12 @@
 </head>
 <body>
 
-
-
 <section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Separating Knowledge with Procedural Data</h1>
+          <h1 class="title is-1 publication-title">Separating Knowledge and Perception with Procedural Data</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://adriarm.github.io">Adrián Rodríguez-Muñoz</a>,</span>
@@ -69,13 +78,9 @@
           <div class="is-size-5 publication-authors">
             <span class="author-block">MIT CSAIL</span>
           </div> 
-          <!-- <div class="is-size-3 publication-authors">
-            <span class="author-block">CVPR 2024</span>
-          </div>  -->
-
-          <!-- <div class="is-size-4 publication-authors">
-            <span class="author-block">NeurIPS 2023</span>
-          </div>  -->
+          <div class="is-size-3 publication-authors">
+            <span class="author-block">ICML 2025</span>
+          </div>
 
           <div class="column has-text-centered">
             <div class="publication-links">
@@ -107,44 +112,13 @@
                   <span>Code</span>
                 </a>
               </span>
-              <!-- Code Link. -->
-              <!-- <span class="link-block">
-              	<a href="https://github.com/multimodal-interpretability/FIND" 
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-github"></i>
-                  </span>
-                  <span>Code</span>
-              	</a>  
-              </span> -->
-              <!-- <span class="link-block">
-		            <a href="https://text-vision-data.csail.mit.edu/web/supplementary.html"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-bars"></i>
-                  </span>
-                  <span>More Results</span>
-             	 </a>   
-              <!-- </span> -->
-              <!-- <span class="link-block">
-		            <a href="./static/figures/sm.pdf"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file"></i>
-                  </span>
-                  <span>Supplementary</span>
-             	 </a>   
-              </span> -->
-            
             </div>
-
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -159,13 +133,7 @@
           <p>
             We train representation models with <a href="https://mbaradad.github.io/learning_with_noise/">procedural data</a> only, and apply them on visual similarity, classification, and semantic segmentation tasks 
             without further training by using <a href="https://arxiv.org/pdf/2408.08172">visual memory</a>&mdash;an explicit database of reference image embeddings. Unlike prior work on visual memory, our 
-            approach achieves full compartmentalization with respect to all real-world images while retaining strong performance. Compared to a model trained 
-            on Places, our procedural model performs within 1% on <a href="https://dreamsim-nights.github.io">NIGHTS</a> visual similarity, outperforms by 8% 
-            and 15% on <a href="https://www.vision.caltech.edu/datasets/cub_200_2011/">CUB200</a> and <a href="https://www.robots.ox.ac.uk/~vgg/data/flowers/102/">Flowers102</a> 
-            fine-grained classification, and is within 10% on <a href="https://www.image-net.org">ImageNet-1K</a> classification. It also demonstrates 
-            strong zero-shot segmentation, achieving an \(R^2\) on <a href="https://cocodataset.org/#home">COCO</a> within 10% of the models trained on real data. 
-            Finally, we analyze procedural versus real data models, showing that parts of the same object have dissimilar representations in procedural models, resulting 
-            in incorrect searches in memory and explaining the remaining performance gap.
+            approach achieves full separation of perception and knowledge with respect to all real-world images while retaining strong performance. In standard approaches, perceptual skills and knowledge are entangled—there is no boundary between what the model is able to do (e.g. classification, segmentation), and what it knows (e.g. people, dogs). Even in visual memory approaches, the embedding model is trained on real data, leaking knowledge into the representation. Our method addresses these limitations with efficient training (no real data), easy editability (data addition/removal through database modification), and explainability (decisions traced to specific examples).
           </p>
           <hr>
         </div>
@@ -175,94 +143,27 @@
   </div>
 </section>
 
-
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <a classa="pub_image">
-        <img src="./static/images/teaser_v7.png" class="pub_image"/>
-      </a>
-      <br>
-      <div class="content has-text-justified">
-        <p><b>Our approach is as follows</b>: first, an embedding model is trained on procedural data generated with OpenGL code using 
-          <a href="https://ai.meta.com/blog/dino-paws-computer-vision-with-self-supervised-transformers-and-10x-more-efficient-training/">self-supervised learning (SSL)</a>. 
-          In this stage, unlearning and attribution is difficult, but procedural data is much less exposed to privacy/bias risk and real-world semantics. 
-          Next, we use the embedding model on real world tasks using only a visual memory of reference image embeddings, without extra training. 
-          When working with real instead of procedural data, there is high privacy/bias risk and real world semantics. 
-          However, isolating all real data to only the memory makes efficient data unlearning and privacy analysis possible. 
-          The overall system has perfect control over all real world data, while approximating the performance of standard training.</p>
-        <hr>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- <section class="section" style="margin-top: -5px;">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-	    <h3 class="title is-4">Classification with visual memory</h3>
-    </div>
-    <figure>
-      <img src="./static/images/visual_memory_row.png"/>
-        <figcaption style="font-size: 1.0em; text-align: justify; display: block; padding-top: 19px;">
-          Classification with visual memory uses k-nearest neighbours (KNN) \wrt 
-          a database of embeddings rather than a parametric classifier (left). This 
-          allows efficient adding and removal of data through modification of the database (right).
-        </figcaption>
-    </figure>
-</section>
-
 <section class="section" style="margin-top: -5px;">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
-	    <h3 class="title is-4">Limitations of prior approaches</h3>
-    </div>
-    <figure>
-      <img src="./static/images/unlearning.png"/>
-        <figcaption style="font-size: 1.0em; text-align: justify; display: block; padding-top: 19px;">
-          Prior visual memory approaches can efficiently unlearn
-          data in the memory, but not data used to train the embedding model. Our proposal to use <em>procedural data</em> makes the latter case much less
-          likely, as procedural data has drastically lower exposure to privacy risk.
-        </figcaption>
-    </figure>
-</section>
-
-<section class="section" style="margin-top: -5px;">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-	    <h3 class="title is-4">Examples of procedural data</h3>
-    </div>
-    <figure>
-      <img src="./static/images/datasets_examples_small.png"/>
-        <figcaption style="font-size: 1.0em; text-align: justify; display: block; padding-top: 19px;">
-          Examples of procedural data from prior work, our new Masked Shaders: Shaders KML and Shaders KML Mixup, and the real
-          datasets Places and ImageNet. Unlike real world data, procedural data is non-realistic and
-          is generated via simple code, and thus is much less exposed
-          to the privacy or bias risks that motivate unlearning. 
-        </figcaption>
-    </figure>
-</section> -->
-
-<section class="section" style="margin-top: -5px;">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-	    <h3 class="title is-4">Limitations of prior visual memory approaches</h3>
+	    <h3 class="title is-4">Approach: Procedural Training + Visual Memory</h3>
     </div>
     <div class="box" style="width: 100%; margin:0 auto;">
       <figure>
-        <img src="./static/images/unlearning.png" style="display: block; margin: auto;"/>
+        <img src="./static/figures_poster/diagram.pdf" style="display: block; margin: auto;"/>
         <figcaption style="font-size: 1.0em; padding-bottom: 20px; text-align: justify">
-          Prior visual memory approaches can efficiently unlearn data in the memory, but not data used to train the embedding model;
-          our proposal to use procedural data makes the latter case much less likely.
+          Comparison of standard classifier approach vs. our visual memory approach with procedural training. 
+          Unlike prior work, we achieve complete separation between perceptual capabilities and real-world knowledge.
         </figcaption>
       </figure>
     </div>
     <div class="box" style="width: 100%; display: block; margin: auto;">
       <figure>
-        <img src="./static/images/datasets_examples_website.png" style="display: block; margin: auto"/>
+        <img src="./static/figures/datasets_examples_small.pdf" style="display: block; margin: auto"/>
         <figcaption style="font-size: 1.0em; text-align: justify">
-          Unlike real world data, procedural data is non-realistic and
-          is generated via simple code, and thus is much less exposed to the privacy or bias risks that motivate unlearning.
+          Examples of procedural data from prior work, our new Masked Shaders dataset, and real datasets (Places and ImageNet). 
+          Procedural data = simple OpenGL programs with zero privacy risk, no personal information or real objects, 
+          yet they enable learning fundamental visual features that generalize to real images.
         </figcaption>
       </figure> 
   </div>
@@ -271,16 +172,46 @@
 <section class="section" style="margin-top: -5px;">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
-	    <h3 class="title is-4">KNN classification with procedural embeddings and visual memory</h3>
+	    <h3 class="title is-4">Novel Procedural Dataset: Shaders KML</h3>
+    </div>
+    <figure>
+      <img src="./static/figures/kml_process.pdf"/>
+        <figcaption style="font-size: 1.0em; text-align: justify; display: block; padding-top: 19px;">
+          The Shaders KML process: (1) Sample shaders, (2) Extract mask via K-means in RGB space, (3) Mix shaders using mask.
+          <b>Innovation:</b> Data-driven mixing masks instead of constant masks (standard Mixup), resulting in greater diversity and stronger representations.
+        </figcaption>
+    </figure>
+</section>
+
+<section class="section" style="margin-top: -5px;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+	    <h3 class="title is-4">Human Visual Similarity Results</h3>
+    </div>
+    <p><b>Key finding:</b> The best procedural datasets have equivalent performance to training on the real dataset Places!</p>
+    <figure>
+      <img src="./static/figures_poster/hvs_with_bars.pdf"/>
+        <figcaption style="font-size: 1.0em; text-align: justify; display: block; padding-top: 19px;">
+          Performance on the <a href="https://dreamsim-nights.github.io">NIGHTS</a> benchmark for human visual similarity. 
+          Our procedural models match the performance of models trained on real data.
+        </figcaption>
+    </figure>
+</section>
+
+<section class="section" style="margin-top: -5px;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+	    <h3 class="title is-4">KNN Classification with Procedural Embeddings</h3>
     </div>
     <p>Despite having no training on real images, not even linear probes, procedural models are effective KNN classifiers.</p>
     <div class="box-container">
       <div class="box">
         <figure>
-          <img src="./static/images/classification.png"/>
+          <img src="./static/figures_poster/classification_thin.png"/>
             <figcaption style="font-size: 1.0em; text-align: justify; display: block; padding-top: 19px;">
               <b>Performance:</b>
-              On fine-grained datasets, procedural data performs better than realistic data with no semantic overlap. When there is semantic overlap, procedural data is within &lt 10%</a>.
+              Procedural models beat out-of-distribution real data models on fine-grained classification. 
+              On ImageNet-1K, they are within 10% of models trained on real data.
             </figcaption>
         </figure>
       </div>
@@ -288,7 +219,7 @@
         <figure>
           <div id="results-carousel" class="carousel results-carousel" style="background-size: 0px">
             <div class="item item-imagenet">
-              <img src="./static/images/imagenet_neighbours.png" style="width: 96%">
+              <img src="./static/figures_poster/image_torralba_mine_kml_mixup_20.pdf" style="width: 96%">
             </div>
             <div class="item item-cub">
               <img src="./static/images/cub_neighbours.png" style="width: 96%">
@@ -299,15 +230,11 @@
             <div class="item item-flowers">
               <img src="./static/images/flowers_neighbours.png" style="width: 96%">
             </div>
-            <!-- <div class="item item-imagenet">
-              <img src="./static/images/imagenet_neighbours.png" style="width: 96%">
-            </div> -->
           </div>
           <figcaption style="font-size: 1.0em; text-align: justify; display: block; padding-bottom: 42px;">
             <b>Visualization:</b>
-            Procedural models can effectively search for perceptually
-            similar images on a wide variety of datasets, despite not seeing
-            real-world data during training.
+            Procedural models select good neighbours even within ImageNet, a large scale pool of O(1M) images, 
+            despite not seeing real-world data during training.
           </figcaption>
       </figure>
       </div>
@@ -318,9 +245,17 @@
 <section class="section" style="margin-top: -5px;">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
-	    <h3 class="title is-4">Semantic segmentation with procedural embeddings and visual memory</h3>
+	    <h3 class="title is-4">Zero-shot Semantic Segmentation</h3>
     </div>
-    <p>Additionally, procedural models have remarkable semantic segmentation ability. </p>
+    <p><b>Remarkable ability:</b> Despite never seeing real images, procedural models can segment bikes and other objects!</p>
+    <div class="box" style="width: 100%; margin:0 auto;">
+      <figure>
+        <img src="./static/figures_poster/segmentation_diagram_zeroshot.pdf" style="display: block; margin: auto;"/>
+        <figcaption style="font-size: 1.0em; padding-bottom: 20px; text-align: justify">
+          Zero-shot segmentation pipeline using procedural models. Features are extracted and projected using PCA to obtain segmentations.
+        </figcaption>
+      </figure>
+    </div>
     <div class="box-container">
       <div class="box" style="padding-top: 0px; width: 30%;">
         <figure>
@@ -333,23 +268,9 @@
       </div>
       <div class="box" style="padding: 0px; width: 70%;">
         <figure>
-          <div id="results-carousel" class="carousel results-carousel" style="background-size: 0px">
-            <div class="item item-zeroshot">
-              <img src="./static/images/segmentation_zeroshot.png" style="width: 96%">
-            </div>
-            <div class="item item-zeroshot">
-              <img src="./static/images/segmentation_incontext_website.png" style="width: 96%">
-            </div>
-            <div class="item item-zeroshot">
-              <img src="./static/images/segmentation_knn.png" style="width: 96%">
-            </div>
-            <!-- <div class="item item-zeroshot">
-              <img src="./static/images/segmentation_zeroshot.png" style="width: 96%">
-            </div> -->
-          </div>
-          <figcaption style="font-size: 1.0em; text-align: justify; display: block; padding-top: 10px; padding-bottom: 110px;">
-            <b>Visualization:</b> Procedurally trained models are effective at zero-shot and in-context segmentations, but struggle at KNN segmentation due to not 
-            seeing real-world objects during training.
+          <img src="./static/figures_poster/segmentation_zeroshot.pdf" style="width: 96%">
+          <figcaption style="font-size: 1.0em; text-align: justify; display: block; padding-top: 10px;">
+            <b>Visualization:</b> In examples, procedural models clearly separate objects from backgrounds without any training on real images.
           </figcaption>
       </figure>
       </div>
@@ -360,27 +281,23 @@
 <section class="section" style="margin-top: -5px;">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
-	    <h3 class="title is-4">Handling of sensitive data</h3>
+	    <h3 class="title is-4">In-Context Semantic Segmentation</h3>
     </div>
-    <p>
-      Sensitive data is information that legally or ethically needs to be handled with high standards of care and control, such
-      as facial identity or medical data. In this scenario, directly training on the data is often not acceptable; procedural models
-      with memory thus offer an elegant solution.
-    </p>
-    <div class="box" style="width: 100%;">
+    <div class="box" style="width: 100%; margin:0 auto;">
       <figure>
-        <img src="./static/images/celeba_similarity_row.png"/>
-          <figcaption style="font-size: 1.0em; text-align: justify; display: block; padding-bottom: 0px;">
-            Despite never training on faces, a model trained on the Shaders KML Mixup procedural dataset can match for appearance and facial expressions on <a href="https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html">CelebA</a>.
-          </figcaption>
+        <img src="./static/figures_poster/segmentation_diagram_incontext.pdf" style="display: block; margin: auto;"/>
+        <figcaption style="font-size: 1.0em; padding-bottom: 20px; text-align: justify">
+          In-context segmentation pipeline: given a single exemplar prompt, procedural models can segment arbitrary classes.
+        </figcaption>
       </figure>
     </div>
     <div class="box" style="width: 100%;">
       <figure>
-        <img src="./static/images/medicalmnist.png"/>
+        <img src="./static/figures_poster/segmentation_incontext_short.pdf"/>
           <figcaption style="font-size: 1.0em; text-align: justify; display: block;">
-            KNN classification accuracy on the <a href="https://medmnist.com">MedMNIST</a> datasets. Procedural models match or exceed the best result from the original paper (Yang et al., 2022) 
-            (a normally trained ResNet) in 7/10 datasets.
+            In-context segmentation on <a href="https://groups.csail.mit.edu/vision/datasets/ADE20K/">ADE20K</a>. 
+            Procedural models can segment arbitrary classes given a single exemplar prompt, demonstrating strong generalization 
+            despite never training on real images.
           </figcaption>
       </figure>
     </div>
@@ -390,25 +307,21 @@
 <div class="container is-max-desktop content">
 <h2 class="title">Related Work</h2>
 <p style="font-size:14px; text-align: justify">
-  [1] Baradad, M., Wulff, J., Wang, T., Isola, P., and Torralba, A. Learning to See by Looking at Noise<br />
+  [1] Baradad, M., Wulff, J., Wang, T., Isola, P., and Torralba, A. Learning to See by Looking at Noise. NeurIPS 2021<br />
 
-  [2] Baradad, M., Chen, C.-F., Wulff, J., Wang, T., Feris, R., Torralba, A., and Isola, P. Procedural Image Programs for Representation Learning<br />
+  [2] Baradad, M., Chen, C.-F., Wulff, J., Wang, T., Feris, R., Torralba, A., and Isola, P. Procedural Image Programs for Representation Learning. NeurIPS 2022<br />
 
-  [3] Geirhos, R., Jaini, P., Stone, A., Medapati, S., Yi, X., Toderici, G., Ogale, A., and Shlens, J. Towards flexible perception with visual memory<br />
+  [3] Geirhos, R., Jaini, P., Stone, A., Medapati, S., Yi, X., Toderici, G., Ogale, A., and Shlens, J. Towards flexible perception with visual memory. arXiv 2024<br />
 
-  [4] Caron, M., Touvron, H., Misra, I., Jegou, H., Mairal, J., Bojanowski, P., and Joulin, A. Emerging Properties in Self-Supervised Vision Transformers<br />
+  [4] Caron, M., Touvron, H., Misra, I., Jegou, H., Mairal, J., Bojanowski, P., and Joulin, A. Emerging Properties in Self-Supervised Vision Transformers. ICCV 2021<br />
 
-  [5] Wah, C., Branson, S., Welinder, P., Perona, P., and Belongie, S. The Caltech-UCSD Birds-200-2011 Dataset. Technical Report CNS-TR-2011-001<br />
+  [5] Zhou, B., Zhao, H., Puig, X., Fidler, S., Barriuso, A., and Torralba, A. Scene Parsing through ADE20K Dataset. CVPR 2017<br />
 
-  [6] Nilsback, M.-E. and Zisserman, A. Automated Flower Classification over a Large Number of Classes<br />
+  [6] Fu, S., Tamir, N., Sundaram, S., Chai, L., Zhang, R., Dekel, T., and Isola, P. DreamSim: Learning New Dimensions of Human Visual Similarity using Synthetic Data. NeurIPS 2023<br />
 
-  [7] Bossard, L., Guillaumin, M., and Van Gool, L. Food-101 – Mining Discriminative Components with Random Forests<br />
+  [7] Russakovsky, O., Deng, J., Su, H., Krause, J., Satheesh, S., Ma, S., Huang, Z., Karpathy, A., Khosla, A., Bernstein, M., Berg, A. C., and Fei-Fei, L. ImageNet Large Scale Visual Recognition Challenge. IJCV 2015<br />
 
-  [8] Russakovsky, O., Deng, J., Su, H., Krause, J., Satheesh, S., Ma, S., Huang, Z., Karpathy, A., Khosla, A., Bernstein, M., Berg, A. C., and Fei-Fei, L. ImageNet Large Scale Visual Recognition Challenge<br />
-
-  [9] Lin, T.-Y., Maire, M., Belongie, S., Bourdev, L., Girshick, R., Hays, J., Perona, P., Ramanan, D., Zitnick, C. L., and Dollar, P. Microsoft COCO: Common Objects in Context<br />
-
-  [10] Liu, Z., Luo, P.,Wang, X., and Tang, X. Deep Learning Face Attributes in the Wild<br />
+  [8] Lin, T.-Y., Maire, M., Belongie, S., Bourdev, L., Girshick, R., Hays, J., Perona, P., Ramanan, D., Zitnick, C. L., and Dollar, P. Microsoft COCO: Common Objects in Context. ECCV 2014<br />
 </p>
 </div>
 </section>
@@ -417,53 +330,33 @@
 <div class="container is-max-desktop content">
   <h2 class="title">BibTeX</h2>
   <pre><code>
-    @misc{rodriguezmunoz2025compartmentalizing,
-      title = {Compartmentalizing Knowledge with Procedural Data},
+    @inproceedings{rodriguezmunoz2025separating,
+      title = {Separating Knowledge and Perception with Procedural Data},
       author = {Rodríguez-Muñoz, Adrián and Baradad, Manel and Isola, Phillip and Torralba, Antonio},
+      booktitle = {Proceedings of the International Conference on Machine Learning (ICML)},
       year={2025},
     }
   </code></pre>
 </div>
 </section>
 
-<section class="section" id="BibTeX">
+<section class="section" id="Acknowledgements">
   <div class="container is-max-desktop content">
     <h2 class="title">Acknowledgements</h2>
-    Adrián Rodríguez-Muñoz is supported by the LaCaixa fellowship. The Torralba and Isola labs are supported by DSTA Singapore and the ONR MURI program.
+    This work was supported by the La Caixa Foundation and DSTA Singapore. The Torralba and Isola labs are supported by the ONR MURI program.
   </div>
 </section>
 
-<!-- </div> -->
-
-	
-<!-- <footer class="footer">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content" style="text-align: center;">
-          <p>
-           
-          </p>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</footer> -->
-
 <style type="text/css" media="all">
   .page__footer {
-    /*float: left;*/
     padding-top: 1em;
     padding-bottom: 0.5em;
     margin-left: 0;
     margin-right: 0;
     width: 100%;
     clear: both;
-    /* sticky footer fix start */
-    /*position: absolute;*/
     bottom: 0;
     height: auto;
-    /* sticky footer fix end */
     margin-top: 3em;
     color: #898c8f;
     background-color: #f2f3f3;
@@ -476,7 +369,6 @@
     margin-left: auto;
     margin-right: auto;
     max-width: 1000px;
-    /*padding: 0;*/
   }
   
   .page__footer .links .social-icons {

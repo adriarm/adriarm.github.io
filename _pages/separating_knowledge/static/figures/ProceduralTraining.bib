@@ -1,0 +1,1213 @@
+
+@misc{deng_adversarial_2021,
+	title = {Adversarial {Training} {Helps} {Transfer} {Learning} via {Better} {Representations}},
+	url = {http://arxiv.org/abs/2106.10189},
+	abstract = {Transfer learning aims to leverage models pre-trained on source data to efficiently adapt to target setting, where only limited data are available for model fine-tuning. Recent works empirically demonstrate that adversarial training in the source data can improve the ability of models to transfer to new domains. However, why this happens is not known. In this paper, we provide a theoretical model to rigorously analyze how adversarial training helps transfer learning. We show that adversarial training in the source data generates provably better representations, so fine-tuning on top of this representation leads to a more accurate predictor of the target data. We further demonstrate both theoretically and empirically that semi-supervised learning in the source data can also improve transfer learning by similarly improving the representation. Moreover, performing adversarial training on top of semi-supervised learning can further improve transferability, suggesting that the two approaches have complementary benefits on representations. We support our theories with experiments on popular data sets and deep learning architectures.},
+	urldate = {2023-09-24},
+	publisher = {arXiv},
+	author = {Deng, Zhun and Zhang, Linjun and Vodrahalli, Kailas and Kawaguchi, Kenji and Zou, James},
+	month = jun,
+	year = {2021},
+	note = {arXiv:2106.10189 [cs]},
+	keywords = {Computer Science - Machine Learning},
+	file = {arXiv.org Snapshot:/Users/adrianrodriguezmunoz/Zotero/storage/IUP9AZQ5/2106.html:text/html;Full Text PDF:/Users/adrianrodriguezmunoz/Zotero/storage/SMYFT5XI/Deng et al. - 2021 - Adversarial Training Helps Transfer Learning via B.pdf:application/pdf},
+}
+
+@article{hoopes_synthstrip_2022,
+	title = {{SynthStrip}: {Skull}-{Stripping} for {Any} {Brain} {Image}},
+	volume = {260},
+	issn = {10538119},
+	shorttitle = {{SynthStrip}},
+	url = {http://arxiv.org/abs/2203.09974},
+	doi = {10.1016/j.neuroimage.2022.119474},
+	abstract = {The removal of non-brain signal from magnetic resonance imaging (MRI) data, known as skull-stripping, is an integral component of many neuroimage analysis streams. Despite their abundance, popular classical skullstripping methods are usually tailored to images with speciﬁc acquisition properties, namely near-isotropic resolution and T1-weighted (T1w) MRI contrast, which are prevalent in research settings. As a result, existing tools tend to adapt poorly to other image types, such as stacks of thick slices acquired with fast spin-echo (FSE) MRI that are common in the clinic. While learning-based approaches for brain extraction have gained traction in recent years, these methods face a similar burden, as they are only eﬀective for image types seen during the training procedure. To achieve robust skull-stripping across a landscape of imaging protocols, we introduce SynthStrip, a rapid, learning-based brain-extraction tool. By leveraging anatomical segmentations to generate an entirely synthetic training dataset with anatomies, intensity distributions, and artifacts that far exceed the realistic range of medical images, SynthStrip learns to successfully generalize to a variety of real acquired brain images, removing the need for training data with target contrasts. We demonstrate the eﬃcacy of SynthStrip for a diverse set of image acquisitions and resolutions across subject populations, ranging from newborn to adult. We show substantial improvements in accuracy over popular skull-stripping baselines – all with a single trained model. Our method and labeled evaluation data are available at https://w3id.org/synthstrip.},
+	language = {en},
+	urldate = {2024-07-15},
+	journal = {NeuroImage},
+	author = {Hoopes, Andrew and Mora, Jocelyn S. and Dalca, Adrian V. and Fischl, Bruce and Hoffmann, Malte},
+	month = oct,
+	year = {2022},
+	note = {arXiv:2203.09974 [physics, q-bio]},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition, Electrical Engineering and Systems Science - Image and Video Processing, Physics - Medical Physics, Quantitative Biology - Neurons and Cognition},
+	pages = {119474},
+	file = {Hoopes et al. - 2022 - SynthStrip Skull-Stripping for Any Brain Image.pdf:/Users/adrianrodriguezmunoz/Zotero/storage/9UJ5RFRT/Hoopes et al. - 2022 - SynthStrip Skull-Stripping for Any Brain Image.pdf:application/pdf},
+}
+
+@misc{billot_learning_2021,
+	title = {A {Learning} {Strategy} for {Contrast}-agnostic {MRI} {Segmentation}},
+	url = {http://arxiv.org/abs/2003.01995},
+	abstract = {We present a deep learning strategy that enables, for the ﬁrst time, contrast-agnostic semantic segmentation of completely unpreprocessed brain MRI scans, without requiring additional training or ﬁne-tuning for new modalities. Classical Bayesian methods address this segmentation problem with unsupervised intensity models, but require signiﬁcant computational resources. In contrast, learning-based methods can be fast at test time, but are sensitive to the data available at training. Our proposed learning method, SynthSeg, leverages a set of training segmentations (no intensity images required) to generate synthetic scans of widely varying contrasts on the ﬂy during training. These scans are produced using the generative model of the classical Bayesian segmentation framework, with randomly sampled parameters for appearance, deformation, noise, and bias ﬁeld. Because each mini-batch has a diﬀerent synthetic contrast, the ﬁnal network is not biased towards any MRI contrast. We comprehensively evaluate our approach on four datasets comprising over 1,000 subjects and four MR contrasts. The results show that our approach successfully segments every contrast in the data, performing slightly better than classical Bayesian segmentation, and three orders of magnitude faster. Moreover, even within the same type of MRI contrast, our strategy generalizes signiﬁcantly better across datasets, compared to training using real images. Finally, we ﬁnd that synthesizing a broad range of contrasts, even if unrealistic, increases the generalization of the neural network. Our code and model are open source at https://github.com/BBillot/SynthSeg.},
+	language = {en},
+	urldate = {2024-07-15},
+	publisher = {arXiv},
+	author = {Billot, Benjamin and Greve, Douglas and Van Leemput, Koen and Fischl, Bruce and Iglesias, Juan Eugenio and Dalca, Adrian V.},
+	month = apr,
+	year = {2021},
+	note = {arXiv:2003.01995 [cs, eess]},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition, Electrical Engineering and Systems Science - Image and Video Processing},
+	file = {Billot et al. - 2021 - A Learning Strategy for Contrast-agnostic MRI Segm.pdf:/Users/adrianrodriguezmunoz/Zotero/storage/SJTSMEVX/Billot et al. - 2021 - A Learning Strategy for Contrast-agnostic MRI Segm.pdf:application/pdf},
+}
+
+@article{hoffmann_synthmorph_2022,
+	title = {{SynthMorph}: {Learning} {Contrast}-{Invariant} {Registration} {Without} {Acquired} {Images}},
+	volume = {41},
+	copyright = {https://creativecommons.org/licenses/by/4.0/legalcode},
+	issn = {0278-0062, 1558-254X},
+	shorttitle = {{SynthMorph}},
+	url = {https://ieeexplore.ieee.org/document/9552865/},
+	doi = {10.1109/TMI.2021.3116879},
+	language = {en},
+	number = {3},
+	urldate = {2024-07-15},
+	journal = {IEEE Transactions on Medical Imaging},
+	author = {Hoffmann, Malte and Billot, Benjamin and Greve, Douglas N. and Iglesias, Juan Eugenio and Fischl, Bruce and Dalca, Adrian V.},
+	month = mar,
+	year = {2022},
+	pages = {543--558},
+	file = {Hoffmann et al. - 2022 - SynthMorph Learning Contrast-Invariant Registrati.pdf:/Users/adrianrodriguezmunoz/Zotero/storage/9JLAY3QK/Hoffmann et al. - 2022 - SynthMorph Learning Contrast-Invariant Registrati.pdf:application/pdf},
+}
+
+@misc{butoi_universeg_2023,
+	title = {{UniverSeg}: {Universal} {Medical} {Image} {Segmentation}},
+	shorttitle = {{UniverSeg}},
+	url = {http://arxiv.org/abs/2304.06131},
+	abstract = {While deep learning models have become the predominant method for medical image segmentation, they are typically not capable of generalizing to unseen segmentation tasks involving new anatomies, image modalities, or labels. Given a new segmentation task, researchers generally have to train or fine-tune models, which is time-consuming and poses a substantial barrier for clinical researchers, who often lack the resources and expertise to train neural networks. We present UniverSeg, a method for solving unseen medical segmentation tasks without additional training. Given a query image and example set of image-label pairs that define a new segmentation task, UniverSeg employs a new Cross-Block mechanism to produce accurate segmentation maps without the need for additional training. To achieve generalization to new tasks, we have gathered and standardized a collection of 53 open-access medical segmentation datasets with over 22,000 scans, which we refer to as MegaMedical. We used this collection to train UniverSeg on a diverse set of anatomies and imaging modalities. We demonstrate that UniverSeg substantially outperforms several related methods on unseen tasks, and thoroughly analyze and draw insights about important aspects of the proposed system. The UniverSeg source code and model weights are freely available at https://universeg.csail.mit.edu},
+	language = {en},
+	urldate = {2024-07-15},
+	publisher = {arXiv},
+	author = {Butoi, Victor Ion and Ortiz, Jose Javier Gonzalez and Ma, Tianyu and Sabuncu, Mert R. and Guttag, John and Dalca, Adrian V.},
+	month = apr,
+	year = {2023},
+	note = {arXiv:2304.06131 [cs]},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition, Computer Science - Machine Learning},
+	file = {Butoi et al. - 2023 - UniverSeg Universal Medical Image Segmentation.pdf:/Users/adrianrodriguezmunoz/Zotero/storage/Z99VNMZ3/Butoi et al. - 2023 - UniverSeg Universal Medical Image Segmentation.pdf:application/pdf},
+}
+
+@misc{rakic_tyche_2024,
+	title = {Tyche: {Stochastic} {In}-{Context} {Learning} for {Medical} {Image} {Segmentation}},
+	shorttitle = {Tyche},
+	url = {http://arxiv.org/abs/2401.13650},
+	abstract = {Existing learning-based solutions to medical image segmentation have two important shortcomings. First, for most new segmentation task, a new model has to be trained or fine-tuned. This requires extensive resources and machinelearning expertise, and is therefore often infeasible for medical researchers and clinicians. Second, most existing segmentation methods produce a single deterministic segmentation mask for a given image. In practice however, there is often considerable uncertainty about what constitutes the correct segmentation, and different expert annotators will often segment the same image differently. We tackle both of these problems with Tyche, a model that uses a context set to generate stochastic predictions for previously unseen tasks without the need to retrain. Tyche differs from other in-context segmentation methods in two important ways. (1) We introduce a novel convolution block architecture that enables interactions among predictions. (2) We introduce in-context test-time augmentation, a new mechanism to provide prediction stochasticity. When combined with appropriate model design and loss functions, Tyche can predict a set of plausible diverse segmentation candidates for new or unseen medical images and segmentation tasks without the need to retrain. Code available at: https://github.com/mariannerakic/tyche/.},
+	language = {en},
+	urldate = {2024-07-15},
+	publisher = {arXiv},
+	author = {Rakic, Marianne and Wong, Hallee E. and Ortiz, Jose Javier Gonzalez and Cimini, Beth and Guttag, John and Dalca, Adrian V.},
+	month = jan,
+	year = {2024},
+	note = {arXiv:2401.13650 [cs, eess]},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition, Electrical Engineering and Systems Science - Image and Video Processing},
+	file = {Rakic et al. - 2024 - Tyche Stochastic In-Context Learning for Medical .pdf:/Users/adrianrodriguezmunoz/Zotero/storage/Z2TCIBRV/Rakic et al. - 2024 - Tyche Stochastic In-Context Learning for Medical .pdf:application/pdf},
+}
+
+@misc{caron_unsupervised_2021,
+	title = {Unsupervised {Learning} of {Visual} {Features} by {Contrasting} {Cluster} {Assignments}},
+	url = {http://arxiv.org/abs/2006.09882},
+	abstract = {Unsupervised image representations have signiﬁcantly reduced the gap with supervised pretraining, notably with the recent achievements of contrastive learning methods. These contrastive methods typically work online and rely on a large number of explicit pairwise feature comparisons, which is computationally challenging. In this paper, we propose an online algorithm, SwAV, that takes advantage of contrastive methods without requiring to compute pairwise comparisons. Speciﬁcally, our method simultaneously clusters the data while enforcing consistency between cluster assignments produced for different augmentations (or “views”) of the same image, instead of comparing features directly as in contrastive learning. Simply put, we use a “swapped” prediction mechanism where we predict the code of a view from the representation of another view. Our method can be trained with large and small batches and can scale to unlimited amounts of data. Compared to previous contrastive methods, our method is more memory efﬁcient since it does not require a large memory bank or a special momentum network. In addition, we also propose a new data augmentation strategy, multi-crop, that uses a mix of views with different resolutions in place of two full-resolution views, without increasing the memory or compute requirements. We validate our ﬁndings by achieving 75.3\% top-1 accuracy on ImageNet with ResNet-50, as well as surpassing supervised pretraining on all the considered transfer tasks.},
+	language = {en},
+	urldate = {2024-07-21},
+	publisher = {arXiv},
+	author = {Caron, Mathilde and Misra, Ishan and Mairal, Julien and Goyal, Priya and Bojanowski, Piotr and Joulin, Armand},
+	month = jan,
+	year = {2021},
+	note = {arXiv:2006.09882 [cs]},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition},
+	file = {Caron et al. - 2021 - Unsupervised Learning of Visual Features by Contra.pdf:/Users/adrianrodriguezmunoz/Zotero/storage/SVNKGWSN/Caron et al. - 2021 - Unsupervised Learning of Visual Features by Contra.pdf:application/pdf},
+}
+
+@inproceedings{sahoo_contrast_2021,
+	title = {Contrast and {Mix}: {Temporal} {Contrastive} {Video} {Domain} {Adaptation} with {Background} {Mixing}},
+	volume = {34},
+	shorttitle = {Contrast and {Mix}},
+	url = {https://proceedings.neurips.cc/paper/2021/hash/c47e93742387750baba2e238558fa12d-Abstract.html},
+	abstract = {Unsupervised domain adaptation which aims to adapt models trained on a labeled source domain to a completely unlabeled target domain has attracted much attention in recent years. While many domain adaptation techniques have been proposed for images, the problem of unsupervised domain adaptation in videos remains largely underexplored. In this paper, we introduce Contrast and Mix (CoMix), a new contrastive learning framework that aims to learn discriminative invariant feature representations for unsupervised video domain adaptation. First, unlike existing methods that rely on adversarial learning for feature alignment, we utilize temporal contrastive learning to bridge the domain gap by maximizing the similarity between encoded representations of an unlabeled video at two different speeds as well as minimizing the similarity between different videos played at different speeds. Second, we propose a novel extension to the temporal contrastive loss by using background mixing that allows additional positives per anchor, thus adapting contrastive learning to leverage action semantics shared across both domains. Moreover, we also integrate a supervised contrastive learning objective using target pseudo-labels to enhance discriminability of the latent space for video domain adaptation. Extensive experiments on several benchmark datasets demonstrate the superiority of our proposed approach over state-of-the-art methods. Project page: https://cvir.github.io/projects/comix.},
+	urldate = {2024-07-21},
+	booktitle = {Advances in {Neural} {Information} {Processing} {Systems}},
+	publisher = {Curran Associates, Inc.},
+	author = {Sahoo, Aadarsh and Shah, Rutav and Panda, Rameswar and Saenko, Kate and Das, Abir},
+	year = {2021},
+	pages = {23386--23400},
+	file = {Full Text PDF:/Users/adrianrodriguezmunoz/Zotero/storage/B5BQF6SI/Sahoo et al. - 2021 - Contrast and Mix Temporal Contrastive Video Domai.pdf:application/pdf},
+}
+
+@misc{kim_mixco_2020,
+	title = {{MixCo}: {Mix}-up {Contrastive} {Learning} for {Visual} {Representation}},
+	shorttitle = {{MixCo}},
+	url = {http://arxiv.org/abs/2010.06300},
+	abstract = {Contrastive learning has shown remarkable results in recent self-supervised approaches for visual representation. By learning to contrast positive pairs’ representation from the corresponding negatives pairs, one can train good visual representations without human annotations. This paper proposes Mix-up Contrast (MixCo), which extends the contrastive learning concept to semi-positives encoded from the mix-up of positive and negative images. MixCo aims to learn the relative similarity of representations, reﬂecting how much the mixed images have the original positives. We validate the efﬁcacy of MixCo when applied to the recent self-supervised learning algorithms under the standard linear evaluation protocol on TinyImageNet, CIFAR10, and CIFAR100. In the experiments, MixCo consistently improves test accuracy. Remarkably, the improvement is more signiﬁcant when the learning capacity (e.g., model size) is limited, suggesting that MixCo might be more useful in real-world scenarios. The code is available at: https://github.com/Lee-Gihun/MixCo-Mixup-Contrast.},
+	language = {en},
+	urldate = {2024-07-21},
+	publisher = {arXiv},
+	author = {Kim, Sungnyun and Lee, Gihun and Bae, Sangmin and Yun, Se-Young},
+	month = nov,
+	year = {2020},
+	note = {arXiv:2010.06300 [cs]},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition},
+	file = {Kim et al. - 2020 - MixCo Mix-up Contrastive Learning for Visual Repr.pdf:/Users/adrianrodriguezmunoz/Zotero/storage/3WLDEY4C/Kim et al. - 2020 - MixCo Mix-up Contrastive Learning for Visual Repr.pdf:application/pdf},
+}
+
+@inproceedings{kalantidis_hard_2020,
+	title = {Hard {Negative} {Mixing} for {Contrastive} {Learning}},
+	volume = {33},
+	url = {https://proceedings.neurips.cc/paper/2020/hash/f7cade80b7cc92b991cf4d2806d6bd78-Abstract.html},
+	abstract = {Contrastive learning has become a key component of self-supervised learning approaches for computer vision. By learning to embed two augmented versions of the same image close to each other and to push the embeddings of different images apart, one can train highly transferable visual representations. As revealed by recent studies, heavy data augmentation and large sets of negatives are both crucial in learning such representations. At the same time, data mixing strategies, either at the image or the feature level, improve both supervised and semi-supervised learning by synthesizing novel examples, forcing networks to learn more robust features. In this paper, we argue that an important aspect of contrastive learning, i.e. the effect of hard negatives, has so far been neglected. To get more meaningful negative samples, current top contrastive self-supervised learning approaches either substantially increase the batch sizes, or keep very large memory banks; increasing memory requirements, however, leads to diminishing returns in terms of performance. We therefore start by delving deeper into a top-performing framework and show evidence that harder negatives are needed to facilitate better and faster learning. Based on these observations, and motivated by the success of data mixing, we propose hard negative mixing strategies at the feature level, that can be computed on-the-fly with a minimal computational overhead. We exhaustively ablate our approach on linear classification, object detection, and instance segmentation and show that employing our hard negative mixing procedure improves the quality of visual representations learned by a state-of-the-art self-supervised learning method.},
+	urldate = {2024-07-21},
+	booktitle = {Advances in {Neural} {Information} {Processing} {Systems}},
+	publisher = {Curran Associates, Inc.},
+	author = {Kalantidis, Yannis and Sariyildiz, Mert Bulent and Pion, Noe and Weinzaepfel, Philippe and Larlus, Diane},
+	year = {2020},
+	pages = {21798--21809},
+	file = {Full Text PDF:/Users/adrianrodriguezmunoz/Zotero/storage/9PBY3B7X/Kalantidis et al. - 2020 - Hard Negative Mixing for Contrastive Learning.pdf:application/pdf},
+}
+
+@misc{yang_medmnist_2022,
+	title = {{MedMNIST} v2 -- {A} large-scale lightweight benchmark for {2D} and {3D} biomedical image classification},
+	url = {http://arxiv.org/abs/2110.14795},
+	abstract = {We introduce MedMNIST v2, a large-scale MNIST-like dataset collection of standardized biomedical images, including 12 datasets for 2D and 6 datasets for 3D. All images are pre-processed into a small size of 28x28 (2D) or 28x28x28 (3D) with the corresponding classification labels so that no background knowledge is required for users. Covering primary data modalities in biomedical images, MedMNIST v2 is designed to perform classification on lightweight 2D and 3D images with various dataset scales (from 100 to 100,000) and diverse tasks (binary/multi-class, ordinal regression, and multi-label). The resulting dataset, consisting of 708,069 2D images and 10,214 3D images in total, could support numerous research / educational purposes in biomedical image analysis, computer vision, and machine learning. We benchmark several baseline methods on MedMNIST v2, including 2D / 3D neural networks and open-source / commercial AutoML tools. The data and code are publicly available at https://medmnist.com/.},
+	urldate = {2024-11-01},
+	publisher = {arXiv},
+	author = {Yang, Jiancheng and Shi, Rui and Wei, Donglai and Liu, Zequan and Zhao, Lin and Ke, Bilian and Pfister, Hanspeter and Ni, Bingbing},
+	month = sep,
+	year = {2022},
+	note = {arXiv:2110.14795},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition, Computer Science - Artificial Intelligence, Computer Science - Machine Learning, Electrical Engineering and Systems Science - Image and Video Processing},
+	file = {Full Text PDF:/Users/adrianrodriguezmunoz/Zotero/storage/FYSL33YL/Yang et al. - 2022 - MedMNIST v2 -- A large-scale lightweight benchmark.pdf:application/pdf;Snapshot:/Users/adrianrodriguezmunoz/Zotero/storage/JVKHNF7W/2110.html:text/html},
+}
+
+@misc{noauthor_papers_nodate,
+	title = {Papers with {Code} - {Fine}-{Grained} {Image} {Classification}},
+	url = {https://paperswithcode.com/task/fine-grained-image-classification},
+	abstract = {**Fine-Grained Image Classification** is a task in computer vision where the goal is to classify images into subcategories within a larger category. For example, classifying different species of birds or different types of flowers. This task is considered to be fine-grained because it requires the model to distinguish between subtle differences in visual appearance and patterns, making it more challenging than regular image classification tasks.
+
+{\textless}span style="color:grey; opacity: 0.6"{\textgreater}( Image credit: [Looking for the Devil in the Details](https://arxiv.org/pdf/1903.06150v2.pdf) ){\textless}/span{\textgreater}},
+	language = {en},
+	urldate = {2024-11-01},
+	file = {Snapshot:/Users/adrianrodriguezmunoz/Zotero/storage/AEN6TWIK/fine-grained-image-classification.html:text/html},
+}
+
+@inproceedings{wang_word_2010,
+	address = {Berlin, Heidelberg},
+	title = {Word {Spotting} in the {Wild}},
+	isbn = {978-3-642-15549-9},
+	doi = {10.1007/978-3-642-15549-9_43},
+	abstract = {We present a method for spotting words in the wild, i.e., in real images taken in unconstrained environments. Text found in the wild has a surprising range of difficulty. At one end of the spectrum, Optical Character Recognition (OCR) applied to scanned pages of well formatted printed text is one of the most successful applications of computer vision to date. At the other extreme lie visual CAPTCHAs – text that is constructed explicitly to fool computer vision algorithms. Both tasks involve recognizing text, yet one is nearly solved while the other remains extremely challenging. In this work, we argue that the appearance of words in the wild spans this range of difficulties and propose a new word recognition approach based on state-of-the-art methods from generic object recognition, in which we consider object categories to be the words themselves. We compare performance of leading OCR engines – one open source and one proprietary – with our new approach on the ICDAR Robust Reading data set and a new word spotting data set we introduce in this paper: the Street View Text data set. We show improvements of up to 16\% on the data sets, demonstrating the feasibility of a new approach to a seemingly old problem.},
+	language = {en},
+	booktitle = {Computer {Vision} – {ECCV} 2010},
+	publisher = {Springer},
+	author = {Wang, Kai and Belongie, Serge},
+	editor = {Daniilidis, Kostas and Maragos, Petros and Paragios, Nikos},
+	year = {2010},
+	keywords = {Image Text, Multiple Kernel Learn, Optical Character Recognition, Street View, Word Recognition},
+	pages = {591--604},
+	file = {Full Text PDF:/Users/adrianrodriguezmunoz/Zotero/storage/YEVRARCY/Wang and Belongie - 2010 - Word Spotting in the Wild.pdf:application/pdf},
+}
+
+@misc{noauthor_deep_nodate,
+	title = {Deep {Image} {Prior}},
+	url = {https://dmitryulyanov.github.io/deep_image_prior},
+	language = {en},
+	urldate = {2024-11-01},
+	file = {Snapshot:/Users/adrianrodriguezmunoz/Zotero/storage/9RDZ2HHD/deep_image_prior.html:text/html},
+}
+
+@misc{gandelsman_double-dip_2018,
+	title = {"{Double}-{DIP}": {Unsupervised} {Image} {Decomposition} via {Coupled} {Deep}-{Image}-{Priors}},
+	shorttitle = {"{Double}-{DIP}"},
+	url = {http://arxiv.org/abs/1812.00467},
+	abstract = {Many seemingly unrelated computer vision tasks can be viewed as a special case of image decomposition into separate layers. For example, image segmentation (separation into foreground and background layers); transparent layer separation (into reflection and transmission layers); Image dehazing (separation into a clear image and a haze map), and more. In this paper we propose a unified framework for unsupervised layer decomposition of a single image, based on coupled "Deep-image-Prior" (DIP) networks. It was shown [Ulyanov et al] that the structure of a single DIP generator network is sufficient to capture the low-level statistics of a single image. We show that coupling multiple such DIPs provides a powerful tool for decomposing images into their basic components, for a wide variety of applications. This capability stems from the fact that the internal statistics of a mixture of layers is more complex than the statistics of each of its individual components. We show the power of this approach for Image-Dehazing, Fg/Bg Segmentation, Watermark-Removal, Transparency Separation in images and video, and more. These capabilities are achieved in a totally unsupervised way, with no training examples other than the input image/video itself.},
+	urldate = {2024-11-01},
+	publisher = {arXiv},
+	author = {Gandelsman, Yossi and Shocher, Assaf and Irani, Michal},
+	month = dec,
+	year = {2018},
+	note = {arXiv:1812.00467},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition, Computer Science - Machine Learning},
+	file = {Full Text PDF:/Users/adrianrodriguezmunoz/Zotero/storage/54J3JVBP/Gandelsman et al. - 2018 - Double-DIP Unsupervised Image Decomposition via.pdf:application/pdf;Snapshot:/Users/adrianrodriguezmunoz/Zotero/storage/S6ILMEH7/1812.html:text/html},
+}
+
+@inproceedings{glasner_super-resolution_2009,
+	address = {Kyoto},
+	title = {Super-resolution from a single image},
+	isbn = {978-1-4244-4420-5},
+	url = {http://ieeexplore.ieee.org/document/5459271/},
+	doi = {10.1109/ICCV.2009.5459271},
+	abstract = {Methods for super-resolution can be broadly classiﬁed into two families of methods: (i) The classical multi-image super-resolution (combining images obtained at subpixel misalignments), and (ii) Example-Based super-resolution (learning correspondence between low and high resolution image patches from a database). In this paper we propose a uniﬁed framework for combining these two families of methods. We further show how this combined approach can be applied to obtain super resolution from as little as a single image (with no database or prior examples). Our approach is based on the observation that patches in a natural image tend to redundantly recur many times inside the image, both within the same scale, as well as across different scales. Recurrence of patches within the same image scale (at subpixel misalignments) gives rise to the classical super-resolution, whereas recurrence of patches across different scales of the same image gives rise to example-based super-resolution. Our approach attempts to recover at each pixel its best possible resolution increase based on its patch redundancy within and across scales.},
+	language = {en},
+	urldate = {2024-11-01},
+	booktitle = {2009 {IEEE} 12th {International} {Conference} on {Computer} {Vision}},
+	publisher = {IEEE},
+	author = {Glasner, Daniel and Bagon, Shai and Irani, Michal},
+	month = sep,
+	year = {2009},
+	pages = {349--356},
+	file = {Glasner et al. - 2009 - Super-resolution from a single image.pdf:/Users/adrianrodriguezmunoz/Zotero/storage/6PQTG9QL/Glasner et al. - 2009 - Super-resolution from a single image.pdf:application/pdf},
+}
+
+@misc{lin_mmmmimiccub-sam_2024,
+	title = {mmmmimic/{CUB}-{SAM}},
+	copyright = {MIT},
+	url = {https://github.com/mmmmimic/CUB-SAM},
+	abstract = {Segmenting Birds with SAM},
+	urldate = {2024-11-03},
+	author = {Lin, Manxi},
+	month = sep,
+	year = {2024},
+	note = {original-date: 2023-09-04T06:48:13Z},
+}
+
+@misc{noauthor_facebookresearchsegment-anything_2024,
+	title = {facebookresearch/segment-anything},
+	copyright = {Apache-2.0},
+	url = {https://github.com/facebookresearch/segment-anything},
+	abstract = {The repository provides code for running inference with the SegmentAnything Model (SAM), links for downloading the trained model checkpoints, and example notebooks that show how to use the model.},
+	urldate = {2024-11-03},
+	publisher = {Meta Research},
+	month = nov,
+	year = {2024},
+	note = {original-date: 2023-03-23T17:03:03Z},
+}
+
+@misc{yu_learning_2024,
+	title = {Learning {Video} {Representations} without {Natural} {Videos}},
+	url = {http://arxiv.org/abs/2410.24213},
+	doi = {10.48550/arXiv.2410.24213},
+	abstract = {In this paper, we show that useful video representations can be learned from synthetic videos and natural images, without incorporating natural videos in the training. We propose a progression of video datasets synthesized by simple generative processes, that model a growing set of natural video properties (e.g. motion, acceleration, and shape transformations). The downstream performance of video models pre-trained on these generated datasets gradually increases with the dataset progression. A VideoMAE model pre-trained on our synthetic videos closes 97.2\% of the performance gap on UCF101 action classification between training from scratch and self-supervised pre-training from natural videos, and outperforms the pre-trained model on HMDB51. Introducing crops of static images to the pre-training stage results in similar performance to UCF101 pre-training and outperforms the UCF101 pre-trained model on 11 out of 14 out-of-distribution datasets of UCF101-P. Analyzing the low-level properties of the datasets, we identify correlations between frame diversity, frame similarity to natural data, and downstream performance. Our approach provides a more controllable and transparent alternative to video data curation processes for pre-training.},
+	urldate = {2024-11-12},
+	publisher = {arXiv},
+	author = {Yu, Xueyang and Chen, Xinlei and Gandelsman, Yossi},
+	month = oct,
+	year = {2024},
+	note = {arXiv:2410.24213},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition},
+	file = {Preprint PDF:/Users/adrianrodriguezmunoz/Zotero/storage/7NN58XQR/Yu et al. - 2024 - Learning Video Representations without Natural Vid.pdf:application/pdf;Snapshot:/Users/adrianrodriguezmunoz/Zotero/storage/D8F8VHRG/2410.html:text/html},
+}
+
+@misc{baradad_procedural_2023,
+	title = {Procedural {Image} {Programs} for {Representation} {Learning}},
+	url = {http://arxiv.org/abs/2211.16412},
+	abstract = {Learning image representations using synthetic data allows training neural networks without some of the concerns associated with real images, such as privacy and bias. Existing work focuses on a handful of curated generative processes which require expert knowledge to design, making it hard to scale up. To overcome this, we propose training with a large dataset of twenty-one thousand programs, each one generating a diverse set of synthetic images. These programs are short code snippets, which are easy to modify and fast to execute using OpenGL. The proposed dataset can be used for both supervised and unsupervised representation learning, and reduces the gap between pre-training with real and procedurally generated images by 38\%.},
+	urldate = {2024-11-13},
+	publisher = {arXiv},
+	author = {Baradad, Manel and Chen, Chun-Fu and Wulff, Jonas and Wang, Tongzhou and Feris, Rogerio and Torralba, Antonio and Isola, Phillip},
+	month = nov,
+	year = {2023},
+	note = {arXiv:2211.16412},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition, Computer Science - Machine Learning},
+	file = {Full Text PDF:/Users/adrianrodriguezmunoz/Zotero/storage/9TCVHVPC/Baradad et al. - 2023 - Procedural Image Programs for Representation Learn.pdf:application/pdf;Snapshot:/Users/adrianrodriguezmunoz/Zotero/storage/HJB3YKYI/2211.html:text/html},
+}
+
+@misc{baradad_learning_2022,
+	title = {Learning to {See} by {Looking} at {Noise}},
+	url = {http://arxiv.org/abs/2106.05963},
+	abstract = {Current vision systems are trained on huge datasets, and these datasets come with costs: curation is expensive, they inherit human biases, and there are concerns over privacy and usage rights. To counter these costs, interest has surged in learning from cheaper data sources, such as unlabeled images. In this paper we go a step further and ask if we can do away with real image datasets entirely, instead learning from noise processes. We investigate a suite of image generation models that produce images from simple random processes. These are then used as training data for a visual representation learner with a contrastive loss. We study two types of noise processes, statistical image models and deep generative models under different random initializations. Our findings show that it is important for the noise to capture certain structural properties of real data but that good performance can be achieved even with processes that are far from realistic. We also find that diversity is a key property to learn good representations. Datasets, models, and code are available at https://mbaradad.github.io/learning\_with\_noise.},
+	urldate = {2024-11-13},
+	publisher = {arXiv},
+	author = {Baradad, Manel and Wulff, Jonas and Wang, Tongzhou and Isola, Phillip and Torralba, Antonio},
+	month = apr,
+	year = {2022},
+	note = {arXiv:2106.05963},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition, Computer Science - Artificial Intelligence},
+	file = {Full Text PDF:/Users/adrianrodriguezmunoz/Zotero/storage/RDTHUEWY/Baradad et al. - 2022 - Learning to See by Looking at Noise.pdf:application/pdf;Snapshot:/Users/adrianrodriguezmunoz/Zotero/storage/E7MP2WEK/2106.html:text/html},
+}
+
+@misc{chuang_measuring_2021,
+	title = {Measuring {Generalization} with {Optimal} {Transport}},
+	url = {http://arxiv.org/abs/2106.03314},
+	doi = {10.48550/arXiv.2106.03314},
+	abstract = {Understanding the generalization of deep neural networks is one of the most important tasks in deep learning. Although much progress has been made, theoretical error bounds still often behave disparately from empirical observations. In this work, we develop margin-based generalization bounds, where the margins are normalized with optimal transport costs between independent random subsets sampled from the training distribution. In particular, the optimal transport cost can be interpreted as a generalization of variance which captures the structural properties of the learned feature space. Our bounds robustly predict the generalization error, given training data and network parameters, on large scale datasets. Theoretically, we demonstrate that the concentration and separation of features play crucial roles in generalization, supporting empirical results in the literature. The code is available at {\textbackslash}url\{https://github.com/chingyaoc/kV-Margin\}.},
+	urldate = {2024-12-11},
+	publisher = {arXiv},
+	author = {Chuang, Ching-Yao and Mroueh, Youssef and Greenewald, Kristjan and Torralba, Antonio and Jegelka, Stefanie},
+	month = nov,
+	year = {2021},
+	note = {arXiv:2106.03314 [cs]},
+	keywords = {Computer Science - Machine Learning, Statistics - Machine Learning},
+	file = {Preprint PDF:/Users/adrianrodriguezmunoz/Zotero/storage/R4U88E7U/Chuang et al. - 2021 - Measuring Generalization with Optimal Transport.pdf:application/pdf;Snapshot:/Users/adrianrodriguezmunoz/Zotero/storage/DMVUAXP6/2106.html:text/html},
+}
+
+@misc{sundaram_when_2024,
+	title = {When {Does} {Perceptual} {Alignment} {Benefit} {Vision} {Representations}?},
+	url = {http://arxiv.org/abs/2410.10817},
+	doi = {10.48550/arXiv.2410.10817},
+	abstract = {Humans judge perceptual similarity according to diverse visual attributes, including scene layout, subject location, and camera pose. Existing vision models understand a wide range of semantic abstractions but improperly weigh these attributes and thus make inferences misaligned with human perception. While vision representations have previously benefited from alignment in contexts like image generation, the utility of perceptually aligned representations in more general-purpose settings remains unclear. Here, we investigate how aligning vision model representations to human perceptual judgments impacts their usability across diverse computer vision tasks. We finetune state-of-the-art models on human similarity judgments for image triplets and evaluate them across standard vision benchmarks. We find that aligning models to perceptual judgments yields representations that improve upon the original backbones across many downstream tasks, including counting, segmentation, depth estimation, instance retrieval, and retrieval-augmented generation. In addition, we find that performance is widely preserved on other tasks, including specialized out-of-distribution domains such as in medical imaging and 3D environment frames. Our results suggest that injecting an inductive bias about human perceptual knowledge into vision models can contribute to better representations.},
+	urldate = {2024-12-18},
+	publisher = {arXiv},
+	author = {Sundaram, Shobhita and Fu, Stephanie and Muttenthaler, Lukas and Tamir, Netanel Y. and Chai, Lucy and Kornblith, Simon and Darrell, Trevor and Isola, Phillip},
+	month = oct,
+	year = {2024},
+	note = {arXiv:2410.10817 [cs]},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition, Computer Science - Machine Learning},
+	file = {Full Text PDF:/Users/adrianrodriguezmunoz/Zotero/storage/ITT89GLG/Sundaram et al. - 2024 - When Does Perceptual Alignment Benefit Vision Repr.pdf:application/pdf;Snapshot:/Users/adrianrodriguezmunoz/Zotero/storage/3XAN5G45/2410.html:text/html},
+}
+
+@misc{fu_dreamsim_2023,
+	title = {{DreamSim}: {Learning} {New} {Dimensions} of {Human} {Visual} {Similarity} using {Synthetic} {Data}},
+	shorttitle = {{DreamSim}},
+	url = {http://arxiv.org/abs/2306.09344},
+	doi = {10.48550/arXiv.2306.09344},
+	abstract = {Current perceptual similarity metrics operate at the level of pixels and patches. These metrics compare images in terms of their low-level colors and textures, but fail to capture mid-level similarities and differences in image layout, object pose, and semantic content. In this paper, we develop a perceptual metric that assesses images holistically. Our first step is to collect a new dataset of human similarity judgments over image pairs that are alike in diverse ways. Critical to this dataset is that judgments are nearly automatic and shared by all observers. To achieve this we use recent text-to-image models to create synthetic pairs that are perturbed along various dimensions. We observe that popular perceptual metrics fall short of explaining our new data, and we introduce a new metric, DreamSim, tuned to better align with human perception. We analyze how our metric is affected by different visual attributes, and find that it focuses heavily on foreground objects and semantic content while also being sensitive to color and layout. Notably, despite being trained on synthetic data, our metric generalizes to real images, giving strong results on retrieval and reconstruction tasks. Furthermore, our metric outperforms both prior learned metrics and recent large vision models on these tasks.},
+	urldate = {2024-12-18},
+	publisher = {arXiv},
+	author = {Fu, Stephanie and Tamir, Netanel and Sundaram, Shobhita and Chai, Lucy and Zhang, Richard and Dekel, Tali and Isola, Phillip},
+	month = dec,
+	year = {2023},
+	note = {arXiv:2306.09344 [cs]},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition, Computer Science - Machine Learning},
+	file = {Full Text PDF:/Users/adrianrodriguezmunoz/Zotero/storage/RFJ43KNW/Fu et al. - 2023 - DreamSim Learning New Dimensions of Human Visual .pdf:application/pdf;Snapshot:/Users/adrianrodriguezmunoz/Zotero/storage/KAK2B76Z/2306.html:text/html},
+}
+
+@misc{papernot_deep_2018,
+	title = {Deep k-{Nearest} {Neighbors}: {Towards} {Confident}, {Interpretable} and {Robust} {Deep} {Learning}},
+	shorttitle = {Deep k-{Nearest} {Neighbors}},
+	url = {http://arxiv.org/abs/1803.04765},
+	doi = {10.48550/arXiv.1803.04765},
+	abstract = {Deep neural networks (DNNs) enable innovative applications of machine learning like image recognition, machine translation, or malware detection. However, deep learning is often criticized for its lack of robustness in adversarial settings (e.g., vulnerability to adversarial inputs) and general inability to rationalize its predictions. In this work, we exploit the structure of deep learning to enable new learning-based inference and decision strategies that achieve desirable properties such as robustness and interpretability. We take a first step in this direction and introduce the Deep k-Nearest Neighbors (DkNN). This hybrid classifier combines the k-nearest neighbors algorithm with representations of the data learned by each layer of the DNN: a test input is compared to its neighboring training points according to the distance that separates them in the representations. We show the labels of these neighboring points afford confidence estimates for inputs outside the model's training manifold, including on malicious inputs like adversarial examples--and therein provides protections against inputs that are outside the models understanding. This is because the nearest neighbors can be used to estimate the nonconformity of, i.e., the lack of support for, a prediction in the training data. The neighbors also constitute human-interpretable explanations of predictions. We evaluate the DkNN algorithm on several datasets, and show the confidence estimates accurately identify inputs outside the model, and that the explanations provided by nearest neighbors are intuitive and useful in understanding model failures.},
+	urldate = {2024-12-30},
+	publisher = {arXiv},
+	author = {Papernot, Nicolas and McDaniel, Patrick},
+	month = mar,
+	year = {2018},
+	note = {arXiv:1803.04765 [cs]},
+	keywords = {Computer Science - Machine Learning, Statistics - Machine Learning},
+	file = {Full Text PDF:/Users/adrianrodriguezmunoz/Zotero/storage/7JKZUFLX/Papernot and McDaniel - 2018 - Deep k-Nearest Neighbors Towards Confident, Inter.pdf:application/pdf;Snapshot:/Users/adrianrodriguezmunoz/Zotero/storage/VK4TMD4N/1803.html:text/html},
+}
+
+@misc{plotz_neural_2018,
+	title = {Neural {Nearest} {Neighbors} {Networks}},
+	url = {http://arxiv.org/abs/1810.12575},
+	doi = {10.48550/arXiv.1810.12575},
+	abstract = {Non-local methods exploiting the self-similarity of natural signals have been well studied, for example in image analysis and restoration. Existing approaches, however, rely on k-nearest neighbors (KNN) matching in a fixed feature space. The main hurdle in optimizing this feature space w.r.t. application performance is the non-differentiability of the KNN selection rule. To overcome this, we propose a continuous deterministic relaxation of KNN selection that maintains differentiability w.r.t. pairwise distances, but retains the original KNN as the limit of a temperature parameter approaching zero. To exploit our relaxation, we propose the neural nearest neighbors block (N3 block), a novel non-local processing layer that leverages the principle of self-similarity and can be used as building block in modern neural network architectures. We show its effectiveness for the set reasoning task of correspondence classification as well as for image restoration, including image denoising and single image super-resolution, where we outperform strong convolutional neural network (CNN) baselines and recent non-local models that rely on KNN selection in hand-chosen features spaces.},
+	urldate = {2024-12-30},
+	publisher = {arXiv},
+	author = {Plötz, Tobias and Roth, Stefan},
+	month = oct,
+	year = {2018},
+	note = {arXiv:1810.12575 [cs]},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition, Computer Science - Machine Learning},
+	file = {Full Text PDF:/Users/adrianrodriguezmunoz/Zotero/storage/D7WUK3BS/Plötz and Roth - 2018 - Neural Nearest Neighbors Networks.pdf:application/pdf;Snapshot:/Users/adrianrodriguezmunoz/Zotero/storage/KSPMAZLQ/1810.html:text/html},
+}
+
+@misc{wallace_interpreting_2018,
+	title = {Interpreting {Neural} {Networks} {With} {Nearest} {Neighbors}},
+	url = {http://arxiv.org/abs/1809.02847},
+	doi = {10.48550/arXiv.1809.02847},
+	abstract = {Local model interpretation methods explain individual predictions by assigning an importance value to each input feature. This value is often determined by measuring the change in confidence when a feature is removed. However, the confidence of neural networks is not a robust measure of model uncertainty. This issue makes reliably judging the importance of the input features difficult. We address this by changing the test-time behavior of neural networks using Deep k-Nearest Neighbors. Without harming text classification accuracy, this algorithm provides a more robust uncertainty metric which we use to generate feature importance values. The resulting interpretations better align with human perception than baseline methods. Finally, we use our interpretation method to analyze model predictions on dataset annotation artifacts.},
+	urldate = {2024-12-30},
+	publisher = {arXiv},
+	author = {Wallace, Eric and Feng, Shi and Boyd-Graber, Jordan},
+	month = nov,
+	year = {2018},
+	note = {arXiv:1809.02847 [cs]},
+	keywords = {Computer Science - Computation and Language},
+	file = {Full Text PDF:/Users/adrianrodriguezmunoz/Zotero/storage/BW9X4HH3/Wallace et al. - 2018 - Interpreting Neural Networks With Nearest Neighbor.pdf:application/pdf;Snapshot:/Users/adrianrodriguezmunoz/Zotero/storage/5XII7D27/1809.html:text/html},
+}
+
+@misc{wang_simpleshot_2019,
+	title = {{SimpleShot}: {Revisiting} {Nearest}-{Neighbor} {Classification} for {Few}-{Shot} {Learning}},
+	shorttitle = {{SimpleShot}},
+	url = {http://arxiv.org/abs/1911.04623},
+	doi = {10.48550/arXiv.1911.04623},
+	abstract = {Few-shot learners aim to recognize new object classes based on a small number of labeled training examples. To prevent overfitting, state-of-the-art few-shot learners use meta-learning on convolutional-network features and perform classification using a nearest-neighbor classifier. This paper studies the accuracy of nearest-neighbor baselines without meta-learning. Surprisingly, we find simple feature transformations suffice to obtain competitive few-shot learning accuracies. For example, we find that a nearest-neighbor classifier used in combination with mean-subtraction and L2-normalization outperforms prior results in three out of five settings on the miniImageNet dataset.},
+	urldate = {2024-12-30},
+	publisher = {arXiv},
+	author = {Wang, Yan and Chao, Wei-Lun and Weinberger, Kilian Q. and Maaten, Laurens van der},
+	month = nov,
+	year = {2019},
+	note = {arXiv:1911.04623 [cs]},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition},
+	file = {Full Text PDF:/Users/adrianrodriguezmunoz/Zotero/storage/2SLD3XNB/Wang et al. - 2019 - SimpleShot Revisiting Nearest-Neighbor Classifica.pdf:application/pdf;Snapshot:/Users/adrianrodriguezmunoz/Zotero/storage/INFSU35W/1911.html:text/html},
+}
+
+@misc{sitawarin_robustness_2019,
+	title = {On the {Robustness} of {Deep} {K}-{Nearest} {Neighbors}},
+	url = {http://arxiv.org/abs/1903.08333},
+	doi = {10.48550/arXiv.1903.08333},
+	abstract = {Despite a large amount of attention on adversarial examples, very few works have demonstrated an effective defense against this threat. We examine Deep k-Nearest Neighbor (DkNN), a proposed defense that combines k-Nearest Neighbor (kNN) and deep learning to improve the model's robustness to adversarial examples. It is challenging to evaluate the robustness of this scheme due to a lack of efficient algorithm for attacking kNN classifiers with large k and high-dimensional data. We propose a heuristic attack that allows us to use gradient descent to find adversarial examples for kNN classifiers, and then apply it to attack the DkNN defense as well. Results suggest that our attack is moderately stronger than any naive attack on kNN and significantly outperforms other attacks on DkNN.},
+	urldate = {2024-12-30},
+	publisher = {arXiv},
+	author = {Sitawarin, Chawin and Wagner, David},
+	month = mar,
+	year = {2019},
+	note = {arXiv:1903.08333 [cs]},
+	keywords = {Statistics - Machine Learning, Computer Science - Cryptography and Security},
+	file = {Full Text PDF:/Users/adrianrodriguezmunoz/Zotero/storage/7WE52HXJ/Sitawarin and Wagner - 2019 - On the Robustness of Deep K-Nearest Neighbors.pdf:application/pdf;Snapshot:/Users/adrianrodriguezmunoz/Zotero/storage/4RQYMIVC/1903.html:text/html},
+}
+
+@misc{bergman_deep_2020,
+	title = {Deep {Nearest} {Neighbor} {Anomaly} {Detection}},
+	url = {http://arxiv.org/abs/2002.10445},
+	doi = {10.48550/arXiv.2002.10445},
+	abstract = {Nearest neighbors is a successful and long-standing technique for anomaly detection. Significant progress has been recently achieved by self-supervised deep methods (e.g. RotNet). Self-supervised features however typically under-perform Imagenet pre-trained features. In this work, we investigate whether the recent progress can indeed outperform nearest-neighbor methods operating on an Imagenet pretrained feature space. The simple nearest-neighbor based-approach is experimentally shown to outperform self-supervised methods in: accuracy, few shot generalization, training time and noise robustness while making fewer assumptions on image distributions.},
+	urldate = {2024-12-30},
+	publisher = {arXiv},
+	author = {Bergman, Liron and Cohen, Niv and Hoshen, Yedid},
+	month = feb,
+	year = {2020},
+	note = {arXiv:2002.10445 [cs]},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition, Computer Science - Machine Learning, Statistics - Machine Learning},
+	file = {Full Text PDF:/Users/adrianrodriguezmunoz/Zotero/storage/6L45FV4J/Bergman et al. - 2020 - Deep Nearest Neighbor Anomaly Detection.pdf:application/pdf;Snapshot:/Users/adrianrodriguezmunoz/Zotero/storage/I34B9WME/2002.html:text/html},
+}
+
+@misc{rajani_explaining_2020,
+	title = {Explaining and {Improving} {Model} {Behavior} with k {Nearest} {Neighbor} {Representations}},
+	url = {http://arxiv.org/abs/2010.09030},
+	doi = {10.48550/arXiv.2010.09030},
+	abstract = {Interpretability techniques in NLP have mainly focused on understanding individual predictions using attention visualization or gradient-based saliency maps over tokens. We propose using k nearest neighbor (kNN) representations to identify training examples responsible for a model's predictions and obtain a corpus-level understanding of the model's behavior. Apart from interpretability, we show that kNN representations are effective at uncovering learned spurious associations, identifying mislabeled examples, and improving the fine-tuned model's performance. We focus on Natural Language Inference (NLI) as a case study and experiment with multiple datasets. Our method deploys backoff to kNN for BERT and RoBERTa on examples with low model confidence without any update to the model parameters. Our results indicate that the kNN approach makes the finetuned model more robust to adversarial inputs.},
+	urldate = {2024-12-30},
+	publisher = {arXiv},
+	author = {Rajani, Nazneen Fatema and Krause, Ben and Yin, Wengpeng and Niu, Tong and Socher, Richard and Xiong, Caiming},
+	month = oct,
+	year = {2020},
+	note = {arXiv:2010.09030 [cs]},
+	keywords = {Computer Science - Machine Learning, Computer Science - Computation and Language},
+	file = {Full Text PDF:/Users/adrianrodriguezmunoz/Zotero/storage/8M6L8LSU/Rajani et al. - 2020 - Explaining and Improving Model Behavior with k Nea.pdf:application/pdf;Snapshot:/Users/adrianrodriguezmunoz/Zotero/storage/MYW2QQQA/2010.html:text/html},
+}
+
+@misc{khandelwal_generalization_2020,
+	title = {Generalization through {Memorization}: {Nearest} {Neighbor} {Language} {Models}},
+	shorttitle = {Generalization through {Memorization}},
+	url = {http://arxiv.org/abs/1911.00172},
+	doi = {10.48550/arXiv.1911.00172},
+	abstract = {We introduce \$k\$NN-LMs, which extend a pre-trained neural language model (LM) by linearly interpolating it with a \$k\$-nearest neighbors (\$k\$NN) model. The nearest neighbors are computed according to distance in the pre-trained LM embedding space, and can be drawn from any text collection, including the original LM training data. Applying this augmentation to a strong Wikitext-103 LM, with neighbors drawn from the original training set, our \$k\$NN-LM achieves a new state-of-the-art perplexity of 15.79 - a 2.9 point improvement with no additional training. We also show that this approach has implications for efficiently scaling up to larger training sets and allows for effective domain adaptation, by simply varying the nearest neighbor datastore, again without further training. Qualitatively, the model is particularly helpful in predicting rare patterns, such as factual knowledge. Together, these results strongly suggest that learning similarity between sequences of text is easier than predicting the next word, and that nearest neighbor search is an effective approach for language modeling in the long tail.},
+	urldate = {2024-12-30},
+	publisher = {arXiv},
+	author = {Khandelwal, Urvashi and Levy, Omer and Jurafsky, Dan and Zettlemoyer, Luke and Lewis, Mike},
+	month = feb,
+	year = {2020},
+	note = {arXiv:1911.00172 [cs]},
+	keywords = {Computer Science - Computation and Language},
+	file = {Full Text PDF:/Users/adrianrodriguezmunoz/Zotero/storage/JHWAVPKF/Khandelwal et al. - 2020 - Generalization through Memorization Nearest Neigh.pdf:application/pdf;Snapshot:/Users/adrianrodriguezmunoz/Zotero/storage/557DGZCI/1911.html:text/html},
+}
+
+@misc{nakata_revisiting_2022,
+	title = {Revisiting a {kNN}-based {Image} {Classification} {System} with {High}-capacity {Storage}},
+	url = {http://arxiv.org/abs/2204.01186},
+	doi = {10.48550/arXiv.2204.01186},
+	abstract = {In existing image classification systems that use deep neural networks, the knowledge needed for image classification is implicitly stored in model parameters. If users want to update this knowledge, then they need to fine-tune the model parameters. Moreover, users cannot verify the validity of inference results or evaluate the contribution of knowledge to the results. In this paper, we investigate a system that stores knowledge for image classification, such as image feature maps, labels, and original images, not in model parameters but in external high-capacity storage. Our system refers to the storage like a database when classifying input images. To increase knowledge, our system updates the database instead of fine-tuning model parameters, which avoids catastrophic forgetting in incremental learning scenarios. We revisit a kNN (k-Nearest Neighbor) classifier and employ it in our system. By analyzing the neighborhood samples referred by the kNN algorithm, we can interpret how knowledge learned in the past is used for inference results. Our system achieves 79.8\% top-1 accuracy on the ImageNet dataset without fine-tuning model parameters after pretraining, and 90.8\% accuracy on the Split CIFAR-100 dataset in the task incremental learning setting.},
+	urldate = {2024-12-30},
+	publisher = {arXiv},
+	author = {Nakata, Kengo and Ng, Youyang and Miyashita, Daisuke and Maki, Asuka and Lin, Yu-Chieh and Deguchi, Jun},
+	month = jul,
+	year = {2022},
+	note = {arXiv:2204.01186 [cs]},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition},
+	file = {Full Text PDF:/Users/adrianrodriguezmunoz/Zotero/storage/NWSVUN47/Nakata et al. - 2022 - Revisiting a kNN-based Image Classification System.pdf:application/pdf;Snapshot:/Users/adrianrodriguezmunoz/Zotero/storage/6DNJ8Q8A/2204.html:text/html},
+}
+
+@inproceedings{drozdov_you_2022,
+	address = {Abu Dhabi, United Arab Emirates},
+	title = {You can't pick your neighbors, or can you? {When} and {How} to {Rely} on {Retrieval} in the {kNN}-{LM}},
+	shorttitle = {You can't pick your neighbors, or can you?},
+	url = {https://aclanthology.org/2022.findings-emnlp.218},
+	doi = {10.18653/v1/2022.findings-emnlp.218},
+	abstract = {Retrieval-enhanced language models (LMs), which condition their predictions on text retrieved from large external datastores, have recently shown significant perplexity improvements compared to standard LMs. One such approach, the kNN-LM, interpolates any existing LM's predictions with the output of a k-nearest neighbors model and requires no additional training. In this paper, we explore the importance of lexical and semantic matching in the context of items retrieved by kNN-LM. We find two trends: (1) the presence of large overlapping n-grams between the datastore and evaluation set plays an important factor in strong performance, even when the datastore is derived from the training data; and (2) the kNN-LM is most beneficial when retrieved items have high semantic similarity with the query. Based on our analysis, we define a new formulation of the kNN-LM that uses retrieval quality to assign the interpolation coefficient. We empirically measure the effectiveness of our approach on two English language modeling datasets, Wikitext-103 and PG-19. Our re-formulation of the kNN-LM is beneficial in both cases, and leads to nearly 4\% improvement in perplexity on the Wikitext-103 test set.},
+	urldate = {2024-12-30},
+	booktitle = {Findings of the {Association} for {Computational} {Linguistics}: {EMNLP} 2022},
+	publisher = {Association for Computational Linguistics},
+	author = {Drozdov, Andrew and Wang, Shufan and Rahimi, Razieh and McCallum, Andrew and Zamani, Hamed and Iyyer, Mohit},
+	editor = {Goldberg, Yoav and Kozareva, Zornitsa and Zhang, Yue},
+	month = dec,
+	year = {2022},
+	pages = {2997--3007},
+	file = {Full Text PDF:/Users/adrianrodriguezmunoz/Zotero/storage/2BZVWQ5M/Drozdov et al. - 2022 - You can't pick your neighbors, or can you When an.pdf:application/pdf},
+}
+
+@inproceedings{lee_improving_2020,
+	address = {Orlando, FL},
+	title = {Improving {Trust} in {Deep} {Neural} {Networks} with {Nearest} {Neighbors}},
+	isbn = {978-1-62410-595-1},
+	url = {https://arc.aiaa.org/doi/10.2514/6.2020-2098},
+	doi = {10.2514/6.2020-2098},
+	language = {en},
+	urldate = {2024-12-30},
+	booktitle = {{AIAA} {Scitech} 2020 {Forum}},
+	publisher = {American Institute of Aeronautics and Astronautics},
+	author = {Lee, Ritchie and Clarke, Justin and Agogino, Adrian and Giannakopoulou, Dimitra},
+	month = jan,
+	year = {2020},
+	file = {Lee et al. - 2020 - Improving Trust in Deep Neural Networks with Neare.pdf:/Users/adrianrodriguezmunoz/Zotero/storage/9GJZ5HD7/Lee et al. - 2020 - Improving Trust in Deep Neural Networks with Neare.pdf:application/pdf},
+}
+
+@misc{sun_out--distribution_2022,
+	title = {Out-of-{Distribution} {Detection} with {Deep} {Nearest} {Neighbors}},
+	url = {http://arxiv.org/abs/2204.06507},
+	doi = {10.48550/arXiv.2204.06507},
+	abstract = {Out-of-distribution (OOD) detection is a critical task for deploying machine learning models in the open world. Distance-based methods have demonstrated promise, where testing samples are detected as OOD if they are relatively far away from in-distribution (ID) data. However, prior methods impose a strong distributional assumption of the underlying feature space, which may not always hold. In this paper, we explore the efficacy of non-parametric nearest-neighbor distance for OOD detection, which has been largely overlooked in the literature. Unlike prior works, our method does not impose any distributional assumption, hence providing stronger flexibility and generality. We demonstrate the effectiveness of nearest-neighbor-based OOD detection on several benchmarks and establish superior performance. Under the same model trained on ImageNet-1k, our method substantially reduces the false positive rate (FPR@TPR95) by 24.77\% compared to a strong baseline SSD+, which uses a parametric approach Mahalanobis distance in detection. Code is available: https://github.com/deeplearning-wisc/knn-ood.},
+	urldate = {2024-12-30},
+	publisher = {arXiv},
+	author = {Sun, Yiyou and Ming, Yifei and Zhu, Xiaojin and Li, Yixuan},
+	month = dec,
+	year = {2022},
+	note = {arXiv:2204.06507 [cs]},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition, Computer Science - Machine Learning},
+	file = {Full Text PDF:/Users/adrianrodriguezmunoz/Zotero/storage/5JPN2DJC/Sun et al. - 2022 - Out-of-Distribution Detection with Deep Nearest Ne.pdf:application/pdf;Snapshot:/Users/adrianrodriguezmunoz/Zotero/storage/Q8VG5VAH/2204.html:text/html},
+}
+
+@incollection{martel_deep_2020,
+	address = {Cham},
+	title = {Deep {kNN} for {Medical} {Image} {Classification}},
+	volume = {12261},
+	isbn = {978-3-030-59709-2 978-3-030-59710-8},
+	url = {https://link.springer.com/10.1007/978-3-030-59710-8_13},
+	abstract = {Human-level diagnostic performance from intelligent systems often depends on large set of training data. However, the amount of available data for model training may be limited for part of diseases, which would cause the widely adopted deep learning models not generalizing well. One alternative simple approach to small class prediction is the traditional k-nearest neighbor (kNN). However, due to the non-parametric characteristics of kNN, it is diﬃcult to combine the kNN classiﬁcation into the learning of feature extractor. This paper proposes an end-to-end learning strategy to unify the kNN classiﬁcation and the feature extraction procedure. The basic idea is to enforce that each training sample and its K nearest neighbors belong to the same class during learning the feature extractor. Experiments on multiple small-class and class-imbalanced medical image datasets showed that the proposed deep kNN outperforms both kNN and other strong classiﬁers.},
+	language = {en},
+	urldate = {2024-12-30},
+	booktitle = {Medical {Image} {Computing} and {Computer} {Assisted} {Intervention} – {MICCAI} 2020},
+	publisher = {Springer International Publishing},
+	author = {Zhuang, Jiaxin and Cai, Jiabin and Wang, Ruixuan and Zhang, Jianguo and Zheng, Wei-Shi},
+	editor = {Martel, Anne L. and Abolmaesumi, Purang and Stoyanov, Danail and Mateus, Diana and Zuluaga, Maria A. and Zhou, S. Kevin and Racoceanu, Daniel and Joskowicz, Leo},
+	year = {2020},
+	doi = {10.1007/978-3-030-59710-8_13},
+	note = {Series Title: Lecture Notes in Computer Science},
+	pages = {127--136},
+	file = {Zhuang et al. - 2020 - Deep kNN for Medical Image Classification.pdf:/Users/adrianrodriguezmunoz/Zotero/storage/QLHRI4MI/Zhuang et al. - 2020 - Deep kNN for Medical Image Classification.pdf:application/pdf},
+}
+
+@misc{wu_memorizing_2022,
+	title = {Memorizing {Transformers}},
+	url = {http://arxiv.org/abs/2203.08913},
+	doi = {10.48550/arXiv.2203.08913},
+	abstract = {Language models typically need to be trained or finetuned in order to acquire new knowledge, which involves updating their weights. We instead envision language models that can simply read and memorize new data at inference time, thus acquiring new knowledge immediately. In this work, we extend language models with the ability to memorize the internal representations of past inputs. We demonstrate that an approximate kNN lookup into a non-differentiable memory of recent (key, value) pairs improves language modeling across various benchmarks and tasks, including generic webtext (C4), math papers (arXiv), books (PG-19), code (Github), as well as formal theorems (Isabelle). We show that the performance steadily improves when we increase the size of memory up to 262K tokens. On benchmarks including code and mathematics, we find that the model is capable of making use of newly defined functions and theorems during test time.},
+	urldate = {2024-12-30},
+	publisher = {arXiv},
+	author = {Wu, Yuhuai and Rabe, Markus N. and Hutchins, DeLesley and Szegedy, Christian},
+	month = mar,
+	year = {2022},
+	note = {arXiv:2203.08913 [cs]},
+	keywords = {Computer Science - Artificial Intelligence, Computer Science - Machine Learning, Computer Science - Computation and Language},
+	file = {Full Text PDF:/Users/adrianrodriguezmunoz/Zotero/storage/9J579R84/Wu et al. - 2022 - Memorizing Transformers.pdf:application/pdf;Snapshot:/Users/adrianrodriguezmunoz/Zotero/storage/V9XEGGDW/2203.html:text/html},
+}
+
+@misc{geirhos_towards_2024,
+	title = {Towards flexible perception with visual memory},
+	url = {http://arxiv.org/abs/2408.08172},
+	doi = {10.48550/arXiv.2408.08172},
+	abstract = {Training a neural network is a monolithic endeavor, akin to carving knowledge into stone: once the process is completed, editing the knowledge in a network is nearly impossible, since all information is distributed across the network's weights. We here explore a simple, compelling alternative by marrying the representational power of deep neural networks with the flexibility of a database. Decomposing the task of image classification into image similarity (from a pre-trained embedding) and search (via fast nearest neighbor retrieval from a knowledge database), we build a simple and flexible visual memory that has the following key capabilities: (1.) The ability to flexibly add data across scales: from individual samples all the way to entire classes and billion-scale data; (2.) The ability to remove data through unlearning and memory pruning; (3.) An interpretable decision-mechanism on which we can intervene to control its behavior. Taken together, these capabilities comprehensively demonstrate the benefits of an explicit visual memory. We hope that it might contribute to a conversation on how knowledge should be represented in deep vision models -- beyond carving it in "stone" weights.},
+	urldate = {2025-01-14},
+	publisher = {arXiv},
+	author = {Geirhos, Robert and Jaini, Priyank and Stone, Austin and Medapati, Sourabh and Yi, Xi and Toderici, George and Ogale, Abhijit and Shlens, Jonathon},
+	month = sep,
+	year = {2024},
+	note = {arXiv:2408.08172 [cs]},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition, Computer Science - Artificial Intelligence, Computer Science - Machine Learning},
+	file = {Full Text PDF:/Users/adrianrodriguezmunoz/Zotero/storage/K8J2AJGA/Geirhos et al. - 2024 - Towards flexible perception with visual memory.pdf:application/pdf;Snapshot:/Users/adrianrodriguezmunoz/Zotero/storage/RLCKPL4D/2408.html:text/html},
+}
+
+@misc{noauthor_d2n4_nodate,
+	title = {{D2N4}: {A} {Discriminative} {Deep} {Nearest} {Neighbor} {Neural} {Network} for {Few}-{Shot} {Space} {Target} {Recognition} {\textbar} {IEEE} {Journals} \& {Magazine} {\textbar} {IEEE} {Xplore}},
+	url = {https://ieeexplore.ieee.org/document/8949701},
+	urldate = {2025-01-14},
+	file = {D2N4\: A Discriminative Deep Nearest Neighbor Neural Network for Few-Shot Space Target Recognition | IEEE Journals & Magazine | IEEE Xplore:/Users/adrianrodriguezmunoz/Zotero/storage/KWTE9ZQQ/8949701.html:text/html},
+}
+
+@inproceedings{bari_nearest_2021,
+	address = {Online and Punta Cana, Dominican Republic},
+	title = {Nearest {Neighbour} {Few}-{Shot} {Learning} for {Cross}-lingual {Classification}},
+	url = {https://aclanthology.org/2021.emnlp-main.131/},
+	doi = {10.18653/v1/2021.emnlp-main.131},
+	abstract = {Even though large pre-trained multilingual models (e.g. mBERT, XLM-R) have led to significant performance gains on a wide range of cross-lingual NLP tasks, success on many downstream tasks still relies on the availability of sufficient annotated data. Traditional fine-tuning of pre-trained models using only a few target samples can cause over-fitting. This can be quite limiting as most languages in the world are under-resourced. In this work, we investigate cross-lingual adaptation using a simple nearest-neighbor few-shot ({\textless}15 samples) inference technique for classification tasks. We experiment using a total of 16 distinct languages across two NLP tasks- XNLI and PAWS-X. Our approach consistently improves traditional fine-tuning using only a handful of labeled samples in target locales. We also demonstrate its generalization capability across tasks.},
+	urldate = {2025-01-14},
+	booktitle = {Proceedings of the 2021 {Conference} on {Empirical} {Methods} in {Natural} {Language} {Processing}},
+	publisher = {Association for Computational Linguistics},
+	author = {Bari, M Saiful and Haider, Batool and Mansour, Saab},
+	editor = {Moens, Marie-Francine and Huang, Xuanjing and Specia, Lucia and Yih, Scott Wen-tau},
+	month = nov,
+	year = {2021},
+	pages = {1745--1753},
+	file = {Full Text PDF:/Users/adrianrodriguezmunoz/Zotero/storage/HM9QTB6H/Bari et al. - 2021 - Nearest Neighbour Few-Shot Learning for Cross-ling.pdf:application/pdf},
+}
+
+@article{yang_d2n4_2020,
+	title = {{D2N4}: {A} {Discriminative} {Deep} {Nearest} {Neighbor} {Neural} {Network} for {Few}-{Shot} {Space} {Target} {Recognition}},
+	volume = {58},
+	issn = {1558-0644},
+	shorttitle = {{D2N4}},
+	url = {https://ieeexplore.ieee.org/document/8949701/?arnumber=8949701},
+	doi = {10.1109/TGRS.2019.2959838},
+	abstract = {With the rapid development of space exploration worldwide, there is a sudden increase in the type and number of spacecraft, thus leading to a more complex space environment. To enhance the ability of space situational awareness, the most important step is to effectively recognize space targets of interests from various spacecraft and debris. Traditional space target recognition approaches adopt manual feature extraction with limited data, resulting in a semantic gap between low-level visual features and high-level semantic representation. Although deep learning models alleviate this problem with a unified framework for combined learning feature extraction and classification simultaneously, it is easy to overfit and leads to poor generalization results when faced with a situation of small examples. To address these issues, we present an end-to-end few-shot deep learning framework for space target recognition, i.e., discriminative deep nearest neighbor neural network (D2N4). Our D2N4 aims to improve the discriminability of the deeply learned features with mainly two strategies. On the one hand, we add an intraclass compactness principle by introducing center loss to efficiently pull deep features of the same classes to their centers and, thus overcoming significant intraclass variation of space target. On the other hand, we introduce the global pooling information for each deep local descriptor to reduce interference from local background noise, thus enhancing the model robustness. In practice, under the joint supervision of soft-max loss and center loss, the deep embedding module and image-to-class metric module are trained in an end-to-end way. Extensive experiments on the space target data set BUAA-SID-share1.0 demonstrate that our simple and effective approach outperforms previous space target recognition methods and is more efficient than recent few-shot approaches. In addition, the proposed framework is equally applicable to natural images and achieves state-of-the-art performance on data sets CUB-200-2010, Stanford Dogs, and Stanford Cars.},
+	number = {5},
+	urldate = {2025-01-14},
+	journal = {IEEE Transactions on Geoscience and Remote Sensing},
+	author = {Yang, Xi and Nan, Xiaoting and Song, Bin},
+	month = may,
+	year = {2020},
+	note = {Conference Name: IEEE Transactions on Geoscience and Remote Sensing},
+	keywords = {Neural networks, Training, Discriminative feature, Feature extraction, few-shot learning, Measurement, metric learning, Semantics, space target recognition, Target recognition, Task analysis, transfer learning},
+	pages = {3667--3676},
+	file = {IEEE Xplore Abstract Record:/Users/adrianrodriguezmunoz/Zotero/storage/5SJB28AX/8949701.html:text/html},
+}
+
+@misc{kataoka_pre-training_2021,
+	title = {Pre-training without {Natural} {Images}},
+	url = {http://arxiv.org/abs/2101.08515},
+	doi = {10.48550/arXiv.2101.08515},
+	abstract = {Is it possible to use convolutional neural networks pre-trained without any natural images to assist natural image understanding? The paper proposes a novel concept, Formula-driven Supervised Learning. We automatically generate image patterns and their category labels by assigning fractals, which are based on a natural law existing in the background knowledge of the real world. Theoretically, the use of automatically generated images instead of natural images in the pre-training phase allows us to generate an infinite scale dataset of labeled images. Although the models pre-trained with the proposed Fractal DataBase (FractalDB), a database without natural images, does not necessarily outperform models pre-trained with human annotated datasets at all settings, we are able to partially surpass the accuracy of ImageNet/Places pre-trained models. The image representation with the proposed FractalDB captures a unique feature in the visualization of convolutional layers and attentions.},
+	urldate = {2025-01-15},
+	publisher = {arXiv},
+	author = {Kataoka, Hirokatsu and Okayasu, Kazushige and Matsumoto, Asato and Yamagata, Eisuke and Yamada, Ryosuke and Inoue, Nakamasa and Nakamura, Akio and Satoh, Yutaka},
+	month = jan,
+	year = {2021},
+	note = {arXiv:2101.08515 [cs]},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition, Computer Science - Machine Learning},
+	file = {Preprint PDF:/Users/adrianrodriguezmunoz/Zotero/storage/CB836LRJ/Kataoka et al. - 2021 - Pre-training without Natural Images.pdf:application/pdf;Snapshot:/Users/adrianrodriguezmunoz/Zotero/storage/MCZXLPKS/2101.html:text/html},
+}
+
+@misc{sun_autoflow_2021,
+	title = {{AutoFlow}: {Learning} a {Better} {Training} {Set} for {Optical} {Flow}},
+	shorttitle = {{AutoFlow}},
+	url = {http://arxiv.org/abs/2104.14544},
+	doi = {10.48550/arXiv.2104.14544},
+	abstract = {Synthetic datasets play a critical role in pre-training CNN models for optical flow, but they are painstaking to generate and hard to adapt to new applications. To automate the process, we present AutoFlow, a simple and effective method to render training data for optical flow that optimizes the performance of a model on a target dataset. AutoFlow takes a layered approach to render synthetic data, where the motion, shape, and appearance of each layer are controlled by learnable hyperparameters. Experimental results show that AutoFlow achieves state-of-the-art accuracy in pre-training both PWC-Net and RAFT. Our code and data are available at https://autoflow-google.github.io .},
+	urldate = {2025-01-15},
+	publisher = {arXiv},
+	author = {Sun, Deqing and Vlasic, Daniel and Herrmann, Charles and Jampani, Varun and Krainin, Michael and Chang, Huiwen and Zabih, Ramin and Freeman, William T. and Liu, Ce},
+	month = apr,
+	year = {2021},
+	note = {arXiv:2104.14544 [cs]},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition},
+	file = {Preprint PDF:/Users/adrianrodriguezmunoz/Zotero/storage/CMN2LRZ3/Sun et al. - 2021 - AutoFlow Learning a Better Training Set for Optic.pdf:application/pdf;Snapshot:/Users/adrianrodriguezmunoz/Zotero/storage/YNRU5CFM/2104.html:text/html},
+}
+
+@misc{nakashima_can_2021,
+	title = {Can {Vision} {Transformers} {Learn} without {Natural} {Images}?},
+	url = {http://arxiv.org/abs/2103.13023},
+	doi = {10.48550/arXiv.2103.13023},
+	abstract = {Can we complete pre-training of Vision Transformers (ViT) without natural images and human-annotated labels? Although a pre-trained ViT seems to heavily rely on a large-scale dataset and human-annotated labels, recent large-scale datasets contain several problems in terms of privacy violations, inadequate fairness protection, and labor-intensive annotation. In the present paper, we pre-train ViT without any image collections and annotation labor. We experimentally verify that our proposed framework partially outperforms sophisticated Self-Supervised Learning (SSL) methods like SimCLRv2 and MoCov2 without using any natural images in the pre-training phase. Moreover, although the ViT pre-trained without natural images produces some different visualizations from ImageNet pre-trained ViT, it can interpret natural image datasets to a large extent. For example, the performance rates on the CIFAR-10 dataset are as follows: our proposal 97.6 vs. SimCLRv2 97.4 vs. ImageNet 98.0.},
+	urldate = {2025-01-15},
+	publisher = {arXiv},
+	author = {Nakashima, Kodai and Kataoka, Hirokatsu and Matsumoto, Asato and Iwata, Kenji and Inoue, Nakamasa},
+	month = mar,
+	year = {2021},
+	note = {arXiv:2103.13023 [cs]},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition},
+	file = {Preprint PDF:/Users/adrianrodriguezmunoz/Zotero/storage/9HQKWMNJ/Nakashima et al. - 2021 - Can Vision Transformers Learn without Natural Imag.pdf:application/pdf;Snapshot:/Users/adrianrodriguezmunoz/Zotero/storage/IWXT87WV/2103.html:text/html},
+}
+
+@misc{anderson_improving_2021,
+	title = {Improving {Fractal} {Pre}-training},
+	url = {http://arxiv.org/abs/2110.03091},
+	doi = {10.48550/arXiv.2110.03091},
+	abstract = {The deep neural networks used in modern computer vision systems require enormous image datasets to train them. These carefully-curated datasets typically have a million or more images, across a thousand or more distinct categories. The process of creating and curating such a dataset is a monumental undertaking, demanding extensive effort and labelling expense and necessitating careful navigation of technical and social issues such as label accuracy, copyright ownership, and content bias. What if we had a way to harness the power of large image datasets but with few or none of the major issues and concerns currently faced? This paper extends the recent work of Kataoka et. al. (2020), proposing an improved pre-training dataset based on dynamically-generated fractal images. Challenging issues with large-scale image datasets become points of elegance for fractal pre-training: perfect label accuracy at zero cost; no need to store/transmit large image archives; no privacy/demographic bias/concerns of inappropriate content, as no humans are pictured; limitless supply and diversity of images; and the images are free/open-source. Perhaps surprisingly, avoiding these difficulties imposes only a small penalty in performance. Leveraging a newly-proposed pre-training task -- multi-instance prediction -- our experiments demonstrate that fine-tuning a network pre-trained using fractals attains 92.7-98.1\% of the accuracy of an ImageNet pre-trained network.},
+	urldate = {2025-01-15},
+	publisher = {arXiv},
+	author = {Anderson, Connor and Farrell, Ryan},
+	month = dec,
+	year = {2021},
+	note = {arXiv:2110.03091 [cs]},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition},
+	file = {Preprint PDF:/Users/adrianrodriguezmunoz/Zotero/storage/T3PWETWK/Anderson and Farrell - 2021 - Improving Fractal Pre-training.pdf:application/pdf;Snapshot:/Users/adrianrodriguezmunoz/Zotero/storage/6AQ6MGA9/2110.html:text/html},
+}
+
+@article{zhou_places_2018,
+	title = {Places: {A} 10 {Million} {Image} {Database} for {Scene} {Recognition}},
+	volume = {40},
+	issn = {1939-3539},
+	shorttitle = {Places},
+	url = {https://ieeexplore.ieee.org/document/7968387/?arnumber=7968387},
+	doi = {10.1109/TPAMI.2017.2723009},
+	abstract = {The rise of multi-million-item dataset initiatives has enabled data-hungry machine learning algorithms to reach near-human semantic classification performance at tasks such as visual object and scene recognition. Here we describe the Places Database, a repository of 10 million scene photographs, labeled with scene semantic categories, comprising a large and diverse list of the types of environments encountered in the world. Using the state-of-the-art Convolutional Neural Networks (CNNs), we provide scene classification CNNs (Places-CNNs) as baselines, that significantly outperform the previous approaches. Visualization of the CNNs trained on Places shows that object detectors emerge as an intermediate representation of scene classification. With its high-coverage and high-diversity of exemplars, the Places Database along with the Places-CNNs offer a novel resource to guide future progress on scene recognition problems.},
+	number = {6},
+	urldate = {2025-01-15},
+	journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+	author = {Zhou, Bolei and Lapedriza, Agata and Khosla, Aditya and Oliva, Aude and Torralba, Antonio},
+	month = jun,
+	year = {2018},
+	note = {Conference Name: IEEE Transactions on Pattern Analysis and Machine Intelligence},
+	keywords = {deep feature, deep learning, Deep learning, Image analysis, Image classification, image dataset, Image recognition, Leearning (artificial intelligence), Object recognition, Scene classification, visual recognition},
+	pages = {1452--1464},
+	file = {Full Text PDF:/Users/adrianrodriguezmunoz/Zotero/storage/ZZQ8UPN6/Zhou et al. - 2018 - Places A 10 Million Image Database for Scene Reco.pdf:application/pdf;IEEE Xplore Abstract Record:/Users/adrianrodriguezmunoz/Zotero/storage/JMBIFRDS/7968387.html:text/html},
+}
+
+@misc{russakovsky_imagenet_2015,
+	title = {{ImageNet} {Large} {Scale} {Visual} {Recognition} {Challenge}},
+	url = {http://arxiv.org/abs/1409.0575},
+	doi = {10.48550/arXiv.1409.0575},
+	abstract = {The ImageNet Large Scale Visual Recognition Challenge is a benchmark in object category classification and detection on hundreds of object categories and millions of images. The challenge has been run annually from 2010 to present, attracting participation from more than fifty institutions. This paper describes the creation of this benchmark dataset and the advances in object recognition that have been possible as a result. We discuss the challenges of collecting large-scale ground truth annotation, highlight key breakthroughs in categorical object recognition, provide a detailed analysis of the current state of the field of large-scale image classification and object detection, and compare the state-of-the-art computer vision accuracy with human accuracy. We conclude with lessons learned in the five years of the challenge, and propose future directions and improvements.},
+	urldate = {2025-01-15},
+	publisher = {arXiv},
+	author = {Russakovsky, Olga and Deng, Jia and Su, Hao and Krause, Jonathan and Satheesh, Sanjeev and Ma, Sean and Huang, Zhiheng and Karpathy, Andrej and Khosla, Aditya and Bernstein, Michael and Berg, Alexander C. and Fei-Fei, Li},
+	month = jan,
+	year = {2015},
+	note = {arXiv:1409.0575 [cs]},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition},
+	file = {Full Text PDF:/Users/adrianrodriguezmunoz/Zotero/storage/R5JIGSM9/Russakovsky et al. - 2015 - ImageNet Large Scale Visual Recognition Challenge.pdf:application/pdf;Snapshot:/Users/adrianrodriguezmunoz/Zotero/storage/UMY5H7TL/1409.html:text/html},
+}
+
+@misc{caron_emerging_2021,
+	title = {Emerging {Properties} in {Self}-{Supervised} {Vision} {Transformers}},
+	url = {http://arxiv.org/abs/2104.14294},
+	doi = {10.48550/arXiv.2104.14294},
+	abstract = {In this paper, we question if self-supervised learning provides new properties to Vision Transformer (ViT) that stand out compared to convolutional networks (convnets). Beyond the fact that adapting self-supervised methods to this architecture works particularly well, we make the following observations: first, self-supervised ViT features contain explicit information about the semantic segmentation of an image, which does not emerge as clearly with supervised ViTs, nor with convnets. Second, these features are also excellent k-NN classifiers, reaching 78.3\% top-1 on ImageNet with a small ViT. Our study also underlines the importance of momentum encoder, multi-crop training, and the use of small patches with ViTs. We implement our findings into a simple self-supervised method, called DINO, which we interpret as a form of self-distillation with no labels. We show the synergy between DINO and ViTs by achieving 80.1\% top-1 on ImageNet in linear evaluation with ViT-Base.},
+	urldate = {2025-01-23},
+	publisher = {arXiv},
+	author = {Caron, Mathilde and Touvron, Hugo and Misra, Ishan and Jégou, Hervé and Mairal, Julien and Bojanowski, Piotr and Joulin, Armand},
+	month = may,
+	year = {2021},
+	note = {arXiv:2104.14294 [cs]},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition},
+	file = {Preprint PDF:/Users/adrianrodriguezmunoz/Zotero/storage/MXWVSCZK/Caron et al. - 2021 - Emerging Properties in Self-Supervised Vision Tran.pdf:application/pdf;Snapshot:/Users/adrianrodriguezmunoz/Zotero/storage/XF8NMI8B/2104.html:text/html},
+}
+
+@misc{zhang_mixup_2018,
+	title = {mixup: {Beyond} {Empirical} {Risk} {Minimization}},
+	shorttitle = {mixup},
+	url = {http://arxiv.org/abs/1710.09412},
+	doi = {10.48550/arXiv.1710.09412},
+	abstract = {Large deep neural networks are powerful, but exhibit undesirable behaviors such as memorization and sensitivity to adversarial examples. In this work, we propose mixup, a simple learning principle to alleviate these issues. In essence, mixup trains a neural network on convex combinations of pairs of examples and their labels. By doing so, mixup regularizes the neural network to favor simple linear behavior in-between training examples. Our experiments on the ImageNet-2012, CIFAR-10, CIFAR-100, Google commands and UCI datasets show that mixup improves the generalization of state-of-the-art neural network architectures. We also find that mixup reduces the memorization of corrupt labels, increases the robustness to adversarial examples, and stabilizes the training of generative adversarial networks.},
+	urldate = {2025-01-24},
+	publisher = {arXiv},
+	author = {Zhang, Hongyi and Cisse, Moustapha and Dauphin, Yann N. and Lopez-Paz, David},
+	month = apr,
+	year = {2018},
+	note = {arXiv:1710.09412 [cs]},
+	keywords = {Computer Science - Machine Learning, Statistics - Machine Learning},
+	file = {Preprint PDF:/Users/adrianrodriguezmunoz/Zotero/storage/8PL56XHL/Zhang et al. - 2018 - mixup Beyond Empirical Risk Minimization.pdf:application/pdf;Snapshot:/Users/adrianrodriguezmunoz/Zotero/storage/RJF6UZS6/1710.html:text/html},
+}
+
+@misc{shlens_tutorial_2014,
+	title = {A {Tutorial} on {Principal} {Component} {Analysis}},
+	url = {http://arxiv.org/abs/1404.1100},
+	doi = {10.48550/arXiv.1404.1100},
+	abstract = {Principal component analysis (PCA) is a mainstay of modern data analysis - a black box that is widely used but (sometimes) poorly understood. The goal of this paper is to dispel the magic behind this black box. This manuscript focuses on building a solid intuition for how and why principal component analysis works. This manuscript crystallizes this knowledge by deriving from simple intuitions, the mathematics behind PCA. This tutorial does not shy away from explaining the ideas informally, nor does it shy away from the mathematics. The hope is that by addressing both aspects, readers of all levels will be able to gain a better understanding of PCA as well as the when, the how and the why of applying this technique.},
+	urldate = {2025-01-28},
+	publisher = {arXiv},
+	author = {Shlens, Jonathon},
+	month = apr,
+	year = {2014},
+	note = {arXiv:1404.1100 [cs]},
+	keywords = {Computer Science - Machine Learning, Statistics - Machine Learning},
+	file = {Full Text PDF:/Users/adrianrodriguezmunoz/Zotero/storage/6T3QISLB/Shlens - 2014 - A Tutorial on Principal Component Analysis.pdf:application/pdf;Snapshot:/Users/adrianrodriguezmunoz/Zotero/storage/IS8BP8ZL/1404.html:text/html},
+}
+
+@misc{shlens_tutorial_2014-1,
+	title = {A {Tutorial} on {Principal} {Component} {Analysis}},
+	url = {http://arxiv.org/abs/1404.1100},
+	doi = {10.48550/arXiv.1404.1100},
+	abstract = {Principal component analysis (PCA) is a mainstay of modern data analysis - a black box that is widely used but (sometimes) poorly understood. The goal of this paper is to dispel the magic behind this black box. This manuscript focuses on building a solid intuition for how and why principal component analysis works. This manuscript crystallizes this knowledge by deriving from simple intuitions, the mathematics behind PCA. This tutorial does not shy away from explaining the ideas informally, nor does it shy away from the mathematics. The hope is that by addressing both aspects, readers of all levels will be able to gain a better understanding of PCA as well as the when, the how and the why of applying this technique.},
+	urldate = {2025-01-28},
+	publisher = {arXiv},
+	author = {Shlens, Jonathon},
+	month = apr,
+	year = {2014},
+	note = {arXiv:1404.1100 [cs]},
+	keywords = {Computer Science - Machine Learning, Statistics - Machine Learning},
+	file = {Preprint PDF:/Users/adrianrodriguezmunoz/Zotero/storage/XK6ZKSSG/Shlens - 2014 - A Tutorial on Principal Component Analysis.pdf:application/pdf;Snapshot:/Users/adrianrodriguezmunoz/Zotero/storage/SMGI986V/1404.html:text/html},
+}
+
+@inproceedings{dwork_calibrating_2006,
+	address = {Berlin, Heidelberg},
+	title = {Calibrating {Noise} to {Sensitivity} in {Private} {Data} {Analysis}},
+	isbn = {978-3-540-32732-5},
+	doi = {10.1007/11681878_14},
+	abstract = {We continue a line of research initiated in [10,11]on privacy-preserving statistical databases. Consider a trusted server that holds a database of sensitive information. Given a query function f mapping databases to reals, the so-called true answer is the result of applying f to the database. To protect privacy, the true answer is perturbed by the addition of random noise generated according to a carefully chosen distribution, and this response, the true answer plus noise, is returned to the user.},
+	language = {en},
+	booktitle = {Theory of {Cryptography}},
+	publisher = {Springer},
+	author = {Dwork, Cynthia and McSherry, Frank and Nissim, Kobbi and Smith, Adam},
+	editor = {Halevi, Shai and Rabin, Tal},
+	year = {2006},
+	keywords = {Laplace Distribution, Privacy Breach, Query Function, Semantic Security, True Answer},
+	pages = {265--284},
+	file = {Full Text PDF:/Users/adrianrodriguezmunoz/Zotero/storage/WZZWXH97/Dwork et al. - 2006 - Calibrating Noise to Sensitivity in Private Data A.pdf:application/pdf},
+}
+
+@article{dwork_firm_2011,
+	title = {A firm foundation for private data analysis},
+	volume = {54},
+	issn = {0001-0782},
+	url = {https://dl.acm.org/doi/10.1145/1866739.1866758},
+	doi = {10.1145/1866739.1866758},
+	abstract = {What does it mean to preserve privacy?},
+	number = {1},
+	urldate = {2025-01-28},
+	journal = {Commun. ACM},
+	author = {Dwork, Cynthia},
+	month = jan,
+	year = {2011},
+	pages = {86--95},
+	file = {Full Text PDF:/Users/adrianrodriguezmunoz/Zotero/storage/IIQI6XS7/Dwork - 2011 - A firm foundation for private data analysis.pdf:application/pdf},
+}
+
+@article{dwork_algorithmic_2013,
+	title = {The {Algorithmic} {Foundations} of {Differential} {Privacy}},
+	volume = {9},
+	issn = {1551-305X, 1551-3068},
+	url = {http://www.nowpublishers.com/articles/foundations-and-trends-in-theoretical-computer-science/TCS-042},
+	doi = {10.1561/0400000042},
+	language = {en},
+	number = {3-4},
+	urldate = {2025-01-28},
+	journal = {Foundations and Trends® in Theoretical Computer Science},
+	author = {Dwork, Cynthia and Roth, Aaron},
+	year = {2013},
+	pages = {211--407},
+	file = {Dwork and Roth - 2013 - The Algorithmic Foundations of Differential Privac.pdf:/Users/adrianrodriguezmunoz/Zotero/storage/YLN3EAZB/Dwork and Roth - 2013 - The Algorithmic Foundations of Differential Privac.pdf:application/pdf},
+}
+
+@misc{min_silo_2024,
+	title = {{SILO} {Language} {Models}: {Isolating} {Legal} {Risk} {In} a {Nonparametric} {Datastore}},
+	shorttitle = {{SILO} {Language} {Models}},
+	url = {http://arxiv.org/abs/2308.04430},
+	doi = {10.48550/arXiv.2308.04430},
+	abstract = {The legality of training language models (LMs) on copyrighted or otherwise restricted data is under intense debate. However, as we show, model performance significantly degrades if trained only on low-risk text (e.g., out-of-copyright books or government documents), due to its limited size and domain coverage. We present SILO, a new language model that manages this risk-performance tradeoff during inference. SILO is built by (1) training a parametric LM on Open License Corpus (OLC), a new corpus we curate with 228B tokens of public domain and permissively licensed text and (2) augmenting it with a more general and easily modifiable nonparametric datastore (e.g., containing copyrighted books or news) that is only queried during inference. The datastore allows use of high-risk data without training on it, supports sentence-level data attribution, and enables data producers to opt out from the model by removing content from the store. These capabilities can foster compliance with data-use regulations such as the fair use doctrine in the United States and the GDPR in the European Union. Our experiments show that the parametric LM struggles on domains not covered by OLC. However, access to the datastore greatly improves out of domain performance, closing 90\% of the performance gap with an LM trained on the Pile, a more diverse corpus with mostly high-risk text. We also analyze which nonparametric approach works best, where the remaining errors lie, and how performance scales with datastore size. Our results suggest that it is possible to build high quality language models while mitigating their legal risk.},
+	urldate = {2025-01-28},
+	publisher = {arXiv},
+	author = {Min, Sewon and Gururangan, Suchin and Wallace, Eric and Shi, Weijia and Hajishirzi, Hannaneh and Smith, Noah A. and Zettlemoyer, Luke},
+	month = jul,
+	year = {2024},
+	note = {arXiv:2308.04430 [cs]},
+	keywords = {Computer Science - Artificial Intelligence, Computer Science - Computation and Language, Computer Science - Machine Learning},
+	file = {Full Text PDF:/Users/adrianrodriguezmunoz/Zotero/storage/42MPVSY3/Min et al. - 2024 - SILO Language Models Isolating Legal Risk In a No.pdf:application/pdf;Snapshot:/Users/adrianrodriguezmunoz/Zotero/storage/4IQA4AXD/2308.html:text/html},
+}
+
+@misc{zhou_semantic_2018,
+	title = {Semantic {Understanding} of {Scenes} through the {ADE20K} {Dataset}},
+	url = {http://arxiv.org/abs/1608.05442},
+	doi = {10.48550/arXiv.1608.05442},
+	abstract = {Scene parsing, or recognizing and segmenting objects and stuff in an image, is one of the key problems in computer vision. Despite the community's efforts in data collection, there are still few image datasets covering a wide range of scenes and object categories with dense and detailed annotations for scene parsing. In this paper, we introduce and analyze the ADE20K dataset, spanning diverse annotations of scenes, objects, parts of objects, and in some cases even parts of parts. A generic network design called Cascade Segmentation Module is then proposed to enable the segmentation networks to parse a scene into stuff, objects, and object parts in a cascade. We evaluate the proposed module integrated within two existing semantic segmentation networks, yielding significant improvements for scene parsing. We further show that the scene parsing networks trained on ADE20K can be applied to a wide variety of scenes and objects.},
+	urldate = {2025-01-29},
+	publisher = {arXiv},
+	author = {Zhou, Bolei and Zhao, Hang and Puig, Xavier and Xiao, Tete and Fidler, Sanja and Barriuso, Adela and Torralba, Antonio},
+	month = oct,
+	year = {2018},
+	note = {arXiv:1608.05442 [cs]},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition},
+	file = {Full Text PDF:/Users/adrianrodriguezmunoz/Zotero/storage/QW3JJ7KZ/Zhou et al. - 2018 - Semantic Understanding of Scenes through the ADE20.pdf:application/pdf;Snapshot:/Users/adrianrodriguezmunoz/Zotero/storage/2NPX5UYJ/1608.html:text/html},
+}
+
+@article{everingham_pascal_2010,
+	title = {The {Pascal} {Visual} {Object} {Classes} ({VOC}) {Challenge}},
+	volume = {88},
+	issn = {1573-1405},
+	url = {https://doi.org/10.1007/s11263-009-0275-4},
+	doi = {10.1007/s11263-009-0275-4},
+	abstract = {The Pascal Visual Object Classes (VOC) challenge is a benchmark in visual object category recognition and detection, providing the vision and machine learning communities with a standard dataset of images and annotation, and standard evaluation procedures. Organised annually from 2005 to present, the challenge and its associated dataset has become accepted as the benchmark for object detection.},
+	language = {en},
+	number = {2},
+	urldate = {2025-01-29},
+	journal = {International Journal of Computer Vision},
+	author = {Everingham, Mark and Van Gool, Luc and Williams, Christopher K. I. and Winn, John and Zisserman, Andrew},
+	month = jun,
+	year = {2010},
+	keywords = {Artificial Intelligence, Benchmark, Database, Object detection, Object recognition},
+	pages = {303--338},
+	file = {Full Text PDF:/Users/adrianrodriguezmunoz/Zotero/storage/ST6A6AM3/Everingham et al. - 2010 - The Pascal Visual Object Classes (VOC) Challenge.pdf:application/pdf},
+}
+
+@misc{lin_microsoft_2015,
+	title = {Microsoft {COCO}: {Common} {Objects} in {Context}},
+	shorttitle = {Microsoft {COCO}},
+	url = {http://arxiv.org/abs/1405.0312},
+	doi = {10.48550/arXiv.1405.0312},
+	abstract = {We present a new dataset with the goal of advancing the state-of-the-art in object recognition by placing the question of object recognition in the context of the broader question of scene understanding. This is achieved by gathering images of complex everyday scenes containing common objects in their natural context. Objects are labeled using per-instance segmentations to aid in precise object localization. Our dataset contains photos of 91 objects types that would be easily recognizable by a 4 year old. With a total of 2.5 million labeled instances in 328k images, the creation of our dataset drew upon extensive crowd worker involvement via novel user interfaces for category detection, instance spotting and instance segmentation. We present a detailed statistical analysis of the dataset in comparison to PASCAL, ImageNet, and SUN. Finally, we provide baseline performance analysis for bounding box and segmentation detection results using a Deformable Parts Model.},
+	urldate = {2025-01-29},
+	publisher = {arXiv},
+	author = {Lin, Tsung-Yi and Maire, Michael and Belongie, Serge and Bourdev, Lubomir and Girshick, Ross and Hays, James and Perona, Pietro and Ramanan, Deva and Zitnick, C. Lawrence and Dollár, Piotr},
+	month = feb,
+	year = {2015},
+	note = {arXiv:1405.0312 [cs]},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition},
+	file = {Preprint PDF:/Users/adrianrodriguezmunoz/Zotero/storage/V5RKD44T/Lin et al. - 2015 - Microsoft COCO Common Objects in Context.pdf:application/pdf;Snapshot:/Users/adrianrodriguezmunoz/Zotero/storage/897IGAN6/1405.html:text/html},
+}
+
+@misc{noauthor_celeba_nodate,
+	title = {{CelebA} {Dataset}},
+	url = {https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html},
+	urldate = {2025-01-29},
+	file = {Deep Learning Face Attributes in the Wild:/Users/adrianrodriguezmunoz/Zotero/storage/9K8C6R54/CelebA.html:text/html},
+}
+
+@misc{noauthor_celeba_nodate-1,
+	title = {{CelebA} {Dataset}},
+	url = {https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html},
+	urldate = {2025-01-29},
+}
+
+@misc{jiancheng_yang_medmnist_2024,
+	title = {[{MedMNIST}+] 18x {Standardized} {Datasets} for {2D} and {3D} {Biomedical} {Image} {Classification} with {Multiple} {Size} {Options}: 28 ({MNIST}-{Like}), 64, 128, and 224},
+	copyright = {Creative Commons Attribution 4.0 International},
+	shorttitle = {[{MedMNIST}+] 18x {Standardized} {Datasets} for {2D} and {3D} {Biomedical} {Image} {Classification} with {Multiple} {Size} {Options}},
+	url = {https://zenodo.org/doi/10.5281/zenodo.10519652},
+	doi = {10.5281/ZENODO.10519652},
+	abstract = {Code [GitHub] {\textbar} Publication [Nature Scientific Data'23 / ISBI'21] {\textbar} Preprint [arXiv]
+
+ 
+
+Abstract
+
+We introduce MedMNIST, a large-scale MNIST-like collection of standardized biomedical images, including 12 datasets for 2D and 6 datasets for 3D. All images are pre-processed into 28x28 (2D) or 28x28x28 (3D) with the corresponding classification labels, so that no background knowledge is required for users. Covering primary data modalities in biomedical images, MedMNIST is designed to perform classification on lightweight 2D and 3D images with various data scales (from 100 to 100,000) and diverse tasks (binary/multi-class, ordinal regression and multi-label). The resulting dataset, consisting of approximately 708K 2D images and 10K 3D images in total, could support numerous research and educational purposes in biomedical image analysis, computer vision and machine learning. We benchmark several baseline methods on MedMNIST, including 2D / 3D neural networks and open-source / commercial AutoML tools. The data and code are publicly available at https://medmnist.com/.
+
+Disclaimer: The only official distribution link for the MedMNIST dataset is Zenodo. We kindly request users to refer to this original dataset link for accurate and up-to-date data.
+
+Update: We are thrilled to release MedMNIST+ with larger sizes: 64x64, 128x128, and 224x224 for 2D, and 64x64x64 for 3D. As a complement to the previous 28-size MedMNIST, the large-size version could serve as a standardized benchmark for medical foundation models. Install the latest API to try it out!
+
+ 
+
+Python Usage
+
+We recommend our official code to download, parse and use the MedMNIST dataset:
+
+
+
+\% pip install medmnist\% python
+
+
+
+To use the standard 28-size (MNIST-like) version utilizing the downloaded files:
+
+
+{\textgreater}{\textgreater}{\textgreater} from medmnist import PathMNIST
+
+{\textgreater}{\textgreater}{\textgreater} train\_dataset = PathMNIST(split="train")
+
+
+To enable automatic downloading by setting `download=True`:
+
+
+{\textgreater}{\textgreater}{\textgreater} from medmnist import NoduleMNIST3D
+
+{\textgreater}{\textgreater}{\textgreater} val\_dataset = NoduleMNIST3D(split="val", download=True)
+
+
+Alternatively, you can access MedMNIST+ with larger image sizes by specifying the `size` parameter:
+
+
+{\textgreater}{\textgreater}{\textgreater} from medmnist import ChestMNIST
+
+{\textgreater}{\textgreater}{\textgreater} test\_dataset = ChestMNIST(split="test", download=True, size=224)
+
+
+
+ 
+
+Citation
+
+If you find this project useful, please cite both v1 and v2 paper as:
+
+
+
+Jiancheng Yang, Rui Shi, Donglai Wei, Zequan Liu, Lin Zhao, Bilian Ke, Hanspeter Pfister, Bingbing Ni. Yang, Jiancheng, et al. "MedMNIST v2-A large-scale lightweight benchmark for 2D and 3D biomedical image classification." Scientific Data, 2023.
+
+Jiancheng Yang, Rui Shi, Bingbing Ni. "MedMNIST Classification Decathlon: A Lightweight AutoML Benchmark for Medical Image Analysis". IEEE 18th International Symposium on Biomedical Imaging (ISBI), 2021.
+
+
+or using bibtex:
+
+
+
+@article\{\vphantom{\}}medmnistv2,
+    title=\{MedMNIST v2-A large-scale lightweight benchmark for 2D and 3D biomedical image classification\},
+    author=\{Yang, Jiancheng and Shi, Rui and Wei, Donglai and Liu, Zequan and Zhao, Lin and Ke, Bilian and Pfister, Hanspeter and Ni, Bingbing\},
+    journal=\{Scientific Data\},
+    volume=\{10\},
+    number=\{1\},
+    pages=\{41\},
+    year=\{2023\},
+    publisher=\{Nature Publishing Group UK London\}
+\vphantom{\{}\}
+
+@inproceedings\{\vphantom{\}}medmnistv1,
+    title=\{MedMNIST Classification Decathlon: A Lightweight AutoML Benchmark for Medical Image Analysis\},
+    author=\{Yang, Jiancheng and Shi, Rui and Ni, Bingbing\},
+    booktitle=\{IEEE 18th International Symposium on Biomedical Imaging (ISBI)\},
+    pages=\{191--195\},
+    year=\{2021\}
+\vphantom{\{}\}
+
+
+Please also cite the corresponding paper(s) of source data if you use any subset of MedMNIST as per the description on the project website.
+
+ 
+
+License
+
+The MedMNIST dataset is licensed under Creative Commons Attribution 4.0 International (CC BY 4.0), except DermaMNIST under Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0).
+
+The code is under Apache-2.0 License.
+
+ 
+
+Changelog
+
+v3.0 (this repository): Released MedMNIST+ featuring larger sizes: 64x64, 128x128, and 224x224 for 2D, and 64x64x64 for 3D.
+
+v2.2: Removed a small number of mistakenly included blank samples in OrganAMNIST, OrganCMNIST, OrganSMNIST, OrganMNIST3D, and VesselMNIST3D. 
+
+v2.1: Addressed an issue in the NoduleMNIST3D file (i.e., nodulemnist3d.npz). Further details can be found in this issue.
+
+v2.0: Launched the initial repository of MedMNIST v2, adding 6 datasets for 3D and 2 for 2D.
+
+v1.0: Established the initial repository (in a separate repository) of MedMNIST v1, featuring 10 datasets for 2D.
+
+ 
+
+Note: This dataset is NOT intended for clinical use.},
+	urldate = {2025-01-29},
+	publisher = {Zenodo},
+	author = {Jiancheng Yang and Rui Shi and Donglai Wei and Zequan Liu and Lin Zhao and Bilian Ke and Hanspeter Pfister and Bingbing Ni},
+	month = jan,
+	year = {2024},
+	keywords = {automl, benchmark, classification, computer vision, decathlon, machine learning, medical image analysis, medmnist, multi-modal},
+}
+
+@article{yang_medmnist_2023,
+	title = {{MedMNIST} v2 - {A} large-scale lightweight benchmark for {2D} and {3D} biomedical image classification},
+	volume = {10},
+	issn = {2052-4463},
+	url = {https://www.nature.com/articles/s41597-022-01721-8},
+	doi = {10.1038/s41597-022-01721-8},
+	abstract = {Abstract
+            
+              We introduce
+              MedMNIST v2
+              , a large-scale MNIST-like dataset collection of standardized biomedical images, including 12 datasets for 2D and 6 datasets for 3D. All images are pre-processed into a small size of 28 × 28 (2D) or 28 × 28 × 28 (3D) with the corresponding classification labels so that no background knowledge is required for users. Covering primary data modalities in biomedical images, MedMNIST v2 is designed to perform classification on lightweight 2D and 3D images with various dataset scales (from 100 to 100,000) and diverse tasks (binary/multi-class, ordinal regression, and multi-label). The resulting dataset, consisting of 708,069 2D images and 9,998 3D images in total, could support numerous research/educational purposes in biomedical image analysis, computer vision, and machine learning. We benchmark several baseline methods on MedMNIST v2, including 2D/3D neural networks and open-source/commercial AutoML tools. The data and code are publicly available at
+              https://medmnist.com/
+              .},
+	language = {en},
+	number = {1},
+	urldate = {2025-01-29},
+	journal = {Scientific Data},
+	author = {Yang, Jiancheng and Shi, Rui and Wei, Donglai and Liu, Zequan and Zhao, Lin and Ke, Bilian and Pfister, Hanspeter and Ni, Bingbing},
+	month = jan,
+	year = {2023},
+	pages = {41},
+	file = {Full Text:/Users/adrianrodriguezmunoz/Zotero/storage/CB6D6MWD/Yang et al. - 2023 - MedMNIST v2 - A large-scale lightweight benchmark .pdf:application/pdf},
+}
+
+@inproceedings{yang_medmnist_2021,
+	address = {Nice, France},
+	title = {{MedMNIST} {Classification} {Decathlon}: {A} {Lightweight} {AutoML} {Benchmark} for {Medical} {Image} {Analysis}},
+	copyright = {https://ieeexplore.ieee.org/Xplorehelp/downloads/license-information/IEEE.html},
+	isbn = {978-1-66541-246-9},
+	shorttitle = {{MedMNIST} {Classification} {Decathlon}},
+	url = {https://ieeexplore.ieee.org/document/9434062/},
+	doi = {10.1109/ISBI48211.2021.9434062},
+	urldate = {2025-01-29},
+	booktitle = {2021 {IEEE} 18th {International} {Symposium} on {Biomedical} {Imaging} ({ISBI})},
+	publisher = {IEEE},
+	author = {Yang, Jiancheng and Shi, Rui and Ni, Bingbing},
+	month = apr,
+	year = {2021},
+	pages = {191--195},
+	file = {Submitted Version:/Users/adrianrodriguezmunoz/Zotero/storage/LR5A7FVL/Yang et al. - 2021 - MedMNIST Classification Decathlon A Lightweight A.pdf:application/pdf},
+}
+
+@misc{liu_deep_2015,
+	title = {Deep {Learning} {Face} {Attributes} in the {Wild}},
+	url = {http://arxiv.org/abs/1411.7766},
+	doi = {10.48550/arXiv.1411.7766},
+	abstract = {Predicting face attributes in the wild is challenging due to complex face variations. We propose a novel deep learning framework for attribute prediction in the wild. It cascades two CNNs, LNet and ANet, which are fine-tuned jointly with attribute tags, but pre-trained differently. LNet is pre-trained by massive general object categories for face localization, while ANet is pre-trained by massive face identities for attribute prediction. This framework not only outperforms the state-of-the-art with a large margin, but also reveals valuable facts on learning face representation. (1) It shows how the performances of face localization (LNet) and attribute prediction (ANet) can be improved by different pre-training strategies. (2) It reveals that although the filters of LNet are fine-tuned only with image-level attribute tags, their response maps over entire images have strong indication of face locations. This fact enables training LNet for face localization with only image-level annotations, but without face bounding boxes or landmarks, which are required by all attribute recognition works. (3) It also demonstrates that the high-level hidden neurons of ANet automatically discover semantic concepts after pre-training with massive face identities, and such concepts are significantly enriched after fine-tuning with attribute tags. Each attribute can be well explained with a sparse linear combination of these concepts.},
+	urldate = {2025-01-29},
+	publisher = {arXiv},
+	author = {Liu, Ziwei and Luo, Ping and Wang, Xiaogang and Tang, Xiaoou},
+	month = sep,
+	year = {2015},
+	note = {arXiv:1411.7766 [cs]},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition},
+	file = {Preprint PDF:/Users/adrianrodriguezmunoz/Zotero/storage/QFKPIWQM/Liu et al. - 2015 - Deep Learning Face Attributes in the Wild.pdf:application/pdf;Snapshot:/Users/adrianrodriguezmunoz/Zotero/storage/MIVES4TH/1411.html:text/html},
+}
+
+@article{yang_medmnist_2023-1,
+	title = {{MedMNIST} v2 -- {A} large-scale lightweight benchmark for {2D} and {3D} biomedical image classification},
+	volume = {10},
+	issn = {2052-4463},
+	url = {http://arxiv.org/abs/2110.14795},
+	doi = {10.1038/s41597-022-01721-8},
+	abstract = {We introduce MedMNIST v2, a large-scale MNIST-like dataset collection of standardized biomedical images, including 12 datasets for 2D and 6 datasets for 3D. All images are pre-processed into a small size of 28x28 (2D) or 28x28x28 (3D) with the corresponding classification labels so that no background knowledge is required for users. Covering primary data modalities in biomedical images, MedMNIST v2 is designed to perform classification on lightweight 2D and 3D images with various dataset scales (from 100 to 100,000) and diverse tasks (binary/multi-class, ordinal regression, and multi-label). The resulting dataset, consisting of 708,069 2D images and 10,214 3D images in total, could support numerous research / educational purposes in biomedical image analysis, computer vision, and machine learning. We benchmark several baseline methods on MedMNIST v2, including 2D / 3D neural networks and open-source / commercial AutoML tools. The data and code are publicly available at https://medmnist.com/.},
+	number = {1},
+	urldate = {2025-01-29},
+	journal = {Scientific Data},
+	author = {Yang, Jiancheng and Shi, Rui and Wei, Donglai and Liu, Zequan and Zhao, Lin and Ke, Bilian and Pfister, Hanspeter and Ni, Bingbing},
+	month = jan,
+	year = {2023},
+	note = {arXiv:2110.14795 [cs]},
+	keywords = {Computer Science - Artificial Intelligence, Computer Science - Computer Vision and Pattern Recognition, Computer Science - Machine Learning, Electrical Engineering and Systems Science - Image and Video Processing},
+	pages = {41},
+	file = {Preprint PDF:/Users/adrianrodriguezmunoz/Zotero/storage/YXBQC8T8/Yang et al. - 2023 - MedMNIST v2 -- A large-scale lightweight benchmark.pdf:application/pdf;Snapshot:/Users/adrianrodriguezmunoz/Zotero/storage/KHIRTKS6/2110.html:text/html},
+}
+
+@misc{weston_memory_2015,
+	title = {Memory {Networks}},
+	url = {http://arxiv.org/abs/1410.3916},
+	doi = {10.48550/arXiv.1410.3916},
+	abstract = {We describe a new class of learning models called memory networks. Memory networks reason with inference components combined with a long-term memory component; they learn how to use these jointly. The long-term memory can be read and written to, with the goal of using it for prediction. We investigate these models in the context of question answering (QA) where the long-term memory effectively acts as a (dynamic) knowledge base, and the output is a textual response. We evaluate them on a large-scale QA task, and a smaller, but more complex, toy task generated from a simulated world. In the latter, we show the reasoning power of such models by chaining multiple supporting sentences to answer questions that require understanding the intension of verbs.},
+	urldate = {2025-01-29},
+	publisher = {arXiv},
+	author = {Weston, Jason and Chopra, Sumit and Bordes, Antoine},
+	month = nov,
+	year = {2015},
+	note = {arXiv:1410.3916 [cs]},
+	keywords = {Computer Science - Artificial Intelligence, Computer Science - Computation and Language, Statistics - Machine Learning},
+	file = {Preprint PDF:/Users/adrianrodriguezmunoz/Zotero/storage/YAW8GD93/Weston et al. - 2015 - Memory Networks.pdf:application/pdf;Snapshot:/Users/adrianrodriguezmunoz/Zotero/storage/ZBNE8LNR/1410.html:text/html},
+}
+
+@inproceedings{chen_semi-supervised_2018,
+	title = {Semi-{Supervised} {Deep} {Learning} with {Memory}},
+	url = {https://openaccess.thecvf.com/content_ECCV_2018/html/Yanbei_Chen_Semi-Supervised_Deep_Learning_ECCV_2018_paper.html},
+	urldate = {2025-01-29},
+	author = {Chen, Yanbei and Zhu, Xiatian and Gong, Shaogang},
+	year = {2018},
+	pages = {268--283},
+	file = {Full Text PDF:/Users/adrianrodriguezmunoz/Zotero/storage/2GZPSYPV/Chen et al. - 2018 - Semi-Supervised Deep Learning with Memory.pdf:application/pdf},
+}
+
+@misc{iscen_memory_2022,
+	title = {A {Memory} {Transformer} {Network} for {Incremental} {Learning}},
+	url = {http://arxiv.org/abs/2210.04485},
+	doi = {10.48550/arXiv.2210.04485},
+	abstract = {We study class-incremental learning, a training setup in which new classes of data are observed over time for the model to learn from. Despite the straightforward problem formulation, the naive application of classification models to class-incremental learning results in the "catastrophic forgetting" of previously seen classes. One of the most successful existing methods has been the use of a memory of exemplars, which overcomes the issue of catastrophic forgetting by saving a subset of past data into a memory bank and utilizing it to prevent forgetting when training future tasks. In our paper, we propose to enhance the utilization of this memory bank: we not only use it as a source of additional training data like existing works but also integrate it in the prediction process explicitly.Our method, the Memory Transformer Network (MTN), learns how to combine and aggregate the information from the nearest neighbors in the memory with a transformer to make more accurate predictions. We conduct extensive experiments and ablations to evaluate our approach. We show that MTN achieves state-of-the-art performance on the challenging ImageNet-1k and Google-Landmarks-1k incremental learning benchmarks.},
+	urldate = {2025-01-29},
+	publisher = {arXiv},
+	author = {Iscen, Ahmet and Bird, Thomas and Caron, Mathilde and Fathi, Alireza and Schmid, Cordelia},
+	month = oct,
+	year = {2022},
+	note = {arXiv:2210.04485 [cs]},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition, Computer Science - Machine Learning},
+	file = {Preprint PDF:/Users/adrianrodriguezmunoz/Zotero/storage/KJLJX7ID/Iscen et al. - 2022 - A Memory Transformer Network for Incremental Learn.pdf:application/pdf;Snapshot:/Users/adrianrodriguezmunoz/Zotero/storage/P87KG4CX/2210.html:text/html},
+}
+
+@misc{iscen_retrieval-enhanced_2024,
+	title = {Retrieval-{Enhanced} {Contrastive} {Vision}-{Text} {Models}},
+	url = {http://arxiv.org/abs/2306.07196},
+	doi = {10.48550/arXiv.2306.07196},
+	abstract = {Contrastive image-text models such as CLIP form the building blocks of many state-of-the-art systems. While they excel at recognizing common generic concepts, they still struggle on fine-grained entities which are rare, or even absent from the pre-training dataset. Hence, a key ingredient to their success has been the use of large-scale curated pre-training data aiming at expanding the set of concepts that they can memorize during the pre-training stage. In this work, we explore an alternative to encoding fine-grained knowledge directly into the model's parameters: we instead train the model to retrieve this knowledge from an external memory. Specifically, we propose to equip existing vision-text models with the ability to refine their embedding with cross-modal retrieved information from a memory at inference time, which greatly improves their zero-shot predictions. Remarkably, we show that this can be done with a light-weight, single-layer, fusion transformer on top of a frozen CLIP. Our experiments validate that our retrieval-enhanced contrastive (RECO) training improves CLIP performance substantially on several challenging fine-grained tasks: for example +10.9 on Stanford Cars, +10.2 on CUB-2011 and +7.3 on the recent OVEN benchmark, where we even outperform the fine-tuned models on unseen classes.},
+	urldate = {2025-01-29},
+	publisher = {arXiv},
+	author = {Iscen, Ahmet and Caron, Mathilde and Fathi, Alireza and Schmid, Cordelia},
+	month = feb,
+	year = {2024},
+	note = {arXiv:2306.07196 [cs]},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition},
+	file = {Preprint PDF:/Users/adrianrodriguezmunoz/Zotero/storage/HBD4XD3B/Iscen et al. - 2024 - Retrieval-Enhanced Contrastive Vision-Text Models.pdf:application/pdf;Snapshot:/Users/adrianrodriguezmunoz/Zotero/storage/4PWZ2ZDG/2306.html:text/html},
+}
+
+@misc{silva_learning_2024,
+	title = {Learning from {Memory}: {Non}-{Parametric} {Memory} {Augmented} {Self}-{Supervised} {Learning} of {Visual} {Features}},
+	shorttitle = {Learning from {Memory}},
+	url = {http://arxiv.org/abs/2407.17486},
+	doi = {10.48550/arXiv.2407.17486},
+	abstract = {This paper introduces a novel approach to improving the training stability of self-supervised learning (SSL) methods by leveraging a non-parametric memory of seen concepts. The proposed method involves augmenting a neural network with a memory component to stochastically compare current image views with previously encountered concepts. Additionally, we introduce stochastic memory blocks to regularize training and enforce consistency between image views. We extensively benchmark our method on many vision tasks, such as linear probing, transfer learning, low-shot classification, and image retrieval on many datasets. The experimental results consolidate the effectiveness of the proposed approach in achieving stable SSL training without additional regularizers while learning highly transferable representations and requiring less computing time and resources.},
+	urldate = {2025-01-29},
+	publisher = {arXiv},
+	author = {Silva, Thalles and Pedrini, Helio and Rivera, Adín Ramírez},
+	month = jul,
+	year = {2024},
+	note = {arXiv:2407.17486 [cs]},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition, Computer Science - Machine Learning},
+	file = {Preprint PDF:/Users/adrianrodriguezmunoz/Zotero/storage/9FDXRIEI/Silva et al. - 2024 - Learning from Memory Non-Parametric Memory Augmen.pdf:application/pdf;Snapshot:/Users/adrianrodriguezmunoz/Zotero/storage/U23UMUWI/2407.html:text/html},
+}
+
+@misc{gui_knn-clip_2024,
+	title = {{kNN}-{CLIP}: {Retrieval} {Enables} {Training}-{Free} {Segmentation} on {Continually} {Expanding} {Large} {Vocabularies}},
+	shorttitle = {{kNN}-{CLIP}},
+	url = {http://arxiv.org/abs/2404.09447},
+	doi = {10.48550/arXiv.2404.09447},
+	abstract = {Continual segmentation has not yet tackled the challenge of improving open-vocabulary segmentation models with training data for accurate segmentation across large, continually expanding vocabularies. We discover that traditional continual training results in severe catastrophic forgetting, failing to outperform a zero-shot segmentation baseline. We introduce a novel training-free strategy, kNN-CLIP, which augments the model with a database of instance embeddings for semantic and panoptic segmentation that achieves zero forgetting. We demonstrate that kNN-CLIP can adapt to continually growing vocabularies without the need for retraining or large memory costs. kNN-CLIP enables open-vocabulary segmentation methods to expand their vocabularies on any domain with a single pass through the data, while only storing compact embeddings. This approach minimizes both compute and memory costs. kNN-CLIP achieves state-of-the-art performance across large-vocabulary semantic and panoptic segmentation datasets. We hope kNN-CLIP represents a significant step forward in enabling more efficient and adaptable continual segmentation, paving the way for advances in real-world large-vocabulary continual segmentation methods.},
+	urldate = {2025-01-29},
+	publisher = {arXiv},
+	author = {Gui, Zhongrui and Sun, Shuyang and Li, Runjia and Yuan, Jianhao and An, Zhaochong and Roth, Karsten and Prabhu, Ameya and Torr, Philip},
+	month = aug,
+	year = {2024},
+	note = {arXiv:2404.09447 [cs]},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition, Computer Science - Machine Learning},
+	file = {Preprint PDF:/Users/adrianrodriguezmunoz/Zotero/storage/P7WK2UE2/Gui et al. - 2024 - kNN-CLIP Retrieval Enables Training-Free Segmenta.pdf:application/pdf;Snapshot:/Users/adrianrodriguezmunoz/Zotero/storage/GE7UCSC5/2404.html:text/html},
+}
