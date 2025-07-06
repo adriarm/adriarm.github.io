@@ -51,6 +51,8 @@
     
     .publication-links .link-block {
       margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+      display: inline-block;
     }
     
     .external-link {
@@ -186,19 +188,189 @@
       font-size: 0.9rem;
     }
     
-    /* Responsive design */
+    /* Mobile optimizations */
     @media screen and (max-width: 768px) {
+      /* Hero section mobile adjustments */
+      .hero-body {
+        padding: 1.5rem 1rem;
+      }
+      
       .title.is-1 {
-        font-size: 2rem;
+        font-size: 1.75rem;
+        line-height: 1.2;
+        word-wrap: break-word;
+        hyphens: auto;
+      }
+      
+      /* Author names and affiliations */
+      .publication-authors {
+        font-size: 0.9rem !important;
+      }
+      
+      .is-size-3.publication-authors {
+        font-size: 1.25rem !important;
+      }
+      
+      /* Author blocks on separate lines for mobile */
+      .author-block {
+        display: inline-block;
+        margin: 0 0.25rem;
+      }
+      
+      /* Publication links */
+      .publication-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+      }
+      
+      .publication-links .link-block {
+        margin: 0;
+        flex: 0 1 auto;
+      }
+      
+      .publication-links .button {
+        font-size: 0.875rem;
+        padding: 0.5rem 1rem;
+      }
+      
+      /* TLDR banner */
+      .tldr-banner {
+        font-size: 1rem;
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+      }
+      
+      /* Section titles */
+      .title.is-3 {
+        font-size: 1.5rem;
+      }
+      
+      .title.is-4 {
+        font-size: 1.25rem;
+        padding: 0 0.5rem;
+      }
+      
+      /* Content padding */
+      .content {
+        padding: 0 0.5rem;
+      }
+      
+      .content ul {
+        padding-left: 1.5rem;
+      }
+      
+      /* Box adjustments */
+      .box {
+        padding: 1rem;
+        margin: 1rem 0;
       }
       
       .box-container {
         flex-direction: column;
+        gap: 1rem;
       }
       
+      /* Key findings */
+      .key-finding {
+        padding: 0.75rem;
+        font-size: 0.95rem;
+      }
+      
+      /* Figure captions */
+      figcaption {
+        font-size: 0.85rem;
+        padding: 0 0.5rem;
+      }
+      
+      /* Section spacing */
+      .section {
+        padding: 1.5rem 0;
+      }
+      
+      /* Footer */
       .logo-container {
-        flex-direction: column;
+        flex-direction: row;
         gap: 2rem;
+      }
+      
+      .logo {
+        height: 40px;
+      }
+      
+      .footer {
+        padding: 1.5rem 0;
+        margin-top: 2rem;
+      }
+      
+      .footer-content p {
+        font-size: 0.875rem;
+        padding: 0 1rem;
+      }
+      
+      /* Code blocks */
+      pre {
+        padding: 0.75rem;
+        font-size: 0.75rem;
+      }
+      
+      code {
+        font-size: 0.8rem;
+      }
+      
+      /* Container adjustments */
+      .container {
+        padding: 0 1rem;
+      }
+      
+      /* Abstract text */
+      .has-text-justified {
+        text-align: left;
+      }
+    }
+    
+    /* Small mobile adjustments */
+    @media screen and (max-width: 480px) {
+      .title.is-1 {
+        font-size: 1.5rem;
+      }
+      
+      .publication-authors {
+        font-size: 0.85rem !important;
+      }
+      
+      .is-size-3.publication-authors {
+        font-size: 1.1rem !important;
+      }
+      
+      .publication-links .button {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+      }
+      
+      .publication-links .button .icon {
+        margin-right: 0.25rem !important;
+      }
+      
+      .tldr-banner {
+        font-size: 0.9rem;
+      }
+    }
+    
+    /* Ensure text doesn't overflow on very small screens */
+    @media screen and (max-width: 320px) {
+      .title.is-1 {
+        font-size: 1.25rem;
+      }
+      
+      .publication-links {
+        gap: 0.25rem;
+      }
+      
+      .publication-links .button {
+        font-size: 0.75rem;
+        padding: 0.35rem 0.6rem;
       }
     }
   </style>
