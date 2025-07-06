@@ -3,59 +3,205 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="We train representation models with procedural data only, and apply them on visual similarity, classification, and semantic segmentation 
-        tasks without further training by using visual memory—an explicit database of reference image embeddings. Unlike prior work on visual memory, 
-        our approach achieves full separation of perception and knowledge with respect to all real-world images while retaining strong performance.">
+        content="We train representation models with procedural data only, and apply them on visual similarity, classification, and semantic segmentation tasks without further training by using visual memory—an explicit database of reference image embeddings.">
   <meta name="keywords" content="Visual Memory, Procedural Data, Computer Vision, Machine Learning, Representation Learning, Privacy-Preserving AI, MIT CSAIL">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Adrián Rodríguez-Muñoz, Manel Baradad, Phillip Isola, Antonio Torralba">
   <meta property="og:title" content="Separating Knowledge and Perception with Procedural Data">
   <meta property="og:description" content="Train embeddings on procedural data, apply on real images with visual memory for separation between perception and knowledge.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://adriarm.github.io/separating_knowledge/">
-  <meta property="og:image" content="./static/images/teaser_v7.png">
-  <!-- <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Separating Knowledge and Perception with Procedural Data">
-  <meta name="twitter:description" content="A novel approach to computer vision that separates perceptual skills from knowledge using procedural data and visual memory.">
-  <meta name="twitter:image" content="./static/images/teaser_v7.png"> -->
   
   <title>Separating Knowledge and Perception with Procedural Data</title>
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  
+  <style>
+    body {
+      font-family: 'Noto Sans', sans-serif;
     }
-
-    gtag('js', new Date());
-
-    gtag('config', 'G-PYVRSFMDRL');
-  </script>
-
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
-
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="./static/images/favicon.svg">
-
-  <link rel="stylesheet" href="./static/css/images.css">
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
-
+    
+    .publication-title {
+      font-family: 'Google Sans', sans-serif;
+    }
+    
+    .publication-authors {
+      font-family: 'Google Sans', sans-serif;
+    }
+    
+    .hero {
+      background-color: #f7f7f7;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+    
+    .hero-body {
+      padding: 3rem 1.5rem;
+    }
+    
+    .title.is-1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .publication-links {
+      margin-top: 1.5rem;
+    }
+    
+    .publication-links .link-block {
+      margin-right: 0.5rem;
+    }
+    
+    .external-link {
+      background-color: #363636;
+      color: white !important;
+    }
+    
+    .external-link:hover {
+      background-color: #4a4a4a;
+    }
+    
+    .content h2.title {
+      margin-top: 2rem;
+      margin-bottom: 1.5rem;
+      font-family: 'Google Sans', sans-serif;
+    }
+    
+    .content h3.title {
+      margin-bottom: 1rem;
+      font-family: 'Google Sans', sans-serif;
+    }
+    
+    figure {
+      margin: 2rem 0;
+    }
+    
+    figure img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+    
+    figcaption {
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      color: #4a4a4a;
+      padding: 0 1rem;
+    }
+    
+    .box {
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      padding: 2rem;
+      margin: 1.5rem 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .box-container {
+      display: flex;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+      flex-wrap: wrap;
+    }
+    
+    .box-container .box {
+      flex: 1;
+    }
+    
+    .key-finding {
+      background-color: #e8f4f8;
+      border-left: 4px solid #3273dc;
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: 0 4px 4px 0;
+    }
+    
+    .tldr-banner {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: bold;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
+    }
+    
+    .footer {
+      background-color: #f2f3f3;
+      padding: 2rem 0;
+      margin-top: 4rem;
+    }
+    
+    .footer-content {
+      text-align: center;
+      color: #4a4a4a;
+    }
+    
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      gap: 4rem;
+      margin-bottom: 2rem;
+      align-items: center;
+    }
+    
+    .logo {
+      height: 60px;
+      opacity: 0.7;
+    }
+    
+    /* Placeholder styles for figures */
+    .figure-placeholder {
+      background-color: #f0f0f0;
+      border: 2px dashed #ccc;
+      padding: 3rem;
+      text-align: center;
+      color: #666;
+      border-radius: 8px;
+    }
+    
+    /* Add spacing between sections */
+    .section {
+      padding: 2rem 0;
+    }
+    
+    .section + .section {
+      padding-top: 0;
+    }
+    
+    /* Style for code blocks */
+    pre {
+      background-color: #f4f4f4;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 1rem;
+      overflow-x: auto;
+    }
+    
+    code {
+      font-family: 'Courier New', monospace;
+      font-size: 0.9rem;
+    }
+    
+    /* Responsive design */
+    @media screen and (max-width: 768px) {
+      .title.is-1 {
+        font-size: 2rem;
+      }
+      
+      .box-container {
+        flex-direction: column;
+      }
+      
+      .logo-container {
+        flex-direction: column;
+        gap: 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -67,13 +213,13 @@
           <h1 class="title is-1 publication-title">Separating Knowledge and Perception with Procedural Data</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://adriarm.github.io">Adrián Rodríguez-Muñoz</a>,</span>
+              <a href="#">Adrián Rodríguez-Muñoz</a>,</span>
             <span class="author-block">
-              <a href="https://mbaradad.github.io">Manel Baradad</a>,</span>
+              <a href="#">Manel Baradad</a>,</span>
             <span class="author-block">
-                <a href="https://web.mit.edu/phillipi/">Phillip Isola</a>,</span>
+              <a href="#">Phillip Isola</a>,</span>
             <span class="author-block">
-              <a href="https://groups.csail.mit.edu/vision/torralbalab/">Antonio Torralba</a></span>
+              <a href="#">Antonio Torralba</a></span>
           </div>
           <div class="is-size-5 publication-authors">
             <span class="author-block">MIT CSAIL</span>
@@ -84,19 +230,16 @@
 
           <div class="column has-text-centered">
             <div class="publication-links">
-              <!-- PDF Link. -->
               <span class="link-block">
-		            <a href="https://arxiv.org/abs/"
-                   class="external-link button is-normal is-rounded is-dark">
+                <a href="#" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
                   </span>
                   <span>arXiv</span>
-             	 </a>   
+                </a>   
               </span>
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/"
-                   class="external-link button is-normal is-rounded is-dark">
+                <a href="#" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                   </span>
@@ -104,8 +247,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href="https://github.com/adriarm/separating_knowledge"
-                   class="external-link button is-normal is-rounded is-dark">
+                <a href="#" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
@@ -120,273 +262,238 @@
   </div>
 </section>
 
+<div class="tldr-banner">
+  TL;DR: Train Embeddings on Procedural Data, Apply on Real Images with Visual Memory, For Separation Between Perception and Knowledge
+</div>
+
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          <script type="text/javascript" id="MathJax-script" async
-            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
-          </script>
           <p>
-            We train representation models with <a href="https://mbaradad.github.io/learning_with_noise/">procedural data</a> only, and apply them on visual similarity, classification, and semantic segmentation tasks 
-            without further training by using <a href="https://arxiv.org/pdf/2408.08172">visual memory</a>&mdash;an explicit database of reference image embeddings. Unlike prior work on visual memory, our 
-            approach achieves full separation of perception and knowledge with respect to all real-world images while retaining strong performance. In standard approaches, perceptual skills and knowledge are entangled—there is no boundary between what the model is able to do (e.g. classification, segmentation), and what it knows (e.g. people, dogs). Even in visual memory approaches, the embedding model is trained on real data, leaking knowledge into the representation. Our method addresses these limitations with efficient training (no real data), easy editability (data addition/removal through database modification), and explainability (decisions traced to specific examples).
+            We train representation models with procedural data only, and apply them on visual similarity, classification, and semantic segmentation tasks 
+            without further training by using visual memory—an explicit database of reference image embeddings. Unlike prior work on visual memory, our 
+            approach achieves full separation of perception and knowledge with respect to all real-world images while retaining strong performance. 
+            In standard approaches, perceptual skills and knowledge are entangled—there is no boundary between what the model is able to do 
+            (e.g. classification, segmentation), and what it knows (e.g. people, dogs). Even in visual memory approaches, the embedding model 
+            is trained on real data, leaking knowledge into the representation. Our method addresses these limitations with efficient training 
+            (no real data), easy editability (data addition/removal through database modification), and explainability (decisions traced to specific examples).
           </p>
           <hr>
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
   </div>
 </section>
 
-<section class="section" style="margin-top: -5px;">
+<section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
-	    <h3 class="title is-4">Approach: Procedural Training + Visual Memory</h3>
+      <h3 class="title is-4">Problem: Perceptual Skills and Knowledge are Entangled</h3>
     </div>
-    <div class="box" style="width: 100%; margin:0 auto;">
+    <div class="content">
+      <ul>
+        <li>There is no boundary between what the model is able to do (e.g. classification, segmentation), and what it knows (e.g. people, dogs).</li>
+        <li>Even in visual memory approaches, the embedding model is trained on real data, leaking knowledge into the representation.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <h3 class="title is-4">Approach: Procedural Training + Visual Memory</h3>
+    </div>
+    <div class="key-finding">
+      <strong>Train representation models with procedural data only, and apply without further training by using visual memory</strong>
+    </div>
+    <div class="content">
+      <ul>
+        <li><strong>Efficient:</strong> No training with real data</li>
+        <li><strong>Editable:</strong> Easy data addition/removal through database modification</li>
+        <li><strong>Explainable:</strong> Can trace decisions back to specific examples</li>
+      </ul>
+    </div>
+    <div class="box">
       <figure>
-        <img src="./static/figures_poster/diagram.pdf" style="display: block; margin: auto;"/>
-        <figcaption style="font-size: 1.0em; padding-bottom: 20px; text-align: justify">
-          Comparison of standard classifier approach vs. our visual memory approach with procedural training. 
-          Unlike prior work, we achieve complete separation between perceptual capabilities and real-world knowledge.
-        </figcaption>
+        <img src="./static/figures_poster/diagram.pdf" alt="Comparison of classifier vs visual memory perception" />
       </figure>
     </div>
-    <div class="box" style="width: 100%; display: block; margin: auto;">
-      <figure>
-        <img src="./static/figures/datasets_examples_small.pdf" style="display: block; margin: auto"/>
-        <figcaption style="font-size: 1.0em; text-align: justify">
-          Examples of procedural data from prior work, our new Masked Shaders dataset, and real datasets (Places and ImageNet). 
-          Procedural data = simple OpenGL programs with zero privacy risk, no personal information or real objects, 
-          yet they enable learning fundamental visual features that generalize to real images.
-        </figcaption>
-      </figure> 
   </div>
 </section>
 
-<section class="section" style="margin-top: -5px;">
+<section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
-	    <h3 class="title is-4">Novel Procedural Dataset: Shaders KML</h3>
+      <h3 class="title is-4">Key Properties of Procedural Data</h3>
     </div>
-    <figure>
-      <img src="./static/figures/kml_process.pdf"/>
-        <figcaption style="font-size: 1.0em; text-align: justify; display: block; padding-top: 19px;">
-          The Shaders KML process: (1) Sample shaders, (2) Extract mask via K-means in RGB space, (3) Mix shaders using mask.
-          <b>Innovation:</b> Data-driven mixing masks instead of constant masks (standard Mixup), resulting in greater diversity and stronger representations.
-        </figcaption>
-    </figure>
+    <div class="key-finding">
+      <strong>Fundamental visual features without privacy risk</strong>
+    </div>
+    <div class="content">
+      <ul>
+        <li>Procedural data = simple OpenGL programs</li>
+        <li>Zero privacy risk: no personal information or real objects</li>
+        <li>Learn fundamental visual features that generalize to real images</li>
+      </ul>
+    </div>
+    <div class="box">
+      <figure>
+        <img src="./static/figures/datasets_examples_small.pdf" alt="Examples of procedural data" />
+        <figcaption>Examples of procedural data from prior work, our new Masked Shaders dataset, and the real datasets Places and ImageNet.</figcaption>
+      </figure>
+    </div>
+  </div>
 </section>
 
-<section class="section" style="margin-top: -5px;">
+<section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
-	    <h3 class="title is-4">Human Visual Similarity Results</h3>
+      <h3 class="title is-4">Novel Procedural Dataset: Shaders KML</h3>
     </div>
-    <p><b>Key finding:</b> The best procedural datasets have equivalent performance to training on the real dataset Places!</p>
     <figure>
-      <img src="./static/figures_poster/hvs_with_bars.pdf"/>
-        <figcaption style="font-size: 1.0em; text-align: justify; display: block; padding-top: 19px;">
-          Performance on the <a href="https://dreamsim-nights.github.io">NIGHTS</a> benchmark for human visual similarity. 
-          Our procedural models match the performance of models trained on real data.
-        </figcaption>
+      <img src="./static/figures/kml_process.pdf" alt="The Shaders KML process" />
+      <figcaption>The Shaders KML process: (1) Sample shaders, (2) Extract mask via K-means in RGB space, (3) Mix shaders using mask.</figcaption>
     </figure>
+    <div class="key-finding">
+      <strong>Innovation: Data-driven mixing masks</strong>
+    </div>
+    <div class="content">
+      <ul>
+        <li><strong>Prior work:</strong> constant mixing masks (standard Mixup)</li>
+        <li><strong>Our approach:</strong> extract masks from shader patterns using K-means</li>
+        <li><strong>Result:</strong> Greater diversity and stronger representations</li>
+      </ul>
+    </div>
+  </div>
 </section>
 
-<section class="section" style="margin-top: -5px;">
+<section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
-	    <h3 class="title is-4">KNN Classification with Procedural Embeddings</h3>
+      <h3 class="title is-4">Human Visual Similarity Results</h3>
     </div>
-    <p>Despite having no training on real images, not even linear probes, procedural models are effective KNN classifiers.</p>
+    <div class="key-finding">
+      <strong>Key finding:</strong> The best procedural datasets have equivalent performance to training on the real dataset Places!
+    </div>
+    <figure>
+      <img src="./static/figures_poster/hvs_with_bars.pdf" alt="Performance on NIGHTS benchmark" />
+      <figcaption>Examples and performance on NIGHTS benchmark. Our procedural models match the performance of models trained on real data.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <h3 class="title is-4">Nearest Neighbours</h3>
+    </div>
     <div class="box-container">
       <div class="box">
+        <div class="key-finding">
+          <strong>Qualitative results:</strong> Procedural models select good neighbours even within ImageNet, a large scale pool of O(1M) images.
+        </div>
         <figure>
-          <img src="./static/figures_poster/classification_thin.png"/>
-            <figcaption style="font-size: 1.0em; text-align: justify; display: block; padding-top: 19px;">
-              <b>Performance:</b>
-              Procedural models beat out-of-distribution real data models on fine-grained classification. 
-              On ImageNet-1K, they are within 10% of models trained on real data.
-            </figcaption>
+          <img src="./static/figures_poster/image_torralba_mine_kml_mixup_20.pdf" alt="Nearest neighbours visualization" />
+          <figcaption>Nearest neighbours of ImageNet query images according to the strongest procedural model.</figcaption>
         </figure>
       </div>
-      <div class="box" style="padding: 0px">
+      <div class="box">
+        <div class="key-finding">
+          <strong>Quantitative results:</strong> Procedural models beat out-of-distribution real data models on fine-grained classification. On ImageNet-1K, they are within 10%.
+        </div>
         <figure>
-          <div id="results-carousel" class="carousel results-carousel" style="background-size: 0px">
-            <div class="item item-imagenet">
-              <img src="./static/figures_poster/image_torralba_mine_kml_mixup_20.pdf" style="width: 96%">
-            </div>
-            <div class="item item-cub">
-              <img src="./static/images/cub_neighbours.png" style="width: 96%">
-            </div>
-            <div class="item item-food">
-              <img src="./static/images/food_neighbours.png" style="width: 96%">
-            </div>
-            <div class="item item-flowers">
-              <img src="./static/images/flowers_neighbours.png" style="width: 96%">
-            </div>
-          </div>
-          <figcaption style="font-size: 1.0em; text-align: justify; display: block; padding-bottom: 42px;">
-            <b>Visualization:</b>
-            Procedural models select good neighbours even within ImageNet, a large scale pool of O(1M) images, 
-            despite not seeing real-world data during training.
-          </figcaption>
-      </figure>
+          <img src="./static/figures_poster/classification_thin.png" alt="Classification accuracy comparison" />
+          <figcaption>Nearest neighbours of a bird query image from CUB (left) and KNN classification accuracy (right) on various datasets.</figcaption>
+        </figure>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section" style="margin-top: -5px;">
+<section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
-	    <h3 class="title is-4">Zero-shot Semantic Segmentation</h3>
+      <h3 class="title is-4">Zero-shot Semantic Segmentation</h3>
     </div>
-    <p><b>Remarkable ability:</b> Despite never seeing real images, procedural models can segment bikes and other objects!</p>
-    <div class="box" style="width: 100%; margin:0 auto;">
+    <div class="key-finding">
+      <strong>Remarkable ability:</strong> Despite never seeing real images, procedural models can segment bikes and other objects!
+    </div>
+    <div class="box">
       <figure>
-        <img src="./static/figures_poster/segmentation_diagram_zeroshot.pdf" style="display: block; margin: auto;"/>
-        <figcaption style="font-size: 1.0em; padding-bottom: 20px; text-align: justify">
-          Zero-shot segmentation pipeline using procedural models. Features are extracted and projected using PCA to obtain segmentations.
-        </figcaption>
+        <img src="./static/figures_poster/segmentation_diagram_zeroshot.pdf" alt="Zero-shot segmentation pipeline" />
+        <figcaption>Zero-shot segmentation pipeline using procedural models. Features are extracted and projected using PCA to obtain segmentations.</figcaption>
       </figure>
     </div>
-    <div class="box-container">
-      <div class="box" style="padding-top: 0px; width: 30%;">
-        <figure>
-          <img src="./static/images/segmentation_zeroshot_table.png"/>
-            <figcaption style="font-size: 1.0em; text-align: justify; display: block; padding-top: 0px;">
-              <b>Performance:</b> \(R^2\) of PCA features and human label segmentations. The best procedural model is within 10% of real data
-              models and highly above random and RGB features.
-            </figcaption>
-        </figure>
-      </div>
-      <div class="box" style="padding: 0px; width: 70%;">
-        <figure>
-          <img src="./static/figures_poster/segmentation_zeroshot.pdf" style="width: 96%">
-          <figcaption style="font-size: 1.0em; text-align: justify; display: block; padding-top: 10px;">
-            <b>Visualization:</b> In examples, procedural models clearly separate objects from backgrounds without any training on real images.
-          </figcaption>
+    <div class="box">
+      <figure>
+        <img src="./static/figures_poster/segmentation_zeroshot.pdf" alt="Segmentation results" />
+        <figcaption>Zero-shot segmentation using PCA features. In examples (left), procedural models clearly separate objects from backgrounds. In quantitative results (right), showing R² between PCA features and human label segmentations, we verify the qualitative observations.</figcaption>
       </figure>
-      </div>
     </div>
   </div>
 </section>
 
-<section class="section" style="margin-top: -5px;">
+<section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
-	    <h3 class="title is-4">In-Context Semantic Segmentation</h3>
+      <h3 class="title is-4">In-Context Semantic Segmentation</h3>
     </div>
-    <div class="box" style="width: 100%; margin:0 auto;">
+    <div class="key-finding">
+      <strong>Remarkable ability:</strong> Despite never seeing real images, procedural models can segment bikes and other objects!
+    </div>
+    <div class="box">
       <figure>
-        <img src="./static/figures_poster/segmentation_diagram_incontext.pdf" style="display: block; margin: auto;"/>
-        <figcaption style="font-size: 1.0em; padding-bottom: 20px; text-align: justify">
-          In-context segmentation pipeline: given a single exemplar prompt, procedural models can segment arbitrary classes.
-        </figcaption>
+        <img src="./static/figures_poster/segmentation_diagram_incontext.pdf" alt="In-context segmentation pipeline" />
+        <figcaption>In-context segmentation pipeline: given a single exemplar prompt, procedural models can segment arbitrary classes.</figcaption>
       </figure>
     </div>
-    <div class="box" style="width: 100%;">
+    <div class="box">
       <figure>
-        <img src="./static/figures_poster/segmentation_incontext_short.pdf"/>
-          <figcaption style="font-size: 1.0em; text-align: justify; display: block;">
-            In-context segmentation on <a href="https://groups.csail.mit.edu/vision/datasets/ADE20K/">ADE20K</a>. 
-            Procedural models can segment arbitrary classes given a single exemplar prompt, demonstrating strong generalization 
-            despite never training on real images.
-          </figcaption>
+        <img src="./static/figures_poster/segmentation_incontext_short.pdf" alt="In-context segmentation results" />
+        <figcaption>In-context segmentation on Ade20k (Zhou et al.). Procedural models can segment arbitrary classes given a single exemplar prompt, demonstrating strong generalization despite never training on real images.</figcaption>
       </figure>
     </div>
+  </div>
 </section>
 
 <section class="section" id="BibTeX">
-<div class="container is-max-desktop content">
-<h2 class="title">Related Work</h2>
-<p style="font-size:14px; text-align: justify">
-  [1] Baradad, M., Wulff, J., Wang, T., Isola, P., and Torralba, A. Learning to See by Looking at Noise. NeurIPS 2021<br />
-
-  [2] Baradad, M., Chen, C.-F., Wulff, J., Wang, T., Feris, R., Torralba, A., and Isola, P. Procedural Image Programs for Representation Learning. NeurIPS 2022<br />
-
-  [3] Geirhos, R., Jaini, P., Stone, A., Medapati, S., Yi, X., Toderici, G., Ogale, A., and Shlens, J. Towards flexible perception with visual memory. arXiv 2024<br />
-
-  [4] Caron, M., Touvron, H., Misra, I., Jegou, H., Mairal, J., Bojanowski, P., and Joulin, A. Emerging Properties in Self-Supervised Vision Transformers. ICCV 2021<br />
-
-  [5] Zhou, B., Zhao, H., Puig, X., Fidler, S., Barriuso, A., and Torralba, A. Scene Parsing through ADE20K Dataset. CVPR 2017<br />
-
-  [6] Fu, S., Tamir, N., Sundaram, S., Chai, L., Zhang, R., Dekel, T., and Isola, P. DreamSim: Learning New Dimensions of Human Visual Similarity using Synthetic Data. NeurIPS 2023<br />
-
-  [7] Russakovsky, O., Deng, J., Su, H., Krause, J., Satheesh, S., Ma, S., Huang, Z., Karpathy, A., Khosla, A., Bernstein, M., Berg, A. C., and Fei-Fei, L. ImageNet Large Scale Visual Recognition Challenge. IJCV 2015<br />
-
-  [8] Lin, T.-Y., Maire, M., Belongie, S., Bourdev, L., Girshick, R., Hays, J., Perona, P., Ramanan, D., Zitnick, C. L., and Dollar, P. Microsoft COCO: Common Objects in Context. ECCV 2014<br />
-</p>
-</div>
-</section>
-
-<section class="section" id="BibTeX">
-<div class="container is-max-desktop content">
-  <h2 class="title">BibTeX</h2>
-  <pre><code>
-    @inproceedings{rodriguezmunoz2025separating,
-      title = {Separating Knowledge and Perception with Procedural Data},
-      author = {Rodríguez-Muñoz, Adrián and Baradad, Manel and Isola, Phillip and Torralba, Antonio},
-      booktitle = {Proceedings of the International Conference on Machine Learning (ICML)},
-      year={2025},
-    }
-  </code></pre>
-</div>
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{rodriguezmunoz2025separating,
+  title = {Separating Knowledge and Perception with Procedural Data},
+  author = {Rodríguez-Muñoz, Adrián and Baradad, Manel and Isola, Phillip and Torralba, Antonio},
+  booktitle = {Proceedings of the International Conference on Machine Learning (ICML)},
+  year={2025},
+}</code></pre>
+  </div>
 </section>
 
 <section class="section" id="Acknowledgements">
   <div class="container is-max-desktop content">
     <h2 class="title">Acknowledgements</h2>
-    This work was supported by the La Caixa Foundation and DSTA Singapore. The Torralba and Isola labs are supported by the ONR MURI program.
+    <p>This work was supported by the La Caixa Foundation and DSTA Singapore.</p>
   </div>
 </section>
 
-<style type="text/css" media="all">
-  .page__footer {
-    padding-top: 1em;
-    padding-bottom: 0.5em;
-    margin-left: 0;
-    margin-right: 0;
-    width: 100%;
-    clear: both;
-    bottom: 0;
-    height: auto;
-    margin-top: 3em;
-    color: #898c8f;
-    background-color: #f2f3f3;
-    padding-left: 0em;
-    padding-right: 0em;
-    max-width: 100%;
-  }
-  
-  .page__footer .links {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1000px;
-  }
-  
-  .page__footer .links .social-icons {
-    padding-left: 0;
-    text-align: left;
-  }
-  </style>
-  
-  <div class="page__footer">
-    <div class="links">
-      <ul class="social-icons">
-        <li style='display: inline-block; margin-right: 5px; font-style: bold'><strong>Links:</strong></li>
-        <li style='display: inline-block; margin-right: 5px; font-style: normal;'><a href="https://accessibility.mit.edu"><i class="fa fa-fw fas fa-universal-access" aria-hidden="true"></i> Accessibility</a></li>
-      </ul>
-      This website is adapted from the <a href="https://github.com/nerfies/nerfies.github.io">Nerfies template</a>, which you are free to borrow if you link back to it in the footer.
+<footer class="footer">
+  <div class="container">
+    <div class="logo-container">
+      <svg class="logo" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+        <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-size="40" font-weight="bold" fill="#333">MIT</text>
+      </svg>
+      <svg class="logo" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+        <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-size="30" font-weight="bold" fill="#333">ICML</text>
+      </svg>
     </div>
-    <br>
+    <div class="footer-content">
+      <p>© 2025 MIT CSAIL. Website adapted from the <a href="https://github.com/nerfies/nerfies.github.io">Nerfies template</a>.</p>
+    </div>
   </div>
+</footer>
 
 </body>
 </html>
