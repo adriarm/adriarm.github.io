@@ -11,13 +11,7 @@ redirect_from:
 <div class="intro">
 <p align="justify">
 I am Adrián Rodríguez-Muñoz, a 3rd year grad student at MIT EECS under the supervision of 
-<a href="http://web.mit.edu/torralba/www/">Prof. Antonio Torralba</a>. My research focuses on <a href="https://mbaradad.github.io/learning_with_noise/">procedurally generated data</a> and efficient <a href="https://adriarm.github.io/_pages/robustness_input_gradients/">adversarial robustness</a>. 
-My goal is to help create intelligent visual systems that:
-<ol>
-  <li>Make decisions on personalized private data without additional training and ideal (k=1) data compartmentalization.</li>
-  <li>Provide <a href="https://jolt.law.harvard.edu/assets/articlePDFs/v31/Counterfactual-Explanations-without-Opening-the-Black-Box-Sandra-Wachter-et-al.pdf">counterfactual explanations</a> grounded on common-sense visual similarity.</li>
-  <li>Are robust to adversarial conditions.</li>
-</ol>
+<a href="http://web.mit.edu/torralba/www/">Prof. Antonio Torralba</a>. My research focuses on learning how to use all data effectively, such as <a href="https://giannisdaras.github.io/publication/ambient_omni">low-quality and out-of-distribution data in generative models</a>, and even <a href="_pages/separating_knowledge">non-realistic procedurally generated data in vision models</a>. Previously, I worked on <a href="https://adriarm.github.io/_pages/robustness_input_gradients/"> efficient adversarial robustness</a>. I am currently doing an internship at Amazon Research, working on retrieval augmented generation (RAG) with diffusion models.
 </p>
 
 <p align="justify">
