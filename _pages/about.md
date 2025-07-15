@@ -44,7 +44,7 @@ Click <a href="./files/cv.pdf">here</a> for my CV.
             <h4 class="authors">
                 <b>Adrián Rodríguez-Muñoz</b>, Manel Baradad, Phillip Isola, Antonio Torralba
             </h4>
-            [<a font size="-2" href="">paper</a>] [<a font size="-2" href="_pages/separating_knowledge">webpage</a>] [<a font size="-2" href="https://github.com/adriarm/separating_knowledge">code</a>]
+            [<a font size="-2" href="https://openreview.net/pdf?id=oyFAFpqaca">paper</a>] [<a font size="-2" href="_pages/separating_knowledge">webpage</a>] [<a font size="-2" href="https://github.com/adriarm/separating_knowledge">code</a>]
         </div>
         <a classa="pub_image">
             <img src="_pages/separating_knowledge/static/figures_poster/diagram.png">
