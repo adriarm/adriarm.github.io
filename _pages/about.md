@@ -33,6 +33,19 @@ Click <a href="./files/cv.pdf">here</a> for my CV.
 <div id="publications"  style="position: relative; top: -20px;">
     <article>
         <div class="pub_text">
+            <h3 class="papertitle">Ambient Diffusion Omni: Training Good Models with Bad Data</h3>
+            <h4 class="authors">
+                <b>Adrián Rodríguez-Muñoz*</b>, Giannis Daras*, Adam Klivans, Antonio Torralba, Constantinos Daskalakis
+            </h4>
+            [<a font size="-2" href="https://arxiv.org/pdf/2506.10038">paper</a>] [<a font size="-2" href="https://giannisdaras.github.io/publication/ambient_omni">webpage</a>] [<a font size="-2" href="https://github.com/giannisdaras/ambient-omni">code</a>]
+        </div>
+        <a classa="pub_image">
+            <img src="https://giannisdaras.github.io/images/annotations.jpg">
+        </a>
+    </article>
+    <br />
+    <article>
+        <div class="pub_text">
             <h3 class="papertitle">[ICML 2025] Separating Knowledge and Perception with Procedural Data</h3>
             <h4 class="authors">
                 <b>Adrián Rodríguez-Muñoz</b>, Manel Baradad, Phillip Isola, Antonio Torralba
