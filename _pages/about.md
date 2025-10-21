@@ -10,8 +10,8 @@ redirect_from:
 
 <div class="intro">
 <p align="justify">
-I am Adrián Rodríguez-Muñoz, a 3rd year grad student at MIT EECS under the supervision of 
-<a href="http://web.mit.edu/torralba/www/">Prof. Antonio Torralba</a>. My research focuses on learning how to use all data effectively, such as <a href="https://giannisdaras.github.io/publication/ambient_omni">low-quality and out-of-distribution data in generative models</a>, and even <a href="_pages/separating_knowledge">non-realistic procedurally generated data in vision models</a>. Previously, I worked on <a href="https://adriarm.github.io/_pages/robustness_input_gradients/"> efficient adversarial robustness</a>. I am currently doing an internship at Amazon Research, working on retrieval augmented generation (RAG) with diffusion models.
+I am Adrián Rodríguez-Muñoz, a 4th year grad student at MIT EECS under the supervision of 
+<a href="http://web.mit.edu/torralba/www/">Prof. Antonio Torralba</a>. My research focuses on learning how to use all data effectively, such as <a href="https://giannisdaras.github.io/publication/ambient_omni">low-quality and out-of-distribution data in generative models</a>, and even <a href="_pages/separating_knowledge">procedurally generated data in vision models</a>. Previously, I worked on <a href="https://adriarm.github.io/_pages/robustness_input_gradients/"> efficient adversarial robustness</a>. In Summer 2025 I did an internship at Amazon Research, working on retrieval augmented generation (RAG) with diffusion models.
 </p>
 
 <p align="justify">
@@ -27,7 +27,7 @@ Click <a href="./files/cv.pdf">here</a> for my CV.
 <div id="publications"  style="position: relative; top: -20px;">
     <article>
         <div class="pub_text">
-            <h3 class="papertitle">Ambient Diffusion Omni: Training Good Models with Bad Data</h3>
+            <h3 class="papertitle"> [Neurips 2025 - Spotlight ⭐] Ambient Diffusion Omni: Training Good Models with Bad Data</h3>
             <h4 class="authors">
                 <b>Adrián Rodríguez-Muñoz*</b>, Giannis Daras*, Adam Klivans, Antonio Torralba, Constantinos Daskalakis
             </h4>
@@ -66,7 +66,7 @@ Click <a href="./files/cv.pdf">here</a> for my CV.
     <br />
     <article>
         <div class="pub_text">
-            <h3 class="papertitle">[CVPR 2024 - Highlight] A Vision Check-up for Language Models</h3>
+            <h3 class="papertitle">[CVPR 2024 - Highlight ⭐] A Vision Check-up for Language Models</h3>
             <h4 class="authors">
                 Pratyusha Sharma*, Tamar Rott Shaham*, Manel Baradad,
                 Stephanie Fu, <b>Adrián Rodríguez-Muñoz</b>, Shivam Duggal, Phillip Isola, Antonio Torralba
