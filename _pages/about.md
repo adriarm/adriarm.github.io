@@ -27,7 +27,7 @@ Click <a href="./files/cv.pdf">here</a> for my CV.
 <div id="publications"  style="position: relative; top: -20px;">
     <article>
         <div class="pub_text">
-            <h3 class="papertitle"> [Neurips 2025 - Spotlight ⭐] Ambient Diffusion Omni: Training Good Models with Bad Data</h3>
+            <h3 class="papertitle"> [Neurips 2025 - Spotlight <span style="color: #DAA520;">★</span>] Ambient Diffusion Omni: Training Good Models with Bad Data</h3>
             <h4 class="authors">
                 <b>Adrián Rodríguez-Muñoz*</b>, Giannis Daras*, Adam Klivans, Antonio Torralba, Constantinos Daskalakis
             </h4>
@@ -66,7 +66,7 @@ Click <a href="./files/cv.pdf">here</a> for my CV.
     <br />
     <article>
         <div class="pub_text">
-            <h3 class="papertitle">[CVPR 2024 - Highlight ⭐] A Vision Check-up for Language Models</h3>
+            <h3 class="papertitle">[CVPR 2024 - Highlight <span style="color: #FFA500;">★</span>] A Vision Check-up for Language Models</h3>
             <h4 class="authors">
                 Pratyusha Sharma*, Tamar Rott Shaham*, Manel Baradad,
                 Stephanie Fu, <b>Adrián Rodríguez-Muñoz</b>, Shivam Duggal, Phillip Isola, Antonio Torralba
