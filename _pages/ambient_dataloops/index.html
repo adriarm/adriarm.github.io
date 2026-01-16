@@ -260,7 +260,7 @@
         .anim-container {
             position: relative;
             width: 100%;
-            /* Custom Aspect Ratio: 3721.48 / 3631.81 */
+            /* Custom Aspect Ratio */
             aspect-ratio: 3721.48 / 3631.81;
             background-color: var(--bg-tertiary);
             border-radius: 12px;
@@ -269,42 +269,17 @@
             border: 0.5px solid var(--border);
         }
 
-        /* The Frame Wrapper (Holds both Day/Night images) */
-        .anim-frame {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out; 
-            pointer-events: none;
-            background-color: var(--bg-tertiary);
-        }
-
-        .anim-frame.active {
-            opacity: 1;
-        }
-
-        /* The Images inside the wrapper */
-        .anim-frame img {
-            position: absolute;
-            top: 0;
-            left: 0;
+        /* New GIF Styles */
+        .anim-gif {
             width: 100%;
             height: 100%;
             object-fit: contain;
+            display: none; /* Hidden by default */
         }
 
-        /* Day/Night Switching Logic */
-        /* Default (Light Mode): Show .img-day, Hide .img-night */
-        .img-day { display: block; }
-        .img-night { display: none; }
-
-        /* Dark Mode: Show .img-night, Hide .img-day */
-        [data-theme="dark"] .img-day { display: none; }
-        [data-theme="dark"] .img-night { display: block; }
-
+        /* Show/Hide Logic based on Data Theme */
+        [data-theme="light"] #gif-day { display: block; }
+        [data-theme="dark"] #gif-night { display: block; }
 
         .anim-restart-btn {
             position: absolute;
@@ -470,30 +445,8 @@
                     </svg>
                 </button>
                 
-                <div class="anim-frame active">
-                    <img src="./coevolution_animation/frame1_3x2.png" class="img-day" alt="Frame 1 Day">
-                    <img src="./coevolution_animation/frame1_3x2_night.png" class="img-night" alt="Frame 1 Night">
-                </div>
-
-                <div class="anim-frame">
-                    <img src="./coevolution_animation/frame2_3x2.png" class="img-day" alt="Frame 2 Day">
-                    <img src="./coevolution_animation/frame2_3x2_night.png" class="img-night" alt="Frame 2 Night">
-                </div>
-
-                <div class="anim-frame">
-                    <img src="./coevolution_animation/frame3_3x2.png" class="img-day" alt="Frame 3 Day">
-                    <img src="./coevolution_animation/frame3_3x2_night.png" class="img-night" alt="Frame 3 Night">
-                </div>
-
-                <div class="anim-frame">
-                    <img src="./coevolution_animation/frame4_3x2.png" class="img-day" alt="Frame 4 Day">
-                    <img src="./coevolution_animation/frame4_3x2_night.png" class="img-night" alt="Frame 4 Night">
-                </div>
-
-                <div class="anim-frame">
-                    <img src="./coevolution_animation/frame5_3x2.png" class="img-day" alt="Frame 5 Day">
-                    <img src="./coevolution_animation/frame5_3x2_night.png" class="img-night" alt="Frame 5 Night">
-                </div>
+                <img id="gif-day" src="./coevolution_animation/day.gif" class="anim-gif" alt="Co-evolution Day Animation">
+                <img id="gif-night" src="./coevolution_animation/night.gif" class="anim-gif" alt="Co-evolution Night Animation">
             </div>
         </section>
 
@@ -612,52 +565,30 @@
             });
         }
 
-        /* --- Animation Logic --- */
-        let animInterval;
-        let currentFrame = 0;
-        const frames = document.querySelectorAll('.anim-frame');
-        const restartBtn = document.querySelector('.anim-restart-btn');
-
-        function playAnimation() {
-            if(animInterval) clearInterval(animInterval);
-            
-            currentFrame = 0;
-            updateFrames();
-
-            animInterval = setInterval(() => {
-                currentFrame++;
-                
-                if (currentFrame >= frames.length) {
-                    clearInterval(animInterval);
-                } else {
-                    updateFrames();
-                }
-            }, 1250); // CHANGED: 1000 -> 2000 for slower animation
-        }
-
-        function updateFrames() {
-            frames.forEach((frame, index) => {
-                if (index === currentFrame) {
-                    frame.classList.add('active');
-                } else {
-                    frame.classList.remove('active');
-                }
-            });
-        }
-
+        /* --- Animation Logic (Replay GIF) --- */
         function restartAnimation() {
+            const restartBtn = document.querySelector('.anim-restart-btn');
             const icon = restartBtn.querySelector('svg');
+            
+            // Spin the icon
             icon.style.transition = 'transform 0.5s ease';
             icon.style.transform = 'rotate(-360deg)';
             setTimeout(() => { icon.style.transform = 'rotate(0deg)'; }, 500);
 
-            playAnimation();
+            // Reload GIFs
+            const gifDay = document.getElementById('gif-day');
+            const gifNight = document.getElementById('gif-night');
+            
+            // We append a timestamp to the src to force the browser to reload the GIF
+            // We strip any existing query string first to avoid accumulation
+            const daySrc = gifDay.getAttribute('src').split('?')[0];
+            const nightSrc = gifNight.getAttribute('src').split('?')[0];
+            
+            const timestamp = new Date().getTime();
+            
+            gifDay.src = `${daySrc}?t=${timestamp}`;
+            gifNight.src = `${nightSrc}?t=${timestamp}`;
         }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            playAnimation();
-        });
-
     </script>
 </body>
 </html>
