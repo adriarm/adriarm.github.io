@@ -483,14 +483,18 @@
                 </p>
                 <p>
                     There is a point after which reducing the dataset further only hurts (madness regime) 
-                    because the current model has reached its denoising capacity. FID is always computed 
-                    with respect to the original clean CIFAR-10.
+                    because the current model has reached its denoising capacity.
+                </p>
+                <p>
+                    Decreasing the noise level at the right speed achieves maximum performance with \(k > 1\) loops.
+                </p>
+                <p>
+                    FID is always computed with respect to the original clean CIFAR-10.
                 </p>
             </div>
             
             <div class="figure-container">
                 <img src="./figures/fid_vs_noise_ablation.png" alt="FID vs Noise Ablation Plot" style="width: 100%; height: auto; border-radius: 4px;">
-                <p class="caption"><em>Figure: FID scores across different noise levels and iteration counts \(k\).</em></p>
             </div>
         </section>
 
