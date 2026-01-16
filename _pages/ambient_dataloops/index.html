@@ -438,15 +438,26 @@
             </div>
 
             <div class="anim-container" id="coevolution-anim">
-                <button class="anim-restart-btn" onclick="restartAnimation()" title="Restart Animation">
+                <button class="anim-restart-btn" onclick="triggerAnimation()" title="Restart Animation">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M23 4v6h-6"></path>
                         <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
                     </svg>
                 </button>
                 
-                <img id="gif-day" src="./coevolution_animation/day.gif" class="anim-gif" alt="Co-evolution Day Animation">
-                <img id="gif-night" src="./coevolution_animation/night.gif" class="anim-gif" alt="Co-evolution Night Animation">
+                <img id="gif-day" 
+                     src="./coevolution_animation/day.gif" 
+                     data-gif="./coevolution_animation/day.gif"
+                     data-static="./coevolution_animation/frame5_3x2.png"
+                     class="anim-gif" 
+                     alt="Co-evolution Day Animation">
+
+                <img id="gif-night" 
+                     src="./coevolution_animation/night.gif" 
+                     data-gif="./coevolution_animation/night.gif"
+                     data-static="./coevolution_animation/frame5_3x2_night.png"
+                     class="anim-gif" 
+                     alt="Co-evolution Night Animation">
             </div>
         </section>
 
@@ -565,8 +576,15 @@
             });
         }
 
-        /* --- Animation Logic (Replay GIF) --- */
-        function restartAnimation() {
+        /* --- Animation Logic (Loop Control) --- */
+        
+        // IMPORTANT: Set this to the length of your GIF in milliseconds
+        // Example: If your GIF is 5 frames at 2000ms per frame = 10000ms
+        const GIF_DURATION_MS = 10000; 
+
+        let animTimeout;
+
+        function triggerAnimation() {
             const restartBtn = document.querySelector('.anim-restart-btn');
             const icon = restartBtn.querySelector('svg');
             
@@ -575,20 +593,37 @@
             icon.style.transform = 'rotate(-360deg)';
             setTimeout(() => { icon.style.transform = 'rotate(0deg)'; }, 500);
 
-            // Reload GIFs
+            // Clear any existing timeout (in case button is pressed quickly)
+            if (animTimeout) clearTimeout(animTimeout);
+
             const gifDay = document.getElementById('gif-day');
             const gifNight = document.getElementById('gif-night');
-            
-            // We append a timestamp to the src to force the browser to reload the GIF
-            // We strip any existing query string first to avoid accumulation
-            const daySrc = gifDay.getAttribute('src').split('?')[0];
-            const nightSrc = gifNight.getAttribute('src').split('?')[0];
-            
+
+            // 1. Reset sources to the GIF (causing them to replay)
             const timestamp = new Date().getTime();
-            
-            gifDay.src = `${daySrc}?t=${timestamp}`;
-            gifNight.src = `${nightSrc}?t=${timestamp}`;
+            gifDay.src = `${gifDay.dataset.gif}?t=${timestamp}`;
+            gifNight.src = `${gifNight.dataset.gif}?t=${timestamp}`;
+
+            // 2. Set a timeout to swap to static image
+            animTimeout = setTimeout(() => {
+                gifDay.src = gifDay.dataset.static;
+                gifNight.src = gifNight.dataset.static;
+            }, GIF_DURATION_MS);
         }
+
+        // Preload static images to prevent flicker when swapping
+        function preloadImages() {
+            const dayStatic = new Image();
+            dayStatic.src = document.getElementById('gif-day').dataset.static;
+            const nightStatic = new Image();
+            nightStatic.src = document.getElementById('gif-night').dataset.static;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            preloadImages();
+            triggerAnimation(); // Start the first loop on page load
+        });
+
     </script>
 </body>
 </html>
