@@ -256,11 +256,66 @@
         }
         .placeholder-text p:last-child { margin-bottom: 0; }
 
+        /* --- ANIMATION BLOCK STYLES --- */
+        .anim-container {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9; /* Widescreen ratio */
+            background-color: var(--bg-tertiary);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: 24px; /* Changed from margin-bottom to margin-top */
+            border: 0.5px solid var(--border);
+        }
+
+        .anim-frame {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            /* Cross-fade effect */
+            transition: opacity 0.5s ease-in-out; 
+            pointer-events: none;
+        }
+
+        .anim-frame.active {
+            opacity: 1;
+        }
+
+        .anim-restart-btn {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(128, 128, 128, 0.25);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 0.5px solid rgba(255, 255, 255, 0.2);
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            opacity: 0.6;
+            transition: all 0.2s ease;
+        }
+
+        .anim-restart-btn:hover {
+            opacity: 1;
+            transform: scale(1.05);
+            background: rgba(128, 128, 128, 0.4);
+        }
+
         /* --- Citation Block --- */
         .citation-card {
-            background-color: var(--bg-elevated); /* Defaults to elevated, JS can override if needed */
+            background-color: var(--bg-elevated); 
         }
-        /* Specific override for Citation card background logic from React Code */
         [data-theme="light"] .citation-card { background-color: var(--bg-secondary); }
         [data-theme="dark"] .citation-card { background-color: #000; }
 
@@ -379,10 +434,26 @@
                 <h2>Dataset-Model co-evolution</h2>
                 <span class="tag methodology">Methodology</span>
             </div>
+            
             <div class="placeholder-text">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+
+            <div class="anim-container" id="coevolution-anim">
+                <button class="anim-restart-btn" onclick="restartAnimation()" title="Restart Animation">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M23 4v6h-6"></path>
+                        <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                    </svg>
+                </button>
+                
+                <img src="./coevolution_animation/frame1_3x2.png" class="anim-frame active" alt="Frame 1">
+                <img src="./coevolution_animation/frame2_3x2.png" class="anim-frame" alt="Frame 2">
+                <img src="./coevolution_animation/frame3_3x2.png" class="anim-frame" alt="Frame 3">
+                <img src="./coevolution_animation/frame4_3x2.png" class="anim-frame" alt="Frame 4">
+                <img src="./coevolution_animation/frame5_3x2.png" class="anim-frame" alt="Frame 5">
             </div>
         </section>
 
@@ -470,7 +541,6 @@
         function setTheme(themeName) {
             document.documentElement.setAttribute('data-theme', themeName);
             
-            // Toggle Button styling
             const lightBtn = document.getElementById('btn-light');
             const darkBtn = document.getElementById('btn-dark');
             
@@ -494,7 +564,6 @@
                 const btn = document.querySelector('.copy-btn');
                 const originalText = btn.innerHTML;
                 
-                // Visual Feedback
                 btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Copied!`;
                 
                 setTimeout(() => {
@@ -502,6 +571,53 @@
                 }, 2000);
             });
         }
+
+        /* --- Animation Logic --- */
+        let animInterval;
+        let currentFrame = 0;
+        const frames = document.querySelectorAll('.anim-frame');
+        const restartBtn = document.querySelector('.anim-restart-btn');
+
+        function playAnimation() {
+            if(animInterval) clearInterval(animInterval);
+            
+            currentFrame = 0;
+            updateFrames();
+
+            animInterval = setInterval(() => {
+                currentFrame++;
+                
+                if (currentFrame >= frames.length) {
+                    clearInterval(animInterval);
+                } else {
+                    updateFrames();
+                }
+            }, 1000); 
+        }
+
+        function updateFrames() {
+            frames.forEach((frame, index) => {
+                if (index === currentFrame) {
+                    frame.classList.add('active');
+                } else {
+                    frame.classList.remove('active');
+                }
+            });
+        }
+
+        function restartAnimation() {
+            const icon = restartBtn.querySelector('svg');
+            icon.style.transition = 'transform 0.5s ease';
+            icon.style.transform = 'rotate(-360deg)';
+            setTimeout(() => { icon.style.transform = 'rotate(0deg)'; }, 500);
+
+            playAnimation();
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            playAnimation();
+        });
+
     </script>
 </body>
 </html>
