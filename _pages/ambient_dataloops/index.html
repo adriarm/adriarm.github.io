@@ -23,6 +23,8 @@
             --shadow: 0 4px 24px rgba(0, 0, 0, 0.04), 0 0 0 0.5px rgba(0, 0, 0, 0.02);
             
             /* Tags */
+            --tag-abstract-bg: rgba(175, 82, 222, 0.1);
+            --tag-abstract-text: #af52de;
             --tag-method-bg: rgba(0, 113, 227, 0.1);
             --tag-method-text: #0071e3;
             --tag-stab-bg: rgba(255, 149, 0, 0.1);
@@ -55,8 +57,8 @@
             --shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
 
             /* Tags */
-            --tag-abstract-bg: rgba(10, 132, 255, 0.16);
-            --tag-abstract-text: #64d2ff;
+            --tag-abstract-bg: rgba(191, 90, 242, 0.16);
+            --tag-abstract-text: #bf5af2;
             --tag-method-bg: rgba(10, 132, 255, 0.16);
             --tag-method-text: #64d2ff;
             --tag-stab-bg: rgba(255, 159, 10, 0.16);
@@ -423,7 +425,7 @@
         <section class="card">
             <div class="section-header">
                 <h2>Abstract</h2>
-                <span class="tag methodology">Abstract</span>
+                <span class="tag abstract">Abstract</span>
             </div>
             <div class="placeholder-text">
                 <p>We propose Ambient Dataloops, an iterative framework for refining datasets that makes it easier for diffusion models to learn the underlying data distribution. Modern datasets contain samples of highly varying quality, and training directly on such heterogeneous data often yields suboptimal models. We propose a dataset-model co-evolution process; at each iteration of our method, the dataset becomes progressively higher quality, and the model improves accordingly. To avoid destructive self-consuming loops, at each generation, we treat the synthetically improved samples as noisy, but at a slightly lower noisy level than the previous iteration, and we use Ambient Diffusion techniques for learning under corruption. Empirically, Ambient Dataloops achieve state-of-the-art performance in unconditional and text-conditional image generation and de novo protein design. We further provide a theoretical justification for the proposed framework that captures the benefits of the data looping procedure.</p>
