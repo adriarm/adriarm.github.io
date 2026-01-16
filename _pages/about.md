@@ -1,99 +1,629 @@
----
-permalink: /
-#title: "About me"
-excerpt: "About me"
-author_profile: true
-redirect_from: 
-  - /about/
-  - /about.html
----
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambient Dataloops</title>
+    <style>
+        /* --- CSS Variables (The Theme Engine) --- */
+        :root {
+            /* Light Mode Defaults */
+            --bg: #f5f5f7;
+            --bg-secondary: #f5f5f7;
+            --bg-tertiary: #e8e8ed;
+            --bg-elevated: #ffffff;
+            --text: #1d1d1f;
+            --text-secondary: #86868b;
+            --text-tertiary: #acacb0;
+            --accent: #0071e3;
+            --accent-hover: #0077ed;
+            --separator: rgba(60, 60, 67, 0.12);
+            --border: rgba(60, 60, 67, 0.08);
+            --glass: rgba(255, 255, 255, 0.72);
+            --shadow: 0 4px 24px rgba(0, 0, 0, 0.04), 0 0 0 0.5px rgba(0, 0, 0, 0.02);
+            
+            /* Tags */
+            --tag-method-bg: rgba(0, 113, 227, 0.1);
+            --tag-method-text: #0071e3;
+            --tag-stab-bg: rgba(255, 149, 0, 0.1);
+            --tag-stab-text: #c93400;
+            --tag-res-bg: rgba(40, 205, 65, 0.1);
+            --tag-res-text: #248a3d;
+            
+            /* Gradient Text */
+            --gradient: linear-gradient(90deg, #0071e3, #5856d6, #af52de);
+            
+            /* Syntax Highlighting */
+            --code-key: #0071e3;
+            --code-val: #86868b;
+            --code-str: #c93400;
+        }
 
-<div class="intro">
-<p align="justify">
-I am Adrián Rodríguez-Muñoz, a 4th year grad student at MIT EECS under the supervision of 
-<a href="http://web.mit.edu/torralba/www/">Prof. Antonio Torralba</a>. My research focuses on learning how to use all data effectively, such as <a href="https://giannisdaras.github.io/publication/ambient_omni">low-quality and out-of-distribution data in generative models</a>, and even <a href="_pages/separating_knowledge">procedurally generated data in vision models</a>. Previously, I worked on <a href="https://adriarm.github.io/_pages/robustness_input_gradients/"> efficient adversarial robustness</a>. In Summer 2025 I did an internship at Amazon Research, working on retrieval augmented generation (RAG) with diffusion models.
-</p>
+        [data-theme="dark"] {
+            --bg: #000000;
+            --bg-secondary: #1c1c1e;
+            --bg-tertiary: #2c2c2e;
+            --bg-elevated: #1c1c1e;
+            --text: #f5f5f7;
+            --text-secondary: #a1a1a6;
+            --text-tertiary: #6e6e73;
+            --accent: #0a84ff;
+            --accent-hover: #409cff;
+            --separator: rgba(84, 84, 88, 0.65);
+            --border: rgba(84, 84, 88, 0.35);
+            --glass: rgba(28, 28, 30, 0.72);
+            --shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
 
-<p align="justify">
-Prior to my PhD, I studied Mathematics and Data Science and Engineering at <a href="https://cfis.upc.edu/en">CFIS-UPC</a> until 2022. During my undergrad, I did internships at the <a href="https://www.bsc.es">Barcelona Supercomputing Center</a>, the biotech company <a href="https://www.zeclinics.com">ZeClinics</a>, and the finance firms <a href="https://www.aspectcapital.com">Aspect Capital</a> (London) and <a href="https://sig.com">Susquehanna International Group</a> (Dublin).
-</p>
+            /* Tags */
+            --tag-method-bg: rgba(10, 132, 255, 0.16);
+            --tag-method-text: #64d2ff;
+            --tag-stab-bg: rgba(255, 159, 10, 0.16);
+            --tag-stab-text: #ffd60a;
+            --tag-res-bg: rgba(48, 209, 88, 0.16);
+            --tag-res-text: #30d158;
 
-<p align="justify">
-Click <a href="./files/cv.pdf">here</a> for my CV.
-</p>
-</div>
+            /* Gradient Text */
+            --gradient: linear-gradient(90deg, #64d2ff, #5e5ce6, #bf5af2);
+            
+            /* Syntax Highlighting */
+            --code-key: #64d2ff;
+            --code-val: #a1a1a6;
+            --code-str: #ffd60a;
+        }
 
-<div><h1 style="position: relative; top: 20px;"> Publications</h1></div>
-<div id="publications"  style="position: relative; top: -20px;">
-    <article>
-        <div class="pub_text">
-            <h3 class="papertitle"> [Neurips 2025 - Spotlight <span style="color: #DAA520;">★</span>] Ambient Diffusion Omni: Training Good Models with Bad Data</h3>
-            <h4 class="authors">
-                <b>Adrián Rodríguez-Muñoz*</b>, Giannis Daras*, Adam Klivans, Antonio Torralba, Constantinos Daskalakis
-            </h4>
-            [<a font size="-2" href="https://arxiv.org/pdf/2506.10038">paper</a>] [<a font size="-2" href="https://giannisdaras.github.io/publication/ambient_omni">webpage</a>] [<a font size="-2" href="https://github.com/giannisdaras/ambient-omni">code</a>]
+        /* --- Reset & Base Styles --- */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-secondary);
+            color: var(--text);
+            min-height: 100vh;
+            transition: background-color 0.5s cubic-bezier(0.25, 0.1, 0.25, 1), color 0.5s ease;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* --- Navbar --- */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: var(--glass);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 0.5px solid var(--separator);
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 24px;
+            transition: background-color 0.5s ease;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            font-size: 17px;
+            letter-spacing: -0.01em;
+        }
+
+        .theme-toggle {
+            display: flex;
+            background-color: var(--bg-tertiary);
+            border-radius: 8px;
+            padding: 2px;
+            gap: 2px;
+        }
+
+        .toggle-btn {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            border-radius: 6px;
+            border: none;
+            background: transparent;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .toggle-btn.active {
+            background-color: var(--bg-elevated);
+            color: var(--text);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
+
+        /* --- Main Layout --- */
+        main {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 60px 24px 80px;
+        }
+
+        /* --- Hero Section --- */
+        header {
+            text-align: center;
+            margin-bottom: 56px;
+            padding-top: 20px;
+            animation: fadeIn 0.8s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        .label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            letter-spacing: -0.01em;
+        }
+
+        h1 {
+            font-size: clamp(40px, 8vw, 64px);
+            font-weight: 700;
+            line-height: 1.05;
+            letter-spacing: -0.025em;
+            margin-bottom: 16px;
+        }
+
+        .subtitle {
+            font-size: clamp(24px, 5vw, 32px);
+            font-weight: 600;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 40px;
+            letter-spacing: -0.02em;
+        }
+
+        .authors {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px 20px;
+            color: var(--text-secondary);
+            font-size: 15px;
+            margin-bottom: 40px;
+        }
+        
+        .divider {
+            width: 40px;
+            height: 4px;
+            background-color: var(--accent);
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+
+        /* --- Cards --- */
+        .card {
+            background-color: var(--bg-elevated);
+            border-radius: 18px;
+            padding: 28px;
+            margin-bottom: 20px;
+            border: 0.5px solid var(--border);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        h2 {
+            font-size: 28px;
+            font-weight: 600;
+            letter-spacing: -0.015em;
+            line-height: 1.14;
+        }
+
+        /* --- Tags --- */
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 5px 12px;
+            border-radius: 980px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+
+        .tag.methodology { background: var(--tag-method-bg); color: var(--tag-method-text); }
+        .tag.stability { background: var(--tag-stab-bg); color: var(--tag-stab-text); }
+        .tag.results { background: var(--tag-res-bg); color: var(--tag-res-text); }
+
+        /* --- Content Text --- */
+        .placeholder-text p {
+            color: var(--text-secondary);
+            line-height: 1.58;
+            font-size: 17px;
+            margin-bottom: 16px;
+        }
+        .placeholder-text p:last-child { margin-bottom: 0; }
+
+        /* --- ANIMATION BLOCK STYLES --- */
+        .anim-container {
+            position: relative;
+            width: 100%;
+            /* Custom Aspect Ratio */
+            aspect-ratio: 3721.48 / 3631.81;
+            background-color: var(--bg-tertiary);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: 24px;
+            border: 0.5px solid var(--border);
+        }
+
+        /* New GIF Styles */
+        .anim-gif {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: none; /* Hidden by default */
+        }
+
+        /* Show/Hide Logic based on Data Theme */
+        [data-theme="light"] #gif-day { display: block; }
+        [data-theme="dark"] #gif-night { display: block; }
+
+        .anim-restart-btn {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(128, 128, 128, 0.25);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 0.5px solid rgba(255, 255, 255, 0.2);
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            opacity: 0.6;
+            transition: all 0.2s ease;
+        }
+
+        .anim-restart-btn:hover {
+            opacity: 1;
+            transform: scale(1.05);
+            background: rgba(128, 128, 128, 0.4);
+        }
+
+        /* --- Citation Block --- */
+        .citation-card {
+            background-color: var(--bg-elevated); 
+        }
+        [data-theme="light"] .citation-card { background-color: var(--bg-secondary); }
+        [data-theme="dark"] .citation-card { background-color: #000; }
+
+        .citation-icon {
+            width: 32px; height: 32px;
+            border-radius: 8px;
+            background-color: var(--accent);
+            display: flex; align-items: center; justify-content: center;
+        }
+
+        .code-block {
+            background-color: var(--bg-elevated);
+            border-radius: 12px;
+            padding: 20px;
+            border: 0.5px solid var(--border);
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+
+        pre {
+            font-family: "SF Mono", SFMono-Regular, ui-monospace, Menlo, Monaco, monospace;
+            font-size: 13px;
+            line-height: 1.7;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        .copy-btn {
+            margin-top: 16px;
+            height: 36px;
+            padding: 0 20px;
+            border-radius: 980px;
+            border: none;
+            background-color: var(--accent);
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: transform 0.2s ease;
+        }
+        .copy-btn:hover { transform: scale(1.02); }
+        .copy-btn:active { transform: scale(0.98); }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 40px 0 20px;
+            margin-top: 20px;
+            color: var(--text-tertiary);
+            font-size: 12px;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-logo">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19.5 3h-15A1.5 1.5 0 003 4.5v15A1.5 1.5 0 004.5 21h15a1.5 1.5 0 001.5-1.5v-15A1.5 1.5 0 0019.5 3zM12 18a.75.75 0 01-.75-.75v-4.5H6.75a.75.75 0 010-1.5h4.5V6.75a.75.75 0 011.5 0v4.5h4.5a.75.75 0 010 1.5h-4.5v4.5A.75.75 0 0112 18z"/>
+            </svg>
+            <span>Research</span>
         </div>
-        <a classa="pub_image">
-            <img src="https://giannisdaras.github.io/images/annotations.jpg">
-        </a>
-    </article>
-    <br />
-    <article>
-        <div class="pub_text">
-            <h3 class="papertitle">[ICML 2025] Separating Knowledge and Perception with Procedural Data</h3>
-            <h4 class="authors">
-                <b>Adrián Rodríguez-Muñoz</b>, Manel Baradad, Phillip Isola, Antonio Torralba
-            </h4>
-            [<a font size="-2" href="https://openreview.net/pdf?id=oyFAFpqaca">paper</a>] [<a font size="-2" href="_pages/separating_knowledge">webpage</a>] [<a font size="-2" href="https://github.com/adriarm/separating_knowledge">code</a>]
+
+        <div class="theme-toggle">
+            <button class="toggle-btn active" id="btn-light" onclick="setTheme('light')">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <circle cx="12" cy="12" r="5"/>
+                    <path d="M12 1v3M12 20v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M1 12h3M20 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/>
+                </svg>
+                Light
+            </button>
+            <button class="toggle-btn" id="btn-dark" onclick="setTheme('dark')">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+                </svg>
+                Dark
+            </button>
         </div>
-        <a classa="pub_image">
-            <img src="_pages/separating_knowledge/static/figures_poster/diagram.png">
-        </a>
-    </article>
-    <br />
-    <article>
-        <div class="pub_text">
-            <h3 class="papertitle">[ECCV 2024] Characterizing Model Robustness with Natural Input Gradients</h3>
-            <h4 class="authors">
-                <b>Adrián Rodríguez-Muñoz</b>, Tongzhou Wang, Antonio Torralba
-            </h4>
-            [<a font size="-2" href="https://arxiv.org/pdf/2409.20139">paper</a>] [<a font size="-2" href="_pages/robustness_input_gradients">webpage</a>] [<a font size="-2" href="https://github.com/adriarm/robustness_input_gradients">code</a>]
-        </div>
-        <a classa="pub_image">
-            <img src="_pages/robustness_input_gradients/images/zzz_gradient_comparison_poster_white.png">
-        </a>
-    </article>
-    <br />
-    <article>
-        <div class="pub_text">
-            <h3 class="papertitle">[CVPR 2024 - Highlight <span style="color: #FFA500;">★</span>] A Vision Check-up for Language Models</h3>
-            <h4 class="authors">
-                Pratyusha Sharma*, Tamar Rott Shaham*, Manel Baradad,
-                Stephanie Fu, <b>Adrián Rodríguez-Muñoz</b>, Shivam Duggal, Phillip Isola, Antonio Torralba
-            </h4>
-            [<a font size="-2" href="https://arxiv.org/abs/2401.01862">paper</a>] [<a font size="-2" href="https://vision-checkup.csail.mit.edu">webpage</a>]
-        </div>
-        <a classa="pub_image">
-            <img src="_pages/vision_checkup/vision_checkup_row.png">
-        </a>
-    </article>
-    <br />
-    <article>
-        <div class="pub_text">
-            <h3 class="papertitle">Aliasing is a Driver of Adversarial Attacks</h3>
-            <h4 class="authors">
-                <b>Adrián Rodríguez-Muñoz</b>, Antonio Torralba
-            </h4>
-            [<a font size="-2" href="https://arxiv.org/abs/2212.11760">paper</a>] [<a font size="-2" href="_pages/aliasing_is_a_driver">webpage</a>] [<a font size="-2" href="https://github.com/adriarm/aliasing_is_a_driver">code</a>]
-        </div>
-        <a classa="pub_image">
-            <img src="_pages/aliasing_is_a_driver/files/toy_example_2.svg">
-        </a>
-    </article>
-<!--     <article>
-        <div class="pub_text">
-            <h2>Aliasing is a Driver of Adversarial Attacks <br /> <font size="-1"><b>Adrián Rodríguez-Muñoz</b>, <span style="font-weight:normal">Antonio Torralba</span></font> <br /> <font size="-1">[<a href="https://arxiv.org/abs/2212.11760">paper</a>] [<a href="_pages/aliasing_is_a_driver">webpage</a>] [<a href="https://github.com/adriarm/aliasing_is_a_driver">code</a>] <br /> <br /> <a classa="pub_image"><img src="_pages/aliasing_is_a_driver/files/toy_example_2.svg"></a></font>
-            </h2>
-        </div>       
-    </article> -->
-</div>
+    </nav>
+
+    <main>
+        <header>
+            <p class="label">Research Paper</p>
+            <h1>Ambient Dataloops</h1>
+            <p class="subtitle">Generative Models for Dataset Refinement</p>
+            
+            <div class="authors">
+                <span>Adrian Rodriguez-Munoz</span> • 
+                <span>William Daspit</span> • 
+                <span>Adam Klivans</span> • 
+                <span>Antonio Torralba</span> • 
+                <span>Constantinos Daskalakis</span> • 
+                <span>Giannis Daras</span>
+            </div>
+
+            <div class="divider"></div>
+        </header>
+
+        <section class="card">
+            <h2>Abstract</h2>
+            <div class="placeholder-text">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="section-header">
+                <h2>Dataset-Model co-evolution</h2>
+                <span class="tag methodology">Methodology</span>
+            </div>
+            
+            <div class="placeholder-text">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+
+            <div class="anim-container" id="coevolution-anim">
+                <button class="anim-restart-btn" onclick="triggerAnimation()" title="Restart Animation">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M23 4v6h-6"></path>
+                        <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                    </svg>
+                </button>
+                
+                <img id="gif-day" 
+                     src="./coevolution_animation/day.gif" 
+                     data-gif="./coevolution_animation/day.gif"
+                     data-static="./coevolution_animation/frame5_3x2.png"
+                     class="anim-gif" 
+                     alt="Co-evolution Day Animation">
+
+                <img id="gif-night" 
+                     src="./coevolution_animation/night.gif" 
+                     data-gif="./coevolution_animation/night.gif"
+                     data-static="./coevolution_animation/frame5_3x2_night.png"
+                     class="anim-gif" 
+                     alt="Co-evolution Night Animation">
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="section-header">
+                <h2>Fighting MADness</h2>
+                <span class="tag stability">Stability</span>
+            </div>
+            <div class="placeholder-text">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="section-header">
+                <h2>Text-to-image models with synthetic data</h2>
+                <span class="tag results">Results</span>
+            </div>
+            <div class="placeholder-text">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="section-header">
+                <h2>DeNovo protein design</h2>
+                <span class="tag results">Results</span>
+            </div>
+            <div class="placeholder-text">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="section-header">
+                <h2>ImageNet restoration</h2>
+                <span class="tag results">Results</span>
+            </div>
+            <div class="placeholder-text">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </section>
+
+        <section class="card citation-card">
+            <div class="section-header" style="gap: 10px; margin-bottom: 0;">
+                <div class="citation-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#ffffff">
+                        <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+                    </svg>
+                </div>
+                <h2>Citation</h2>
+            </div>
+            
+            <div class="code-block">
+                <pre><span style="color: var(--accent)">@article</span>{<span style="color: var(--code-str)">rodriguez2025ambient</span>,
+  <span style="color: var(--code-key)">title</span> = {<span style="color: var(--code-val)">Ambient Dataloops: Generative Models for Dataset Refinement</span>},
+  <span style="color: var(--code-key)">author</span> = {<span style="color: var(--code-val)">Rodriguez-Munoz, A. and Daspit, W. and Klivans, A. and Torralba, A. and Daskalakis, C. and Daras, G.</span>},
+  <span style="color: var(--code-key)">year</span> = {<span style="color: var(--code-val)">2025</span>},
+}</pre>
+            </div>
+
+            <button class="copy-btn" onclick="copyCitation()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+                </svg>
+                Copy Citation
+            </button>
+        </section>
+
+        <footer>
+            <p>© 2025 Ambient Dataloops Research Team</p>
+        </footer>
+    </main>
+
+    <script>
+        // Theme Logic
+        function setTheme(themeName) {
+            document.documentElement.setAttribute('data-theme', themeName);
+            
+            const lightBtn = document.getElementById('btn-light');
+            const darkBtn = document.getElementById('btn-dark');
+            
+            if (themeName === 'dark') {
+                darkBtn.classList.add('active');
+                lightBtn.classList.remove('active');
+            } else {
+                lightBtn.classList.add('active');
+                darkBtn.classList.remove('active');
+            }
+        }
+
+        // Copy Function
+        function copyCitation() {
+            const citationText = `@article{rodriguez2025ambient,
+  title = {Ambient Dataloops: Generative Models for Dataset Refinement},
+  author = {Rodriguez-Munoz, A. and Daspit, W. and Klivans, A. and Torralba, A. and Daskalakis, C. and Daras, G.},
+  year = {2025},
+}`;
+            navigator.clipboard.writeText(citationText).then(() => {
+                const btn = document.querySelector('.copy-btn');
+                const originalText = btn.innerHTML;
+                
+                btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Copied!`;
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                }, 2000);
+            });
+        }
+
+        /* --- Animation Logic (Loop Control) --- */
+        
+        // IMPORTANT: Set this to the length of your GIF in milliseconds
+        // Example: If your GIF is 5 frames at 2000ms per frame = 10000ms
+        const GIF_DURATION_MS = 10000; 
+
+        let animTimeout;
+
+        function triggerAnimation() {
+            const restartBtn = document.querySelector('.anim-restart-btn');
+            const icon = restartBtn.querySelector('svg');
+            
+            // Spin the icon
+            icon.style.transition = 'transform 0.5s ease';
+            icon.style.transform = 'rotate(-360deg)';
+            setTimeout(() => { icon.style.transform = 'rotate(0deg)'; }, 500);
+
+            // Clear any existing timeout (in case button is pressed quickly)
+            if (animTimeout) clearTimeout(animTimeout);
+
+            const gifDay = document.getElementById('gif-day');
+            const gifNight = document.getElementById('gif-night');
+
+            // 1. Reset sources to the GIF (causing them to replay)
+            const timestamp = new Date().getTime();
+            gifDay.src = `${gifDay.dataset.gif}?t=${timestamp}`;
+            gifNight.src = `${gifNight.dataset.gif}?t=${timestamp}`;
+
+            // 2. Set a timeout to swap to static image
+            animTimeout = setTimeout(() => {
+                gifDay.src = gifDay.dataset.static;
+                gifNight.src = gifNight.dataset.static;
+            }, GIF_DURATION_MS);
+        }
+
+        // Preload static images to prevent flicker when swapping
+        function preloadImages() {
+            const dayStatic = new Image();
+            dayStatic.src = document.getElementById('gif-day').dataset.static;
+            const nightStatic = new Image();
+            nightStatic.src = document.getElementById('gif-night').dataset.static;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            preloadImages();
+            triggerAnimation(); // Start the first loop on page load
+        });
+
+    </script>
+</body>
+</html>
