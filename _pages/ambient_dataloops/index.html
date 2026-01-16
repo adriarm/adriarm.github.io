@@ -432,16 +432,29 @@
             </div>
         </section>
 
-        <section class="card">
+<section class="card">
             <div class="section-header">
                 <h2>Dataset-Model co-evolution</h2>
                 <span class="tag methodology">Methodology</span>
             </div>
             
             <div class="placeholder-text">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p>
+                    \(D_0\) shows synthetically generated images from <strong>DiffusionDB</strong> (Wang et al., 2022), 
+                    a dataset used for text-to-image generative modeling. These images have artifacts due to learning 
+                    errors of the underlying model.
+                </p>
+                <p>
+                    We train a model on this dataset, \(M_1\), that we use to improve its own training set, 
+                    leading to a "restored" dataset \(D_1\). Successive iterations of this process lead to a 
+                    co-evolution of both the model and the dataset — see dataset \(D_2\) and model \(M_1\) 
+                    respectively.
+                </p>
+                <p>
+                    We avoid catastrophic self-consuming loops by accounting for learning errors at each 
+                    iteration using <strong>Ambient Diffusion</strong> (Daras et al., 2025c, 2023) techniques 
+                    for learning from imperfect data.
+                </p>
             </div>
 
             <div class="anim-container" id="coevolution-anim">
