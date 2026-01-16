@@ -269,23 +269,42 @@
             border: 0.5px solid var(--border);
         }
 
+        /* The Frame Wrapper (Holds both Day/Night images) */
         .anim-frame {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: contain; /* Changed to contain to ensure full image visibility */
-            background-color: var(--bg-tertiary);
             opacity: 0;
-            /* Cross-fade effect */
             transition: opacity 0.5s ease-in-out; 
             pointer-events: none;
+            background-color: var(--bg-tertiary);
         }
 
         .anim-frame.active {
             opacity: 1;
         }
+
+        /* The Images inside the wrapper */
+        .anim-frame img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* Day/Night Switching Logic */
+        /* Default (Light Mode): Show .img-day, Hide .img-night */
+        .img-day { display: block; }
+        .img-night { display: none; }
+
+        /* Dark Mode: Show .img-night, Hide .img-day */
+        [data-theme="dark"] .img-day { display: none; }
+        [data-theme="dark"] .img-night { display: block; }
+
 
         .anim-restart-btn {
             position: absolute;
@@ -451,11 +470,30 @@
                     </svg>
                 </button>
                 
-                <img src="./coevolution_animation/frame1_3x2.png" class="anim-frame active" alt="Frame 1">
-                <img src="./coevolution_animation/frame2_3x2.png" class="anim-frame" alt="Frame 2">
-                <img src="./coevolution_animation/frame3_3x2.png" class="anim-frame" alt="Frame 3">
-                <img src="./coevolution_animation/frame4_3x2.png" class="anim-frame" alt="Frame 4">
-                <img src="./coevolution_animation/frame5_3x2.png" class="anim-frame" alt="Frame 5">
+                <div class="anim-frame active">
+                    <img src="./coevolution_animation/frame1_3x2.png" class="img-day" alt="Frame 1 Day">
+                    <img src="./coevolution_animation/frame1_3x2_night.png" class="img-night" alt="Frame 1 Night">
+                </div>
+
+                <div class="anim-frame">
+                    <img src="./coevolution_animation/frame2_3x2.png" class="img-day" alt="Frame 2 Day">
+                    <img src="./coevolution_animation/frame2_3x2_night.png" class="img-night" alt="Frame 2 Night">
+                </div>
+
+                <div class="anim-frame">
+                    <img src="./coevolution_animation/frame3_3x2.png" class="img-day" alt="Frame 3 Day">
+                    <img src="./coevolution_animation/frame3_3x2_night.png" class="img-night" alt="Frame 3 Night">
+                </div>
+
+                <div class="anim-frame">
+                    <img src="./coevolution_animation/frame4_3x2.png" class="img-day" alt="Frame 4 Day">
+                    <img src="./coevolution_animation/frame4_3x2_night.png" class="img-night" alt="Frame 4 Night">
+                </div>
+
+                <div class="anim-frame">
+                    <img src="./coevolution_animation/frame5_3x2.png" class="img-day" alt="Frame 5 Day">
+                    <img src="./coevolution_animation/frame5_3x2_night.png" class="img-night" alt="Frame 5 Night">
+                </div>
             </div>
         </section>
 
