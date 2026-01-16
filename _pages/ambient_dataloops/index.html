@@ -477,9 +477,20 @@
                 <span class="tag stability">Stability</span>
             </div>
             <div class="placeholder-text">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p>
+                    The horizontal axis is the noise level we denoise a corrupted CIFAR-10 dataset after \(k\) loops, 
+                    where \(k\) changes for each one of the lines. Going too fast or too slow is suboptimal. 
+                </p>
+                <p>
+                    There is a point after which reducing the dataset further only hurts (madness regime) 
+                    because the current model has reached its denoising capacity. FID is always computed 
+                    with respect to the original clean CIFAR-10.
+                </p>
+            </div>
+            
+            <div class="figure-container">
+                <img src="./figures/fid_vs_noise_ablation.png" alt="FID vs Noise Ablation Plot" style="width: 100%; height: auto; border-radius: 4px;">
+                <p class="caption"><em>Figure: FID scores across different noise levels and iteration counts \(k\).</em></p>
             </div>
         </section>
 
