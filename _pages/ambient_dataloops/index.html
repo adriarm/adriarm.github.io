@@ -438,25 +438,6 @@
                 <h2>Dataset-Model co-evolution</h2>
                 <span class="tag methodology">Methodology</span>
             </div>
-            
-            <div class="placeholder-text">
-                <p>
-                    \(D_0\) shows synthetically generated images from <strong>DiffusionDB</strong> (Wang et al., 2022), 
-                    a dataset used for text-to-image generative modeling. These images have artifacts due to learning 
-                    errors of the underlying model.
-                </p>
-                <p>
-                    We train a model on this dataset, \(M_1\), that we use to improve its own training set, 
-                    leading to a "restored" dataset \(D_1\). Successive iterations of this process lead to a 
-                    co-evolution of both the model and the dataset — see dataset \(D_2\) and model \(M_1\) 
-                    respectively.
-                </p>
-                <p>
-                    We avoid catastrophic self-consuming loops by accounting for learning errors at each 
-                    iteration using <strong>Ambient Diffusion</strong> (Daras et al., 2025c, 2023) techniques 
-                    for learning from imperfect data.
-                </p>
-            </div>
 
             <div class="anim-container" id="coevolution-anim">
                 <button class="anim-restart-btn" onclick="restartAnimation()" title="Restart Animation">
@@ -469,33 +450,59 @@
                 <img id="gif-day" src="./coevolution_animation/day.gif" class="anim-gif" alt="Co-evolution Day Animation">
                 <img id="gif-night" src="./coevolution_animation/night.gif" class="anim-gif" alt="Co-evolution Night Animation">
             </div>
+
+            <div class="placeholder-text">
+                <p>
+                    Real-world dataset are imperfect. For example, \(D_0\) 
+                    shows synthetically generated images from <strong>DiffusionDB</strong> (Wang et al., 2022), 
+                    a dataset used for text-to-image generative modeling. These images have artifacts due to learning errors of the underlying model.
+                </p>
+                <p>
+                    We train a model on this dataset, \(M_1\), using <strong>Ambient Diffusion</strong> (Daras et al., 2025c, 2023) techniques 
+                    for learning from imperfect data. Next, we use \(M_1\) to improve its own training set, 
+                    leading to a "restored" dataset \(D_1\). Successive iterations of this process lead to a 
+                    co-evolution of both the model and the dataset — see dataset \(D_2\) and model \(M_1\) 
+                    respectively.
+                </p>
+            </div>
         </section>
 
         <section class="card">
             <div class="section-header">
-                <h2>Fighting MADness</h2>
+                <h2>The self-refinement paradox</h2>
                 <span class="tag stability">Stability</span>
             </div>
             <div class="placeholder-text">
                 <p>
-                    The horizontal axis is the noise level we denoise a corrupted CIFAR-10 dataset after \(k\) loops, 
-                    where \(k\) changes for each one of the lines. Going too fast or too slow is suboptimal. 
+                  The idea of dataset refinement, despite being natural, presents a paradox. First,
+                  it seems to be violating the data processing inequality; information cannot be created out of thin air,
+                  and hence any processing of the original data cannot have more information for the underlying
+                  distribution than the original dataset. While this is true, it is important to consider that the first training
+                  might be suboptimal due to failures of the optimization process (e.g., gradient descent getting stuck
+                  in a local minimum). Hence, dataset refinement can be thought of as a reorganization of the original
+                  information in a way that facilitates learning and creates a better optimization landscape.
                 </p>
                 <p>
-                    There is a point after which reducing the dataset further only hurts (madness regime) 
-                    because the current model has reached its denoising capacity.
+                  Secondly, several recent works have
+                  shown that naive training on synthetic data leads to catastrophic self-confusing loops and mode
+                  collapse (Alemohammad et al., 2024a; Shumailov et al., 2024; Hataya et al., 2023; Martinez et al.,
+                  2023; Padmakumar & He, 2024; Seddik et al., 2024; Dohmatob et al., 2024). Our approach avoids this 
+                  scenario by accounting for learning errors at each iteration using <strong>Ambient Diffusion</strong> 
+                  (Daras et al., 2025c, 2023) to account for model errors.
                 </p>
-                <p>
-                    Decreasing the noise level at the right speed achieves maximum performance with \(k > 1\) loops.
-                </p>
-                <p>
-                    FID is always computed with respect to the original clean CIFAR-10.
-                </p>
-            </div>
-            
-            <div class="figure-container">
-                <img src="./figures/fid_vs_noise_ablation.png" alt="FID vs Noise Ablation Plot" style="width: 100%; height: auto; border-radius: 4px;">
-            </div>
+
+                <figure class="figure-container">
+                    <img src="./figures/fid_vs_noise_ablation.png" alt="FID vs Noise Ablation Plot" style="width: 100%; height: auto; border-radius: 4px;">
+                    
+                    <figcaption style="margin-top: 10px; font-size: 0.9em; color: #555;">
+                        The horizontal axis is the noise level we denoise a corrupted CIFAR-10 dataset after \( k \) loops, 
+                        where \( k \) changes for each one of the lines. Going too fast or too slow is suboptimal. 
+                        There is a point after which reducing the dataset further only hurts (madness regime) 
+                        because the current model has reached its denoising capacity.
+                        Decreasing the noise level at the right speed achieves maximum performance with \( k > 1 \) loops.
+                        FID is always computed with respect to the original clean CIFAR-10.
+                    </figcaption>
+                </figure>
         </section>
 
         <section class="card">
