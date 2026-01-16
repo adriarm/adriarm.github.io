@@ -11,7 +11,7 @@ redirect_from:
 <div class="intro">
 <p align="justify">
 I am Adrián Rodríguez-Muñoz, a 4th year grad student at MIT EECS under the supervision of 
-<a href="http://web.mit.edu/torralba/www/">Prof. Antonio Torralba</a>. My research focuses on learning how to use all data effectively, such as <a href="https://giannisdaras.github.io/publication/ambient_omni">low-quality and out-of-distribution data in generative models</a>, and even <a href="_pages/separating_knowledge">procedurally generated data in vision models</a>. Previously, I worked on <a href="https://adriarm.github.io/_pages/robustness_input_gradients/"> efficient adversarial robustness</a>. In Summer 2025 I did an internship at Amazon Research, working on retrieval augmented generation (RAG) with diffusion models.
+<a href="http://web.mit.edu/torralba/www/">Prof. Antonio Torralba</a>. My research focuses on learning how to use all data effectively, such as <a href="https://giannisdaras.github.io/publication/ambient_omni">low-quality and out-of-distribution data in generative models</a>, and even <a href="_pages/separating_knowledge">procedurally generated data in vision models</a>. Previously, I worked on <a href="https://adrianrm99.github.io/_pages/robustness_input_gradients/"> efficient adversarial robustness</a>. In Summer 2025 I did an internship at Amazon Research, working on retrieval augmented generation (RAG) with diffusion models.
 </p>
 
 <p align="justify">
