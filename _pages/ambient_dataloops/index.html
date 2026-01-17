@@ -286,6 +286,11 @@
         /* Show/Hide Logic based on Data Theme */
         [data-theme="light"] #gif-day { display: block; }
         [data-theme="dark"] #gif-night { display: block; }
+        
+        /* --- NEW: Theme Image Switcher --- */
+        .theme-img-toggle { display: none; }
+        [data-theme="light"] .theme-img-toggle.day { display: block; }
+        [data-theme="dark"] .theme-img-toggle.night { display: block; }
 
         .anim-restart-btn {
             position: absolute;
@@ -602,7 +607,8 @@
             </div>
             
             <figure class="figure-container">
-                    <img src="./figures/figure1_loops_2_day.png" alt="Refinement of DiffusionDB synthetic data" style="width: 100%; height: auto; border-radius: 4px;">
+                    <img src="./figures/figure1_loops_2_day.png" class="theme-img-toggle day" alt="Refinement of DiffusionDB synthetic data" style="width: 100%; height: auto; border-radius: 4px;">
+                    <img src="./figures/figure1_loops_2_night.png" class="theme-img-toggle night" alt="Refinement of DiffusionDB synthetic data" style="width: 100%; height: auto; border-radius: 4px;">
                     
                     <figcaption style="margin-top: 10px; font-size: 0.9em; color: #555;">
                         \(D_0\) shows synthetically generated images from DiffusionDB (Wang et al., 2022), a dataset used 
