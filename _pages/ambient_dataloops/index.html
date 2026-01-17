@@ -702,8 +702,14 @@
             </div>
 
             <figure class="figure-container">
-                <img src="./figures/proteins4.png" alt="Protein Dataset Refinement Procedure" style="width: 100%; height: auto; border-radius: 4px;">
-                <figcaption style="margin-top: 10px; font-size: 0.9em; color: #555;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                    <img src="./figures/proteins1.png" alt="Protein 1" style="width: 100%; height: auto; border-radius: 4px;">
+                    <img src="./figures/proteins2.png" alt="Protein 2" style="width: 100%; height: auto; border-radius: 4px;">
+                    <img src="./figures/proteins3.png" alt="Protein 3" style="width: 100%; height: auto; border-radius: 4px;">
+                    <img src="./figures/proteins4.png" alt="Protein 4" style="width: 100%; height: auto; border-radius: 4px;">
+                </div>
+                
+                <figcaption style="margin-top: 10px; font-size: 0.9em; color: #555; text-align: center;">
                     <strong>Example of our dataset refinement procedure.</strong> An initial low pLDDT protein, denoted with green, is noised to a certain level, giving the shape in cyan. We initialize the reverse process with the cyan sample, and we sample the red point from the posterior.
                 </figcaption>
             </figure>
