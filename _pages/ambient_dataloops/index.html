@@ -474,10 +474,8 @@
             </div>
             <div class="placeholder-text">
                 <p>
-                  The idea of dataset refinement, despite being natural, presents a paradox. First,
-                  it seems to be violating the data processing inequality; information cannot be created out of thin air,
-                  and hence any processing of the original data cannot have more information for the underlying
-                  distribution than the original dataset. While this is true, it is important to consider that the first training
+                  The idea of dataset refinement, despite being natural, presents a paradox: information cannot be created out of thin air.
+                  While this is true, it is important to consider that the first training
                   might be suboptimal due to failures of the optimization process (e.g., gradient descent getting stuck
                   in a local minimum). Hence, dataset refinement can be thought of as a reorganization of the original
                   information in a way that facilitates learning and creates a better optimization landscape.
@@ -487,8 +485,8 @@
                   shown that naive training on synthetic data leads to catastrophic self-confusing loops and mode
                   collapse (Alemohammad et al., 2024a; Shumailov et al., 2024; Hataya et al., 2023; Martinez et al.,
                   2023; Padmakumar & He, 2024; Seddik et al., 2024; Dohmatob et al., 2024). Our approach avoids this 
-                  scenario by accounting for learning errors at each iteration using <strong>Ambient Diffusion</strong> 
-                  (Daras et al., 2025c, 2023) to account for model errors.
+                  scenario by accounting for learning errors at each iteration using corruption-aware training 
+                  (Daras et al., 2025c, 2023), and by tuning the number of refinement rounds.
                 </p>
 
                 <figure class="figure-container">
