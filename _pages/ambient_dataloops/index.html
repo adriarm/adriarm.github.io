@@ -376,6 +376,77 @@
         @keyframes fadeIn {
             to { opacity: 1; transform: translateY(0); }
         }
+
+        /* --- NEW: TABLE STYLES (Booktabs-like) --- */
+        .table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .academic-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            text-align: center;
+            color: var(--text);
+            white-space: nowrap;
+        }
+        
+        .academic-table th, 
+        .academic-table td {
+            padding: 10px 12px;
+        }
+        
+        .academic-table th {
+            font-weight: 600;
+        }
+        
+        .academic-table td {
+            color: var(--text-secondary);
+        }
+
+        .academic-table thead {
+            border-top: 2px solid var(--text);
+            border-bottom: 1px solid var(--text);
+        }
+        
+        .academic-table tbody {
+            border-bottom: 2px solid var(--text);
+        }
+        
+        /* The thin line for the sub-header */
+        .academic-table .sub-header th {
+            border-top: 1px solid var(--separator);
+            font-weight: 500;
+            font-size: 0.8em;
+        }
+
+        .academic-table th:first-child, 
+        .academic-table td:first-child {
+            text-align: left;
+        }
+
+        /* Highlight strong tags in cells */
+        .academic-table td strong {
+            color: var(--text);
+            font-weight: 700;
+        }
+
+        .academic-table caption {
+            caption-side: top;
+            text-align: left;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+        }
+
+        .academic-table tbody tr:hover {
+            background-color: var(--bg-tertiary);
+        }
     </style>
 </head>
 <body>
@@ -542,7 +613,69 @@
                         and model \(M_1\) respectively.
                     </figcaption>
             </figure>
-        </section>
+
+            <div class="table-wrapper">
+                <table class="academic-table">
+                    <caption>Table 1: Quantitative benefits of Ambient Loops on COCO zero-shot generation and GenEval.</caption>
+                    <thead>
+                        <tr>
+                            <th rowspan="2" style="vertical-align: middle;">Method</th>
+                            <th colspan="2">COCO (Fidelity & Alignment)</th>
+                            <th colspan="7">GenEval Benchmark</th>
+                        </tr>
+                        <tr class="sub-header">
+                            <th>FID-30K \(\downarrow\)</th>
+                            <th>Clip-FD-30K \(\downarrow\)</th>
+                            <th>Overall</th>
+                            <th>Single</th>
+                            <th>Two</th>
+                            <th>Counting</th>
+                            <th>Colors</th>
+                            <th>Position</th>
+                            <th>Color<br>attribution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Micro-diffusion</td>
+                            <td>12.37</td>
+                            <td>10.07</td>
+                            <td>0.44</td>
+                            <td>0.97</td>
+                            <td>0.33</td>
+                            <td>0.35</td>
+                            <td>0.82</td>
+                            <td>0.06</td>
+                            <td>0.14</td>
+                        </tr>
+                        <tr>
+                            <td>Ambient-o (L0)</td>
+                            <td>10.61</td>
+                            <td>9.40</td>
+                            <td>0.47</td>
+                            <td>0.97</td>
+                            <td><strong>0.40</strong></td>
+                            <td><strong>0.36</strong></td>
+                            <td>0.82</td>
+                            <td>0.11</td>
+                            <td>0.14</td>
+                        </tr>
+                        <tr>
+                            <td>Ambient Loops (L1)</td>
+                            <td><strong>10.06</strong></td>
+                            <td><strong>8.83</strong></td>
+                            <td><strong>0.47</strong></td>
+                            <td><strong>0.97</strong></td>
+                            <td>0.38</td>
+                            <td>0.35</td>
+                            <td>0.78</td>
+                            <td><strong>0.11</strong></td>
+                            <td><strong>0.19</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            </section>
 
         <section class="card">
             <div class="section-header">
