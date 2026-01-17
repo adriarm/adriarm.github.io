@@ -503,15 +503,15 @@
                 </p>
 
                 <figure class="figure-container">
-                    <img src="./figures/figure1_loops_2.png" alt="Refinement of DiffusionDB synthetic data" style="width: 100%; height: auto; border-radius: 4px;">
+                    <img src="./figures/fid_vs_noise_ablation.png" alt="FID vs Noise Ablation Plot" style="width: 100%; height: auto; border-radius: 4px;">
                     
                     <figcaption style="margin-top: 10px; font-size: 0.9em; color: #555;">
-                        \(D_0\) shows synthetically generated images from DiffusionDB (Wang et al., 2022), a dataset used 
-                        for text-to-image generative modeling. These images have artifacts due to learning errors of the 
-                        underlying model. We train a model on this dataset, \(M_1\), that we use to improve its own 
-                        training set, leading to a &ldquo;restored&rdquo; dataset \(D_1\). Successive iterations of 
-                        this process lead to a co-evolution of both the model and the dataset &mdash; see dataset \(D_2\) 
-                        and model \(M_1\) respectively.
+                        The horizontal axis is the noise level we denoise a corrupted CIFAR-10 dataset after \( k \) loops, 
+                        where \( k \) changes for each one of the lines. Going too fast or too slow is suboptimal. 
+                        There is a point after which reducing the dataset further only hurts (madness regime) 
+                        because the current model has reached its denoising capacity.
+                        Decreasing the noise level at the right speed achieves maximum performance with \( k > 1 \) loops.
+                        FID is always computed with respect to the original clean CIFAR-10.
                     </figcaption>
                 </figure>
         </section>
@@ -529,6 +529,19 @@
                   the rest, and obtain stronger results than the baseline including the dataset and Ambient Diffusion.
                 </p>
             </div>
+            
+            <figure class="figure-container">
+                    <img src="./figures/figure1_loops_2.png" alt="Refinement of DiffusionDB synthetic data" style="width: 100%; height: auto; border-radius: 4px;">
+                    
+                    <figcaption style="margin-top: 10px; font-size: 0.9em; color: #555;">
+                        \(D_0\) shows synthetically generated images from DiffusionDB (Wang et al., 2022), a dataset used 
+                        for text-to-image generative modeling. These images have artifacts due to learning errors of the 
+                        underlying model. We train a model on this dataset, \(M_1\), that we use to improve its own 
+                        training set, leading to a &ldquo;restored&rdquo; dataset \(D_1\). Successive iterations of 
+                        this process lead to a co-evolution of both the model and the dataset &mdash; see dataset \(D_2\) 
+                        and model \(M_1\) respectively.
+                    </figcaption>
+            </figure>
         </section>
 
         <section class="card">
