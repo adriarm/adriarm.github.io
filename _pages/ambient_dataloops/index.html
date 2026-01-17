@@ -436,10 +436,10 @@
 <section class="card">
             <div class="section-header">
                 <h2>Dataset-Model co-evolution</h2>
-                <span class="tag methodology">Methodology</span>
+                <span class="tag methodology">Method</span>
             </div>
 
-            <div class="anim-container" id="coevolution-anim">
+<!--             <div class="anim-container" id="coevolution-anim">
                 <button class="anim-restart-btn" onclick="restartAnimation()" title="Restart Animation">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M23 4v6h-6"></path>
@@ -449,44 +449,44 @@
                 
                 <img id="gif-day" src="./coevolution_animation/day.gif" class="anim-gif" alt="Co-evolution Day Animation">
                 <img id="gif-night" src="./coevolution_animation/night.gif" class="anim-gif" alt="Co-evolution Night Animation">
-            </div>
+            </div> -->
 
             <div class="placeholder-text">
                 <p>
-                    Real-world dataset are imperfect. For example, \(D_0\) 
-                    shows synthetically generated images from <strong>DiffusionDB</strong> (Wang et al., 2022), 
-                    a dataset used for text-to-image generative modeling. These images have artifacts due to learning errors of the underlying model.
-                </p>
-                <p>
-                    We train a model on this dataset, \(M_1\), using <strong>Ambient Diffusion</strong> (Daras et al., 2025c, 2023) techniques 
-                    for learning from imperfect data. Next, we use \(M_1\) to improve its own training set, 
-                    leading to a "restored" dataset \(D_1\). Successive iterations of this process lead to a 
-                    co-evolution of both the model and the dataset — see dataset \(D_2\) and model \(M_1\) 
-                    respectively.
+                    Our method is as follows. Firstly, we annotate each of our datapoints according to their quality, by assigning 
+                    them a minimum diffusion time at which low and high quality data distributions approximately merge. Second, we 
+                    train a diffusion model using Ambient Diffusion (Daras et al., 2025c, 2023) techniques, which can learn from 
+                    data of heterogenous qualities. Thirdly, we *restore* the original dataset using a trained model, by performing 
+                    posterior sampling on each datapoint starting from the minimum diffusion time we assigned at the beginning, 
+                    resulting in a better, higher quality dataset. We call this process an Ambient Dataloop. Successive iterations 
+                    of this process lead to a co-evolution of both the model and the dataset.
                 </p>
             </div>
         </section>
 
         <section class="card">
             <div class="section-header">
-                <h2>The self-refinement paradox</h2>
-                <span class="tag stability">Stability</span>
+                <h2>Imperfect datasets, imperfect optimisation</h2>
+                <span class="tag stability">Insight</span>
             </div>
             <div class="placeholder-text">
                 <p>
-                  The idea of dataset refinement, despite being natural, presents a paradox: information cannot be created out of thin air.
-                  While this is true, it is important to consider that the first training
-                  might be suboptimal due to failures of the optimization process (e.g., gradient descent getting stuck
-                  in a local minimum). Hence, dataset refinement can be thought of as a reorganization of the original
-                  information in a way that facilitates learning and creates a better optimization landscape.
+                  The idea of dataset refinement, despite being natural, presents a paradox. First, it seems to be 
+                  violating the data processing inequality; information cannot be created out of thin air, and hence 
+                  any processing of the original data cannot have more information for the underlying distribution than 
+                  the original dataset. While this is true, it is important to consider that the first training might be 
+                  suboptimal due to failures of the optimization process. Hence, dataset refinement can be thought of as 
+                  a reorganization of the original information in a way that facilitates learning and creates a better 
+                  optimization landscape. Indeed, what our empirical results show is that training on imperfect datasets 
+                  leads to imperfect optimisation, even with Ambient Diffusion training. Trying to remove the imperfections, 
+                  even without external verifiers, results in better training, better optimisation, and better results.
                 </p>
                 <p>
-                  Secondly, several recent works have
-                  shown that naive training on synthetic data leads to catastrophic self-confusing loops and mode
-                  collapse (Alemohammad et al., 2024a; Shumailov et al., 2024; Hataya et al., 2023; Martinez et al.,
-                  2023; Padmakumar & He, 2024; Seddik et al., 2024; Dohmatob et al., 2024). Our approach avoids this 
-                  scenario by accounting for learning errors at each iteration using corruption-aware training 
-                  (Daras et al., 2025c, 2023), and by tuning the number of refinement rounds.
+                  Secondly, several recent works have shown that naive training on synthetic data leads to catastrophic 
+                  self-confusing loops and mode collapse (Alemohammad et al., 2024a; Shumailov et al., 2024; Hataya et al., 2023; 
+                  Martinez et al., 2023; Padmakumar & He, 2024; Seddik et al., 2024; Dohmatob et al., 2024). Our approach avoids 
+                  this scenario by accounting for learning errors at each iteration using Ambient Diffusion to account for model
+                   errors, and by running only a small number of Ambient Dataloops.
                 </p>
 
                 <figure class="figure-container">
@@ -509,9 +509,12 @@
                 <span class="tag results">Results</span>
             </div>
             <div class="placeholder-text">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p>
+                  To show the effectiveness of our method, we experiment with text-to-image generative modeling, following the 
+                  architectural and dataset choices of MicroDiffusion (Sehwag et al., 2025). We attempt to refine the DiffusionDB 
+                  dataset, a collection of synthetic images part of the MicroDiffusion training set that is of lower quality than 
+                  the rest, and obtain stronger results than the baseline including the dataset and Ambient Diffusion.
+                </p>
             </div>
         </section>
 
@@ -521,21 +524,15 @@
                 <span class="tag results">Results</span>
             </div>
             <div class="placeholder-text">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
-        </section>
-
-        <section class="card">
-            <div class="section-header">
-                <h2>ImageNet restoration</h2>
-                <span class="tag results">Results</span>
-            </div>
-            <div class="placeholder-text">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p>
+                    To further show the scope of our method, we switch modality and target structural protein design. The problem 
+                    is well-suited for our Ambient Dataloops framework, as techniques for determining the atomistic resolution of 
+                    molecular protein structures (such as X-ray crystallography) are inherently noisy. We use the same dataset, 
+                    architectural, and training procedures as in (Daras et al., 2025b), but use Ambient Dataloops to iteratively 
+                    refine the protein structures in the dataset. Just one loop of our procedure is enough to achieve a new Pareto 
+                    point, as shown below. In particular, we trade 0.2% decrease in designability for a 14.3% increase in diversity, 
+                    significantly expanding the creativity boundaries of the baseline Ambient model for the same inference parameters. 
+                </p>
             </div>
         </section>
 
