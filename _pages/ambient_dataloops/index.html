@@ -429,7 +429,20 @@
                 <span class="tag abstract">Abstract</span>
             </div>
             <div class="placeholder-text">
-                <p style="text-align: justify;">We propose Ambient Dataloops, an iterative framework for refining datasets that makes it easier for diffusion models to learn the underlying data distribution. Modern datasets contain samples of highly varying quality, and training directly on such heterogeneous data often yields suboptimal models. We propose a dataset-model co-evolution process; at each iteration of our method, the dataset becomes progressively higher quality, and the model improves accordingly. To avoid destructive self-consuming loops, at each generation, we treat the synthetically improved samples as noisy, but at a slightly lower noisy level than the previous iteration, and we use Ambient Diffusion techniques for learning under corruption. Empirically, Ambient Dataloops achieve state-of-the-art performance in unconditional and text-conditional image generation and de novo protein design. We further provide a theoretical justification for the proposed framework that captures the benefits of the data looping procedure.</p>
+                <p style="text-align: justify;">
+                    We propose Ambient Dataloops, an iterative framework for refining datasets that makes it 
+                    easier for diffusion models to learn the underlying data distribution. Modern datasets 
+                    contain samples of highly varying quality, and training directly on such heterogeneous 
+                    data often yields suboptimal models. We propose a dataset-model co-evolution process; at 
+                    each iteration of our method, the dataset becomes progressively higher quality, and the 
+                    model improves accordingly. To avoid destructive self-consuming loops, at each generation, 
+                    we treat the synthetically improved samples as noisy, but at a slightly lower noisy level 
+                    than the previous iteration, and we use Ambient Diffusion techniques for learning under 
+                    corruption. Empirically, Ambient Dataloops achieve state-of-the-art performance in 
+                    unconditional and text-conditional image generation and de novo protein design. We 
+                    further provide a theoretical justification for the proposed framework that captures 
+                    the benefits of the data looping procedure.
+                </p>
             </div>
         </section>
 
@@ -452,7 +465,7 @@
             </div> -->
 
             <div class="placeholder-text">
-                <p>
+                <p style="text-align: justify;">
                     Our method is as follows. Firstly, we annotate each of our datapoints according to their quality, by assigning 
                     them a minimum diffusion time at which low and high quality data distributions approximately merge. Second, we 
                     train a diffusion model using Ambient Diffusion (Daras et al., 2025c, 2023) techniques, which can learn from 
@@ -470,7 +483,7 @@
                 <span class="tag stability">Insight</span>
             </div>
             <div class="placeholder-text">
-                <p>
+                <p style="text-align: justify;">
                   The idea of dataset refinement, despite being natural, presents a paradox. First, it seems to be 
                   violating the data processing inequality; information cannot be created out of thin air, and hence 
                   any processing of the original data cannot have more information for the underlying distribution than 
@@ -481,7 +494,7 @@
                   leads to imperfect optimisation, even with Ambient Diffusion training. Trying to remove the imperfections, 
                   even without external verifiers, results in better training, better optimisation, and better results.
                 </p>
-                <p>
+                <p style="text-align: justify;">
                   Secondly, several recent works have shown that naive training on synthetic data leads to catastrophic 
                   self-confusing loops and mode collapse (Alemohammad et al., 2024a; Shumailov et al., 2024; Hataya et al., 2023; 
                   Martinez et al., 2023; Padmakumar & He, 2024; Seddik et al., 2024; Dohmatob et al., 2024). Our approach avoids 
@@ -509,7 +522,7 @@
                 <span class="tag results">Results</span>
             </div>
             <div class="placeholder-text">
-                <p>
+                <p style="text-align: justify;">
                   To show the effectiveness of our method, we experiment with text-to-image generative modeling, following the 
                   architectural and dataset choices of MicroDiffusion (Sehwag et al., 2025). We attempt to refine the DiffusionDB 
                   dataset, a collection of synthetic images part of the MicroDiffusion training set that is of lower quality than 
@@ -524,7 +537,7 @@
                 <span class="tag results">Results</span>
             </div>
             <div class="placeholder-text">
-                <p>
+                <p style="text-align: justify;">
                     To further show the scope of our method, we switch modality and target structural protein design. The problem 
                     is well-suited for our Ambient Dataloops framework, as techniques for determining the atomistic resolution of 
                     molecular protein structures (such as X-ray crystallography) are inherently noisy. We use the same dataset, 
